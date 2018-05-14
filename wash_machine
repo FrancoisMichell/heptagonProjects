@@ -1,0 +1,25 @@
+node washing_machine (start, end, standby, go_on : bool) returns (s : bool)
+	let
+		state Off do
+			s = off;
+			unless start then Washing
+		
+		state washing do
+			s = wash;
+			unless end then Rinse
+				| standby then Standby
+		
+		state Rinse do
+			s = rinse;
+			unless end then Spin
+				| standby then Standby
+
+		state Spin do
+			s = spin;
+			unless end then Off
+				| standby then Standby
+
+		state Standby do
+			unless go_on & s = wash then Washing
+				| go_on & s = rinse then Rinse
+				| go_on & s = spin then Spin

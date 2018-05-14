@@ -1,0 +1,23 @@
+node mopa (turnOn, turnOff, c : bool) returns (s : bool)
+	let 
+		automaton
+			state Desligada do
+				s = false ;
+				unless turnOn & c then Ligada
+
+			state Ligada do
+				s = true ;
+				unless turnOff & c then Desligada
+					| not c then Desligada
+		end
+tel
+
+node controller (turnOn1, turnOff1, turnOn2, turnOff2  : bool) returns (s1, s2 : bool)
+	contract
+		enforce not (s1 & s2)
+		with (c1, c2 : bool)
+
+let
+	s1 = inlined mopa (turnOn1, turnOff1, c1);
+	s2 = inlined mopa (turnOn2, turnOff2, c2)
+tel

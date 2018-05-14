@@ -1,0 +1,23 @@
+node rad (turn_on, turn_off, turn_down, turn_high : bool) returns (s:bool)
+	let
+		automaton
+			state Off do
+				s = false;
+				unless turn_on then Frost_Protection
+
+			state Frost_Protection do
+				s = true;
+				unless turn_high then High
+					| turn_off then Off
+
+			state High do
+				s = true
+				unless turn_down then Frost_Protection
+					| turn_off then Off
+		end
+	tel
+
+node controller (turn_on1, turn_off1, turn_down1, turn_high1 : bool) returns (s1 : bool)
+	let
+		s1 = inlined rad (turn_on1, turn_off1, turn_down1, turn_high1);
+	tel
