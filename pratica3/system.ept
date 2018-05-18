@@ -2,12 +2,12 @@ node room (presence : bool) returns (room_oc: bool)
 	let
 		automaton
 			state Empty do
-				room_oc = true;
+				room_oc = false;
 				unless presence then Ocupied
 
 			state Ocupied do
-				room_oc = false;
-				unless not presence then Empty
+				room_oc = true;
+				unless presence then Empty
 		end
 	tel
 
@@ -25,7 +25,7 @@ node management_policy (eco_input, confort_input : bool) returns (eco, confort :
 				pl=5000;
 				eco = true;
 				confort = false;
-				unless not eco_input then Minimal_safety
+				unless eco_input then Minimal_safety
 					|	confort_input then Confort
 
 			state Confort do
@@ -33,7 +33,7 @@ node management_policy (eco_input, confort_input : bool) returns (eco, confort :
 				eco = false;
 				confort = true;
 				unless eco_input then Eco
-					|	not confort_input then Minimal_safety
+					| confort_input then Minimal_safety
 		end
 	tel
 
@@ -79,11 +79,20 @@ node rad (up1, up2, down1, down2, c1, c2 : bool) returns (on_state, power : int)
 		end
 	tel
 
-node controller (up1_1, up2_1, down1_1, down2_1, up1_2, up2_2, down1_2, down2_2: bool) returns (on_state1, power1, on_state2, power2 : int)
+node controller (up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, presence1, push1: bool) returns (eco1, confort1, room_oc1, door_open1 : bool ; on_state1, power1, pl1 : int)
 	contract
-		enforce not ((power1 + power2) > 3500)
-		with(c1_1, c2_1, c1_2, c2_2 : bool)
+		var rule1, rule2: bool;
+
+		let
+			rule1 = not (power1 > 3500);
+			rule2 = not (door_open1 & not room_oc1);
+		tel
+
+		enforce rule1 & rule2
+		with(c1_1, c2_1, c_door1 : bool)
 	let
+		(eco1, confort1, pl1) = inlined management_policy (eco_input1, confort_input1);
 		(on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1);
-		(on_state2, power2) = inlined rad (up1_2, up2_2, down1_2, down2_2, c1_2, c2_2);
+		room_oc1 = inlined room (presence1);
+		door_open1 = inlined door (push1, c_door1);
 	tel

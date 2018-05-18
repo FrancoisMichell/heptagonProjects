@@ -1,0 +1,177 @@
+node controller_controller_controller_c_door1(controller_up1_1 : bool;
+                                               controller_up2_1 : bool;
+                                               controller_down1_1 : bool;
+                                               controller_down2_1 : bool;
+                                               controller_eco_input1 : bool;
+                                               controller_confort_input1 : bool;
+                                               controller_presence1 : bool;
+                                               controller_push1 : bool;
+                                               controller_v_130 : bool;
+                                               controller_v_129 : bool;
+                                               controller_pnr_3 : bool;
+                                               controller_v_110 : bool;
+                                               controller_v_109 : bool;
+                                               controller_pnr_2 : bool;
+                                               controller_ck_8_1 : bool;
+                                               controller_pnr_1 : bool;
+                                               controller_ck_10_1 : bool;
+                                               controller_pnr : bool;
+                                               p_controller_c_door1 : bool;
+                                               p_controller_c2_1 : bool;
+                                               p_controller_c1_1 : bool;
+                                               controller_c2_1 : bool;
+                                               controller_c1_1 : bool)
+returns (controller_c_door1 : bool)
+var v_1 : bool; v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool;
+    sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool;
+    sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool;
+    sub_13 : bool; sub_14 : bool; sub_15 : bool;
+let
+  controller_c_door1 = sub_0;
+  sub_15 = true;
+  sub_14 = sub_15;
+  sub_13 = sub_14;
+  sub_12 = sub_13;
+  sub_11 = sub_12;
+  sub_10 = if controller_ck_10_1 then sub_4 else false;
+  sub_9 = false;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  v = if controller_ck_10_1 then sub_11 else false;
+  v_1 = if p_controller_c_door1 then v else sub_10;
+  sub_3 = if controller_push1 then sub_4 else v_1;
+  sub_2 = sub_3;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node controller_controller_controller_c2_1(controller_up1_1 : bool;
+                                            controller_up2_1 : bool;
+                                            controller_down1_1 : bool;
+                                            controller_down2_1 : bool;
+                                            controller_eco_input1 : bool;
+                                            controller_confort_input1 : bool;
+                                            controller_presence1 : bool;
+                                            controller_push1 : bool;
+                                            controller_v_130 : bool;
+                                            controller_v_129 : bool;
+                                            controller_pnr_3 : bool;
+                                            controller_v_110 : bool;
+                                            controller_v_109 : bool;
+                                            controller_pnr_2 : bool;
+                                            controller_ck_8_1 : bool;
+                                            controller_pnr_1 : bool;
+                                            controller_ck_10_1 : bool;
+                                            controller_pnr : bool;
+                                            p_controller_c_door1 : bool;
+                                            p_controller_c2_1 : bool;
+                                            p_controller_c1_1 : bool;
+                                            controller_c1_1 : bool)
+returns (controller_c2_1 : bool)
+var v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool;
+let
+  controller_c2_1 = sub_0;
+  sub_9 = p_controller_c2_1;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  v = if controller_ck_10_1 then sub_3 else false;
+  sub_2 = if controller_push1 then sub_3 else v;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node controller_controller_controller_c1_1(controller_up1_1 : bool;
+                                            controller_up2_1 : bool;
+                                            controller_down1_1 : bool;
+                                            controller_down2_1 : bool;
+                                            controller_eco_input1 : bool;
+                                            controller_confort_input1 : bool;
+                                            controller_presence1 : bool;
+                                            controller_push1 : bool;
+                                            controller_v_130 : bool;
+                                            controller_v_129 : bool;
+                                            controller_pnr_3 : bool;
+                                            controller_v_110 : bool;
+                                            controller_v_109 : bool;
+                                            controller_pnr_2 : bool;
+                                            controller_ck_8_1 : bool;
+                                            controller_pnr_1 : bool;
+                                            controller_ck_10_1 : bool;
+                                            controller_pnr : bool;
+                                            p_controller_c_door1 : bool;
+                                            p_controller_c2_1 : bool;
+                                            p_controller_c1_1 : bool)
+returns (controller_c1_1 : bool)
+var v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+let
+  controller_c1_1 = sub_0;
+  sub_8 = p_controller_c1_1;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  v = if controller_ck_10_1 then sub_3 else false;
+  sub_2 = if controller_push1 then sub_3 else v;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node controller_controller(controller_up1_1 : bool; controller_up2_1 : bool;
+                            controller_down1_1 : bool;
+                            controller_down2_1 : bool;
+                            controller_eco_input1 : bool;
+                            controller_confort_input1 : bool;
+                            controller_presence1 : bool;
+                            controller_push1 : bool; controller_v_130 : bool;
+                            controller_v_129 : bool; controller_pnr_3 : bool;
+                            controller_v_110 : bool; controller_v_109 : bool;
+                            controller_pnr_2 : bool;
+                            controller_ck_8_1 : bool;
+                            controller_pnr_1 : bool;
+                            controller_ck_10_1 : bool; controller_pnr : bool;
+                            p_controller_c_door1 : bool;
+                            p_controller_c2_1 : bool;
+                            p_controller_c1_1 : bool)
+returns (controller_c_door1 : bool; controller_c2_1 : bool;
+          controller_c1_1 : bool)
+let
+  controller_c1_1 =
+    controller_controller_controller_c1_1
+    (controller_up1_1, controller_up2_1, controller_down1_1,
+      controller_down2_1, controller_eco_input1, controller_confort_input1,
+      controller_presence1, controller_push1, controller_v_130,
+      controller_v_129, controller_pnr_3, controller_v_110, controller_v_109,
+      controller_pnr_2, controller_ck_8_1, controller_pnr_1,
+      controller_ck_10_1, controller_pnr, p_controller_c_door1,
+      p_controller_c2_1, p_controller_c1_1);
+  controller_c2_1 =
+    controller_controller_controller_c2_1
+    (controller_up1_1, controller_up2_1, controller_down1_1,
+      controller_down2_1, controller_eco_input1, controller_confort_input1,
+      controller_presence1, controller_push1, controller_v_130,
+      controller_v_129, controller_pnr_3, controller_v_110, controller_v_109,
+      controller_pnr_2, controller_ck_8_1, controller_pnr_1,
+      controller_ck_10_1, controller_pnr, p_controller_c_door1,
+      p_controller_c2_1, p_controller_c1_1, controller_c1_1);
+  controller_c_door1 =
+    controller_controller_controller_c_door1
+    (controller_up1_1, controller_up2_1, controller_down1_1,
+      controller_down2_1, controller_eco_input1, controller_confort_input1,
+      controller_presence1, controller_push1, controller_v_130,
+      controller_v_129, controller_pnr_3, controller_v_110, controller_v_109,
+      controller_pnr_2, controller_ck_8_1, controller_pnr_1,
+      controller_ck_10_1, controller_pnr, p_controller_c_door1,
+      p_controller_c2_1, p_controller_c1_1, controller_c2_1, controller_c1_1)
+tel
+
