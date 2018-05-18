@@ -1,0 +1,89 @@
+node room (presence : bool) returns (room_oc: bool)
+	let
+		automaton
+			state Empty do
+				room_oc = true;
+				unless presence then Ocupied
+
+			state Ocupied do
+				room_oc = false;
+				unless not presence then Empty
+		end
+	tel
+
+node management_policy (eco_input, confort_input : bool) returns (eco, confort : bool; pl : int)
+	let
+		automaton
+			state Minimal_safety do
+				pl=3000;
+				eco = false;
+				confort = false;
+				unless eco_input then Eco
+					|	confort_input then Confort
+
+			state Eco do
+				pl=5000;
+				eco = true;
+				confort = false;
+				unless not eco_input then Minimal_safety
+					|	confort_input then Confort
+
+			state Confort do
+				pl=7000;
+				eco = false;
+				confort = true;
+				unless eco_input then Eco
+					|	not confort_input then Minimal_safety
+		end
+	tel
+
+node door (push, c_door : bool) returns (door_open : bool)
+	let
+		automaton
+			state Closed do
+				door_open = false;
+				unless push & c_door then Open
+
+			state Open do
+				door_open = true;
+				unless push & not c_door then Closed
+		end
+	tel
+
+node rad (up1, up2, down1, down2, c1, c2 : bool) returns (on_state, power : int)
+	let
+		automaton
+			state Off do
+				on_state = 0;
+				power = 0;
+				unless up1 or not c1 then Frost_Protection
+
+			state Frost_Protection do
+				on_state = 1;
+				power = 300;
+				unless up1 & c1 then Eco
+					| up2 & c2 then High
+					| down1 or not c1 then Off
+
+			state Eco do
+				on_state = 2 ;
+				power = 1500 ;
+				unless up2 & c2 then High
+					| down1 or not c1 then Frost_Protection
+
+			state High do
+				on_state = 3 ;
+				power = 2000 ;
+				unless down2 or not c2 then Frost_Protection
+					| down1 or not c1 then Eco
+		end
+	tel
+
+node controller (up1_1, up2_1, down1_1, down2_1, up1_2, up2_2, down1_2, down2_2: bool) returns (on_state1, power1, on_state2, power2 : int)
+	contract
+		enforce not ((power1 + power2) > 3500)
+		with(c1_1, c2_1, c1_2, c2_2 : bool)
+	let
+		(on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1);
+		(on_state2, power2) = inlined rad (up1_2, up2_2, down1_2, down2_2, c1_2, c2_2);
+	tel

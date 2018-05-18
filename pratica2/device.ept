@@ -1,0 +1,33 @@
+node rad (up1, up2, down1, down2 : bool) returns (s:bool; p:int)
+	let
+		automaton
+			state Off do
+				s = false;
+				p = 0;
+				unless up1 then Frost_Protection
+
+			state Frost_Protection do
+				s = true;
+				p = 300;
+				unless up1 then Eco
+					| up2 then High
+					| down1 then Off
+
+			state Eco do
+				s = true ;
+				p = 1500 ;
+				unless up2 then High
+					| down1 then Frost_Protection
+
+			state High do
+				s = true ;
+				p = 2000 ;
+				unless down2 then Frost_Protection
+					| down1 then Eco
+		end
+	tel
+
+node controller (up1_1, up2_1, down1_1, down2_1 : bool) returns (state1 : bool; power1 : int)
+	let
+		(state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1);
+	tel

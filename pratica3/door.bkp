@@ -1,0 +1,49 @@
+node door (push, c_door : bool) returns (door_open : bool)
+	let
+		automaton
+			state Closed do
+				door_open = false;
+				unless push & c_door then Open
+
+			state Open do
+				door_open = true;
+				unless push & not c_door then Closed
+		end
+	tel
+
+node rad (up1, up2, down1, down2, c1, c2 : bool) returns (on_state, power : int)
+	let
+		automaton
+			state Off do
+				on_state = 0;
+				power = 0;
+				unless up1 or not c1 then Frost_Protection
+
+			state Frost_Protection do
+				on_state = 1;
+				power = 300;
+				unless up1 & c1 then Eco
+					| up2 & c2 then High
+					| down1 or not c1 then Off
+
+			state Eco do
+				on_state = 2 ;
+				power = 1500 ;
+				unless up2 & c2 then High
+					| down1 or not c1 then Frost_Protection
+
+			state High do
+				on_state = 3 ;
+				power = 2000 ;
+				unless down2 or not c2 then Frost_Protection
+					| down1 or not c1 then Eco
+		end
+	tel
+node controller (push1, push2: bool) returns (door_open1, door_open2 : bool)
+	contract
+		enforce not (door_open1 & door_open2)
+		with(c_door1, c_door2 : bool)
+	let
+		door_open1 = inlined door (push1, c_door1);
+		door_open2 = inlined door (push2, c_door2);
+	tel
