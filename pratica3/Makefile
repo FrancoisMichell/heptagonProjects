@@ -10,8 +10,8 @@ CC=gcc
 HEPTC=heptc
 HEPTS=hepts
 #Mude o diretorio para onde esta o bin de seu sigali
-SIGALI=/home/francois/Sigali-2.4/bin/sigali
-
+#SIGALI=/home/francois/Sigali-2.4/bin/sigali
+SIGALI=/home/osboxes/tmc/Sigali-2.4/bin/sigali
 
 
 HEPT_LIB_C=/usr/local/lib/heptagon/c

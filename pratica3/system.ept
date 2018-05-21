@@ -178,26 +178,28 @@ node oven (finish, start, c_oven, cold, temp_ok : bool) returns (oven_state, ove
 		end
 	tel
 
-node controller ( (* up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, *) presence1, push1, lamp_switch1, tv_switch1: bool) returns 
-	((* eco1, confort1, *) room_oc1, door_open1, lamp_on1, tv_on1 : bool (* ); on_state1, power1, pl1 : int *))
+node controller ( (* up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, *) presence1, (*push1,*) lamp_switch1, tv_switch1: bool) returns 
+	((* eco1, confort1, *) room_oc1, (*door_open1,*) lamp_on1, tv_on1 : bool (* ); on_state1, power1, pl1 : int *))
 
 	contract
-		var (* rule1,*) rule2, rule3, rule4, rule5: bool;
+		var (* rule1, rule2,*) rule1: bool;
 		let
 			(* rule1 = not (power1 > 3500);*)
-			rule2 = not (not room_oc1 & door_open1);			
-			rule3 = not (presence1 & not (lamp_on1 or tv_on1));
-			rule4 = not (not presence1 & (lamp_on1 or tv_on1));
-			rule5 = room_oc1 & not door_open1;
+			(* rule2 = not (not room_oc1 & door_open1); *)
+			rule1 = not presence1 or not lamp_on1 or not tv_on1;
 		tel
 
-		enforce rule2 & rule3 & rule4 & rule5	
-		with(c1_1, c2_1, c_door1_1, c_door2_1, c_lamp1_1, c_lamp2_1, c_tv1_1, c_tv1_2 : bool)
+		enforce rule1	
+		with(c1_1, c2_1, c_lamp1_1, c_lamp2_1, c_tv1_1, c_tv1_2 : bool)
 	let
 		(* (eco1, confort1, pl1) = inlined management_policy (eco_input1, confort_input1); *)
-		(* (on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1);*)
+		(* (on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1); *)
 		room_oc1 = inlined room (presence1);
-		door_open1 = inlined door (push1, c_door1_1, c_door2_1);
+		(*door_open1 = inlined door (push1, c_door1_1, c_door2_1); *)
 		lamp_on1 = inlined lamp(lamp_switch1, c_lamp1_1, c_lamp2_1);
 		tv_on1 = inlined tv(tv_switch1, c_tv1_1, c_tv1_2);
 	tel
+(* rule1: not room_oc or (tv or lamp) *)
+(* rule2: room_oc or (not d_open & not w_open *)
+(* rule3: not (d_open or w_open) or (rad_state <= 1) *)
+(* rule4: room_oc or (not (lamp or tv) and (state_rad = 0 or state_rad = 1)  *)
