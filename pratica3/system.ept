@@ -3,9 +3,9 @@ node room (presence : bool) returns (room_oc: bool)
 		automaton
 			state Empty do
 				room_oc = false;
-				unless presence then Ocupied
+				unless presence then Occupied
 
-			state Ocupied do
+			state Occupied do
 				room_oc = true;
 				unless presence then Empty
 		end
@@ -37,16 +37,45 @@ node management_policy (eco_input, confort_input : bool) returns (eco, confort :
 		end
 	tel
 
-node door (push, c_door : bool) returns (door_open : bool)
+node tv (tv_switch, c_tv1, c_tv2 : bool) returns (tv_on : bool)
+	let
+		automaton
+			state Off do
+				tv_on = false
+				unless (tv_switch or c_tv1) & c_tv2 then On
+
+			state On do
+				tv_on = true
+				unless (tv_switch or not c_tv1) & not c_tv2 then Off
+
+		end
+	tel
+
+node lamp (lamp_switch, c_lamp1, c_lamp2 : bool) returns (lamp_on : bool)
+	let
+		automaton
+
+			state Off do
+				lamp_on = false
+				unless (lamp_switch or c_lamp1) & c_lamp2 then On
+
+			state On do
+				lamp_on = true
+				unless (lamp_switch or c_lamp1) & c_lamp2 then Off
+
+		end
+	tel
+
+node door (push, c_door1, c_door2 : bool) returns (door_open : bool)
 	let
 		automaton
 			state Closed do
 				door_open = false;
-				unless push & c_door then Open
+				unless (push or c_door1) & c_door2 then Open
 
 			state Open do
 				door_open = true;
-				unless push & not c_door then Closed
+				unless (push & c_door1) & c_door2 then Closed
 		end
 	tel
 
@@ -79,20 +108,96 @@ node rad (up1, up2, down1, down2, c1, c2 : bool) returns (on_state, power : int)
 		end
 	tel
 
-node controller (up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, presence1, push1: bool) returns (eco1, confort1, room_oc1, door_open1 : bool ; on_state1, power1, pl1 : int)
-	contract
-		var rule1, rule2: bool;
+node washing_machine (finish, start, c_wash : bool) returns (wash_state, wash_power : int)
+	let
+		automaton
+			state Off do
+				wash_state = 0;
+				wash_power = 0;
+				unless start then Water_fill
 
+			state Water_fill do
+				wash_state = 1;
+				wash_power = 15;
+				unless finish & c_wash then Washing
+					| finish & not c_wash then Standby
+
+			state Washing do
+				wash_state = 2;
+				wash_power = 250;
+				unless finish then Rinse
+
+			state Rinse do
+				wash_state = 3;
+				wash_power = 200;
+				unless finish then Spin
+
+			state Spin do
+				wash_state = 4;
+				wash_power = 800;
+				unless finish then Off
+
+			state Standby do
+				wash_state = 5;
+				wash_power = 0;
+				unless c_wash then Washing
+		end
+	tel
+
+node oven (finish, start, c_oven, cold, temp_ok : bool) returns (oven_state, oven_power : int)
+	let
+		automaton
+			state Off do
+				oven_state = 0;
+				oven_power = 0;
+				unless start & c_oven then Heat
+					| start & not c_oven then Standby
+
+			state Heat do
+				oven_state = 1;
+				oven_power = 1500;
+				unless finish then Off
+					| temp_ok then Maintain
+
+			state Maintain do
+				oven_state = 2;
+				oven_power = 300;
+				unless finish then Off
+					| cold & c_oven then Reheat
+
+			state Reheat do
+				oven_state = 3;
+				oven_power = 1000;
+				unless temp_ok then Maintain
+					| finish then Off
+
+			state Standby do
+				oven_state = 4;
+				oven_power = 0;
+				unless c_oven then Heat
+		end
+	tel
+
+node controller ( (* up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, *) presence1, push1, lamp_switch1, tv_switch1: bool) returns 
+	((* eco1, confort1, *) room_oc1, door_open1, lamp_on1, tv_on1 : bool (* ); on_state1, power1, pl1 : int *))
+
+	contract
+		var (* rule1,*) rule2, rule3, rule4, rule5: bool;
 		let
-			rule1 = not (power1 > 3500);
-			rule2 = not (door_open1 & not room_oc1);
+			(* rule1 = not (power1 > 3500);*)
+			rule2 = not (not room_oc1 & door_open1);			
+			rule3 = not (presence1 & not (lamp_on1 or tv_on1));
+			rule4 = not (not presence1 & (lamp_on1 or tv_on1));
+			rule5 = room_oc1 & not door_open1;
 		tel
 
-		enforce rule1 & rule2
-		with(c1_1, c2_1, c_door1 : bool)
+		enforce rule2 & rule3 & rule4 & rule5	
+		with(c1_1, c2_1, c_door1_1, c_door2_1, c_lamp1_1, c_lamp2_1, c_tv1_1, c_tv1_2 : bool)
 	let
-		(eco1, confort1, pl1) = inlined management_policy (eco_input1, confort_input1);
-		(on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1);
+		(* (eco1, confort1, pl1) = inlined management_policy (eco_input1, confort_input1); *)
+		(* (on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1);*)
 		room_oc1 = inlined room (presence1);
-		door_open1 = inlined door (push1, c_door1);
+		door_open1 = inlined door (push1, c_door1_1, c_door2_1);
+		lamp_on1 = inlined lamp(lamp_switch1, c_lamp1_1, c_lamp2_1);
+		tv_on1 = inlined tv(tv_switch1, c_tv1_1, c_tv1_2);
 	tel
