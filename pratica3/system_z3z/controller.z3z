@@ -1,4 +1,4 @@
-% --- Generated the 20/5/2018 at 22:24 --- %
+% --- Generated the 22/5/2018 at 22:25 --- %
 % --- heptagon compiler, version 1.03.00 (compiled fri. jan. 19 10:22:24 CET 2018) --- %
 % --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- %
 
@@ -7,193 +7,415 @@ set_reorder(2);read("Property.lib");read("Synthesis.lib");read("Verif_Determ.lib
 
 % ---------- process controller ---------- %
 
-declare(controller_presence1, controller_push1, controller_lamp_switch1,
-        controller_tv_switch1, controller_c_tv1_2, controller_c_tv1_1,
-        controller_c_lamp2_1, controller_c_lamp1_1, controller_c_door2_1,
-        controller_c_door1_1, controller_c2_1, controller_c1_1,
-        controller_ck_1, controller_pnr_3, controller_ck_10_1,
-        controller_pnr_2, controller_ck_12_1, controller_pnr_1,
-        controller_ck_14_1, controller_pnr, controller_error_state);
-conditions : [controller_presence1, controller_push1,
-              controller_lamp_switch1, controller_tv_switch1,
-              controller_c_tv1_2, controller_c_tv1_1, controller_c_lamp2_1,
-              controller_c_lamp1_1, controller_c_door2_1,
-              controller_c_door1_1, controller_c2_1, controller_c1_1];
-states : [controller_ck_1, controller_pnr_3, controller_ck_10_1,
-          controller_pnr_2, controller_ck_12_1, controller_pnr_1,
-          controller_ck_14_1, controller_pnr, controller_error_state];
-controllables : [controller_c_tv1_2, controller_c_tv1_1,
-                 controller_c_lamp2_1, controller_c_lamp1_1,
-                 controller_c_door2_1, controller_c_door1_1, controller_c2_1,
-                 controller_c1_1];
+declare(controller_c_window, controller_c_door, controller_push_porta,
+        controller_push_janela, controller_rad_up1, controller_rad_down1,
+        controller_rad_up2, controller_rad_down2, controller_presence,
+        controller_light_switch, controller_tv_switch, controller_c_tv2,
+        controller_c_tv1, controller_c_light2, controller_c_light1,
+        controller_rad_c2, controller_rad_c1, controller_v_268,
+        controller_v_267, controller_pnr_5, controller_ck_9_1,
+        controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+        controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+        controller_pnr_1, controller_ck_17_1, controller_pnr,
+        controller_error_state);
+conditions : [controller_c_window, controller_c_door, controller_push_porta,
+              controller_push_janela, controller_rad_up1,
+              controller_rad_down1, controller_rad_up2, controller_rad_down2,
+              controller_presence, controller_light_switch,
+              controller_tv_switch, controller_c_tv2, controller_c_tv1,
+              controller_c_light2, controller_c_light1, controller_rad_c2,
+              controller_rad_c1];
+states : [controller_v_268, controller_v_267, controller_pnr_5,
+          controller_ck_9_1, controller_pnr_4, controller_ck_11_1,
+          controller_pnr_3, controller_ck_13_1, controller_pnr_2,
+          controller_ck_15_1, controller_pnr_1, controller_ck_17_1,
+          controller_pnr, controller_error_state];
+controllables : [controller_c_tv2, controller_c_tv1, controller_c_light2,
+                 controller_c_light1, controller_rad_c2, controller_rad_c1];
 evolutions : [];
 initialisations : [];
-controller_presence : controller_presence1;
-controller_c_door2 : controller_c_door2_1;
-controller_c_door1 : controller_c_door1_1;
-controller_push : controller_push1;
-controller_c_lamp2 : controller_c_lamp2_1;
-controller_c_lamp1 : controller_c_lamp1_1;
-controller_lamp_switch : controller_lamp_switch1;
-controller_c_tv2 : controller_c_tv1_2;
-controller_c_tv1 : controller_c_tv1_1;
-controller_tv_switch : controller_tv_switch1;
-controller_s_3_St_11_Occupied_1 : ((1 when controller_presence) default -1);
-controller_r_3_St_11_Occupied : ((1 when controller_presence)
+controller_ck_2 : controller_v_268;
+controller_ck_1 : controller_v_267;
+controller_c_rad2 : controller_rad_c2;
+controller_c_rad1 : controller_rad_c1;
+controller_down2 : controller_rad_down2;
+controller_up2 : controller_rad_up2;
+controller_down1 : controller_rad_down1;
+controller_up1 : controller_rad_up1;
+controller_c_door_1 : controller_c_door;
+controller_push : controller_push_porta;
+controller_c_door_2 : controller_c_window;
+controller_push_1 : controller_push_janela;
+controller_c_source2 : controller_c_light2;
+controller_c_source1 : controller_c_light1;
+controller_source_switch : controller_light_switch;
+controller_c_source2_1 : controller_c_tv2;
+controller_c_source1_1 : controller_c_tv1;
+controller_source_switch_1 : controller_tv_switch;
+controller_presence_1 : controller_presence;
+controller_ck_2_0 : controller_ck_2;
+controller_ck_2_1 : controller_ck_2;
+controller_v_63 : (not controller_c_rad1);
+controller_v_64 : (controller_down1 or controller_v_63);
+controller_v_65 : (not controller_c_rad2);
+controller_v_66 : (controller_down2 or controller_v_65);
+controller_v_67_2 : ((-1 when controller_v_66) default 1);
+controller_v_67_1 : ((1 when controller_v_66) default -1);
+controller_v_68 : ((1 when controller_v_66) default controller_pnr_5);
+controller_s_5_St_12_High_2 : ((1 when controller_v_64)
+  default controller_v_67_2);
+controller_s_5_St_12_High_1 : ((1 when controller_v_64)
+  default controller_v_67_1);
+controller_r_5_St_12_High : ((1 when controller_v_64)
+  default controller_v_68);
+controller_v_82 : (not controller_c_rad1);
+controller_v_83 : (controller_up1 or controller_v_82);
+controller_s_5_St_12_Off_2 : ((-1 when controller_v_83) default -1);
+controller_v_272 : ((controller_s_5_St_12_High_2 when controller_ck_2_0)
+  default controller_s_5_St_12_Off_2);
+controller_s_5_St_12_Off_1 : ((1 when controller_v_83) default -1);
+controller_v_271 : ((controller_s_5_St_12_High_1 when controller_ck_2_0)
+  default controller_s_5_St_12_Off_1);
+controller_r_5_St_12_Off : ((1 when controller_v_83)
+  default controller_pnr_5);
+controller_v_274 : ((controller_r_5_St_12_High when controller_ck_2_0)
+  default controller_r_5_St_12_Off);
+controller_s_5_St_12_High_2_0 : controller_s_5_St_12_High_2;
+controller_s_5_St_12_High_2_1 : controller_s_5_St_12_High_2;
+controller_s_5_St_12_Off_2_0 : controller_s_5_St_12_Off_2;
+controller_s_5_St_12_Off_2_1 : controller_s_5_St_12_Off_2;
+controller_v_67_2_0 : controller_v_67_2;
+controller_v_67_2_1 : controller_v_67_2;
+controller_v_69 : (not controller_c_rad1);
+controller_v_70 : (controller_down1 or controller_v_69);
+controller_v_71 : (controller_up2 and controller_c_rad2);
+controller_v_72_2 : ((1 when controller_v_71) default 1);
+controller_v_72_1 : ((-1 when controller_v_71) default 1);
+controller_v_73 : ((1 when controller_v_71) default controller_pnr_5);
+controller_s_5_St_12_Eco_2 : ((-1 when controller_v_70)
+  default controller_v_72_2);
+controller_s_5_St_12_Eco_1 : ((1 when controller_v_70)
+  default controller_v_72_1);
+controller_r_5_St_12_Eco : ((1 when controller_v_70)
+  default controller_v_73);
+controller_v_74 : (controller_up1 and controller_c_rad1);
+controller_v_75 : (controller_up2 and controller_c_rad2);
+controller_v_76 : (not controller_c_rad1);
+controller_v_77 : (controller_down1 or controller_v_76);
+controller_v_78_2 : ((-1 when controller_v_77) default -1);
+controller_v_78_1 : ((-1 when controller_v_77) default 1);
+controller_v_79 : ((1 when controller_v_77) default controller_pnr_5);
+controller_v_80_2 : ((1 when controller_v_75) default controller_v_78_2);
+controller_v_80_1 : ((-1 when controller_v_75) default controller_v_78_1);
+controller_v_81 : ((1 when controller_v_75) default controller_v_79);
+controller_s_5_St_12_Frostprotection_2 : ((1 when controller_v_74)
+  default controller_v_80_2);
+controller_v_270 : ((controller_s_5_St_12_Eco_2 when controller_ck_2_1)
+  default controller_s_5_St_12_Frostprotection_2);
+controller_s_5_St_12_Frostprotection_1 : ((1 when controller_v_74)
+  default controller_v_80_1);
+controller_v_269 : ((controller_s_5_St_12_Eco_1 when controller_ck_2_1)
+  default controller_s_5_St_12_Frostprotection_1);
+controller_r_5_St_12_Frostprotection : ((1 when controller_v_74)
+  default controller_v_81);
+controller_v_273 : ((controller_r_5_St_12_Eco when controller_ck_2_1)
+  default controller_r_5_St_12_Frostprotection);
+controller_s_5_St_12_Eco_2_0 : controller_s_5_St_12_Eco_2;
+controller_s_5_St_12_Eco_2_1 : controller_s_5_St_12_Eco_2;
+controller_s_5_St_12_Frostprotection_2_0 : controller_s_5_St_12_Frostprotection_2;
+controller_s_5_St_12_Frostprotection_2_1 : controller_s_5_St_12_Frostprotection_2;
+controller_r_5 : ((controller_v_273 when controller_ck_1)
+  default controller_v_274);
+controller_s_5_2 : ((controller_v_270 when controller_ck_1)
+  default controller_v_272);
+controller_s_5_1 : ((controller_v_269 when controller_ck_1)
+  default controller_v_271);
+controller_s_5_2_0 : controller_s_5_2;
+controller_s_5_2_1 : controller_s_5_2;
+controller_v_72_2_0 : controller_v_72_2;
+controller_v_72_2_1 : controller_v_72_2;
+controller_v_80_2_0 : controller_v_80_2;
+controller_v_80_2_1 : controller_v_80_2;
+controller_v_78_2_0 : controller_v_78_2;
+controller_v_78_2_1 : controller_v_78_2;
+controller_ck_8_2 : controller_s_5_2;
+controller_ck_8_1 : controller_s_5_1;
+controller_ck_8_2_0 : controller_ck_8_2;
+controller_ck_8_2_1 : controller_ck_8_2;
+controller_ns_5_St_12_High_2 : 1;
+controller_ns_5_St_12_High_1 : -1;
+controller_nr_5_St_12_High : -1;
+controller_rad_state_1_St_12_High : a_const(3);
+controller_rad_power_1_St_12_High : a_const(2000);
+controller_ns_5_St_12_Off_2 : -1;
+controller_v_264 : ((controller_ns_5_St_12_High_2 when controller_ck_8_2_0)
+  default controller_ns_5_St_12_Off_2);
+controller_ns_5_St_12_Off_1 : -1;
+controller_v_263 : ((controller_ns_5_St_12_High_1 when controller_ck_8_2_0)
+  default controller_ns_5_St_12_Off_1);
+controller_nr_5_St_12_Off : -1;
+controller_v_266 : ((controller_nr_5_St_12_High when controller_ck_8_2_0)
+  default controller_nr_5_St_12_Off);
+controller_rad_state_1_St_12_Off : a_const(0);
+controller_v_260 : a_part(controller_ck_8_2_0, a_const(0),
+                          controller_rad_state_1_St_12_High,
+                          controller_rad_state_1_St_12_Off);
+controller_rad_power_1_St_12_Off : a_const(0);
+controller_v_258 : a_part(controller_ck_8_2_0, a_const(0),
+                          controller_rad_power_1_St_12_High,
+                          controller_rad_power_1_St_12_Off);
+controller_ns_5_St_12_High_2_0 : controller_ns_5_St_12_High_2;
+controller_ns_5_St_12_High_2_1 : controller_ns_5_St_12_High_2;
+controller_ns_5_St_12_Off_2_0 : controller_ns_5_St_12_Off_2;
+controller_ns_5_St_12_Off_2_1 : controller_ns_5_St_12_Off_2;
+controller_ns_5_St_12_Eco_2 : 1;
+controller_ns_5_St_12_Eco_1 : 1;
+controller_nr_5_St_12_Eco : -1;
+controller_rad_state_1_St_12_Eco : a_const(2);
+controller_rad_power_1_St_12_Eco : a_const(1500);
+controller_ns_5_St_12_Frostprotection_2 : -1;
+controller_v_262 : ((controller_ns_5_St_12_Eco_2 when controller_ck_8_2_1)
+  default controller_ns_5_St_12_Frostprotection_2);
+controller_ns_5_St_12_Frostprotection_1 : 1;
+controller_v_261 : ((controller_ns_5_St_12_Eco_1 when controller_ck_8_2_1)
+  default controller_ns_5_St_12_Frostprotection_1);
+controller_nr_5_St_12_Frostprotection : -1;
+controller_v_265 : ((controller_nr_5_St_12_Eco when controller_ck_8_2_1)
+  default controller_nr_5_St_12_Frostprotection);
+controller_rad_state_1_St_12_Frostprotection : a_const(1);
+controller_v_259 : a_part(controller_ck_8_2_1, a_const(0),
+                          controller_rad_state_1_St_12_Eco,
+                          controller_rad_state_1_St_12_Frostprotection);
+controller_rad_power_1_St_12_Frostprotection : a_const(300);
+controller_v_257 : a_part(controller_ck_8_2_1, a_const(0),
+                          controller_rad_power_1_St_12_Eco,
+                          controller_rad_power_1_St_12_Frostprotection);
+controller_ns_5_St_12_Eco_2_0 : controller_ns_5_St_12_Eco_2;
+controller_ns_5_St_12_Eco_2_1 : controller_ns_5_St_12_Eco_2;
+controller_ns_5_St_12_Frostprotection_2_0 : controller_ns_5_St_12_Frostprotection_2;
+controller_ns_5_St_12_Frostprotection_2_1 : controller_ns_5_St_12_Frostprotection_2;
+controller_nr_5 : ((controller_v_265 when controller_ck_8_1)
+  default controller_v_266);
+controller_ns_5_2 : ((controller_v_262 when controller_ck_8_1)
+  default controller_v_264);
+controller_ns_5_1 : ((controller_v_261 when controller_ck_8_1)
+  default controller_v_263);
+controller_rad_state_1 : a_part(controller_ck_8_1, a_const(0),
+                                controller_v_259, controller_v_260);
+controller_rad_power_1 : a_part(controller_ck_8_1, a_const(0),
+                                controller_v_257, controller_v_258);
+controller_ns_5_2_0 : controller_ns_5_2;
+controller_ns_5_2_1 : controller_ns_5_2;
+controller_rad_power : controller_rad_power_1;
+controller_rad_state : controller_rad_state_1;
+controller_v_84 : (not controller_c_door_1);
+controller_v_85 : (controller_push or controller_v_84);
+controller_s_4_St_11_Open_1 : ((1 when controller_v_85) default -1);
+controller_r_4_St_11_Open : ((1 when controller_v_85)
+  default controller_pnr_4);
+controller_v_86 : (controller_push and controller_c_door_1);
+controller_s_4_St_11_Closed_1 : ((-1 when controller_v_86) default 1);
+controller_s_4_1 : ((controller_s_4_St_11_Closed_1 when controller_ck_9_1)
+  default controller_s_4_St_11_Open_1);
+controller_r_4_St_11_Closed : ((1 when controller_v_86)
+  default controller_pnr_4);
+controller_r_4 : ((controller_r_4_St_11_Closed when controller_ck_9_1)
+  default controller_r_4_St_11_Open);
+controller_ck_10_1 : controller_s_4_1;
+controller_ns_4_St_11_Open_1 : -1;
+controller_nr_4_St_11_Open : -1;
+controller_door_open_1_St_11_Open : 1;
+controller_ns_4_St_11_Closed_1 : 1;
+controller_ns_4_1 : ((controller_ns_4_St_11_Closed_1 when controller_ck_10_1)
+  default controller_ns_4_St_11_Open_1);
+controller_nr_4_St_11_Closed : -1;
+controller_nr_4 : ((controller_nr_4_St_11_Closed when controller_ck_10_1)
+  default controller_nr_4_St_11_Open);
+controller_door_open_1_St_11_Closed : -1;
+controller_door_open_1 : ((controller_door_open_1_St_11_Closed
+  when controller_ck_10_1) default controller_door_open_1_St_11_Open);
+controller_door_open : controller_door_open_1;
+controller_v_87 : (not controller_c_door_2);
+controller_v_88 : (controller_push_1 or controller_v_87);
+controller_s_3_St_10_Open_1 : ((1 when controller_v_88) default -1);
+controller_r_3_St_10_Open : ((1 when controller_v_88)
   default controller_pnr_3);
-controller_s_3_St_11_Empty_1 : ((-1 when controller_presence) default 1);
-controller_s_3_1 : ((controller_s_3_St_11_Empty_1 when controller_ck_1)
-  default controller_s_3_St_11_Occupied_1);
-controller_r_3_St_11_Empty : ((1 when controller_presence)
+controller_v_89 : (controller_push_1 and controller_c_door_2);
+controller_s_3_St_10_Closed_1 : ((-1 when controller_v_89) default 1);
+controller_s_3_1 : ((controller_s_3_St_10_Closed_1 when controller_ck_11_1)
+  default controller_s_3_St_10_Open_1);
+controller_r_3_St_10_Closed : ((1 when controller_v_89)
   default controller_pnr_3);
-controller_r_3 : ((controller_r_3_St_11_Empty when controller_ck_1)
-  default controller_r_3_St_11_Occupied);
-controller_ck_9_1 : controller_s_3_1;
-controller_ns_3_St_11_Occupied_1 : -1;
-controller_nr_3_St_11_Occupied : -1;
-controller_room_oc_St_11_Occupied : 1;
-controller_ns_3_St_11_Empty_1 : 1;
-controller_ns_3_1 : ((controller_ns_3_St_11_Empty_1 when controller_ck_9_1)
-  default controller_ns_3_St_11_Occupied_1);
-controller_nr_3_St_11_Empty : -1;
-controller_nr_3 : ((controller_nr_3_St_11_Empty when controller_ck_9_1)
-  default controller_nr_3_St_11_Occupied);
-controller_room_oc_St_11_Empty : -1;
-controller_room_oc : ((controller_room_oc_St_11_Empty when controller_ck_9_1)
-  default controller_room_oc_St_11_Occupied);
-controller_room_oc1 : controller_room_oc;
-controller_v_63 : (controller_push and controller_c_door1);
-controller_v_64 : (controller_v_63 and controller_c_door2);
-controller_s_2_St_10_Open_1 : ((1 when controller_v_64) default -1);
-controller_r_2_St_10_Open : ((1 when controller_v_64)
+controller_r_3 : ((controller_r_3_St_10_Closed when controller_ck_11_1)
+  default controller_r_3_St_10_Open);
+controller_ck_12_1 : controller_s_3_1;
+controller_ns_3_St_10_Open_1 : -1;
+controller_nr_3_St_10_Open : -1;
+controller_door_open_2_St_10_Open : 1;
+controller_ns_3_St_10_Closed_1 : 1;
+controller_ns_3_1 : ((controller_ns_3_St_10_Closed_1 when controller_ck_12_1)
+  default controller_ns_3_St_10_Open_1);
+controller_nr_3_St_10_Closed : -1;
+controller_nr_3 : ((controller_nr_3_St_10_Closed when controller_ck_12_1)
+  default controller_nr_3_St_10_Open);
+controller_door_open_2_St_10_Closed : -1;
+controller_door_open_2 : ((controller_door_open_2_St_10_Closed
+  when controller_ck_12_1) default controller_door_open_2_St_10_Open);
+controller_window_open : controller_door_open_2;
+controller_v_90 : (not controller_c_source1);
+controller_v_91 : (controller_source_switch and controller_v_90);
+controller_v_92 : (controller_v_91 or controller_c_source2);
+controller_s_2_St_9_Ligado_1 : ((1 when controller_v_92) default -1);
+controller_r_2_St_9_Ligado : ((1 when controller_v_92)
   default controller_pnr_2);
-controller_v_65 : (controller_push or controller_c_door1);
-controller_v_66 : (controller_v_65 and controller_c_door2);
-controller_s_2_St_10_Closed_1 : ((-1 when controller_v_66) default 1);
-controller_s_2_1 : ((controller_s_2_St_10_Closed_1 when controller_ck_10_1)
-  default controller_s_2_St_10_Open_1);
-controller_r_2_St_10_Closed : ((1 when controller_v_66)
+controller_v_93 : (not controller_c_source2);
+controller_v_94 : (controller_source_switch and controller_v_93);
+controller_v_95 : (controller_v_94 or controller_c_source1);
+controller_s_2_St_9_Desligado_1 : ((-1 when controller_v_95) default 1);
+controller_s_2_1 : ((controller_s_2_St_9_Desligado_1 when controller_ck_13_1)
+  default controller_s_2_St_9_Ligado_1);
+controller_r_2_St_9_Desligado : ((1 when controller_v_95)
   default controller_pnr_2);
-controller_r_2 : ((controller_r_2_St_10_Closed when controller_ck_10_1)
-  default controller_r_2_St_10_Open);
-controller_ck_11_1 : controller_s_2_1;
-controller_ns_2_St_10_Open_1 : -1;
-controller_nr_2_St_10_Open : -1;
-controller_door_open_St_10_Open : 1;
-controller_ns_2_St_10_Closed_1 : 1;
-controller_ns_2_1 : ((controller_ns_2_St_10_Closed_1 when controller_ck_11_1)
-  default controller_ns_2_St_10_Open_1);
-controller_nr_2_St_10_Closed : -1;
-controller_nr_2 : ((controller_nr_2_St_10_Closed when controller_ck_11_1)
-  default controller_nr_2_St_10_Open);
-controller_door_open_St_10_Closed : -1;
-controller_door_open : ((controller_door_open_St_10_Closed
-  when controller_ck_11_1) default controller_door_open_St_10_Open);
-controller_door_open1 : controller_door_open;
-controller_v_67 : (controller_lamp_switch or controller_c_lamp1);
-controller_v_68 : (controller_v_67 and controller_c_lamp2);
-controller_s_1_St_9_On_1 : ((1 when controller_v_68) default -1);
-controller_r_1_St_9_On : ((1 when controller_v_68) default controller_pnr_1);
-controller_v_69 : (controller_lamp_switch or controller_c_lamp1);
-controller_v_70 : (controller_v_69 and controller_c_lamp2);
-controller_s_1_St_9_Off_1 : ((-1 when controller_v_70) default 1);
-controller_s_1_1 : ((controller_s_1_St_9_Off_1 when controller_ck_12_1)
-  default controller_s_1_St_9_On_1);
-controller_r_1_St_9_Off : ((1 when controller_v_70)
+controller_r_2 : ((controller_r_2_St_9_Desligado when controller_ck_13_1)
+  default controller_r_2_St_9_Ligado);
+controller_ck_14_1 : controller_s_2_1;
+controller_ns_2_St_9_Ligado_1 : -1;
+controller_nr_2_St_9_Ligado : -1;
+controller_source_on_St_9_Ligado : 1;
+controller_ns_2_St_9_Desligado_1 : 1;
+controller_ns_2_1 : ((controller_ns_2_St_9_Desligado_1
+  when controller_ck_14_1) default controller_ns_2_St_9_Ligado_1);
+controller_nr_2_St_9_Desligado : -1;
+controller_nr_2 : ((controller_nr_2_St_9_Desligado when controller_ck_14_1)
+  default controller_nr_2_St_9_Ligado);
+controller_source_on_St_9_Desligado : -1;
+controller_source_on : ((controller_source_on_St_9_Desligado
+  when controller_ck_14_1) default controller_source_on_St_9_Ligado);
+controller_lamp_on : controller_source_on;
+controller_v_96 : (not controller_c_source1_1);
+controller_v_97 : (controller_source_switch_1 and controller_v_96);
+controller_v_98 : (controller_v_97 or controller_c_source2_1);
+controller_s_1_St_8_Ligado_1 : ((1 when controller_v_98) default -1);
+controller_r_1_St_8_Ligado : ((1 when controller_v_98)
   default controller_pnr_1);
-controller_r_1 : ((controller_r_1_St_9_Off when controller_ck_12_1)
-  default controller_r_1_St_9_On);
-controller_ck_13_1 : controller_s_1_1;
-controller_ns_1_St_9_On_1 : -1;
-controller_nr_1_St_9_On : -1;
-controller_lamp_on_St_9_On : 1;
-controller_ns_1_St_9_Off_1 : 1;
-controller_ns_1_1 : ((controller_ns_1_St_9_Off_1 when controller_ck_13_1)
-  default controller_ns_1_St_9_On_1);
-controller_nr_1_St_9_Off : -1;
-controller_nr_1 : ((controller_nr_1_St_9_Off when controller_ck_13_1)
-  default controller_nr_1_St_9_On);
-controller_lamp_on_St_9_Off : -1;
-controller_lamp_on : ((controller_lamp_on_St_9_Off when controller_ck_13_1)
-  default controller_lamp_on_St_9_On);
-controller_lamp_on1 : controller_lamp_on;
-controller_v_71 : (not controller_c_tv1);
-controller_v_72 : (controller_tv_switch or controller_v_71);
-controller_v_73 : (not controller_c_tv2);
-controller_v_74 : (controller_v_72 and controller_v_73);
-controller_s_St_8_On_1 : ((1 when controller_v_74) default -1);
-controller_r_St_8_On : ((1 when controller_v_74) default controller_pnr);
-controller_v_75 : (controller_tv_switch or controller_c_tv1);
-controller_v_76 : (controller_v_75 and controller_c_tv2);
-controller_s_St_8_Off_1 : ((-1 when controller_v_76) default 1);
-controller_s_1_2 : ((controller_s_St_8_Off_1 when controller_ck_14_1)
-  default controller_s_St_8_On_1);
-controller_r_St_8_Off : ((1 when controller_v_76) default controller_pnr);
-controller_r : ((controller_r_St_8_Off when controller_ck_14_1)
-  default controller_r_St_8_On);
-controller_ck_15_1 : controller_s_1_2;
-controller_ns_St_8_On_1 : -1;
-controller_nr_St_8_On : -1;
-controller_tv_on_St_8_On : 1;
-controller_ns_St_8_Off_1 : 1;
-controller_ns_1_2 : ((controller_ns_St_8_Off_1 when controller_ck_15_1)
-  default controller_ns_St_8_On_1);
-controller_nr_St_8_Off : -1;
-controller_nr : ((controller_nr_St_8_Off when controller_ck_15_1)
-  default controller_nr_St_8_On);
-controller_tv_on_St_8_Off : -1;
-controller_tv_on : ((controller_tv_on_St_8_Off when controller_ck_15_1)
-  default controller_tv_on_St_8_On);
-controller_tv_on1 : controller_tv_on;
-initialisations : concat(initialisations, [(controller_ck_1 = 1)]);
-evolutions : concat(evolutions, [(controller_ns_3_1 default controller_ck_1)]);
+controller_v_99 : (not controller_c_source2_1);
+controller_v_100 : (controller_source_switch_1 and controller_v_99);
+controller_v_101 : (controller_v_100 or controller_c_source1_1);
+controller_s_1_St_8_Desligado_1 : ((-1 when controller_v_101) default 1);
+controller_s_1_1 : ((controller_s_1_St_8_Desligado_1 when controller_ck_15_1)
+  default controller_s_1_St_8_Ligado_1);
+controller_r_1_St_8_Desligado : ((1 when controller_v_101)
+  default controller_pnr_1);
+controller_r_1 : ((controller_r_1_St_8_Desligado when controller_ck_15_1)
+  default controller_r_1_St_8_Ligado);
+controller_ck_16_1 : controller_s_1_1;
+controller_ns_1_St_8_Ligado_1 : -1;
+controller_nr_1_St_8_Ligado : -1;
+controller_source_on_1_St_8_Ligado : 1;
+controller_ns_1_St_8_Desligado_1 : 1;
+controller_ns_1_1 : ((controller_ns_1_St_8_Desligado_1
+  when controller_ck_16_1) default controller_ns_1_St_8_Ligado_1);
+controller_nr_1_St_8_Desligado : -1;
+controller_nr_1 : ((controller_nr_1_St_8_Desligado when controller_ck_16_1)
+  default controller_nr_1_St_8_Ligado);
+controller_source_on_1_St_8_Desligado : -1;
+controller_source_on_1 : ((controller_source_on_1_St_8_Desligado
+  when controller_ck_16_1) default controller_source_on_1_St_8_Ligado);
+controller_tv_on : controller_source_on_1;
+controller_v_102 : (not controller_presence_1);
+controller_s_St_7_Ocupied_1 : ((1 when controller_v_102) default -1);
+controller_r_St_7_Ocupied : ((1 when controller_v_102)
+  default controller_pnr);
+controller_s_St_7_Empty_1 : ((-1 when controller_presence_1) default 1);
+controller_s_1_2 : ((controller_s_St_7_Empty_1 when controller_ck_17_1)
+  default controller_s_St_7_Ocupied_1);
+controller_r_St_7_Empty : ((1 when controller_presence_1)
+  default controller_pnr);
+controller_r : ((controller_r_St_7_Empty when controller_ck_17_1)
+  default controller_r_St_7_Ocupied);
+controller_ck_18_1 : controller_s_1_2;
+controller_ns_St_7_Ocupied_1 : -1;
+controller_nr_St_7_Ocupied : -1;
+controller_occupied_1_St_7_Ocupied : 1;
+controller_ns_St_7_Empty_1 : 1;
+controller_ns_1_2 : ((controller_ns_St_7_Empty_1 when controller_ck_18_1)
+  default controller_ns_St_7_Ocupied_1);
+controller_nr_St_7_Empty : -1;
+controller_nr : ((controller_nr_St_7_Empty when controller_ck_18_1)
+  default controller_nr_St_7_Ocupied);
+controller_occupied_1_St_7_Empty : -1;
+controller_occupied_1 : ((controller_occupied_1_St_7_Empty
+  when controller_ck_18_1) default controller_occupied_1_St_7_Ocupied);
+controller_occupied : controller_occupied_1;
+initialisations : concat(initialisations, [(controller_v_268 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_5_2 default controller_v_268)]);
+initialisations : concat(initialisations, [(controller_v_267 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_5_1 default controller_v_267)]);
+initialisations : concat(initialisations, [(controller_pnr_5 = -1)]);
+evolutions : concat(evolutions, [(controller_nr_5 default controller_pnr_5)]);
+initialisations : concat(initialisations, [(controller_ck_9_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_4_1 default controller_ck_9_1)]);
+initialisations : concat(initialisations, [(controller_pnr_4 = -1)]);
+evolutions : concat(evolutions, [(controller_nr_4 default controller_pnr_4)]);
+initialisations : concat(initialisations, [(controller_ck_11_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_3_1 default controller_ck_11_1)]);
 initialisations : concat(initialisations, [(controller_pnr_3 = -1)]);
 evolutions : concat(evolutions, [(controller_nr_3 default controller_pnr_3)]);
-initialisations : concat(initialisations, [(controller_ck_10_1 = 1)]);
+initialisations : concat(initialisations, [(controller_ck_13_1 = 1)]);
 evolutions : concat(evolutions,
-                    [(controller_ns_2_1 default controller_ck_10_1)]);
+                    [(controller_ns_2_1 default controller_ck_13_1)]);
 initialisations : concat(initialisations, [(controller_pnr_2 = -1)]);
 evolutions : concat(evolutions, [(controller_nr_2 default controller_pnr_2)]);
-initialisations : concat(initialisations, [(controller_ck_12_1 = 1)]);
+initialisations : concat(initialisations, [(controller_ck_15_1 = 1)]);
 evolutions : concat(evolutions,
-                    [(controller_ns_1_1 default controller_ck_12_1)]);
+                    [(controller_ns_1_1 default controller_ck_15_1)]);
 initialisations : concat(initialisations, [(controller_pnr_1 = -1)]);
 evolutions : concat(evolutions, [(controller_nr_1 default controller_pnr_1)]);
-initialisations : concat(initialisations, [(controller_ck_14_1 = 1)]);
+initialisations : concat(initialisations, [(controller_ck_17_1 = 1)]);
 evolutions : concat(evolutions,
-                    [(controller_ns_1_2 default controller_ck_14_1)]);
+                    [(controller_ns_1_2 default controller_ck_17_1)]);
 initialisations : concat(initialisations, [(controller_pnr = -1)]);
 evolutions : concat(evolutions, [(controller_nr default controller_pnr)]);
-controller_v_58 : (not controller_room_oc1);
-controller_v_59 : (controller_v_58 and controller_door_open1);
-controller_rule2 : (not controller_v_59);
-controller_v_55 : (controller_lamp_on1 or controller_tv_on1);
-controller_v_56 : (not controller_v_55);
-controller_v_57 : (controller_presence1 and controller_v_56);
-controller_rule3 : (not controller_v_57);
-controller_v_60 : (controller_rule2 and controller_rule3);
-controller_v_53 : (controller_lamp_on1 or controller_tv_on1);
-controller_v_52 : (not controller_presence1);
-controller_v_54 : (controller_v_52 and controller_v_53);
-controller_rule4 : (not controller_v_54);
-controller_v_61 : (controller_v_60 and controller_rule4);
-controller_v : (not controller_door_open1);
-controller_rule5 : (controller_room_oc1 and controller_v);
-controller_v_62 : (controller_v_61 and controller_rule5);
+controller_v_59 : (not controller_occupied);
+controller_v_60 : (controller_v_59 or controller_tv_on);
+controller_rule1 : (controller_v_60 or controller_lamp_on);
+controller_v_57 : (not controller_window_open);
+controller_v_56 : (not controller_door_open);
+controller_v_58 : (controller_v_56 and controller_v_57);
+controller_rule2 : (controller_occupied or controller_v_58);
+controller_v_55 : (a_inf(controller_rad_state, 1) + 1);
+controller_v_53 : (controller_door_open or controller_window_open);
+controller_v_54 : (not controller_v_53);
+controller_rule3 : (controller_v_54 or controller_v_55);
+controller_v_61 : (controller_rule1 and controller_rule3);
+controller_v_51 : (a_inf(controller_rad_state, 1) + 1);
+controller_v : (controller_lamp_on or controller_tv_on);
+controller_v_50 : (not controller_v);
+controller_v_52 : (controller_v_50 and controller_v_51);
+controller_rule4 : (controller_occupied or controller_v_52);
+controller_v_62 : (controller_v_61 and controller_rule4);
 controller_assume : 1;
 controller_guarantee : controller_v_62;
 initialisations : concat(initialisations, [(controller_error_state = 1)]);
 evolutions : concat(evolutions, [controller_guarantee]);
-constraints : [((controller_presence1^2) = 1), ((controller_push1^2) = 1),
-               ((controller_lamp_switch1^2) = 1), ((controller_tv_switch1^2)
-               = 1), ((controller_c_tv1_2^2) = 1), ((controller_c_tv1_1^2)
-               = 1), ((controller_c_lamp2_1^2) = 1),
-               ((controller_c_lamp1_1^2) = 1), ((controller_c_door2_1^2)
-               = 1), ((controller_c_door1_1^2) = 1), ((controller_c2_1^2)
-               = 1), ((controller_c1_1^2) = 1), (controller_assume = 1)];
+constraints : [((controller_c_window^2) = 1), ((controller_c_door^2) = 1),
+               ((controller_push_porta^2) = 1), ((controller_push_janela^2)
+               = 1), ((controller_rad_up1^2) = 1), ((controller_rad_down1^2)
+               = 1), ((controller_rad_up2^2) = 1), ((controller_rad_down2^2)
+               = 1), ((controller_presence^2) = 1),
+               ((controller_light_switch^2) = 1), ((controller_tv_switch^2)
+               = 1), ((controller_c_tv2^2) = 1), ((controller_c_tv1^2) = 1),
+               ((controller_c_light2^2) = 1), ((controller_c_light1^2) = 1),
+               ((controller_rad_c2^2) = 1), ((controller_rad_c1^2) = 1),
+               (controller_assume = 1)];
 
-% --- outputs : [controller_room_oc1, controller_door_open1,
-                 controller_lamp_on1, controller_tv_on1] --- %
+% --- outputs : [controller_door_open, controller_window_open,
+                 controller_lamp_on, controller_tv_on, controller_occupied,
+                 controller_rad_power, controller_rad_state] --- %
 controller : processus(conditions, states, evolutions, initialisations,
                        [gen(constraints)], controllables);
 controller_init : initial(controller);
@@ -208,22 +430,25 @@ if dcs_result then
     print("Triangulation and controller generation...")
 else
     quit(1);
-declare(p_controller_c_tv1_2, p_controller_c_tv1_1, p_controller_c_lamp2_1,
-        p_controller_c_lamp1_1, p_controller_c_door2_1,
-        p_controller_c_door1_1, p_controller_c2_1, p_controller_c1_1);
-phantom_vars : [p_controller_c_tv1_2, p_controller_c_tv1_1,
-                p_controller_c_lamp2_1, p_controller_c_lamp1_1,
-                p_controller_c_door2_1, p_controller_c_door1_1,
-                p_controller_c2_1, p_controller_c1_1];
+declare(p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+        p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1);
+phantom_vars : [p_controller_c_tv2, p_controller_c_tv1,
+                p_controller_c_light2, p_controller_c_light1,
+                p_controller_rad_c2, p_controller_rad_c1];
 controller_triang : Triang(constraint(controller),controllables,phantom_vars);
-controller_inputs : [controller_presence1, controller_push1,
-                     controller_lamp_switch1, controller_tv_switch1,
-                     controller_ck_1, controller_pnr_3, controller_ck_10_1,
-                     controller_pnr_2, controller_ck_12_1, controller_pnr_1,
-                     controller_ck_14_1, controller_pnr,
-                     p_controller_c_tv1_2, p_controller_c_tv1_1,
-                     p_controller_c_lamp2_1, p_controller_c_lamp1_1,
-                     p_controller_c_door2_1, p_controller_c_door1_1,
-                     p_controller_c2_1, p_controller_c1_1];
+controller_inputs : [controller_c_window, controller_c_door,
+                     controller_push_porta, controller_push_janela,
+                     controller_rad_up1, controller_rad_down1,
+                     controller_rad_up2, controller_rad_down2,
+                     controller_presence, controller_light_switch,
+                     controller_tv_switch, controller_v_268,
+                     controller_v_267, controller_pnr_5, controller_ck_9_1,
+                     controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+                     controller_ck_13_1, controller_pnr_2,
+                     controller_ck_15_1, controller_pnr_1,
+                     controller_ck_17_1, controller_pnr, p_controller_c_tv2,
+                     p_controller_c_tv1, p_controller_c_light2,
+                     p_controller_c_light1, p_controller_rad_c2,
+                     p_controller_rad_c1];
 heptagon_controller("controller_controller.ept","controller",controller_inputs,controllables,controller_triang);
 

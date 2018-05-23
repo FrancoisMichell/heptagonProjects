@@ -1,205 +1,188 @@
-node room (presence : bool) returns (room_oc: bool)
+node room ( presence : bool ) returns ( occupied : bool )
 	let
-		automaton
-			state Empty do
-				room_oc = false;
-				unless presence then Occupied
+    automaton
+	    
+	    state Empty do
+	      occupied = false;
+	    	unless presence then Ocupied
 
-			state Occupied do
-				room_oc = true;
-				unless presence then Empty
-		end
+	    state Ocupied do
+	      occupied = true;
+	    	unless not presence then Empty
+    
+    end
 	tel
 
-node management_policy (eco_input, confort_input : bool) returns (eco, confort : bool; pl : int)
+node management_policy( eco_input, comfort_input : bool ) returns ( eco_on , comfort_on : bool; power_limit : int )
 	let
-		automaton
-			state Minimal_safety do
-				pl=3000;
-				eco = false;
-				confort = false;
-				unless eco_input then Eco
-					|	confort_input then Confort
+    automaton
+	    state Minimal_safety do
+	      power_limit = 3000;
+	      eco_on = false;
+	      comfort_on = false;
+		    unless eco_input then Eco
+		      | comfort_input then Comfort
 
-			state Eco do
-				pl=5000;
-				eco = true;
-				confort = false;
-				unless eco_input then Minimal_safety
-					|	confort_input then Confort
+	    state Eco do
+	      power_limit = 5000;
+	      eco_on = true;
+	      comfort_on = false;
+		    unless not eco_input then Minimal_safety
+		      | comfort_input then Comfort
 
-			state Confort do
-				pl=7000;
-				eco = false;
-				confort = true;
-				unless eco_input then Eco
-					| confort_input then Minimal_safety
-		end
+	    state Comfort do
+	      power_limit = 7000;
+	      eco_on = false;
+	      comfort_on = true;
+		    unless eco_input then Eco
+		      | not comfort_input then Minimal_safety
+    end
 	tel
 
-node tv (tv_switch, c_tv1, c_tv2 : bool) returns (tv_on : bool)
+node light_source ( source_switch, c_source1, c_source2 : bool ) returns ( source_on : bool )
 	let
-		automaton
-			state Off do
-				tv_on = false
-				unless (tv_switch or c_tv1) & c_tv2 then On
-
-			state On do
-				tv_on = true
-				unless (tv_switch or not c_tv1) & not c_tv2 then Off
-
-		end
+    automaton
+	  
+	    state Desligado do
+	      source_on = false;
+	    	unless (source_switch & not c_source2) or c_source1 then Ligado
+	  
+	    state Ligado do
+	      source_on = true;
+		    unless (source_switch & not c_source1) or c_source2 then Desligado
+    
+    end
 	tel
 
-node lamp (lamp_switch, c_lamp1, c_lamp2 : bool) returns (lamp_on : bool)
+node door( push, c_door : bool ) returns ( door_open : bool )
 	let
-		automaton
-
-			state Off do
-				lamp_on = false
-				unless (lamp_switch or c_lamp1) & c_lamp2 then On
-
-			state On do
-				lamp_on = true
-				unless (lamp_switch or c_lamp1) & c_lamp2 then Off
-
-		end
+    automaton
+    state Closed do
+      door_open = false;
+    unless push & c_door then Open
+    state Open do
+      door_open = true;
+    unless push or not c_door then Closed
+    end
 	tel
 
-node door (push, c_door1, c_door2 : bool) returns (door_open : bool)
+node rad(up1,down1,up2,down2,c_rad1,c_rad2:bool) returns (rad_power, rad_state:int)
 	let
-		automaton
-			state Closed do
-				door_open = false;
-				unless (push or c_door1) & c_door2 then Open
+    automaton
+	    state Off do
+	      rad_power = 0;
+	      rad_state = 0;
+		    unless up1 or not c_rad1 then Frostprotection
 
-			state Open do
-				door_open = true;
-				unless (push & c_door1) & c_door2 then Closed
-		end
+	    state Frostprotection do
+	      rad_power = 300;
+	      rad_state = 1;
+		    unless up1 & c_rad1 then Eco
+		      | up2 & c_rad2 then High
+		      | down1 or not c_rad1 then Off
+	    
+	    state Eco do
+	      rad_power = 1500;
+	      rad_state = 2;
+		    unless down1 or not c_rad1 then Frostprotection
+		      | up2 & c_rad2 then High
+	    
+	    state High do
+	      rad_power = 2000;
+	      rad_state = 3;
+		    unless down1 or not c_rad1 then Eco
+		       | down2 or not c_rad2 then Frostprotection
+    end
 	tel
 
-node rad (up1, up2, down1, down2, c1, c2 : bool) returns (on_state, power : int)
+node washing_machine(finish, start, c_wash:bool) returns (wash_power, wash_state:int)
 	let
-		automaton
-			state Off do
-				on_state = 0;
-				power = 0;
-				unless up1 or not c1 then Frost_Protection
+    automaton
+	    state Off do
+	      wash_power = 0;
+	      wash_state = 0;
+	    	unless start then Water_fill
 
-			state Frost_Protection do
-				on_state = 1;
-				power = 300;
-				unless up1 & c1 then Eco
-					| up2 & c2 then High
-					| down1 or not c1 then Off
-
-			state Eco do
-				on_state = 2 ;
-				power = 1500 ;
-				unless up2 & c2 then High
-					| down1 or not c1 then Frost_Protection
-
-			state High do
-				on_state = 3 ;
-				power = 2000 ;
-				unless down2 or not c2 then Frost_Protection
-					| down1 or not c1 then Eco
-		end
+	    state Water_fill do
+	      wash_power = 15;
+	      wash_state = 1;
+		    unless finish & not c_wash then Standby
+		      | finish & c_wash then Washing
+	    
+	    state Washing do
+	      wash_power = 250;
+	      wash_state = 2;
+	    	unless finish then Rinse
+	    
+	    state Rinse do
+	      wash_power = 200;
+	      wash_state = 3;
+	    	unless finish then Spin
+	    
+	    state Spin do
+	      wash_power = 800;
+	      wash_state = 4;
+	    	unless finish then Off
+	    
+	    state Standby do
+	      wash_power = 0;
+	      wash_state = 5;
+	    	unless c_wash then Washing
+    end
 	tel
 
-node washing_machine (finish, start, c_wash : bool) returns (wash_state, wash_power : int)
+node oven(finish, start, c_oven, temp_ok, cold:bool) returns ( oven_power, oven_state:int)
 	let
-		automaton
-			state Off do
-				wash_state = 0;
-				wash_power = 0;
-				unless start then Water_fill
+    automaton
+	    state Off do
+	      oven_power = 0;
+	      oven_state = 0;
+	    	unless start & c_oven then Heat 
+	      	| start & not c_oven then Standby
 
-			state Water_fill do
-				wash_state = 1;
-				wash_power = 15;
-				unless finish & c_wash then Washing
-					| finish & not c_wash then Standby
+	    state Heat do
+	      oven_power = 1500;
+	      oven_state = 1;
+		    unless temp_ok then Maintain
+		      | finish  then Off
 
-			state Washing do
-				wash_state = 2;
-				wash_power = 250;
-				unless finish then Rinse
+	    state Maintain do
+	      oven_power = 300;
+	      oven_state = 2;
+		    unless cold & c_oven then Reheat
+		      | finish then Off
 
-			state Rinse do
-				wash_state = 3;
-				wash_power = 200;
-				unless finish then Spin
-
-			state Spin do
-				wash_state = 4;
-				wash_power = 800;
-				unless finish then Off
-
-			state Standby do
-				wash_state = 5;
-				wash_power = 0;
-				unless c_wash then Washing
-		end
+	    state Reheat do
+	      oven_power = 1000;
+	      oven_state = 3;
+		    unless temp_ok then Maintain
+		       | finish then Off
+	    
+	    state Standby do
+	      oven_power = 0;
+	      oven_state = 4;
+	    	unless c_oven then Heat
+    end
 	tel
 
-node oven (finish, start, c_oven, cold, temp_ok : bool) returns (oven_state, oven_power : int)
+node controller( c_window, c_door, push_porta, push_janela, rad_up1, rad_down1, rad_up2, rad_down2, presence, light_switch, tv_switch : bool ) returns ( door_open, window_open, lamp_on, tv_on, occupied : bool; rad_power, rad_state : int )
+  contract
+	var rule1, rule2, rule3, rule4 : bool;
+
 	let
-		automaton
-			state Off do
-				oven_state = 0;
-				oven_power = 0;
-				unless start & c_oven then Heat
-					| start & not c_oven then Standby
-
-			state Heat do
-				oven_state = 1;
-				oven_power = 1500;
-				unless finish then Off
-					| temp_ok then Maintain
-
-			state Maintain do
-				oven_state = 2;
-				oven_power = 300;
-				unless finish then Off
-					| cold & c_oven then Reheat
-
-			state Reheat do
-				oven_state = 3;
-				oven_power = 1000;
-				unless temp_ok then Maintain
-					| finish then Off
-
-			state Standby do
-				oven_state = 4;
-				oven_power = 0;
-				unless c_oven then Heat
-		end
+		rule1 = ( not occupied or tv_on or lamp_on );
+		rule2 = occupied or ( not door_open & not window_open );
+		rule3 = not ( door_open or window_open ) or ( rad_state <= 1 );
+		rule4 = occupied or (not(lamp_on or tv_on) & (rad_state <= 1));
+	tel
+    enforce rule1 & (*rule2 & *)rule3 & rule4
+    with ( rad_c1, rad_c2, c_light1, c_light2, c_tv1, c_tv2 : bool )
+	let
+    (rad_power, rad_state) = inlined rad(rad_up1,rad_down1,rad_up2,rad_down2,rad_c1,rad_c2);
+    door_open = inlined door(push_porta, c_door);
+    window_open = inlined door(push_janela, c_window);
+    lamp_on = inlined light_source(light_switch,c_light1,c_light2); 
+    tv_on = inlined light_source(tv_switch,c_tv1,c_tv2);
+    occupied = inlined room(presence);
 	tel
 
-node controller ( (* up1_1, up2_1, down1_1, down2_1, eco_input1, confort_input1, *) presence1, (*push1,*) lamp_switch1, tv_switch1: bool) returns 
-	((* eco1, confort1, *) room_oc1, (*door_open1,*) lamp_on1, tv_on1 : bool (* ); on_state1, power1, pl1 : int *))
-
-	contract
-		var (* rule1, rule2,*) rule1: bool;
-		let
-			(* rule1 = not (power1 > 3500);*)
-			(* rule2 = not (not room_oc1 & door_open1); *)
-			rule1 = not presence1 or not lamp_on1 or not tv_on1;
-		tel
-
-		enforce rule1	
-		with(c1_1, c2_1, c_lamp1_1, c_lamp2_1, c_tv1_1, c_tv1_2 : bool)
-	let
-		(* (eco1, confort1, pl1) = inlined management_policy (eco_input1, confort_input1); *)
-		(* (on_state1, power1) = inlined rad (up1_1, up2_1, down1_1, down2_1, c1_1, c2_1); *)
-		room_oc1 = inlined room (presence1);
-		(*door_open1 = inlined door (push1, c_door1_1, c_door2_1); *)
-		lamp_on1 = inlined lamp(lamp_switch1, c_lamp1_1, c_lamp2_1);
-		tv_on1 = inlined tv(tv_switch1, c_tv1_1, c_tv1_2);
-	tel
-(* rule1: not room_oc or (tv or lamp) *)
-(* rule2: room_oc or (not d_open & not w_open *)
-(* rule3: not (d_open or w_open) or (rad_state <= 1) *)
-(* rule4: room_oc or (not (lamp or tv) and (state_rad = 0 or state_rad = 1)  *)

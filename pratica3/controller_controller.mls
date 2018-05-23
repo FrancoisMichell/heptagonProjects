@@ -1,0 +1,999 @@
+node controller_controller_controller_c_tv2(controller_c_window : bool;
+                                             controller_c_door : bool;
+                                             controller_push_porta : bool;
+                                             controller_push_janela : bool;
+                                             controller_rad_up1 : bool;
+                                             controller_rad_down1 : bool;
+                                             controller_rad_up2 : bool;
+                                             controller_rad_down2 : bool;
+                                             controller_presence : bool;
+                                             controller_light_switch : bool;
+                                             controller_tv_switch : bool;
+                                             controller_v_268 : bool;
+                                             controller_v_267 : bool;
+                                             controller_pnr_5 : bool;
+                                             controller_ck_9_1 : bool;
+                                             controller_pnr_4 : bool;
+                                             controller_ck_11_1 : bool;
+                                             controller_pnr_3 : bool;
+                                             controller_ck_13_1 : bool;
+                                             controller_pnr_2 : bool;
+                                             controller_ck_15_1 : bool;
+                                             controller_pnr_1 : bool;
+                                             controller_ck_17_1 : bool;
+                                             controller_pnr : bool;
+                                             p_controller_c_tv2 : bool;
+                                             p_controller_c_tv1 : bool;
+                                             p_controller_c_light2 : bool;
+                                             p_controller_c_light1 : bool;
+                                             p_controller_rad_c2 : bool;
+                                             p_controller_rad_c1 : bool;
+                                             controller_c_tv1 : bool;
+                                             controller_c_light2 : bool;
+                                             controller_c_light1 : bool;
+                                             controller_rad_c2 : bool;
+                                             controller_rad_c1 : bool)
+returns (controller_c_tv2 : bool)
+var v_66 : bool; v_65 : bool; v_64 : bool; v_63 : bool; v_62 : bool;
+    v_61 : bool; v_60 : bool; v_59 : bool; v_58 : bool; v_57 : bool;
+    v_56 : bool; v_55 : bool; v_54 : bool; v_53 : bool; v_52 : bool;
+    v_51 : bool; v_50 : bool; v_49 : bool; v_48 : bool; v_47 : bool;
+    v_46 : bool; v_45 : bool; v_44 : bool; v_43 : bool; v_42 : bool;
+    v_41 : bool; v_40 : bool; v_39 : bool; v_38 : bool; v_37 : bool;
+    v_36 : bool; v_35 : bool; v_34 : bool; v_33 : bool; v_32 : bool;
+    v_31 : bool; v_30 : bool; v_29 : bool; v_28 : bool; v_27 : bool;
+    v_26 : bool; v_25 : bool; v_24 : bool; v_23 : bool; v_22 : bool;
+    v_21 : bool; v_20 : bool; v_19 : bool; v_18 : bool; v_17 : bool;
+    v_16 : bool; v_15 : bool; v_14 : bool; v_13 : bool; v_12 : bool;
+    v_11 : bool; v_10 : bool; v_9 : bool; v_8 : bool; v_7 : bool; v_6 : bool;
+    v_5 : bool; v_4 : bool; v_3 : bool; v_2 : bool; v_1 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool; sub_63 : bool; sub_64 : bool; sub_65 : bool;
+    sub_66 : bool; sub_67 : bool; sub_68 : bool; sub_69 : bool;
+    sub_70 : bool; sub_71 : bool; sub_72 : bool; sub_73 : bool;
+    sub_74 : bool; sub_75 : bool; sub_76 : bool; sub_77 : bool;
+let
+  controller_c_tv2 = sub_0;
+  sub_77 = sub_71;
+  sub_76 = sub_77;
+  sub_75 = if controller_v_267 then sub_50 else false;
+  v = if controller_v_267 then false else sub_69;
+  v_1 = if controller_rad_down1 then sub_75 else v;
+  sub_74 = if controller_rad_c1 then v_1 else sub_75;
+  sub_73 = if controller_v_267 then false else sub_50;
+  v_2 = if controller_rad_c1 then sub_73 else sub_64;
+  sub_72 = if controller_rad_up1 then v_2 else sub_66;
+  sub_71 = if controller_v_268 then sub_74 else sub_72;
+  sub_70 = if controller_rad_down2 then sub_53 else false;
+  sub_69 = if controller_rad_c2 then sub_70 else sub_51;
+  sub_68 = if controller_v_267 then sub_50 else sub_60;
+  v_3 = if controller_rad_up2 then false else sub_62;
+  v_4 = if controller_rad_c2 then v_3 else sub_61;
+  v_5 = if controller_v_267 then v_4 else sub_69;
+  v_6 = if controller_rad_down1 then sub_68 else v_5;
+  sub_67 = if controller_rad_c1 then v_6 else sub_68;
+  sub_66 = sub_64;
+  v_7 = if controller_rad_up2 then false else sub_52;
+  v_8 = if controller_rad_c2 then v_7 else sub_51;
+  sub_65 = if controller_v_267 then v_8 else sub_50;
+  sub_64 = sub_65;
+  sub_63 = if controller_presence then sub_54 else false;
+  sub_62 = sub_63;
+  sub_61 = sub_62;
+  sub_60 = sub_61;
+  v_9 = if controller_c_light1 then sub_23 else sub_25;
+  sub_59 = if controller_c_light2 then false else v_9;
+  v_10 = if controller_c_light1 then sub_23 else false;
+  v_11 = if controller_c_light1 then sub_23 else sub_24;
+  v_12 = if controller_c_light2 then v_10 else v_11;
+  sub_58 = if controller_ck_13_1 then v_12 else sub_59;
+  v_13 = not(controller_light_switch);
+  v_14 = if controller_c_light1 then sub_23 else v_13;
+  sub_57 = if controller_c_light2 then sub_12 else v_14;
+  v_15 = if controller_c_light1 then sub_23 else sub_13;
+  v_16 = if controller_c_light1 then sub_23 else controller_light_switch;
+  v_17 = if controller_c_light2 then v_15 else v_16;
+  sub_56 = if controller_ck_13_1 then v_17 else sub_57;
+  sub_55 = if controller_ck_15_1 then sub_22 else sub_56;
+  v_18 = if controller_ck_15_1 then sub_56 else sub_58;
+  v_19 = if controller_ck_15_1 then sub_58 else sub_56;
+  v_20 = if controller_tv_switch then v_18 else v_19;
+  sub_54 = if controller_c_tv1 then sub_55 else v_20;
+  v_21 = if controller_c_tv1 then sub_18 else sub_20;
+  sub_53 = if controller_presence then sub_54 else v_21;
+  sub_52 = sub_53;
+  sub_51 = sub_52;
+  sub_50 = sub_51;
+  sub_49 = if controller_v_267 then sub_60 else sub_50;
+  v_22 = if controller_rad_c1 then sub_49 else sub_64;
+  sub_48 = if controller_rad_up1 then v_22 else sub_66;
+  sub_47 = if controller_v_268 then sub_67 else sub_48;
+  v_23 = if controller_ck_11_1 then sub_71 else sub_47;
+  v_24 = if controller_ck_11_1 then sub_47 else sub_71;
+  v_25 = if controller_push_janela then v_23 else v_24;
+  sub_46 = if controller_c_window then v_25 else sub_47;
+  sub_45 = sub_39;
+  sub_44 = sub_45;
+  sub_43 = if controller_v_267 then sub_6 else false;
+  v_26 = if controller_v_267 then false else sub_37;
+  v_27 = if controller_rad_down1 then sub_43 else v_26;
+  sub_42 = if controller_rad_c1 then v_27 else sub_43;
+  sub_41 = if controller_v_267 then false else sub_6;
+  v_28 = if controller_rad_c1 then sub_41 else sub_32;
+  sub_40 = if controller_rad_up1 then v_28 else sub_34;
+  sub_39 = if controller_v_268 then sub_42 else sub_40;
+  sub_38 = if controller_rad_down2 then sub_9 else false;
+  sub_37 = if controller_rad_c2 then sub_38 else sub_7;
+  sub_36 = if controller_v_267 then sub_6 else sub_28;
+  v_29 = if controller_rad_up2 then false else sub_30;
+  v_30 = if controller_rad_c2 then v_29 else sub_29;
+  v_31 = if controller_v_267 then v_30 else sub_37;
+  v_32 = if controller_rad_down1 then sub_36 else v_31;
+  sub_35 = if controller_rad_c1 then v_32 else sub_36;
+  sub_34 = sub_32;
+  v_33 = if controller_rad_up2 then false else sub_8;
+  v_34 = if controller_rad_c2 then v_33 else sub_7;
+  sub_33 = if controller_v_267 then v_34 else sub_6;
+  sub_32 = sub_33;
+  sub_31 = if controller_presence then sub_10 else false;
+  sub_30 = sub_31;
+  sub_29 = sub_30;
+  sub_28 = sub_29;
+  v_35 = if controller_c_light1 then false else sub_17;
+  sub_27 = if controller_c_light2 then sub_12 else v_35;
+  v_36 = if controller_c_light1 then false else sub_13;
+  v_37 = if controller_c_light1 then false else sub_16;
+  v_38 = if controller_c_light2 then v_36 else v_37;
+  sub_26 = if controller_ck_13_1 then v_38 else sub_27;
+  v_39 = not(controller_light_switch);
+  sub_25 = (v_39 or false);
+  sub_24 = (controller_light_switch or false);
+  sub_23 = true;
+  sub_22 = sub_23;
+  v_40 = if controller_c_light1 then false else sub_24;
+  sub_21 = if controller_c_light2 then sub_22 else v_40;
+  v_41 = if controller_c_light1 then false else sub_23;
+  v_42 = if controller_c_light1 then false else sub_25;
+  v_43 = if controller_c_light2 then v_41 else v_42;
+  sub_20 = if controller_ck_13_1 then v_43 else sub_21;
+  sub_19 = if controller_ck_15_1 then false else sub_20;
+  sub_18 = sub_19;
+  v_44 = not(controller_light_switch);
+  sub_17 = (v_44 & false);
+  sub_16 = (controller_light_switch & false);
+  v_45 = if controller_c_light1 then sub_13 else sub_16;
+  sub_15 = if controller_c_light2 then false else v_45;
+  v_46 = if controller_c_light1 then sub_13 else false;
+  v_47 = if controller_c_light1 then sub_13 else sub_17;
+  v_48 = if controller_c_light2 then v_46 else v_47;
+  sub_14 = if controller_ck_13_1 then v_48 else sub_15;
+  sub_13 = false;
+  sub_12 = sub_13;
+  sub_11 = sub_12;
+  v_49 = if controller_ck_15_1 then sub_11 else sub_14;
+  v_50 = if controller_ck_15_1 then sub_14 else sub_11;
+  v_51 = if controller_tv_switch then v_49 else v_50;
+  sub_10 = if controller_c_tv1 then sub_11 else v_51;
+  v_52 = if controller_ck_15_1 then sub_20 else sub_26;
+  v_53 = if controller_ck_15_1 then sub_26 else sub_20;
+  v_54 = if controller_tv_switch then v_52 else v_53;
+  v_55 = if controller_c_tv1 then sub_18 else v_54;
+  sub_9 = if controller_presence then sub_10 else v_55;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = if controller_v_267 then sub_28 else sub_6;
+  v_56 = if controller_rad_c1 then sub_5 else sub_32;
+  sub_4 = if controller_rad_up1 then v_56 else sub_34;
+  sub_3 = if controller_v_268 then sub_35 else sub_4;
+  v_57 = if controller_ck_11_1 then sub_39 else sub_3;
+  v_58 = if controller_ck_11_1 then sub_3 else sub_39;
+  v_59 = if controller_push_janela then v_57 else v_58;
+  sub_2 = if controller_c_window then v_59 else sub_3;
+  v_60 = if controller_ck_9_1 then sub_44 else sub_2;
+  v_61 = if controller_ck_9_1 then sub_2 else sub_44;
+  v_62 = if controller_push_porta then v_60 else v_61;
+  sub_1 = if controller_c_door then v_62 else sub_2;
+  v_63 = if controller_ck_9_1 then sub_76 else sub_46;
+  v_64 = if controller_ck_9_1 then sub_46 else sub_76;
+  v_65 = if controller_push_porta then v_63 else v_64;
+  v_66 = if controller_c_door then v_65 else sub_46;
+  sub_0 = if p_controller_c_tv2 then v_66 else sub_1
+tel
+
+node controller_controller_controller_c_tv1(controller_c_window : bool;
+                                             controller_c_door : bool;
+                                             controller_push_porta : bool;
+                                             controller_push_janela : bool;
+                                             controller_rad_up1 : bool;
+                                             controller_rad_down1 : bool;
+                                             controller_rad_up2 : bool;
+                                             controller_rad_down2 : bool;
+                                             controller_presence : bool;
+                                             controller_light_switch : bool;
+                                             controller_tv_switch : bool;
+                                             controller_v_268 : bool;
+                                             controller_v_267 : bool;
+                                             controller_pnr_5 : bool;
+                                             controller_ck_9_1 : bool;
+                                             controller_pnr_4 : bool;
+                                             controller_ck_11_1 : bool;
+                                             controller_pnr_3 : bool;
+                                             controller_ck_13_1 : bool;
+                                             controller_pnr_2 : bool;
+                                             controller_ck_15_1 : bool;
+                                             controller_pnr_1 : bool;
+                                             controller_ck_17_1 : bool;
+                                             controller_pnr : bool;
+                                             p_controller_c_tv2 : bool;
+                                             p_controller_c_tv1 : bool;
+                                             p_controller_c_light2 : bool;
+                                             p_controller_c_light1 : bool;
+                                             p_controller_rad_c2 : bool;
+                                             p_controller_rad_c1 : bool;
+                                             controller_c_light2 : bool;
+                                             controller_c_light1 : bool;
+                                             controller_rad_c2 : bool;
+                                             controller_rad_c1 : bool)
+returns (controller_c_tv1 : bool)
+var v_119 : bool; v_118 : bool; v_117 : bool; v_116 : bool; v_115 : bool;
+    v_114 : bool; v_113 : bool; v_112 : bool; v_111 : bool; v_110 : bool;
+    v_109 : bool; v_108 : bool; v_107 : bool; v_106 : bool; v_105 : bool;
+    v_104 : bool; v_103 : bool; v_102 : bool; v_101 : bool; v_100 : bool;
+    v_99 : bool; v_98 : bool; v_97 : bool; v_96 : bool; v_95 : bool;
+    v_94 : bool; v_93 : bool; v_92 : bool; v_91 : bool; v_90 : bool;
+    v_89 : bool; v_88 : bool; v_87 : bool; v_86 : bool; v_85 : bool;
+    v_84 : bool; v_83 : bool; v_82 : bool; v_81 : bool; v_80 : bool;
+    v_79 : bool; v_78 : bool; v_77 : bool; v_76 : bool; v_75 : bool;
+    v_74 : bool; v_73 : bool; v_72 : bool; v_71 : bool; v_70 : bool;
+    v_69 : bool; v_68 : bool; v_67 : bool; v : bool; sub_0 : bool;
+    sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool;
+    sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool;
+    sub_11 : bool; sub_12 : bool; sub_13 : bool; sub_14 : bool;
+    sub_15 : bool; sub_16 : bool; sub_17 : bool; sub_18 : bool;
+    sub_19 : bool; sub_20 : bool; sub_21 : bool; sub_22 : bool;
+    sub_23 : bool; sub_24 : bool; sub_25 : bool; sub_26 : bool;
+    sub_27 : bool; sub_28 : bool; sub_29 : bool; sub_30 : bool;
+    sub_31 : bool; sub_32 : bool; sub_33 : bool; sub_34 : bool;
+    sub_35 : bool; sub_36 : bool; sub_37 : bool; sub_38 : bool;
+    sub_39 : bool; sub_40 : bool; sub_41 : bool; sub_42 : bool;
+    sub_43 : bool; sub_44 : bool; sub_45 : bool; sub_46 : bool;
+    sub_47 : bool; sub_48 : bool; sub_49 : bool; sub_50 : bool;
+    sub_51 : bool; sub_52 : bool; sub_53 : bool; sub_54 : bool;
+    sub_55 : bool; sub_56 : bool; sub_57 : bool; sub_58 : bool;
+    sub_59 : bool; sub_60 : bool; sub_61 : bool; sub_62 : bool;
+    sub_63 : bool; sub_64 : bool; sub_65 : bool; sub_66 : bool;
+    sub_67 : bool; sub_68 : bool;
+let
+  controller_c_tv1 = sub_0;
+  sub_68 = sub_62;
+  sub_67 = sub_68;
+  sub_66 = if controller_v_267 then sub_42 else false;
+  v = if controller_v_267 then false else sub_60;
+  v_67 = if controller_rad_down1 then sub_66 else v;
+  sub_65 = if controller_rad_c1 then v_67 else sub_66;
+  sub_64 = if controller_v_267 then false else sub_42;
+  v_68 = if controller_rad_c1 then sub_64 else sub_55;
+  sub_63 = if controller_rad_up1 then v_68 else sub_57;
+  sub_62 = if controller_v_268 then sub_65 else sub_63;
+  sub_61 = if controller_rad_down2 then sub_45 else false;
+  sub_60 = if controller_rad_c2 then sub_61 else sub_43;
+  sub_59 = if controller_v_267 then sub_42 else sub_51;
+  v_69 = if controller_rad_up2 then false else sub_53;
+  v_70 = if controller_rad_c2 then v_69 else sub_52;
+  v_71 = if controller_v_267 then v_70 else sub_60;
+  v_72 = if controller_rad_down1 then sub_59 else v_71;
+  sub_58 = if controller_rad_c1 then v_72 else sub_59;
+  sub_57 = sub_55;
+  v_73 = if controller_rad_up2 then false else sub_44;
+  v_74 = if controller_rad_c2 then v_73 else sub_43;
+  sub_56 = if controller_v_267 then v_74 else sub_42;
+  sub_55 = sub_56;
+  sub_54 = if controller_presence then sub_46 else false;
+  sub_53 = sub_54;
+  sub_52 = sub_53;
+  sub_51 = sub_52;
+  v_75 = (controller_light_switch or false);
+  v_76 = if controller_c_light1 then false else v_75;
+  sub_50 = if controller_c_light2 then sub_13 else v_76;
+  v_77 = if controller_c_light1 then false else sub_14;
+  v_78 = not(controller_light_switch);
+  v_79 = (v_78 or false);
+  v_80 = if controller_c_light1 then false else v_79;
+  v_81 = if controller_c_light2 then v_77 else v_80;
+  sub_49 = if controller_ck_13_1 then v_81 else sub_50;
+  sub_48 = if controller_ck_15_1 then sub_18 else sub_49;
+  sub_47 = sub_13;
+  sub_46 = sub_47;
+  sub_45 = if controller_presence then sub_46 else sub_48;
+  sub_44 = sub_45;
+  sub_43 = sub_44;
+  sub_42 = sub_43;
+  sub_41 = if controller_v_267 then sub_51 else sub_42;
+  v_82 = if controller_rad_c1 then sub_41 else sub_55;
+  sub_40 = if controller_rad_up1 then v_82 else sub_57;
+  sub_39 = if controller_v_268 then sub_58 else sub_40;
+  v_83 = if controller_ck_11_1 then sub_62 else sub_39;
+  v_84 = if controller_ck_11_1 then sub_39 else sub_62;
+  v_85 = if controller_push_janela then v_83 else v_84;
+  sub_38 = if controller_c_window then v_85 else sub_39;
+  sub_37 = sub_31;
+  sub_36 = sub_37;
+  sub_35 = if controller_v_267 then sub_6 else false;
+  v_86 = if controller_v_267 then false else sub_29;
+  v_87 = if controller_rad_down1 then sub_35 else v_86;
+  sub_34 = if controller_rad_c1 then v_87 else sub_35;
+  sub_33 = if controller_v_267 then false else sub_6;
+  v_88 = if controller_rad_c1 then sub_33 else sub_24;
+  sub_32 = if controller_rad_up1 then v_88 else sub_26;
+  sub_31 = if controller_v_268 then sub_34 else sub_32;
+  sub_30 = if controller_rad_down2 then sub_9 else false;
+  sub_29 = if controller_rad_c2 then sub_30 else sub_7;
+  sub_28 = if controller_v_267 then sub_6 else sub_20;
+  v_89 = if controller_rad_up2 then false else sub_22;
+  v_90 = if controller_rad_c2 then v_89 else sub_21;
+  v_91 = if controller_v_267 then v_90 else sub_29;
+  v_92 = if controller_rad_down1 then sub_28 else v_91;
+  sub_27 = if controller_rad_c1 then v_92 else sub_28;
+  sub_26 = sub_24;
+  v_93 = if controller_rad_up2 then false else sub_8;
+  v_94 = if controller_rad_c2 then v_93 else sub_7;
+  sub_25 = if controller_v_267 then v_94 else sub_6;
+  sub_24 = sub_25;
+  sub_23 = if controller_presence then sub_10 else false;
+  sub_22 = sub_23;
+  sub_21 = sub_22;
+  sub_20 = sub_21;
+  v_95 = not(controller_light_switch);
+  v_96 = (v_95 & false);
+  v_97 = if controller_c_light1 then false else v_96;
+  sub_19 = if controller_c_light2 then sub_17 else v_97;
+  v_98 = if controller_c_light1 then false else sub_15;
+  v_99 = (controller_light_switch & false);
+  v_100 = if controller_c_light1 then false else v_99;
+  v_101 = if controller_c_light2 then v_98 else v_100;
+  sub_18 = if controller_ck_13_1 then v_101 else sub_19;
+  sub_17 = sub_15;
+  sub_16 = sub_17;
+  sub_15 = false;
+  sub_14 = true;
+  sub_13 = sub_14;
+  v_102 = if controller_c_light1 then sub_15 else controller_light_switch;
+  sub_12 = if controller_c_light2 then sub_13 else v_102;
+  v_103 = if controller_c_light1 then sub_15 else sub_14;
+  v_104 = not(controller_light_switch);
+  v_105 = if controller_c_light1 then sub_15 else v_104;
+  v_106 = if controller_c_light2 then v_103 else v_105;
+  sub_11 = if controller_ck_13_1 then v_106 else sub_12;
+  v_107 = if controller_ck_15_1 then sub_16 else sub_11;
+  v_108 = if controller_ck_15_1 then sub_11 else sub_16;
+  sub_10 = if controller_tv_switch then v_107 else v_108;
+  sub_9 = if controller_presence then sub_10 else sub_18;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = if controller_v_267 then sub_20 else sub_6;
+  v_109 = if controller_rad_c1 then sub_5 else sub_24;
+  sub_4 = if controller_rad_up1 then v_109 else sub_26;
+  sub_3 = if controller_v_268 then sub_27 else sub_4;
+  v_110 = if controller_ck_11_1 then sub_31 else sub_3;
+  v_111 = if controller_ck_11_1 then sub_3 else sub_31;
+  v_112 = if controller_push_janela then v_110 else v_111;
+  sub_2 = if controller_c_window then v_112 else sub_3;
+  v_113 = if controller_ck_9_1 then sub_36 else sub_2;
+  v_114 = if controller_ck_9_1 then sub_2 else sub_36;
+  v_115 = if controller_push_porta then v_113 else v_114;
+  sub_1 = if controller_c_door then v_115 else sub_2;
+  v_116 = if controller_ck_9_1 then sub_67 else sub_38;
+  v_117 = if controller_ck_9_1 then sub_38 else sub_67;
+  v_118 = if controller_push_porta then v_116 else v_117;
+  v_119 = if controller_c_door then v_118 else sub_38;
+  sub_0 = if p_controller_c_tv1 then v_119 else sub_1
+tel
+
+node controller_controller_controller_c_light2(controller_c_window : bool;
+                                                controller_c_door : bool;
+                                                controller_push_porta : bool;
+                                                controller_push_janela : bool;
+                                                controller_rad_up1 : bool;
+                                                controller_rad_down1 : bool;
+                                                controller_rad_up2 : bool;
+                                                controller_rad_down2 : bool;
+                                                controller_presence : bool;
+                                                controller_light_switch : bool;
+                                                controller_tv_switch : bool;
+                                                controller_v_268 : bool;
+                                                controller_v_267 : bool;
+                                                controller_pnr_5 : bool;
+                                                controller_ck_9_1 : bool;
+                                                controller_pnr_4 : bool;
+                                                controller_ck_11_1 : bool;
+                                                controller_pnr_3 : bool;
+                                                controller_ck_13_1 : bool;
+                                                controller_pnr_2 : bool;
+                                                controller_ck_15_1 : bool;
+                                                controller_pnr_1 : bool;
+                                                controller_ck_17_1 : bool;
+                                                controller_pnr : bool;
+                                                p_controller_c_tv2 : bool;
+                                                p_controller_c_tv1 : bool;
+                                                p_controller_c_light2 : bool;
+                                                p_controller_c_light1 : bool;
+                                                p_controller_rad_c2 : bool;
+                                                p_controller_rad_c1 : bool;
+                                                controller_c_light1 : bool;
+                                                controller_rad_c2 : bool;
+                                                controller_rad_c1 : bool)
+returns (controller_c_light2 : bool)
+var v_154 : bool; v_153 : bool; v_152 : bool; v_151 : bool; v_150 : bool;
+    v_149 : bool; v_148 : bool; v_147 : bool; v_146 : bool; v_145 : bool;
+    v_144 : bool; v_143 : bool; v_142 : bool; v_141 : bool; v_140 : bool;
+    v_139 : bool; v_138 : bool; v_137 : bool; v_136 : bool; v_135 : bool;
+    v_134 : bool; v_133 : bool; v_132 : bool; v_131 : bool; v_130 : bool;
+    v_129 : bool; v_128 : bool; v_127 : bool; v_126 : bool; v_125 : bool;
+    v_124 : bool; v_123 : bool; v_122 : bool; v_121 : bool; v_120 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool;
+let
+  controller_c_light2 = sub_0;
+  sub_62 = sub_56;
+  sub_61 = sub_62;
+  sub_60 = if controller_v_267 then sub_38 else false;
+  v = if controller_v_267 then false else sub_54;
+  v_120 = if controller_rad_down1 then sub_60 else v;
+  sub_59 = if controller_rad_c1 then v_120 else sub_60;
+  sub_58 = if controller_v_267 then false else sub_38;
+  v_121 = if controller_rad_c1 then sub_58 else sub_49;
+  sub_57 = if controller_rad_up1 then v_121 else sub_51;
+  sub_56 = if controller_v_268 then sub_59 else sub_57;
+  sub_55 = if controller_rad_down2 then sub_41 else false;
+  sub_54 = if controller_rad_c2 then sub_55 else sub_39;
+  sub_53 = if controller_v_267 then sub_38 else sub_45;
+  v_122 = if controller_rad_up2 then false else sub_47;
+  v_123 = if controller_rad_c2 then v_122 else sub_46;
+  v_124 = if controller_v_267 then v_123 else sub_54;
+  v_125 = if controller_rad_down1 then sub_53 else v_124;
+  sub_52 = if controller_rad_c1 then v_125 else sub_53;
+  sub_51 = sub_49;
+  v_126 = if controller_rad_up2 then false else sub_40;
+  v_127 = if controller_rad_c2 then v_126 else sub_39;
+  sub_50 = if controller_v_267 then v_127 else sub_38;
+  sub_49 = sub_50;
+  sub_48 = if controller_presence then sub_42 else false;
+  sub_47 = sub_48;
+  sub_46 = sub_47;
+  sub_45 = sub_46;
+  v_128 = if controller_c_light1 then false else sub_15;
+  sub_44 = if controller_ck_13_1 then v_128 else sub_43;
+  sub_43 = sub_15;
+  sub_42 = sub_43;
+  sub_41 = if controller_presence then sub_42 else sub_44;
+  sub_40 = sub_41;
+  sub_39 = sub_40;
+  sub_38 = sub_39;
+  sub_37 = if controller_v_267 then sub_45 else sub_38;
+  v_129 = if controller_rad_c1 then sub_37 else sub_49;
+  sub_36 = if controller_rad_up1 then v_129 else sub_51;
+  sub_35 = if controller_v_268 then sub_52 else sub_36;
+  v_130 = if controller_ck_11_1 then sub_56 else sub_35;
+  v_131 = if controller_ck_11_1 then sub_35 else sub_56;
+  v_132 = if controller_push_janela then v_130 else v_131;
+  sub_34 = if controller_c_window then v_132 else sub_35;
+  sub_33 = sub_27;
+  sub_32 = sub_33;
+  sub_31 = if controller_v_267 then sub_6 else false;
+  v_133 = if controller_v_267 then false else sub_25;
+  v_134 = if controller_rad_down1 then sub_31 else v_133;
+  sub_30 = if controller_rad_c1 then v_134 else sub_31;
+  sub_29 = if controller_v_267 then false else sub_6;
+  v_135 = if controller_rad_c1 then sub_29 else sub_20;
+  sub_28 = if controller_rad_up1 then v_135 else sub_22;
+  sub_27 = if controller_v_268 then sub_30 else sub_28;
+  sub_26 = if controller_rad_down2 then sub_9 else false;
+  sub_25 = if controller_rad_c2 then sub_26 else sub_7;
+  sub_24 = if controller_v_267 then sub_6 else sub_16;
+  v_136 = if controller_rad_up2 then false else sub_18;
+  v_137 = if controller_rad_c2 then v_136 else sub_17;
+  v_138 = if controller_v_267 then v_137 else sub_25;
+  v_139 = if controller_rad_down1 then sub_24 else v_138;
+  sub_23 = if controller_rad_c1 then v_139 else sub_24;
+  sub_22 = sub_20;
+  v_140 = if controller_rad_up2 then false else sub_8;
+  v_141 = if controller_rad_c2 then v_140 else sub_7;
+  sub_21 = if controller_v_267 then v_141 else sub_6;
+  sub_20 = sub_21;
+  sub_19 = if controller_presence then sub_10 else false;
+  sub_18 = sub_19;
+  sub_17 = sub_18;
+  sub_16 = sub_17;
+  sub_15 = true;
+  v_142 = not(controller_light_switch);
+  sub_14 = if controller_c_light1 then sub_15 else v_142;
+  v_143 = if controller_c_light1 then false else controller_light_switch;
+  sub_13 = if controller_ck_13_1 then v_143 else sub_14;
+  sub_12 = false;
+  sub_11 = sub_12;
+  sub_10 = sub_11;
+  sub_9 = if controller_presence then sub_10 else sub_13;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = if controller_v_267 then sub_16 else sub_6;
+  v_144 = if controller_rad_c1 then sub_5 else sub_20;
+  sub_4 = if controller_rad_up1 then v_144 else sub_22;
+  sub_3 = if controller_v_268 then sub_23 else sub_4;
+  v_145 = if controller_ck_11_1 then sub_27 else sub_3;
+  v_146 = if controller_ck_11_1 then sub_3 else sub_27;
+  v_147 = if controller_push_janela then v_145 else v_146;
+  sub_2 = if controller_c_window then v_147 else sub_3;
+  v_148 = if controller_ck_9_1 then sub_32 else sub_2;
+  v_149 = if controller_ck_9_1 then sub_2 else sub_32;
+  v_150 = if controller_push_porta then v_148 else v_149;
+  sub_1 = if controller_c_door then v_150 else sub_2;
+  v_151 = if controller_ck_9_1 then sub_61 else sub_34;
+  v_152 = if controller_ck_9_1 then sub_34 else sub_61;
+  v_153 = if controller_push_porta then v_151 else v_152;
+  v_154 = if controller_c_door then v_153 else sub_34;
+  sub_0 = if p_controller_c_light2 then v_154 else sub_1
+tel
+
+node controller_controller_controller_c_light1(controller_c_window : bool;
+                                                controller_c_door : bool;
+                                                controller_push_porta : bool;
+                                                controller_push_janela : bool;
+                                                controller_rad_up1 : bool;
+                                                controller_rad_down1 : bool;
+                                                controller_rad_up2 : bool;
+                                                controller_rad_down2 : bool;
+                                                controller_presence : bool;
+                                                controller_light_switch : bool;
+                                                controller_tv_switch : bool;
+                                                controller_v_268 : bool;
+                                                controller_v_267 : bool;
+                                                controller_pnr_5 : bool;
+                                                controller_ck_9_1 : bool;
+                                                controller_pnr_4 : bool;
+                                                controller_ck_11_1 : bool;
+                                                controller_pnr_3 : bool;
+                                                controller_ck_13_1 : bool;
+                                                controller_pnr_2 : bool;
+                                                controller_ck_15_1 : bool;
+                                                controller_pnr_1 : bool;
+                                                controller_ck_17_1 : bool;
+                                                controller_pnr : bool;
+                                                p_controller_c_tv2 : bool;
+                                                p_controller_c_tv1 : bool;
+                                                p_controller_c_light2 : bool;
+                                                p_controller_c_light1 : bool;
+                                                p_controller_rad_c2 : bool;
+                                                p_controller_rad_c1 : bool;
+                                                controller_rad_c2 : bool;
+                                                controller_rad_c1 : bool)
+returns (controller_c_light1 : bool)
+var v_169 : bool; v_168 : bool; v_167 : bool; v_166 : bool; v_165 : bool;
+    v_164 : bool; v_163 : bool; v_162 : bool; v_161 : bool; v_160 : bool;
+    v_159 : bool; v_158 : bool; v_157 : bool; v_156 : bool; v_155 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool;
+let
+  controller_c_light1 = sub_0;
+  sub_30 = sub_24;
+  sub_29 = sub_30;
+  sub_28 = if controller_v_267 then sub_5 else false;
+  v = if controller_v_267 then false else sub_22;
+  v_155 = if controller_rad_down1 then sub_28 else v;
+  sub_27 = if controller_rad_c1 then v_155 else sub_28;
+  sub_26 = if controller_v_267 then false else sub_5;
+  v_156 = if controller_rad_c1 then sub_26 else sub_17;
+  sub_25 = if controller_rad_up1 then v_156 else sub_19;
+  sub_24 = if controller_v_268 then sub_27 else sub_25;
+  sub_23 = if controller_rad_down2 then sub_8 else false;
+  sub_22 = if controller_rad_c2 then sub_23 else sub_6;
+  sub_21 = if controller_v_267 then sub_5 else sub_13;
+  v_157 = if controller_rad_up2 then false else sub_15;
+  v_158 = if controller_rad_c2 then v_157 else sub_14;
+  v_159 = if controller_v_267 then v_158 else sub_22;
+  v_160 = if controller_rad_down1 then sub_21 else v_159;
+  sub_20 = if controller_rad_c1 then v_160 else sub_21;
+  sub_19 = sub_17;
+  v_161 = if controller_rad_up2 then false else sub_7;
+  v_162 = if controller_rad_c2 then v_161 else sub_6;
+  sub_18 = if controller_v_267 then v_162 else sub_5;
+  sub_17 = sub_18;
+  sub_16 = if controller_presence then sub_9 else false;
+  sub_15 = sub_16;
+  sub_14 = sub_15;
+  sub_13 = sub_14;
+  sub_12 = if controller_ck_13_1 then sub_11 else sub_10;
+  sub_11 = false;
+  sub_10 = if p_controller_c_light1 then true else sub_11;
+  sub_9 = sub_10;
+  sub_8 = if controller_presence then sub_9 else sub_12;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if controller_v_267 then sub_13 else sub_5;
+  v_163 = if controller_rad_c1 then sub_4 else sub_17;
+  sub_3 = if controller_rad_up1 then v_163 else sub_19;
+  sub_2 = if controller_v_268 then sub_20 else sub_3;
+  v_164 = if controller_ck_11_1 then sub_24 else sub_2;
+  v_165 = if controller_ck_11_1 then sub_2 else sub_24;
+  v_166 = if controller_push_janela then v_164 else v_165;
+  sub_1 = if controller_c_window then v_166 else sub_2;
+  v_167 = if controller_ck_9_1 then sub_29 else sub_1;
+  v_168 = if controller_ck_9_1 then sub_1 else sub_29;
+  v_169 = if controller_push_porta then v_167 else v_168;
+  sub_0 = if controller_c_door then v_169 else sub_1
+tel
+
+node controller_controller_controller_rad_c2(controller_c_window : bool;
+                                              controller_c_door : bool;
+                                              controller_push_porta : bool;
+                                              controller_push_janela : bool;
+                                              controller_rad_up1 : bool;
+                                              controller_rad_down1 : bool;
+                                              controller_rad_up2 : bool;
+                                              controller_rad_down2 : bool;
+                                              controller_presence : bool;
+                                              controller_light_switch : bool;
+                                              controller_tv_switch : bool;
+                                              controller_v_268 : bool;
+                                              controller_v_267 : bool;
+                                              controller_pnr_5 : bool;
+                                              controller_ck_9_1 : bool;
+                                              controller_pnr_4 : bool;
+                                              controller_ck_11_1 : bool;
+                                              controller_pnr_3 : bool;
+                                              controller_ck_13_1 : bool;
+                                              controller_pnr_2 : bool;
+                                              controller_ck_15_1 : bool;
+                                              controller_pnr_1 : bool;
+                                              controller_ck_17_1 : bool;
+                                              controller_pnr : bool;
+                                              p_controller_c_tv2 : bool;
+                                              p_controller_c_tv1 : bool;
+                                              p_controller_c_light2 : bool;
+                                              p_controller_c_light1 : bool;
+                                              p_controller_rad_c2 : bool;
+                                              p_controller_rad_c1 : bool;
+                                              controller_rad_c1 : bool)
+returns (controller_rad_c2 : bool)
+var v_193 : bool; v_192 : bool; v_191 : bool; v_190 : bool; v_189 : bool;
+    v_188 : bool; v_187 : bool; v_186 : bool; v_185 : bool; v_184 : bool;
+    v_183 : bool; v_182 : bool; v_181 : bool; v_180 : bool; v_179 : bool;
+    v_178 : bool; v_177 : bool; v_176 : bool; v_175 : bool; v_174 : bool;
+    v_173 : bool; v_172 : bool; v_171 : bool; v_170 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool;
+let
+  controller_rad_c2 = sub_0;
+  sub_50 = sub_44;
+  sub_49 = sub_50;
+  sub_48 = if controller_v_267 then sub_29 else false;
+  v = if controller_v_267 then false else sub_42;
+  v_170 = if controller_rad_down1 then sub_48 else v;
+  sub_47 = if controller_rad_c1 then v_170 else sub_48;
+  sub_46 = if controller_v_267 then false else sub_29;
+  v_171 = if controller_rad_c1 then sub_46 else sub_37;
+  sub_45 = if controller_rad_up1 then v_171 else sub_39;
+  sub_44 = if controller_v_268 then sub_47 else sub_45;
+  sub_43 = if controller_rad_down2 then sub_31 else sub_8;
+  sub_42 = sub_43;
+  sub_41 = if controller_v_267 then sub_29 else sub_34;
+  v_172 = if controller_rad_up2 then sub_12 else sub_35;
+  v_173 = if controller_v_267 then v_172 else sub_42;
+  v_174 = if controller_rad_down1 then sub_41 else v_173;
+  sub_40 = if controller_rad_c1 then v_174 else sub_41;
+  sub_39 = sub_37;
+  v_175 = if controller_rad_up2 then sub_7 else sub_30;
+  sub_38 = if controller_v_267 then v_175 else sub_29;
+  sub_37 = sub_38;
+  sub_36 = if controller_presence then sub_32 else false;
+  sub_35 = sub_36;
+  sub_34 = sub_35;
+  sub_33 = true;
+  sub_32 = sub_33;
+  sub_31 = sub_32;
+  sub_30 = sub_31;
+  sub_29 = sub_30;
+  sub_28 = if controller_v_267 then sub_34 else sub_29;
+  v_176 = if controller_rad_c1 then sub_28 else sub_37;
+  sub_27 = if controller_rad_up1 then v_176 else sub_39;
+  sub_26 = if controller_v_268 then sub_40 else sub_27;
+  v_177 = if controller_ck_11_1 then sub_44 else sub_26;
+  v_178 = if controller_ck_11_1 then sub_26 else sub_44;
+  v_179 = if controller_push_janela then v_177 else v_178;
+  sub_25 = if controller_c_window then v_179 else sub_26;
+  sub_24 = sub_18;
+  sub_23 = sub_24;
+  sub_22 = if controller_v_267 then sub_6 else false;
+  v_180 = if controller_rad_down1 then sub_22 else sub_20;
+  sub_21 = if controller_rad_c1 then v_180 else sub_22;
+  sub_20 = if controller_v_267 then false else sub_6;
+  v_181 = if controller_rad_c1 then sub_20 else sub_14;
+  sub_19 = if controller_rad_up1 then v_181 else sub_15;
+  sub_18 = if controller_v_268 then sub_21 else sub_19;
+  sub_17 = if controller_v_267 then sub_6 else sub_11;
+  v_182 = if controller_rad_down1 then sub_17 else sub_5;
+  sub_16 = if controller_rad_c1 then v_182 else sub_17;
+  sub_15 = sub_14;
+  sub_14 = sub_6;
+  sub_13 = if controller_presence then sub_9 else false;
+  sub_12 = sub_13;
+  sub_11 = sub_12;
+  sub_10 = false;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = if controller_v_267 then sub_11 else sub_6;
+  v_183 = if controller_rad_c1 then sub_5 else sub_14;
+  sub_4 = if controller_rad_up1 then v_183 else sub_15;
+  sub_3 = if controller_v_268 then sub_16 else sub_4;
+  v_184 = if controller_ck_11_1 then sub_18 else sub_3;
+  v_185 = if controller_ck_11_1 then sub_3 else sub_18;
+  v_186 = if controller_push_janela then v_184 else v_185;
+  sub_2 = if controller_c_window then v_186 else sub_3;
+  v_187 = if controller_ck_9_1 then sub_23 else sub_2;
+  v_188 = if controller_ck_9_1 then sub_2 else sub_23;
+  v_189 = if controller_push_porta then v_187 else v_188;
+  sub_1 = if controller_c_door then v_189 else sub_2;
+  v_190 = if controller_ck_9_1 then sub_49 else sub_25;
+  v_191 = if controller_ck_9_1 then sub_25 else sub_49;
+  v_192 = if controller_push_porta then v_190 else v_191;
+  v_193 = if controller_c_door then v_192 else sub_25;
+  sub_0 = if p_controller_rad_c2 then v_193 else sub_1
+tel
+
+node controller_controller_controller_rad_c1(controller_c_window : bool;
+                                              controller_c_door : bool;
+                                              controller_push_porta : bool;
+                                              controller_push_janela : bool;
+                                              controller_rad_up1 : bool;
+                                              controller_rad_down1 : bool;
+                                              controller_rad_up2 : bool;
+                                              controller_rad_down2 : bool;
+                                              controller_presence : bool;
+                                              controller_light_switch : bool;
+                                              controller_tv_switch : bool;
+                                              controller_v_268 : bool;
+                                              controller_v_267 : bool;
+                                              controller_pnr_5 : bool;
+                                              controller_ck_9_1 : bool;
+                                              controller_pnr_4 : bool;
+                                              controller_ck_11_1 : bool;
+                                              controller_pnr_3 : bool;
+                                              controller_ck_13_1 : bool;
+                                              controller_pnr_2 : bool;
+                                              controller_ck_15_1 : bool;
+                                              controller_pnr_1 : bool;
+                                              controller_ck_17_1 : bool;
+                                              controller_pnr : bool;
+                                              p_controller_c_tv2 : bool;
+                                              p_controller_c_tv1 : bool;
+                                              p_controller_c_light2 : bool;
+                                              p_controller_c_light1 : bool;
+                                              p_controller_rad_c2 : bool;
+                                              p_controller_rad_c1 : bool)
+returns (controller_rad_c1 : bool)
+var v_202 : bool; v_201 : bool; v_200 : bool; v_199 : bool; v_198 : bool;
+    v_197 : bool; v_196 : bool; v_195 : bool; v_194 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+let
+  controller_rad_c1 = sub_0;
+  sub_37 = sub_26;
+  sub_36 = sub_37;
+  sub_35 = sub_24;
+  sub_34 = sub_35;
+  sub_33 = sub_34;
+  v = if controller_v_267 then sub_5 else false;
+  v_194 = if controller_v_267 then sub_29 else sub_33;
+  sub_32 = if controller_rad_down1 then v else v_194;
+  sub_31 = sub_14;
+  sub_30 = sub_31;
+  sub_29 = sub_30;
+  sub_28 = if controller_v_267 then sub_29 else sub_5;
+  sub_27 = if controller_rad_up1 then sub_28 else sub_16;
+  sub_26 = if controller_v_268 then sub_32 else sub_27;
+  sub_25 = true;
+  sub_24 = sub_25;
+  sub_23 = if controller_presence then sub_8 else sub_24;
+  sub_22 = sub_23;
+  sub_21 = sub_22;
+  sub_20 = if controller_presence then sub_8 else false;
+  sub_19 = sub_20;
+  sub_18 = sub_19;
+  v_195 = if controller_v_267 then sub_5 else sub_18;
+  v_196 = if controller_v_267 then sub_11 else sub_21;
+  sub_17 = if controller_rad_down1 then v_195 else v_196;
+  sub_16 = sub_5;
+  sub_15 = false;
+  sub_14 = sub_15;
+  sub_13 = if controller_presence then sub_8 else sub_14;
+  sub_12 = sub_13;
+  sub_11 = sub_12;
+  sub_10 = p_controller_rad_c1;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if controller_v_267 then sub_11 else sub_5;
+  sub_3 = if controller_rad_up1 then sub_4 else sub_16;
+  sub_2 = if controller_v_268 then sub_17 else sub_3;
+  v_197 = if controller_ck_11_1 then sub_26 else sub_2;
+  v_198 = if controller_ck_11_1 then sub_2 else sub_26;
+  v_199 = if controller_push_janela then v_197 else v_198;
+  sub_1 = if controller_c_window then v_199 else sub_2;
+  v_200 = if controller_ck_9_1 then sub_36 else sub_1;
+  v_201 = if controller_ck_9_1 then sub_1 else sub_36;
+  v_202 = if controller_push_porta then v_200 else v_201;
+  sub_0 = if controller_c_door then v_202 else sub_1
+tel
+
+node controller_controller(controller_c_window : bool;
+                            controller_c_door : bool;
+                            controller_push_porta : bool;
+                            controller_push_janela : bool;
+                            controller_rad_up1 : bool;
+                            controller_rad_down1 : bool;
+                            controller_rad_up2 : bool;
+                            controller_rad_down2 : bool;
+                            controller_presence : bool;
+                            controller_light_switch : bool;
+                            controller_tv_switch : bool;
+                            controller_v_268 : bool; controller_v_267 : bool;
+                            controller_pnr_5 : bool;
+                            controller_ck_9_1 : bool;
+                            controller_pnr_4 : bool;
+                            controller_ck_11_1 : bool;
+                            controller_pnr_3 : bool;
+                            controller_ck_13_1 : bool;
+                            controller_pnr_2 : bool;
+                            controller_ck_15_1 : bool;
+                            controller_pnr_1 : bool;
+                            controller_ck_17_1 : bool; controller_pnr : bool;
+                            p_controller_c_tv2 : bool;
+                            p_controller_c_tv1 : bool;
+                            p_controller_c_light2 : bool;
+                            p_controller_c_light1 : bool;
+                            p_controller_rad_c2 : bool;
+                            p_controller_rad_c1 : bool)
+returns (controller_c_tv2 : bool; controller_c_tv1 : bool;
+          controller_c_light2 : bool; controller_c_light1 : bool;
+          controller_rad_c2 : bool; controller_rad_c1 : bool)
+let
+  controller_rad_c1 =
+    controller_controller_controller_rad_c1
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1);
+  controller_rad_c2 =
+    controller_controller_controller_rad_c2
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1,
+      controller_rad_c1);
+  controller_c_light1 =
+    controller_controller_controller_c_light1
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1,
+      controller_rad_c2, controller_rad_c1);
+  controller_c_light2 =
+    controller_controller_controller_c_light2
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1,
+      controller_c_light1, controller_rad_c2, controller_rad_c1);
+  controller_c_tv1 =
+    controller_controller_controller_c_tv1
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1,
+      controller_c_light2, controller_c_light1, controller_rad_c2,
+      controller_rad_c1);
+  controller_c_tv2 =
+    controller_controller_controller_c_tv2
+    (controller_c_window, controller_c_door, controller_push_porta,
+      controller_push_janela, controller_rad_up1, controller_rad_down1,
+      controller_rad_up2, controller_rad_down2, controller_presence,
+      controller_light_switch, controller_tv_switch, controller_v_268,
+      controller_v_267, controller_pnr_5, controller_ck_9_1,
+      controller_pnr_4, controller_ck_11_1, controller_pnr_3,
+      controller_ck_13_1, controller_pnr_2, controller_ck_15_1,
+      controller_pnr_1, controller_ck_17_1, controller_pnr,
+      p_controller_c_tv2, p_controller_c_tv1, p_controller_c_light2,
+      p_controller_c_light1, p_controller_rad_c2, p_controller_rad_c1,
+      controller_c_tv1, controller_c_light2, controller_c_light1,
+      controller_rad_c2, controller_rad_c1)
+tel
+
