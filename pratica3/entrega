@@ -8,8 +8,34 @@ node room ( presence : bool ) returns ( occupied : bool )
 
 	    state Ocupied do
 	      occupied = true;
-	    	unless presence then Empty
+	    	unless not presence then Empty
     
+    end
+	tel
+
+node management_policy( eco_input, comfort_input : bool ) returns ( eco_on , comfort_on : bool; power_limit : int )
+	let
+    automaton
+	    state Minimal_safety do
+	      power_limit = 3000;
+	      eco_on = false;
+	      comfort_on = false;
+		    unless eco_input then Eco
+		      | comfort_input then Comfort
+
+	    state Eco do
+	      power_limit = 5000;
+	      eco_on = true;
+	      comfort_on = false;
+		    unless not eco_input then Minimal_safety
+		      | comfort_input then Comfort
+
+	    state Comfort do
+	      power_limit = 7000;
+	      eco_on = false;
+	      comfort_on = true;
+		    unless eco_input then Eco
+		      | not comfort_input then Minimal_safety
     end
 	tel
 
@@ -69,7 +95,7 @@ node rad(up1,down1,up2,down2,c_rad1,c_rad2:bool) returns (rad_power, rad_state:i
     end
 	tel
 
-node washing_machine(start,finish, c_wash:bool) returns (wash_power, wash_state:int)
+node washing_machine(finish, start, c_wash:bool) returns (wash_power, wash_state:int)
 	let
     automaton
 	    state Off do
@@ -105,7 +131,7 @@ node washing_machine(start,finish, c_wash:bool) returns (wash_power, wash_state:
     end
 	tel
 
-node oven(start, finish, temp_ok, cold, c_oven:bool) returns ( oven_power, oven_state:int)
+node oven(finish, start, c_oven, temp_ok, cold:bool) returns ( oven_power, oven_state:int)
 	let
     automaton
 	    state Off do
@@ -139,58 +165,25 @@ node oven(start, finish, temp_ok, cold, c_oven:bool) returns ( oven_power, oven_
     end
 	tel
 
-type modes = Minimal | Eco | Confort
-node management_policy( eco_input, comfort_input : bool ) returns ( mode: modes )
-	let
-    automaton
-	    state Minimal_safety do
-	      mode = Minimal
-		    unless eco_input then Eco
-		      | comfort_input then Comfort
-
-	    state Eco do
-	      mode = Eco
-		    unless eco_input then Minimal_safety
-		      | comfort_input then Comfort
-
-	    state Comfort do
-	      mode = Confort
-		    unless eco_input then Eco
-		      | comfort_input then Minimal_safety
-    end
-	tel
-
-node controller( push_porta, push_janela, rad_up1, rad_down1, rad_up2, rad_down2, 
-								 wash_start, wash_finish, oven_start, oven_finish, temp_ok, cold,
-								 presence, light_switch, tv_switch, eco_in, comfort_in : bool ) 
-	returns ( occupied, door_open, window_open, lamp_on, tv_on : bool; 
-						rad_power, rad_state, wash_power, wash_state, oven_power, oven_state : int; policy : modes;)
+node controller( push_porta, push_janela, rad_up1, rad_down1, rad_up2, rad_down2, presence, light_switch, tv_switch : bool ) returns ( door_open, window_open, lamp_on, tv_on, occupied : bool; rad_power, rad_state : int )
   contract
-	var rule1, rule2, rule3, rule4, rule5: bool; total: int;
+	var rule1, rule2, rule3, rule4, rule5 : bool;
 
 	let
 		rule1 = ( not occupied or tv_on or lamp_on );
-		rule2 = occupied or not ( door_open or window_open );
+		rule2 = occupied or ( not door_open & not window_open );
 		rule3 = not ( door_open or window_open ) or ( rad_state <= 1 );
 		rule4 = occupied or (not(lamp_on or tv_on) & (rad_state <= 1));
-		total = rad_power + wash_power + oven_power;
-		switch policy
-			| Minimal do rule5 = total <= 3000
-			| Eco do rule5 = total <= 5000
-			| Confort do rule5 = total <= 7000
-		end
+		rule5 = rad_power < 2000
 	tel
     enforce rule1 & rule2 & rule3 & rule4 & rule5
-    with ( c_door, c_window, rad_c1, rad_c2, c_light1, c_light2, c_tv1, c_tv2, c_wash1, c_oven1 : bool )
+    with ( c_door, c_window, rad_c1, rad_c2, c_light1, c_light2, c_tv1, c_tv2 : bool )
 	let
     (rad_power, rad_state) = inlined rad(rad_up1,rad_down1,rad_up2,rad_down2,rad_c1,rad_c2);
-		(wash_power, wash_state) = inlined washing_machine(wash_start, wash_finish, c_wash1);
-		(oven_power, oven_state) = inlined oven(oven_start, oven_finish, temp_ok, cold, c_oven1);
     door_open = inlined door(push_porta, c_door);
     window_open = inlined door(push_janela, c_window);
     lamp_on = inlined light_source(light_switch,c_light1,c_light2); 
     tv_on = inlined light_source(tv_switch,c_tv1,c_tv2);
     occupied = inlined room(presence);
-		policy = inlined management_policy(eco_in, comfort_in);
 	tel
 
