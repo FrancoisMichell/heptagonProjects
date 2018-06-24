@@ -1,0 +1,381 @@
+type st_1 = St_1_Off|St_1_High|St_1_Frost_Protection|St_1_Eco
+type st = St_Off|St_High|St_Frost_Protection|St_Eco
+node rad(up1 : bool; up2 : bool; down1 : bool; down2 : bool)
+returns (s : bool; p : int)
+var v_24 : bool; v_23 : bool; v_22 : bool; v_21 : bool; v_20 : bool;
+    v_19 : bool; v_18 : int; v_17 : int; v_16 : bool; v_15 : bool;
+    ns_St_High_2_0 : bool; ns_St_High_2_1 : bool; ns_St_Eco_2_0 : bool;
+    ns_St_Eco_2_1 : bool; ns_St_Frost_Protection_2_0 : bool;
+    ns_St_Frost_Protection_2_1 : bool; ns_St_Off_2_0 : bool;
+    ns_St_Off_2_1 : bool; ck_1_2_0 : bool; ck_1_2_1 : bool;
+    nr_St_High : bool; ns_St_High_2 : bool; ns_St_High_1 : bool;
+    p_St_High : int; s_St_High : bool; nr_St_Eco : bool; ns_St_Eco_2 : bool;
+    ns_St_Eco_1 : bool; p_St_Eco : int; s_St_Eco : bool;
+    nr_St_Frost_Protection : bool; ns_St_Frost_Protection_2 : bool;
+    ns_St_Frost_Protection_1 : bool; p_St_Frost_Protection : int;
+    s_St_Frost_Protection : bool; nr_St_Off : bool; ns_St_Off_2 : bool;
+    ns_St_Off_1 : bool; p_St_Off : int; s_St_Off : bool; ck_1_2 : bool;
+    ck_1_1 : bool; v_6_2_0 : bool; v_6_2_1 : bool; v_4_2_0 : bool;
+    v_4_2_1 : bool; v_7 : bool; v_6_2 : bool; v_6_1 : bool; v_5 : bool;
+    v_4_2 : bool; v_4_1 : bool; v_2_2_0 : bool; v_2_2_1 : bool; v_3 : bool;
+    v_2_2 : bool; v_2_1 : bool; v_2_3_0 : bool; v_2_3_1 : bool; v_1 : bool;
+    v_2_3 : bool; v_1_1 : bool; v_32 : bool; v_31 : bool; v_30 : bool;
+    v_29 : bool; v_28 : bool; v_27 : bool; v_26 : bool; v_25 : bool;
+    s_1_St_High_2_0 : bool; s_1_St_High_2_1 : bool; s_1_St_Eco_2_0 : bool;
+    s_1_St_Eco_2_1 : bool; s_1_St_Frost_Protection_2_0 : bool;
+    s_1_St_Frost_Protection_2_1 : bool; s_1_St_Off_2_0 : bool;
+    s_1_St_Off_2_1 : bool; ck_2_0 : bool; ck_2_1 : bool; r_St_High : bool;
+    s_1_St_High_2 : bool; s_1_St_High_1 : bool; r_St_Eco : bool;
+    s_1_St_Eco_2 : bool; s_1_St_Eco_1 : bool; r_St_Frost_Protection : bool;
+    s_1_St_Frost_Protection_2 : bool; s_1_St_Frost_Protection_1 : bool;
+    r_St_Off : bool; s_1_St_Off_2 : bool; s_1_St_Off_1 : bool; ck_2 : bool;
+    ck_1_3 : bool; s_1_2_0 : bool; s_1_2_1 : bool; ns_2_0 : bool;
+    ns_2_1 : bool; s_1_2 : bool; s_1_1 : bool; ns_2 : bool; ns_1 : bool;
+    r : bool; nr : bool; pnr : bool;
+let
+  pnr = false fby nr;
+  ck_1_1 = s_1_1;
+  ck_1_2 = s_1_2;
+  s_St_Off = false;
+  p_St_Off = 0;
+  nr_St_Off = false;
+  ns_St_Off_1 = false;
+  ns_St_Off_2 = false;
+  s_St_Frost_Protection = true;
+  p_St_Frost_Protection = 300;
+  nr_St_Frost_Protection = false;
+  ns_St_Frost_Protection_1 = true;
+  ns_St_Frost_Protection_2 = false;
+  s_St_Eco = true;
+  p_St_Eco = 1500;
+  nr_St_Eco = false;
+  ns_St_Eco_1 = true;
+  ns_St_Eco_2 = true;
+  s_St_High = true;
+  p_St_High = 2000;
+  nr_St_High = false;
+  ns_St_High_1 = false;
+  ns_St_High_2 = true;
+  v_15 = merge ck_1_2_1 (true -> s_St_Eco)(false -> s_St_Frost_Protection);
+  v_16 = merge ck_1_2_0 (true -> s_St_High)(false -> s_St_Off);
+  s = merge ck_1_1 (true -> v_15)(false -> v_16);
+  v_17 = merge ck_1_2_1 (true -> p_St_Eco)(false -> p_St_Frost_Protection);
+  v_18 = merge ck_1_2_0 (true -> p_St_High)(false -> p_St_Off);
+  p = merge ck_1_1 (true -> v_17)(false -> v_18);
+  v_19 =
+    merge ck_1_2_1 (true -> ns_St_Eco_1)(false -> ns_St_Frost_Protection_1);
+  v_20 =
+    merge ck_1_2_1 (true -> ns_St_Eco_2)(false -> ns_St_Frost_Protection_2);
+  v_21 = merge ck_1_2_0 (true -> ns_St_High_1)(false -> ns_St_Off_1);
+  v_22 = merge ck_1_2_0 (true -> ns_St_High_2)(false -> ns_St_Off_2);
+  ns_1 = merge ck_1_1 (true -> v_19)(false -> v_21);
+  ns_2 = merge ck_1_1 (true -> v_20)(false -> v_22);
+  v_23 = merge ck_1_2_1 (true -> nr_St_Eco)(false -> nr_St_Frost_Protection);
+  v_24 = merge ck_1_2_0 (true -> nr_St_High)(false -> nr_St_Off);
+  nr = merge ck_1_1 (true -> v_23)(false -> v_24);
+  ck_1_2_1 = (ck_1_2 when true(ck_1_1));
+  ck_1_2_0 = (ck_1_2 when false(ck_1_1));
+  ns_St_Off_2_1 = (ns_St_Off_2 when true(ns_St_Off_1));
+  ns_St_Off_2_0 = (ns_St_Off_2 when false(ns_St_Off_1));
+  ns_St_Frost_Protection_2_1 =
+    (ns_St_Frost_Protection_2 when true(ns_St_Frost_Protection_1));
+  ns_St_Frost_Protection_2_0 =
+    (ns_St_Frost_Protection_2 when false(ns_St_Frost_Protection_1));
+  ns_St_Eco_2_1 = (ns_St_Eco_2 when true(ns_St_Eco_1));
+  ns_St_Eco_2_0 = (ns_St_Eco_2 when false(ns_St_Eco_1));
+  ns_St_High_2_1 = (ns_St_High_2 when true(ns_St_High_1));
+  ns_St_High_2_0 = (ns_St_High_2 when false(ns_St_High_1));
+  v_25 = false fby ns_1;
+  v_26 = false fby ns_2;
+  ck_1_3 = v_25;
+  ck_2 = v_26;
+  r_St_Off =
+    if ((up1 when false(ck_1_3)) when false(ck_2_0))
+    then true
+    else ((pnr when false(ck_1_3)) when false(ck_2_0));
+  s_1_St_Off_1 =
+    if ((up1 when false(ck_1_3)) when false(ck_2_0)) then true else false;
+  s_1_St_Off_2 =
+    if ((up1 when false(ck_1_3)) when false(ck_2_0)) then false else false;
+  r_St_Frost_Protection =
+    if ((up1 when true(ck_1_3)) when false(ck_2_1)) then true else v_7;
+  s_1_St_Frost_Protection_1 =
+    if ((up1 when true(ck_1_3)) when false(ck_2_1)) then true else v_6_1;
+  s_1_St_Frost_Protection_2 =
+    if ((up1 when true(ck_1_3)) when false(ck_2_1)) then true else v_6_2;
+  v_7 = if ((up2 when true(ck_1_3)) when false(ck_2_1)) then true else v_5;
+  v_6_1 =
+    if ((up2 when true(ck_1_3)) when false(ck_2_1)) then false else v_4_1;
+  v_6_2 =
+    if ((up2 when true(ck_1_3)) when false(ck_2_1)) then true else v_4_2;
+  v_5 =
+    if ((down1 when true(ck_1_3)) when false(ck_2_1))
+    then true
+    else ((pnr when true(ck_1_3)) when false(ck_2_1));
+  v_4_1 =
+    if ((down1 when true(ck_1_3)) when false(ck_2_1)) then false else true;
+  v_4_2 =
+    if ((down1 when true(ck_1_3)) when false(ck_2_1)) then false else false;
+  v_4_2_1 = (v_4_2 when true(v_4_1));
+  v_4_2_0 = (v_4_2 when false(v_4_1));
+  v_6_2_1 = (v_6_2 when true(v_6_1));
+  v_6_2_0 = (v_6_2 when false(v_6_1));
+  r_St_Eco =
+    if ((up2 when true(ck_1_3)) when true(ck_2_1)) then true else v_3;
+  s_1_St_Eco_1 =
+    if ((up2 when true(ck_1_3)) when true(ck_2_1)) then false else v_2_1;
+  s_1_St_Eco_2 =
+    if ((up2 when true(ck_1_3)) when true(ck_2_1)) then true else v_2_2;
+  v_3 =
+    if ((down1 when true(ck_1_3)) when true(ck_2_1))
+    then true
+    else ((pnr when true(ck_1_3)) when true(ck_2_1));
+  v_2_1 =
+    if ((down1 when true(ck_1_3)) when true(ck_2_1)) then true else true;
+  v_2_2 =
+    if ((down1 when true(ck_1_3)) when true(ck_2_1)) then false else true;
+  v_2_2_1 = (v_2_2 when true(v_2_1));
+  v_2_2_0 = (v_2_2 when false(v_2_1));
+  r_St_High =
+    if ((down2 when false(ck_1_3)) when true(ck_2_0)) then true else v_1;
+  s_1_St_High_1 =
+    if ((down2 when false(ck_1_3)) when true(ck_2_0)) then true else v_1_1;
+  s_1_St_High_2 =
+    if ((down2 when false(ck_1_3)) when true(ck_2_0)) then false else v_2_3;
+  v_1 =
+    if ((down1 when false(ck_1_3)) when true(ck_2_0))
+    then true
+    else ((pnr when false(ck_1_3)) when true(ck_2_0));
+  v_1_1 =
+    if ((down1 when false(ck_1_3)) when true(ck_2_0)) then true else false;
+  v_2_3 =
+    if ((down1 when false(ck_1_3)) when true(ck_2_0)) then true else true;
+  v_2_3_1 = (v_2_3 when true(v_1_1));
+  v_2_3_0 = (v_2_3 when false(v_1_1));
+  v_27 =
+    merge ck_2_1 (true -> s_1_St_Eco_1)(false -> s_1_St_Frost_Protection_1);
+  v_28 =
+    merge ck_2_1 (true -> s_1_St_Eco_2)(false -> s_1_St_Frost_Protection_2);
+  v_29 = merge ck_2_0 (true -> s_1_St_High_1)(false -> s_1_St_Off_1);
+  v_30 = merge ck_2_0 (true -> s_1_St_High_2)(false -> s_1_St_Off_2);
+  s_1_1 = merge ck_1_3 (true -> v_27)(false -> v_29);
+  s_1_2 = merge ck_1_3 (true -> v_28)(false -> v_30);
+  v_31 = merge ck_2_1 (true -> r_St_Eco)(false -> r_St_Frost_Protection);
+  v_32 = merge ck_2_0 (true -> r_St_High)(false -> r_St_Off);
+  r = merge ck_1_3 (true -> v_31)(false -> v_32);
+  ck_2_1 = (ck_2 when true(ck_1_3));
+  ck_2_0 = (ck_2 when false(ck_1_3));
+  s_1_St_Off_2_1 = (s_1_St_Off_2 when true(s_1_St_Off_1));
+  s_1_St_Off_2_0 = (s_1_St_Off_2 when false(s_1_St_Off_1));
+  s_1_St_Frost_Protection_2_1 =
+    (s_1_St_Frost_Protection_2 when true(s_1_St_Frost_Protection_1));
+  s_1_St_Frost_Protection_2_0 =
+    (s_1_St_Frost_Protection_2 when false(s_1_St_Frost_Protection_1));
+  s_1_St_Eco_2_1 = (s_1_St_Eco_2 when true(s_1_St_Eco_1));
+  s_1_St_Eco_2_0 = (s_1_St_Eco_2 when false(s_1_St_Eco_1));
+  s_1_St_High_2_1 = (s_1_St_High_2 when true(s_1_St_High_1));
+  s_1_St_High_2_0 = (s_1_St_High_2 when false(s_1_St_High_1));
+  ns_2_1 = (ns_2 when true(ns_1));
+  ns_2_0 = (ns_2 when false(ns_1));
+  s_1_2_1 = (s_1_2 when true(s_1_1));
+  s_1_2_0 = (s_1_2 when false(s_1_1))
+tel
+
+node controller(up1_1 : bool; up2_1 : bool; down1_1 : bool; down2_1 : bool)
+returns (state1 : bool; power1 : int)
+var v_42 : bool; v_41 : bool; v_40 : bool; v_39 : bool; v_38 : bool;
+    v_37 : bool; v_36 : int; v_35 : int; v_34 : bool; v_33 : bool;
+    ns_St_1_High_2_0 : bool; ns_St_1_High_2_1 : bool; ns_St_1_Eco_2_0 : bool;
+    ns_St_1_Eco_2_1 : bool; ns_St_1_Frost_Protection_2_0 : bool;
+    ns_St_1_Frost_Protection_2_1 : bool; ns_St_1_Off_2_0 : bool;
+    ns_St_1_Off_2_1 : bool; ck_2_2_0 : bool; ck_2_2_1 : bool;
+    nr_St_1_High : bool; ns_St_1_High_2 : bool; ns_St_1_High_1 : bool;
+    p_St_1_High : int; s_St_1_High : bool; nr_St_1_Eco : bool;
+    ns_St_1_Eco_2 : bool; ns_St_1_Eco_1 : bool; p_St_1_Eco : int;
+    s_St_1_Eco : bool; nr_St_1_Frost_Protection : bool;
+    ns_St_1_Frost_Protection_2 : bool; ns_St_1_Frost_Protection_1 : bool;
+    p_St_1_Frost_Protection : int; s_St_1_Frost_Protection : bool;
+    nr_St_1_Off : bool; ns_St_1_Off_2 : bool; ns_St_1_Off_1 : bool;
+    p_St_1_Off : int; s_St_1_Off : bool; ck_2_2 : bool; ck_2_1 : bool;
+    v_13_2_0 : bool; v_13_2_1 : bool; v_11_2_0 : bool; v_11_2_1 : bool;
+    v_14 : bool; v_13_2 : bool; v_13_1 : bool; v_12 : bool; v_11_2 : bool;
+    v_11_1 : bool; v_9_2_0 : bool; v_9_2_1 : bool; v_10 : bool; v_9_2 : bool;
+    v_9_1 : bool; v_2_0 : bool; v_2_1 : bool; v_8 : bool; v_2 : bool;
+    v_1 : bool; v_50 : bool; v_49 : bool; v_48 : bool; v_47 : bool;
+    v_46 : bool; v_45 : bool; v_44 : bool; v_43 : bool;
+    s_2_St_1_High_2_0 : bool; s_2_St_1_High_2_1 : bool;
+    s_2_St_1_Eco_2_0 : bool; s_2_St_1_Eco_2_1 : bool;
+    s_2_St_1_Frost_Protection_2_0 : bool;
+    s_2_St_1_Frost_Protection_2_1 : bool; s_2_St_1_Off_2_0 : bool;
+    s_2_St_1_Off_2_1 : bool; ck_2_3_0 : bool; ck_2_3_1 : bool;
+    r_St_1_High : bool; s_2_St_1_High_2 : bool; s_2_St_1_High_1 : bool;
+    r_St_1_Eco : bool; s_2_St_1_Eco_2 : bool; s_2_St_1_Eco_1 : bool;
+    r_St_1_Frost_Protection : bool; s_2_St_1_Frost_Protection_2 : bool;
+    s_2_St_1_Frost_Protection_1 : bool; r_St_1_Off : bool;
+    s_2_St_1_Off_2 : bool; s_2_St_1_Off_1 : bool; ck_2_3 : bool; ck_1 : bool;
+    s_2_2_0 : bool; s_2_2_1 : bool; ns_2_0 : bool; ns_2_1 : bool;
+    s_2_2 : bool; s_2_1 : bool; ns_2 : bool; ns_1 : bool; r : bool;
+    nr : bool; pnr : bool; up1 : bool; up2 : bool; down1 : bool;
+    down2 : bool; s : bool; p : int;
+let
+  up1 = up1_1;
+  up2 = up2_1;
+  down1 = down1_1;
+  down2 = down2_1;
+  pnr = false fby nr;
+  ck_2_1 = s_2_1;
+  ck_2_2 = s_2_2;
+  s_St_1_Off = false;
+  p_St_1_Off = 0;
+  nr_St_1_Off = false;
+  ns_St_1_Off_1 = false;
+  ns_St_1_Off_2 = false;
+  s_St_1_Frost_Protection = true;
+  p_St_1_Frost_Protection = 300;
+  nr_St_1_Frost_Protection = false;
+  ns_St_1_Frost_Protection_1 = true;
+  ns_St_1_Frost_Protection_2 = false;
+  s_St_1_Eco = true;
+  p_St_1_Eco = 1500;
+  nr_St_1_Eco = false;
+  ns_St_1_Eco_1 = true;
+  ns_St_1_Eco_2 = true;
+  s_St_1_High = true;
+  p_St_1_High = 2000;
+  nr_St_1_High = false;
+  ns_St_1_High_1 = false;
+  ns_St_1_High_2 = true;
+  v_33 =
+    merge ck_2_2_1 (true -> s_St_1_Eco)(false -> s_St_1_Frost_Protection);
+  v_34 = merge ck_2_2_0 (true -> s_St_1_High)(false -> s_St_1_Off);
+  s = merge ck_2_1 (true -> v_33)(false -> v_34);
+  v_35 =
+    merge ck_2_2_1 (true -> p_St_1_Eco)(false -> p_St_1_Frost_Protection);
+  v_36 = merge ck_2_2_0 (true -> p_St_1_High)(false -> p_St_1_Off);
+  p = merge ck_2_1 (true -> v_35)(false -> v_36);
+  v_37 =
+    merge ck_2_2_1
+      (true -> ns_St_1_Eco_1)(false -> ns_St_1_Frost_Protection_1);
+  v_38 =
+    merge ck_2_2_1
+      (true -> ns_St_1_Eco_2)(false -> ns_St_1_Frost_Protection_2);
+  v_39 = merge ck_2_2_0 (true -> ns_St_1_High_1)(false -> ns_St_1_Off_1);
+  v_40 = merge ck_2_2_0 (true -> ns_St_1_High_2)(false -> ns_St_1_Off_2);
+  ns_1 = merge ck_2_1 (true -> v_37)(false -> v_39);
+  ns_2 = merge ck_2_1 (true -> v_38)(false -> v_40);
+  v_41 =
+    merge ck_2_2_1 (true -> nr_St_1_Eco)(false -> nr_St_1_Frost_Protection);
+  v_42 = merge ck_2_2_0 (true -> nr_St_1_High)(false -> nr_St_1_Off);
+  nr = merge ck_2_1 (true -> v_41)(false -> v_42);
+  ck_2_2_1 = (ck_2_2 when true(ck_2_1));
+  ck_2_2_0 = (ck_2_2 when false(ck_2_1));
+  ns_St_1_Off_2_1 = (ns_St_1_Off_2 when true(ns_St_1_Off_1));
+  ns_St_1_Off_2_0 = (ns_St_1_Off_2 when false(ns_St_1_Off_1));
+  ns_St_1_Frost_Protection_2_1 =
+    (ns_St_1_Frost_Protection_2 when true(ns_St_1_Frost_Protection_1));
+  ns_St_1_Frost_Protection_2_0 =
+    (ns_St_1_Frost_Protection_2 when false(ns_St_1_Frost_Protection_1));
+  ns_St_1_Eco_2_1 = (ns_St_1_Eco_2 when true(ns_St_1_Eco_1));
+  ns_St_1_Eco_2_0 = (ns_St_1_Eco_2 when false(ns_St_1_Eco_1));
+  ns_St_1_High_2_1 = (ns_St_1_High_2 when true(ns_St_1_High_1));
+  ns_St_1_High_2_0 = (ns_St_1_High_2 when false(ns_St_1_High_1));
+  v_43 = false fby ns_1;
+  v_44 = false fby ns_2;
+  ck_1 = v_43;
+  ck_2_3 = v_44;
+  r_St_1_Off =
+    if ((up1 when false(ck_1)) when false(ck_2_3_0))
+    then true
+    else ((pnr when false(ck_1)) when false(ck_2_3_0));
+  s_2_St_1_Off_1 =
+    if ((up1 when false(ck_1)) when false(ck_2_3_0)) then true else false;
+  s_2_St_1_Off_2 =
+    if ((up1 when false(ck_1)) when false(ck_2_3_0)) then false else false;
+  r_St_1_Frost_Protection =
+    if ((up1 when true(ck_1)) when false(ck_2_3_1)) then true else v_14;
+  s_2_St_1_Frost_Protection_1 =
+    if ((up1 when true(ck_1)) when false(ck_2_3_1)) then true else v_13_1;
+  s_2_St_1_Frost_Protection_2 =
+    if ((up1 when true(ck_1)) when false(ck_2_3_1)) then true else v_13_2;
+  v_14 = if ((up2 when true(ck_1)) when false(ck_2_3_1)) then true else v_12;
+  v_13_1 =
+    if ((up2 when true(ck_1)) when false(ck_2_3_1)) then false else v_11_1;
+  v_13_2 =
+    if ((up2 when true(ck_1)) when false(ck_2_3_1)) then true else v_11_2;
+  v_12 =
+    if ((down1 when true(ck_1)) when false(ck_2_3_1))
+    then true
+    else ((pnr when true(ck_1)) when false(ck_2_3_1));
+  v_11_1 =
+    if ((down1 when true(ck_1)) when false(ck_2_3_1)) then false else true;
+  v_11_2 =
+    if ((down1 when true(ck_1)) when false(ck_2_3_1)) then false else false;
+  v_11_2_1 = (v_11_2 when true(v_11_1));
+  v_11_2_0 = (v_11_2 when false(v_11_1));
+  v_13_2_1 = (v_13_2 when true(v_13_1));
+  v_13_2_0 = (v_13_2 when false(v_13_1));
+  r_St_1_Eco =
+    if ((up2 when true(ck_1)) when true(ck_2_3_1)) then true else v_10;
+  s_2_St_1_Eco_1 =
+    if ((up2 when true(ck_1)) when true(ck_2_3_1)) then false else v_9_1;
+  s_2_St_1_Eco_2 =
+    if ((up2 when true(ck_1)) when true(ck_2_3_1)) then true else v_9_2;
+  v_10 =
+    if ((down1 when true(ck_1)) when true(ck_2_3_1))
+    then true
+    else ((pnr when true(ck_1)) when true(ck_2_3_1));
+  v_9_1 =
+    if ((down1 when true(ck_1)) when true(ck_2_3_1)) then true else true;
+  v_9_2 =
+    if ((down1 when true(ck_1)) when true(ck_2_3_1)) then false else true;
+  v_9_2_1 = (v_9_2 when true(v_9_1));
+  v_9_2_0 = (v_9_2 when false(v_9_1));
+  r_St_1_High =
+    if ((down2 when false(ck_1)) when true(ck_2_3_0)) then true else v_8;
+  s_2_St_1_High_1 =
+    if ((down2 when false(ck_1)) when true(ck_2_3_0)) then true else v_1;
+  s_2_St_1_High_2 =
+    if ((down2 when false(ck_1)) when true(ck_2_3_0)) then false else v_2;
+  v_8 =
+    if ((down1 when false(ck_1)) when true(ck_2_3_0))
+    then true
+    else ((pnr when false(ck_1)) when true(ck_2_3_0));
+  v_1 =
+    if ((down1 when false(ck_1)) when true(ck_2_3_0)) then true else false;
+  v_2 = if ((down1 when false(ck_1)) when true(ck_2_3_0)) then true else true;
+  v_2_1 = (v_2 when true(v_1));
+  v_2_0 = (v_2 when false(v_1));
+  v_45 =
+    merge ck_2_3_1
+      (true -> s_2_St_1_Eco_1)(false -> s_2_St_1_Frost_Protection_1);
+  v_46 =
+    merge ck_2_3_1
+      (true -> s_2_St_1_Eco_2)(false -> s_2_St_1_Frost_Protection_2);
+  v_47 = merge ck_2_3_0 (true -> s_2_St_1_High_1)(false -> s_2_St_1_Off_1);
+  v_48 = merge ck_2_3_0 (true -> s_2_St_1_High_2)(false -> s_2_St_1_Off_2);
+  s_2_1 = merge ck_1 (true -> v_45)(false -> v_47);
+  s_2_2 = merge ck_1 (true -> v_46)(false -> v_48);
+  v_49 =
+    merge ck_2_3_1 (true -> r_St_1_Eco)(false -> r_St_1_Frost_Protection);
+  v_50 = merge ck_2_3_0 (true -> r_St_1_High)(false -> r_St_1_Off);
+  r = merge ck_1 (true -> v_49)(false -> v_50);
+  ck_2_3_1 = (ck_2_3 when true(ck_1));
+  ck_2_3_0 = (ck_2_3 when false(ck_1));
+  s_2_St_1_Off_2_1 = (s_2_St_1_Off_2 when true(s_2_St_1_Off_1));
+  s_2_St_1_Off_2_0 = (s_2_St_1_Off_2 when false(s_2_St_1_Off_1));
+  s_2_St_1_Frost_Protection_2_1 =
+    (s_2_St_1_Frost_Protection_2 when true(s_2_St_1_Frost_Protection_1));
+  s_2_St_1_Frost_Protection_2_0 =
+    (s_2_St_1_Frost_Protection_2 when false(s_2_St_1_Frost_Protection_1));
+  s_2_St_1_Eco_2_1 = (s_2_St_1_Eco_2 when true(s_2_St_1_Eco_1));
+  s_2_St_1_Eco_2_0 = (s_2_St_1_Eco_2 when false(s_2_St_1_Eco_1));
+  s_2_St_1_High_2_1 = (s_2_St_1_High_2 when true(s_2_St_1_High_1));
+  s_2_St_1_High_2_0 = (s_2_St_1_High_2 when false(s_2_St_1_High_1));
+  power1 = p;
+  state1 = s;
+  ns_2_1 = (ns_2 when true(ns_1));
+  ns_2_0 = (ns_2 when false(ns_1));
+  s_2_2_1 = (s_2_2 when true(s_2_1));
+  s_2_2_0 = (s_2_2 when false(s_2_1))
+tel
+

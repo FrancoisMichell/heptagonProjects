@@ -1,0 +1,314 @@
+node room ( presence : bool ) returns ( occupied : bool )
+	let
+    automaton
+	    
+	    state Empty do
+	      occupied = false;
+	    	unless presence then Ocupied
+
+	    state Ocupied do
+	      occupied = true;
+	    	unless presence then Empty
+    
+    end
+	tel
+
+node light_source ( source_switch, c_source1, c_source2 : bool ) returns ( source_on : bool )
+	let
+    automaton
+	  
+	    state Desligado do
+	      source_on = false;
+	    	unless (source_switch & not c_source2) or c_source1 then Ligado
+	  
+	    state Ligado do
+	      source_on = true;
+		    unless (source_switch & not c_source1) or c_source2 then Desligado
+    
+    end
+	tel
+
+node door( push, c_door : bool ) returns ( door_open : bool )
+	let
+    automaton
+    state Closed do
+      door_open = false;
+    unless push & c_door then Open
+    state Open do
+      door_open = true;
+    unless push or not c_door then Closed
+    end
+	tel
+
+node rad(up1,down1,up2,down2,c_rad1,c_rad2:bool) returns (rad_power, rad_state:int)
+	let
+    automaton
+	    state Off do
+	      rad_power = 0;
+	      rad_state = 0;
+		    unless up1 or not c_rad1 then Frostprotection
+
+	    state Frostprotection do
+	      rad_power = 300;
+	      rad_state = 1;
+		    unless up1 & c_rad1 then Eco
+		      | up2 & c_rad2 then High
+		      | down1 or not c_rad1 then Off
+	    
+	    state Eco do
+	      rad_power = 1500;
+	      rad_state = 2;
+		    unless down1 or not c_rad1 then Frostprotection
+		      | up2 & c_rad2 then High
+	    
+	    state High do
+	      rad_power = 2000;
+	      rad_state = 3;
+		    unless down1 or not c_rad1 then Eco
+		       | down2 or not c_rad2 then Frostprotection
+    end
+	tel
+
+node washing_machine(start,finish, c_wash:bool) returns (wash_power, wash_state:int)
+	let
+    automaton
+	    state Off do
+	      wash_power = 0;
+	      wash_state = 0;
+	    	unless start then Water_fill
+
+	    state Water_fill do
+	      wash_power = 15;
+	      wash_state = 1;
+		    unless finish & not c_wash then Standby
+		      | finish & c_wash then Washing
+	    
+	    state Washing do
+	      wash_power = 250;
+	      wash_state = 2;
+	    	unless finish then Rinse
+	    
+	    state Rinse do
+	      wash_power = 200;
+	      wash_state = 3;
+	    	unless finish then Spin
+	    
+	    state Spin do
+	      wash_power = 800;
+	      wash_state = 4;
+	    	unless finish then Off
+	    
+	    state Standby do
+	      wash_power = 0;
+	      wash_state = 5;
+	    	unless c_wash then Washing
+    end
+	tel
+
+node oven(start, finish, temp_ok, cold, c_oven:bool) returns ( oven_power, oven_state:int)
+	let
+    automaton
+	    state Off do
+	      oven_power = 0;
+	      oven_state = 0;
+	    	unless start & c_oven then Heat 
+	      	| start & not c_oven then Standby
+
+	    state Heat do
+	      oven_power = 1500;
+	      oven_state = 1;
+		    unless temp_ok then Maintain
+		      | finish  then Off
+
+	    state Maintain do
+	      oven_power = 300;
+	      oven_state = 2;
+		    unless cold & c_oven then Reheat
+		      | finish then Off
+
+	    state Reheat do
+	      oven_power = 1000;
+	      oven_state = 3;
+		    unless temp_ok then Maintain
+		       | finish then Off
+	    
+	    state Standby do
+	      oven_power = 0;
+	      oven_state = 4;
+	    	unless c_oven then Heat
+    end
+	tel
+
+type modes = Minimal | Eco | Confort
+node management_policy( eco_input, comfort_input : bool ) returns ( mode: modes )
+	let
+    automaton
+	    state Minimal_safety do
+	      mode = Minimal
+		    unless eco_input then Eco
+		      | comfort_input then Comfort
+
+	    state Eco do
+	      mode = Eco
+		    unless eco_input then Minimal_safety
+		      | comfort_input then Comfort
+
+	    state Comfort do
+	      mode = Confort
+		    unless eco_input then Eco
+		      | comfort_input then Minimal_safety
+    end
+	tel
+
+
+
+node porta( push, c_porta : bool ) returns ( porta_open : bool )
+	let
+	    automaton
+		    state Closed do
+		  	    porta_open = false;
+		    unless push & c_porta then Open
+		    state Open do
+		    	porta_open = true;
+		    unless push or not c_porta then Closed
+	    end
+	tel
+
+node roteador ( c : bool ) returns ( r_on : bool )
+	let
+		automaton
+			state Off do
+				r_on = false;
+				unless c then On
+			state On do
+				r_on = true;
+				unless not c then Off
+		end
+	tel
+
+node armario_de_servico ( c : bool ) returns ( arm_open : bool )
+	let
+		automaton
+			state Locked do
+				arm_open = false;
+				unless c then Open
+			state Open do
+				arm_open = true;
+				unless not c then Locked
+		end
+	tel
+
+node pessoas ( arrived : bool ) returns ( presence : bool )
+	let
+		automaton
+			state Not_Present do
+				presence = false;
+				unless arrived then Preent
+			state Preent do
+				presence = true;
+				unless not arrived then Not_Present
+		end
+	tel
+
+node computadores ( c : bool ) returns ( pc_on : bool )
+	let
+		automaton
+			state Off do
+				pc_on = false;
+				unless c then On
+			state On do
+				pc_on = true;
+				unless not c then Off
+		end
+	tel
+
+node janelas ( c : bool ) returns ( w_open : bool )
+	let
+		automaton
+			state Closed do
+				w_open = false;
+				unless c then Open
+			state Open do
+				w_open = true;
+				unless not c then Closed
+		end
+	tel
+
+node luzes ( c1, c2 : bool ) returns ( l_state : int )
+	let
+		automaton
+			state None do
+				l_state = 0;
+				unless c1 then Some
+					| c2 then All
+			state Some do
+				l_state = 1;
+				unless not c1 then None
+					| c2 then All
+			state All do
+				l_state = 2;
+				unless not c1 then Some
+					| not c2 then None
+		end
+	tel
+
+node persianas ( c1, c2 : bool ) returns ( p_state : int )
+	let
+		automaton
+			state Down do
+				p_state = 0;
+				unless c1 then Mid
+					| c2 then Up
+			state Mid do
+				p_state = 1;
+				unless not c1 then Down
+					| c2 then Up
+			state Up do
+				p_state = 2;
+				unless not c1 then Mid
+					| not c2 then Down
+		end
+	tel
+
+node ar_condicionado ( c1, c2 : bool ) returns ( ar_state : int )
+	let
+		automaton
+			state Off do
+				ar_state = 0;
+				unless c1 then Min
+					| c2 then Max
+			state Min do
+				ar_state = 1;
+				unless not c1 then Off
+					| c2 then Max
+			state Max do
+				ar_state = 2;
+				unless not c1 then Min
+					| not c2 then Off
+		end
+	tel
+
+node controller( abre_porta, p_arrived : bool ) 
+	returns ( p_open, r_on1, arm_open, presence, pc_on, w_open : bool; l_state, p_state, ar_state : int;)
+  	
+  	contract
+		var rule1: bool;
+
+		let
+			rule1 = ( not arm_open & w_open );
+		tel
+    enforce rule1
+    with ( c_porta, c_rot, c_arm, c_pc, c_jan, c_luz1, c_luz2, c_per1, c_per2, c_ar1, c_ar2 : bool )
+
+  	let
+		p_open = inlined porta (abre_porta, c_porta);
+		r_on1 = inlined roteador (c_rot);
+		arm_open = inlined armario_de_servico (c_arm);
+		presence = inlined pessoas (p_arrived);
+		pc_on = inlined comfort_inputputadores (c_pc);
+		w_open = inlined janelas (c_jan);
+		l_state = inlined luzes (c_luz1, c_luz2);
+		p_state = inlined persianas (c_per1, c_per2);
+		ar_state = inlined ar_condicionado (c_ar1, c_ar2);
+	tel
+
