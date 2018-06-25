@@ -1,5 +1,5 @@
-/* --- Generated the 23/6/2018 at 14:33 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 25/6/2018 at 10:48 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -51,8 +51,8 @@ void System__door_step(int push, int c_door, System__door_out* _out,
                        System__door_mem* self);
 
 typedef struct System__rad_mem {
-  int v_120;
-  int v_119;
+  int v_142;
+  int v_141;
   int pnr;
 } System__rad_mem;
 
@@ -68,9 +68,9 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
                       System__rad_mem* self);
 
 typedef struct System__washing_machine_mem {
-  int v_165;
-  int v_164;
-  int v_163;
+  int v_187;
+  int v_186;
+  int v_185;
   int pnr;
 } System__washing_machine_mem;
 
@@ -86,9 +86,9 @@ void System__washing_machine_step(int start, int finish, int c_wash,
                                   System__washing_machine_mem* self);
 
 typedef struct System__oven_mem {
-  int v_222;
-  int v_221;
-  int v_220;
+  int v_244;
+  int v_243;
+  int v_242;
   int pnr;
 } System__oven_mem;
 
@@ -104,8 +104,8 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
                        System__oven_mem* self);
 
 typedef struct System__management_policy_mem {
-  int v_254;
-  int v_253;
+  int v_276;
+  int v_275;
   int pnr;
 } System__management_policy_mem;
 
@@ -206,8 +206,8 @@ void System__janelas_step(int c, System__janelas_out* _out,
                           System__janelas_mem* self);
 
 typedef struct System__luzes_mem {
-  int v_270;
-  int v_269;
+  int v_292;
+  int v_291;
   int pnr;
 } System__luzes_mem;
 
@@ -221,8 +221,8 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
                         System__luzes_mem* self);
 
 typedef struct System__persianas_mem {
-  int v_286;
-  int v_285;
+  int v_308;
+  int v_307;
   int pnr;
 } System__persianas_mem;
 
@@ -236,8 +236,8 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
                             System__persianas_mem* self);
 
 typedef struct System__ar_condicionado_mem {
-  int v_302;
-  int v_301;
+  int v_324;
+  int v_323;
   int pnr;
 } System__ar_condicionado_mem;
 
@@ -251,18 +251,32 @@ void System__ar_condicionado_step(int c1, int c2,
                                   System__ar_condicionado_out* _out,
                                   System__ar_condicionado_mem* self);
 
+typedef struct System__turno_mem {
+  int ck_1;
+  int pnr;
+} System__turno_mem;
+
+typedef struct System__turno_out {
+  int turno;
+} System__turno_out;
+
+void System__turno_reset(System__turno_mem* self);
+
+void System__turno_step(int shift, System__turno_out* _out,
+                        System__turno_mem* self);
+
 typedef struct System__controller_mem {
-  int v_318;
-  int v_317;
-  int v_334;
-  int v_333;
-  int v_350;
-  int v_349;
-  int ck_26_1;
-  int ck_24_1;
-  int ck_22_1;
-  int ck_20_1;
-  int ck_18_1;
+  int v_340;
+  int v_339;
+  int v_356;
+  int v_355;
+  int v_372;
+  int v_371;
+  int ck_27_1;
+  int ck_25_1;
+  int ck_23_1;
+  int ck_21_1;
+  int ck_19_1;
   int ck_1;
   int pnr_8;
   int pnr_7;
@@ -276,9 +290,9 @@ typedef struct System__controller_mem {
 } System__controller_mem;
 
 typedef struct System__controller_out {
+  int night;
   int p_open;
   int r_on1;
-  int arm_open;
   int presence;
   int pc_on;
   int w_open;
@@ -289,7 +303,7 @@ typedef struct System__controller_out {
 
 void System__controller_reset(System__controller_mem* self);
 
-void System__controller_step(int abre_porta, int p_arrived,
+void System__controller_step(int shift_turno, int abre_porta, int p_arrived,
                              System__controller_out* _out,
                              System__controller_mem* self);
 

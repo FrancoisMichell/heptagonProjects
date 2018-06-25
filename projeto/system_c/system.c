@@ -1,5 +1,5 @@
-/* --- Generated the 23/6/2018 at 14:33 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 25/6/2018 at 10:48 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -229,24 +229,24 @@ void System__door_step(int push, int c_door, System__door_out* _out,
 
 void System__rad_reset(System__rad_mem* self) {
   self->pnr = false;
-  self->v_119 = false;
-  self->v_120 = false;
+  self->v_141 = false;
+  self->v_142 = false;
 }
 
 void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
                       int c_rad2, System__rad_out* _out,
                       System__rad_mem* self) {
   
-  int v_118;
-  int v_117;
-  int v_116;
-  int v_115;
-  int v_114;
-  int v_113;
-  int v_112;
-  int v_111;
-  int v_110;
-  int v_109;
+  int v_140;
+  int v_139;
+  int v_138;
+  int v_137;
+  int v_136;
+  int v_135;
+  int v_134;
+  int v_133;
+  int v_132;
+  int v_131;
   int ns_St_3_High_2_0;
   int ns_St_3_High_2_1;
   int ns_St_3_Eco_2_0;
@@ -312,12 +312,12 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
   int v_9;
   int v_8;
   int v;
-  int v_126;
-  int v_125;
-  int v_124;
-  int v_123;
-  int v_122;
-  int v_121;
+  int v_148;
+  int v_147;
+  int v_146;
+  int v_145;
+  int v_144;
+  int v_143;
   int s_St_3_High_2_0;
   int s_St_3_High_2_1;
   int s_St_3_Eco_2_0;
@@ -352,8 +352,8 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_119;
-  ck_2 = self->v_120;
+  ck_1 = self->v_141;
+  ck_2 = self->v_142;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -374,19 +374,19 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
       } else {
         r_St_3_Eco = v_17;
       };
-      v_125 = r_St_3_Eco;
+      v_147 = r_St_3_Eco;
       if (v_14) {
         s_St_3_Eco_1 = true;
       } else {
         s_St_3_Eco_1 = v_16_1;
       };
-      v_121 = s_St_3_Eco_1;
+      v_143 = s_St_3_Eco_1;
       if (v_14) {
         s_St_3_Eco_2 = false;
       } else {
         s_St_3_Eco_2 = v_16_2;
       };
-      v_122 = s_St_3_Eco_2;
+      v_144 = s_St_3_Eco_2;
       if (v_16_1) {
         v_16_2_1 = v_16_2;
       } else {
@@ -429,9 +429,9 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
         s_St_3_Frostprotection_1 = v_24_1;
         s_St_3_Frostprotection_2 = v_24_2;
       };
-      v_125 = r_St_3_Frostprotection;
-      v_121 = s_St_3_Frostprotection_1;
-      v_122 = s_St_3_Frostprotection_2;
+      v_147 = r_St_3_Frostprotection;
+      v_143 = s_St_3_Frostprotection_1;
+      v_144 = s_St_3_Frostprotection_2;
       if (v_22_1) {
         v_22_2_1 = v_22_2;
       } else {
@@ -448,9 +448,9 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
         s_St_3_Frostprotection_2_0 = s_St_3_Frostprotection_2;
       };
     };
-    s_1 = v_121;
-    s_2 = v_122;
-    r = v_125;
+    s_1 = v_143;
+    s_2 = v_144;
+    r = v_147;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
@@ -472,19 +472,19 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
       } else {
         r_St_3_High = v_12;
       };
-      v_126 = r_St_3_High;
+      v_148 = r_St_3_High;
       if (v_8) {
         s_St_3_High_1 = true;
       } else {
         s_St_3_High_1 = v_11_1;
       };
-      v_123 = s_St_3_High_1;
+      v_145 = s_St_3_High_1;
       if (v_8) {
         s_St_3_High_2 = true;
       } else {
         s_St_3_High_2 = v_11_2;
       };
-      v_124 = s_St_3_High_2;
+      v_146 = s_St_3_High_2;
     } else {
       v_26 = !(c_rad1);
       v_27 = (up1||v_26);
@@ -497,13 +497,13 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
         s_St_3_Off_1 = false;
         s_St_3_Off_2 = false;
       };
-      v_126 = r_St_3_Off;
-      v_123 = s_St_3_Off_1;
-      v_124 = s_St_3_Off_2;
+      v_148 = r_St_3_Off;
+      v_145 = s_St_3_Off_1;
+      v_146 = s_St_3_Off_2;
     };
-    s_1 = v_123;
-    s_2 = v_124;
-    r = v_126;
+    s_1 = v_145;
+    s_2 = v_146;
+    r = v_148;
   };
   ck_4_1 = s_1;
   ck_4_2 = s_2;
@@ -511,15 +511,15 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
     ck_4_2_1 = ck_4_2;
     if (ck_4_2_1) {
       rad_power_St_3_Eco = 1500;
-      v_109 = rad_power_St_3_Eco;
+      v_131 = rad_power_St_3_Eco;
       rad_state_St_3_Eco = 2;
-      v_111 = rad_state_St_3_Eco;
+      v_133 = rad_state_St_3_Eco;
       nr_St_3_Eco = false;
-      v_117 = nr_St_3_Eco;
+      v_139 = nr_St_3_Eco;
       ns_St_3_Eco_1 = true;
-      v_113 = ns_St_3_Eco_1;
+      v_135 = ns_St_3_Eco_1;
       ns_St_3_Eco_2 = true;
-      v_114 = ns_St_3_Eco_2;
+      v_136 = ns_St_3_Eco_2;
       if (ns_St_3_Eco_1) {
         ns_St_3_Eco_2_1 = ns_St_3_Eco_2;
       } else {
@@ -531,52 +531,52 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
       nr_St_3_Frostprotection = false;
       ns_St_3_Frostprotection_1 = true;
       ns_St_3_Frostprotection_2 = false;
-      v_109 = rad_power_St_3_Frostprotection;
-      v_111 = rad_state_St_3_Frostprotection;
-      v_117 = nr_St_3_Frostprotection;
-      v_113 = ns_St_3_Frostprotection_1;
-      v_114 = ns_St_3_Frostprotection_2;
+      v_131 = rad_power_St_3_Frostprotection;
+      v_133 = rad_state_St_3_Frostprotection;
+      v_139 = nr_St_3_Frostprotection;
+      v_135 = ns_St_3_Frostprotection_1;
+      v_136 = ns_St_3_Frostprotection_2;
       if (ns_St_3_Frostprotection_1) {
         ns_St_3_Frostprotection_2_1 = ns_St_3_Frostprotection_2;
       } else {
         ns_St_3_Frostprotection_2_0 = ns_St_3_Frostprotection_2;
       };
     };
-    _out->rad_power = v_109;
-    _out->rad_state = v_111;
-    ns_1 = v_113;
-    ns_2 = v_114;
-    nr = v_117;
+    _out->rad_power = v_131;
+    _out->rad_state = v_133;
+    ns_1 = v_135;
+    ns_2 = v_136;
+    nr = v_139;
   } else {
     ck_4_2_0 = ck_4_2;
     if (ck_4_2_0) {
       rad_power_St_3_High = 2000;
-      v_110 = rad_power_St_3_High;
+      v_132 = rad_power_St_3_High;
       rad_state_St_3_High = 3;
-      v_112 = rad_state_St_3_High;
+      v_134 = rad_state_St_3_High;
       nr_St_3_High = false;
-      v_118 = nr_St_3_High;
+      v_140 = nr_St_3_High;
       ns_St_3_High_1 = false;
-      v_115 = ns_St_3_High_1;
+      v_137 = ns_St_3_High_1;
       ns_St_3_High_2 = true;
-      v_116 = ns_St_3_High_2;
+      v_138 = ns_St_3_High_2;
     } else {
       rad_power_St_3_Off = 0;
       rad_state_St_3_Off = 0;
       nr_St_3_Off = false;
       ns_St_3_Off_1 = false;
       ns_St_3_Off_2 = false;
-      v_110 = rad_power_St_3_Off;
-      v_112 = rad_state_St_3_Off;
-      v_118 = nr_St_3_Off;
-      v_115 = ns_St_3_Off_1;
-      v_116 = ns_St_3_Off_2;
+      v_132 = rad_power_St_3_Off;
+      v_134 = rad_state_St_3_Off;
+      v_140 = nr_St_3_Off;
+      v_137 = ns_St_3_Off_1;
+      v_138 = ns_St_3_Off_2;
     };
-    _out->rad_power = v_110;
-    _out->rad_state = v_112;
-    ns_1 = v_115;
-    ns_2 = v_116;
-    nr = v_118;
+    _out->rad_power = v_132;
+    _out->rad_state = v_134;
+    ns_1 = v_137;
+    ns_2 = v_138;
+    nr = v_140;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -624,21 +624,43 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
     };
   };
   self->pnr = nr;
-  self->v_119 = ns_1;
-  self->v_120 = ns_2;;
+  self->v_141 = ns_1;
+  self->v_142 = ns_2;;
 }
 
 void System__washing_machine_reset(System__washing_machine_mem* self) {
   self->pnr = false;
-  self->v_163 = true;
-  self->v_164 = true;
-  self->v_165 = true;
+  self->v_185 = true;
+  self->v_186 = true;
+  self->v_187 = true;
 }
 
 void System__washing_machine_step(int start, int finish, int c_wash,
                                   System__washing_machine_out* _out,
                                   System__washing_machine_mem* self) {
   
+  int v_184;
+  int v_183;
+  int v_182;
+  int v_181;
+  int v_180;
+  int v_179;
+  int v_178;
+  int v_177;
+  int v_176;
+  int v_175;
+  int v_174;
+  int v_173;
+  int v_172;
+  int v_171;
+  int v_170;
+  int v_169;
+  int v_168;
+  int v_167;
+  int v_166;
+  int v_165;
+  int v_164;
+  int v_163;
   int v_162;
   int v_161;
   int v_160;
@@ -653,28 +675,6 @@ void System__washing_machine_step(int start, int finish, int c_wash,
   int v_151;
   int v_150;
   int v_149;
-  int v_148;
-  int v_147;
-  int v_146;
-  int v_145;
-  int v_144;
-  int v_143;
-  int v_142;
-  int v_141;
-  int v_140;
-  int v_139;
-  int v_138;
-  int v_137;
-  int v_136;
-  int v_135;
-  int v_134;
-  int v_133;
-  int v_132;
-  int v_131;
-  int v_130;
-  int v_129;
-  int v_128;
-  int v_127;
   int ns_St_4_Standby_2_0;
   int ns_St_4_Standby_3_0_0;
   int ns_St_4_Standby_3_0_1;
@@ -769,30 +769,30 @@ void System__washing_machine_step(int start, int finish, int c_wash,
   int v_29;
   int v_28;
   int v;
+  int v_211;
+  int v_210;
+  int v_209;
+  int v_208;
+  int v_207;
+  int v_206;
+  int v_205;
+  int v_204;
+  int v_203;
+  int v_202;
+  int v_201;
+  int v_200;
+  int v_199;
+  int v_198;
+  int v_197;
+  int v_196;
+  int v_195;
+  int v_194;
+  int v_193;
+  int v_192;
+  int v_191;
+  int v_190;
   int v_189;
   int v_188;
-  int v_187;
-  int v_186;
-  int v_185;
-  int v_184;
-  int v_183;
-  int v_182;
-  int v_181;
-  int v_180;
-  int v_179;
-  int v_178;
-  int v_177;
-  int v_176;
-  int v_175;
-  int v_174;
-  int v_173;
-  int v_172;
-  int v_171;
-  int v_170;
-  int v_169;
-  int v_168;
-  int v_167;
-  int v_166;
   int s_St_4_Standby_2_0;
   int s_St_4_Standby_3_0_0;
   int s_St_4_Standby_3_0_1;
@@ -882,9 +882,9 @@ void System__washing_machine_step(int start, int finish, int c_wash,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_163;
-  ck_2 = self->v_164;
-  ck_3 = self->v_165;
+  ck_1 = self->v_185;
+  ck_2 = self->v_186;
+  ck_3 = self->v_187;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -901,10 +901,10 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           s_St_4_Off_2 = true;
           s_St_4_Off_3 = true;
         };
-        v_184 = r_St_4_Off;
-        v_166 = s_St_4_Off_1;
-        v_167 = s_St_4_Off_2;
-        v_168 = s_St_4_Off_3;
+        v_206 = r_St_4_Off;
+        v_188 = s_St_4_Off_1;
+        v_189 = s_St_4_Off_2;
+        v_190 = s_St_4_Off_3;
         if (s_St_4_Off_1) {
           s_St_4_Off_2_1 = s_St_4_Off_2;
           if (s_St_4_Off_2_1) {
@@ -926,25 +926,25 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         } else {
           r_St_4_Rinse = self->pnr;
         };
-        v_184 = r_St_4_Rinse;
+        v_206 = r_St_4_Rinse;
         if (finish) {
           s_St_4_Rinse_1 = true;
         } else {
           s_St_4_Rinse_1 = true;
         };
-        v_166 = s_St_4_Rinse_1;
+        v_188 = s_St_4_Rinse_1;
         if (finish) {
           s_St_4_Rinse_2 = false;
         } else {
           s_St_4_Rinse_2 = true;
         };
-        v_167 = s_St_4_Rinse_2;
+        v_189 = s_St_4_Rinse_2;
         if (finish) {
           s_St_4_Rinse_3 = false;
         } else {
           s_St_4_Rinse_3 = false;
         };
-        v_168 = s_St_4_Rinse_3;
+        v_190 = s_St_4_Rinse_3;
         if (s_St_4_Rinse_1) {
           s_St_4_Rinse_2_1 = s_St_4_Rinse_2;
           if (s_St_4_Rinse_2_1) {
@@ -961,47 +961,47 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           };
         };
       };
-      v_178 = v_166;
-      v_179 = v_167;
-      v_180 = v_168;
-      v_186 = v_184;
+      v_200 = v_188;
+      v_201 = v_189;
+      v_202 = v_190;
+      v_208 = v_206;
     } else {
       ck_3_1_0 = ck_3;
       if (ck_3_1_0) {
-        v_185 = true;
-        v_169 = true;
-        v_170 = true;
-        v_171 = true;
+        v_207 = true;
+        v_191 = true;
+        v_192 = true;
+        v_193 = true;
       } else {
         if (finish) {
           r_St_4_Spin = true;
         } else {
           r_St_4_Spin = self->pnr;
         };
-        v_185 = r_St_4_Spin;
+        v_207 = r_St_4_Spin;
         if (finish) {
           s_St_4_Spin_1 = true;
         } else {
           s_St_4_Spin_1 = true;
         };
-        v_169 = s_St_4_Spin_1;
+        v_191 = s_St_4_Spin_1;
         if (finish) {
           s_St_4_Spin_2 = true;
         } else {
           s_St_4_Spin_2 = false;
         };
-        v_170 = s_St_4_Spin_2;
+        v_192 = s_St_4_Spin_2;
         if (finish) {
           s_St_4_Spin_3 = true;
         } else {
           s_St_4_Spin_3 = false;
         };
-        v_171 = s_St_4_Spin_3;
+        v_193 = s_St_4_Spin_3;
       };
-      v_178 = v_169;
-      v_179 = v_170;
-      v_180 = v_171;
-      v_186 = v_185;
+      v_200 = v_191;
+      v_201 = v_192;
+      v_202 = v_193;
+      v_208 = v_207;
       if (!(ck_3_1_0)) {
         if (s_St_4_Spin_1) {
           s_St_4_Spin_2_1 = s_St_4_Spin_2;
@@ -1020,10 +1020,10 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         };
       };
     };
-    s_1 = v_178;
-    s_2 = v_179;
-    s_3 = v_180;
-    r = v_186;
+    s_1 = v_200;
+    s_2 = v_201;
+    s_3 = v_202;
+    r = v_208;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
@@ -1034,25 +1034,25 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         } else {
           r_St_4_Standby = self->pnr;
         };
-        v_187 = r_St_4_Standby;
+        v_209 = r_St_4_Standby;
         if (c_wash) {
           s_St_4_Standby_1 = false;
         } else {
           s_St_4_Standby_1 = false;
         };
-        v_172 = s_St_4_Standby_1;
+        v_194 = s_St_4_Standby_1;
         if (c_wash) {
           s_St_4_Standby_2 = true;
         } else {
           s_St_4_Standby_2 = true;
         };
-        v_173 = s_St_4_Standby_2;
+        v_195 = s_St_4_Standby_2;
         if (c_wash) {
           s_St_4_Standby_3 = false;
         } else {
           s_St_4_Standby_3 = true;
         };
-        v_174 = s_St_4_Standby_3;
+        v_196 = s_St_4_Standby_3;
       } else {
         if (finish) {
           r_St_4_Washing = true;
@@ -1065,22 +1065,22 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           s_St_4_Washing_2 = true;
           s_St_4_Washing_3 = false;
         };
-        v_187 = r_St_4_Washing;
-        v_172 = s_St_4_Washing_1;
-        v_173 = s_St_4_Washing_2;
-        v_174 = s_St_4_Washing_3;
+        v_209 = r_St_4_Washing;
+        v_194 = s_St_4_Washing_1;
+        v_195 = s_St_4_Washing_2;
+        v_196 = s_St_4_Washing_3;
       };
-      v_181 = v_172;
-      v_182 = v_173;
-      v_183 = v_174;
-      v_189 = v_187;
+      v_203 = v_194;
+      v_204 = v_195;
+      v_205 = v_196;
+      v_211 = v_209;
     } else {
       ck_3_0_0 = ck_3;
       if (ck_3_0_0) {
-        v_188 = true;
-        v_175 = true;
-        v_176 = true;
-        v_177 = true;
+        v_210 = true;
+        v_197 = true;
+        v_198 = true;
+        v_199 = true;
       } else {
         v_29 = (finish&&c_wash);
         if (v_29) {
@@ -1101,25 +1101,25 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         } else {
           r_St_4_Water_fill = v_31;
         };
-        v_188 = r_St_4_Water_fill;
+        v_210 = r_St_4_Water_fill;
         if (v_28) {
           s_St_4_Water_fill_1 = false;
         } else {
           s_St_4_Water_fill_1 = v_30_1;
         };
-        v_175 = s_St_4_Water_fill_1;
+        v_197 = s_St_4_Water_fill_1;
         if (v_28) {
           s_St_4_Water_fill_2 = true;
         } else {
           s_St_4_Water_fill_2 = v_30_2;
         };
-        v_176 = s_St_4_Water_fill_2;
+        v_198 = s_St_4_Water_fill_2;
         if (v_28) {
           s_St_4_Water_fill_3 = true;
         } else {
           s_St_4_Water_fill_3 = v_30_3;
         };
-        v_177 = s_St_4_Water_fill_3;
+        v_199 = s_St_4_Water_fill_3;
         if (v_30_1) {
           v_30_2_1 = v_30_2;
           if (v_30_2_1) {
@@ -1151,15 +1151,15 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           };
         };
       };
-      v_181 = v_175;
-      v_182 = v_176;
-      v_183 = v_177;
-      v_189 = v_188;
+      v_203 = v_197;
+      v_204 = v_198;
+      v_205 = v_199;
+      v_211 = v_210;
     };
-    s_1 = v_181;
-    s_2 = v_182;
-    s_3 = v_183;
-    r = v_189;
+    s_1 = v_203;
+    s_2 = v_204;
+    s_3 = v_205;
+    r = v_211;
   };
   ck_5_1 = s_1;
   ck_5_2 = s_2;
@@ -1175,12 +1175,12 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         ns_St_4_Off_1 = true;
         ns_St_4_Off_2 = true;
         ns_St_4_Off_3 = true;
-        v_127 = wash_power_St_4_Off;
-        v_133 = wash_state_St_4_Off;
-        v_157 = nr_St_4_Off;
-        v_139 = ns_St_4_Off_1;
-        v_140 = ns_St_4_Off_2;
-        v_141 = ns_St_4_Off_3;
+        v_149 = wash_power_St_4_Off;
+        v_155 = wash_state_St_4_Off;
+        v_179 = nr_St_4_Off;
+        v_161 = ns_St_4_Off_1;
+        v_162 = ns_St_4_Off_2;
+        v_163 = ns_St_4_Off_3;
         if (ns_St_4_Off_1) {
           ns_St_4_Off_2_1 = ns_St_4_Off_2;
           if (ns_St_4_Off_2_1) {
@@ -1198,17 +1198,17 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         };
       } else {
         wash_power_St_4_Rinse = 200;
-        v_127 = wash_power_St_4_Rinse;
+        v_149 = wash_power_St_4_Rinse;
         wash_state_St_4_Rinse = 3;
-        v_133 = wash_state_St_4_Rinse;
+        v_155 = wash_state_St_4_Rinse;
         nr_St_4_Rinse = false;
-        v_157 = nr_St_4_Rinse;
+        v_179 = nr_St_4_Rinse;
         ns_St_4_Rinse_1 = true;
-        v_139 = ns_St_4_Rinse_1;
+        v_161 = ns_St_4_Rinse_1;
         ns_St_4_Rinse_2 = true;
-        v_140 = ns_St_4_Rinse_2;
+        v_162 = ns_St_4_Rinse_2;
         ns_St_4_Rinse_3 = false;
-        v_141 = ns_St_4_Rinse_3;
+        v_163 = ns_St_4_Rinse_3;
         if (ns_St_4_Rinse_1) {
           ns_St_4_Rinse_2_1 = ns_St_4_Rinse_2;
           if (ns_St_4_Rinse_2_1) {
@@ -1225,41 +1225,41 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           };
         };
       };
-      v_129 = v_127;
-      v_135 = v_133;
-      v_151 = v_139;
-      v_152 = v_140;
-      v_153 = v_141;
-      v_159 = v_157;
+      v_151 = v_149;
+      v_157 = v_155;
+      v_173 = v_161;
+      v_174 = v_162;
+      v_175 = v_163;
+      v_181 = v_179;
     } else {
       ck_5_3_1_0 = ck_5_3;
       if (ck_5_3_1_0) {
-        v_128 = 0;
-        v_134 = 0;
-        v_158 = true;
-        v_142 = true;
-        v_143 = true;
-        v_144 = true;
+        v_150 = 0;
+        v_156 = 0;
+        v_180 = true;
+        v_164 = true;
+        v_165 = true;
+        v_166 = true;
       } else {
         wash_power_St_4_Spin = 800;
-        v_128 = wash_power_St_4_Spin;
+        v_150 = wash_power_St_4_Spin;
         wash_state_St_4_Spin = 4;
-        v_134 = wash_state_St_4_Spin;
+        v_156 = wash_state_St_4_Spin;
         nr_St_4_Spin = false;
-        v_158 = nr_St_4_Spin;
+        v_180 = nr_St_4_Spin;
         ns_St_4_Spin_1 = true;
-        v_142 = ns_St_4_Spin_1;
+        v_164 = ns_St_4_Spin_1;
         ns_St_4_Spin_2 = false;
-        v_143 = ns_St_4_Spin_2;
+        v_165 = ns_St_4_Spin_2;
         ns_St_4_Spin_3 = false;
-        v_144 = ns_St_4_Spin_3;
+        v_166 = ns_St_4_Spin_3;
       };
-      v_129 = v_128;
-      v_135 = v_134;
-      v_151 = v_142;
-      v_152 = v_143;
-      v_153 = v_144;
-      v_159 = v_158;
+      v_151 = v_150;
+      v_157 = v_156;
+      v_173 = v_164;
+      v_174 = v_165;
+      v_175 = v_166;
+      v_181 = v_180;
       if (!(ck_5_3_1_0)) {
         if (ns_St_4_Spin_1) {
           ns_St_4_Spin_2_1 = ns_St_4_Spin_2;
@@ -1278,29 +1278,29 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         };
       };
     };
-    _out->wash_power = v_129;
-    _out->wash_state = v_135;
-    ns_1 = v_151;
-    ns_2 = v_152;
-    ns_3 = v_153;
-    nr = v_159;
+    _out->wash_power = v_151;
+    _out->wash_state = v_157;
+    ns_1 = v_173;
+    ns_2 = v_174;
+    ns_3 = v_175;
+    nr = v_181;
   } else {
     ck_5_2_0 = ck_5_2;
     if (ck_5_2_0) {
       ck_5_3_0_1 = ck_5_3;
       if (ck_5_3_0_1) {
         wash_power_St_4_Standby = 0;
-        v_130 = wash_power_St_4_Standby;
+        v_152 = wash_power_St_4_Standby;
         wash_state_St_4_Standby = 5;
-        v_136 = wash_state_St_4_Standby;
+        v_158 = wash_state_St_4_Standby;
         nr_St_4_Standby = false;
-        v_160 = nr_St_4_Standby;
+        v_182 = nr_St_4_Standby;
         ns_St_4_Standby_1 = false;
-        v_145 = ns_St_4_Standby_1;
+        v_167 = ns_St_4_Standby_1;
         ns_St_4_Standby_2 = true;
-        v_146 = ns_St_4_Standby_2;
+        v_168 = ns_St_4_Standby_2;
         ns_St_4_Standby_3 = true;
-        v_147 = ns_St_4_Standby_3;
+        v_169 = ns_St_4_Standby_3;
       } else {
         wash_power_St_4_Washing = 250;
         wash_state_St_4_Washing = 2;
@@ -1308,41 +1308,41 @@ void System__washing_machine_step(int start, int finish, int c_wash,
         ns_St_4_Washing_1 = false;
         ns_St_4_Washing_2 = true;
         ns_St_4_Washing_3 = false;
-        v_130 = wash_power_St_4_Washing;
-        v_136 = wash_state_St_4_Washing;
-        v_160 = nr_St_4_Washing;
-        v_145 = ns_St_4_Washing_1;
-        v_146 = ns_St_4_Washing_2;
-        v_147 = ns_St_4_Washing_3;
+        v_152 = wash_power_St_4_Washing;
+        v_158 = wash_state_St_4_Washing;
+        v_182 = nr_St_4_Washing;
+        v_167 = ns_St_4_Washing_1;
+        v_168 = ns_St_4_Washing_2;
+        v_169 = ns_St_4_Washing_3;
       };
-      v_132 = v_130;
-      v_138 = v_136;
-      v_154 = v_145;
-      v_155 = v_146;
-      v_156 = v_147;
-      v_162 = v_160;
+      v_154 = v_152;
+      v_160 = v_158;
+      v_176 = v_167;
+      v_177 = v_168;
+      v_178 = v_169;
+      v_184 = v_182;
     } else {
       ck_5_3_0_0 = ck_5_3;
       if (ck_5_3_0_0) {
-        v_131 = 0;
-        v_137 = 0;
-        v_161 = true;
-        v_148 = true;
-        v_149 = true;
-        v_150 = true;
+        v_153 = 0;
+        v_159 = 0;
+        v_183 = true;
+        v_170 = true;
+        v_171 = true;
+        v_172 = true;
       } else {
         wash_power_St_4_Water_fill = 15;
-        v_131 = wash_power_St_4_Water_fill;
+        v_153 = wash_power_St_4_Water_fill;
         wash_state_St_4_Water_fill = 1;
-        v_137 = wash_state_St_4_Water_fill;
+        v_159 = wash_state_St_4_Water_fill;
         nr_St_4_Water_fill = false;
-        v_161 = nr_St_4_Water_fill;
+        v_183 = nr_St_4_Water_fill;
         ns_St_4_Water_fill_1 = false;
-        v_148 = ns_St_4_Water_fill_1;
+        v_170 = ns_St_4_Water_fill_1;
         ns_St_4_Water_fill_2 = false;
-        v_149 = ns_St_4_Water_fill_2;
+        v_171 = ns_St_4_Water_fill_2;
         ns_St_4_Water_fill_3 = false;
-        v_150 = ns_St_4_Water_fill_3;
+        v_172 = ns_St_4_Water_fill_3;
         if (ns_St_4_Water_fill_1) {
           ns_St_4_Water_fill_2_1 = ns_St_4_Water_fill_2;
           if (ns_St_4_Water_fill_2_1) {
@@ -1359,19 +1359,19 @@ void System__washing_machine_step(int start, int finish, int c_wash,
           };
         };
       };
-      v_132 = v_131;
-      v_138 = v_137;
-      v_154 = v_148;
-      v_155 = v_149;
-      v_156 = v_150;
-      v_162 = v_161;
+      v_154 = v_153;
+      v_160 = v_159;
+      v_176 = v_170;
+      v_177 = v_171;
+      v_178 = v_172;
+      v_184 = v_183;
     };
-    _out->wash_power = v_132;
-    _out->wash_state = v_138;
-    ns_1 = v_154;
-    ns_2 = v_155;
-    ns_3 = v_156;
-    nr = v_162;
+    _out->wash_power = v_154;
+    _out->wash_state = v_160;
+    ns_1 = v_176;
+    ns_2 = v_177;
+    ns_3 = v_178;
+    nr = v_184;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -1478,22 +1478,44 @@ void System__washing_machine_step(int start, int finish, int c_wash,
     };
   };
   self->pnr = nr;
-  self->v_163 = ns_1;
-  self->v_164 = ns_2;
-  self->v_165 = ns_3;;
+  self->v_185 = ns_1;
+  self->v_186 = ns_2;
+  self->v_187 = ns_3;;
 }
 
 void System__oven_reset(System__oven_mem* self) {
   self->pnr = false;
-  self->v_220 = true;
-  self->v_221 = false;
-  self->v_222 = false;
+  self->v_242 = true;
+  self->v_243 = false;
+  self->v_244 = false;
 }
 
 void System__oven_step(int start, int finish, int temp_ok, int cold,
                        int c_oven, System__oven_out* _out,
                        System__oven_mem* self) {
   
+  int v_241;
+  int v_240;
+  int v_239;
+  int v_238;
+  int v_237;
+  int v_236;
+  int v_235;
+  int v_234;
+  int v_233;
+  int v_232;
+  int v_231;
+  int v_230;
+  int v_229;
+  int v_228;
+  int v_227;
+  int v_226;
+  int v_225;
+  int v_224;
+  int v_223;
+  int v_222;
+  int v_221;
+  int v_220;
   int v_219;
   int v_218;
   int v_217;
@@ -1502,28 +1524,6 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
   int v_214;
   int v_213;
   int v_212;
-  int v_211;
-  int v_210;
-  int v_209;
-  int v_208;
-  int v_207;
-  int v_206;
-  int v_205;
-  int v_204;
-  int v_203;
-  int v_202;
-  int v_201;
-  int v_200;
-  int v_199;
-  int v_198;
-  int v_197;
-  int v_196;
-  int v_195;
-  int v_194;
-  int v_193;
-  int v_192;
-  int v_191;
-  int v_190;
   int ns_St_5_Standby_2_0;
   int ns_St_5_Standby_3_0_0;
   int ns_St_5_Standby_3_0_1;
@@ -1637,26 +1637,26 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
   int v_3;
   int v_2;
   int v_1;
-  int v_242;
-  int v_241;
-  int v_240;
-  int v_239;
-  int v_238;
-  int v_237;
-  int v_236;
-  int v_235;
-  int v_234;
-  int v_233;
-  int v_232;
-  int v_231;
-  int v_230;
-  int v_229;
-  int v_228;
-  int v_227;
-  int v_226;
-  int v_225;
-  int v_224;
-  int v_223;
+  int v_264;
+  int v_263;
+  int v_262;
+  int v_261;
+  int v_260;
+  int v_259;
+  int v_258;
+  int v_257;
+  int v_256;
+  int v_255;
+  int v_254;
+  int v_253;
+  int v_252;
+  int v_251;
+  int v_250;
+  int v_249;
+  int v_248;
+  int v_247;
+  int v_246;
+  int v_245;
   int s_St_5_Standby_2_0;
   int s_St_5_Standby_3_0_0;
   int s_St_5_Standby_3_0_1;
@@ -1736,9 +1736,9 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_220;
-  ck_2 = self->v_221;
-  ck_3 = self->v_222;
+  ck_1 = self->v_242;
+  ck_2 = self->v_243;
+  ck_3 = self->v_244;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -1784,10 +1784,10 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         } else {
           s_St_5_Heat_3 = v_36_3;
         };
-        v_238 = r_St_5_Heat;
-        v_223 = s_St_5_Heat_1;
-        v_224 = s_St_5_Heat_2;
-        v_225 = s_St_5_Heat_3;
+        v_260 = r_St_5_Heat;
+        v_245 = s_St_5_Heat_1;
+        v_246 = s_St_5_Heat_2;
+        v_247 = s_St_5_Heat_3;
       } else {
         if (finish) {
           v_35 = true;
@@ -1806,30 +1806,30 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         } else {
           r_St_5_Maintain = v_35;
         };
-        v_238 = r_St_5_Maintain;
+        v_260 = r_St_5_Maintain;
         if (v_33) {
           s_St_5_Maintain_1 = false;
         } else {
           s_St_5_Maintain_1 = v_34_1;
         };
-        v_223 = s_St_5_Maintain_1;
+        v_245 = s_St_5_Maintain_1;
         if (v_33) {
           s_St_5_Maintain_2 = false;
         } else {
           s_St_5_Maintain_2 = v_34_2;
         };
-        v_224 = s_St_5_Maintain_2;
+        v_246 = s_St_5_Maintain_2;
         if (v_33) {
           s_St_5_Maintain_3 = true;
         } else {
           s_St_5_Maintain_3 = v_34_3;
         };
-        v_225 = s_St_5_Maintain_3;
+        v_247 = s_St_5_Maintain_3;
       };
-      v_232 = v_223;
-      v_233 = v_224;
-      v_234 = v_225;
-      v_240 = v_238;
+      v_254 = v_245;
+      v_255 = v_246;
+      v_256 = v_247;
+      v_262 = v_260;
       if (ck_3_1_1) {
         if (v_36_1) {
           v_36_2_1 = v_36_2;
@@ -1896,10 +1896,10 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
     } else {
       ck_3_1_0 = ck_3;
       if (ck_3_1_0) {
-        v_239 = true;
-        v_226 = true;
-        v_227 = true;
-        v_228 = true;
+        v_261 = true;
+        v_248 = true;
+        v_249 = true;
+        v_250 = true;
       } else {
         v_39 = !(c_oven);
         v_40 = (start&&v_39);
@@ -1920,25 +1920,25 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         } else {
           r_St_5_Off = v_42;
         };
-        v_239 = r_St_5_Off;
+        v_261 = r_St_5_Off;
         if (v_38) {
           s_St_5_Off_1 = true;
         } else {
           s_St_5_Off_1 = v_41_1;
         };
-        v_226 = s_St_5_Off_1;
+        v_248 = s_St_5_Off_1;
         if (v_38) {
           s_St_5_Off_2 = true;
         } else {
           s_St_5_Off_2 = v_41_2;
         };
-        v_227 = s_St_5_Off_2;
+        v_249 = s_St_5_Off_2;
         if (v_38) {
           s_St_5_Off_3 = true;
         } else {
           s_St_5_Off_3 = v_41_3;
         };
-        v_228 = s_St_5_Off_3;
+        v_250 = s_St_5_Off_3;
         if (v_41_1) {
           v_41_2_1 = v_41_2;
           if (v_41_2_1) {
@@ -1970,23 +1970,23 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
           };
         };
       };
-      v_232 = v_226;
-      v_233 = v_227;
-      v_234 = v_228;
-      v_240 = v_239;
+      v_254 = v_248;
+      v_255 = v_249;
+      v_256 = v_250;
+      v_262 = v_261;
     };
-    s_1 = v_232;
-    s_2 = v_233;
-    s_3 = v_234;
-    r = v_240;
+    s_1 = v_254;
+    s_2 = v_255;
+    s_3 = v_256;
+    r = v_262;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
       ck_3_0_1 = ck_3;
-      v_235 = true;
-      v_236 = true;
-      v_237 = true;
-      v_242 = true;
+      v_257 = true;
+      v_258 = true;
+      v_259 = true;
+      v_264 = true;
     } else {
       ck_3_0_0 = ck_3;
       if (ck_3_0_0) {
@@ -2030,10 +2030,10 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         } else {
           s_St_5_Reheat_3 = v_3;
         };
-        v_241 = r_St_5_Reheat;
-        v_229 = s_St_5_Reheat_1;
-        v_230 = s_St_5_Reheat_2;
-        v_231 = s_St_5_Reheat_3;
+        v_263 = r_St_5_Reheat;
+        v_251 = s_St_5_Reheat_1;
+        v_252 = s_St_5_Reheat_2;
+        v_253 = s_St_5_Reheat_3;
         if (v_1) {
           v_2_1 = v_2;
           if (v_2_1) {
@@ -2055,35 +2055,35 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         } else {
           r_St_5_Standby = self->pnr;
         };
-        v_241 = r_St_5_Standby;
+        v_263 = r_St_5_Standby;
         if (c_oven) {
           s_St_5_Standby_1 = true;
         } else {
           s_St_5_Standby_1 = false;
         };
-        v_229 = s_St_5_Standby_1;
+        v_251 = s_St_5_Standby_1;
         if (c_oven) {
           s_St_5_Standby_2 = true;
         } else {
           s_St_5_Standby_2 = false;
         };
-        v_230 = s_St_5_Standby_2;
+        v_252 = s_St_5_Standby_2;
         if (c_oven) {
           s_St_5_Standby_3 = true;
         } else {
           s_St_5_Standby_3 = false;
         };
-        v_231 = s_St_5_Standby_3;
+        v_253 = s_St_5_Standby_3;
       };
-      v_235 = v_229;
-      v_236 = v_230;
-      v_237 = v_231;
-      v_242 = v_241;
+      v_257 = v_251;
+      v_258 = v_252;
+      v_259 = v_253;
+      v_264 = v_263;
     };
-    s_1 = v_235;
-    s_2 = v_236;
-    s_3 = v_237;
-    r = v_242;
+    s_1 = v_257;
+    s_2 = v_258;
+    s_3 = v_259;
+    r = v_264;
   };
   ck_6_1 = s_1;
   ck_6_2 = s_2;
@@ -2099,32 +2099,32 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         ns_St_5_Heat_1 = true;
         ns_St_5_Heat_2 = true;
         ns_St_5_Heat_3 = true;
-        v_190 = oven_power_St_5_Heat;
-        v_195 = oven_state_St_5_Heat;
-        v_215 = nr_St_5_Heat;
-        v_200 = ns_St_5_Heat_1;
-        v_201 = ns_St_5_Heat_2;
-        v_202 = ns_St_5_Heat_3;
+        v_212 = oven_power_St_5_Heat;
+        v_217 = oven_state_St_5_Heat;
+        v_237 = nr_St_5_Heat;
+        v_222 = ns_St_5_Heat_1;
+        v_223 = ns_St_5_Heat_2;
+        v_224 = ns_St_5_Heat_3;
       } else {
         oven_power_St_5_Maintain = 300;
-        v_190 = oven_power_St_5_Maintain;
+        v_212 = oven_power_St_5_Maintain;
         oven_state_St_5_Maintain = 2;
-        v_195 = oven_state_St_5_Maintain;
+        v_217 = oven_state_St_5_Maintain;
         nr_St_5_Maintain = false;
-        v_215 = nr_St_5_Maintain;
+        v_237 = nr_St_5_Maintain;
         ns_St_5_Maintain_1 = true;
-        v_200 = ns_St_5_Maintain_1;
+        v_222 = ns_St_5_Maintain_1;
         ns_St_5_Maintain_2 = true;
-        v_201 = ns_St_5_Maintain_2;
+        v_223 = ns_St_5_Maintain_2;
         ns_St_5_Maintain_3 = false;
-        v_202 = ns_St_5_Maintain_3;
+        v_224 = ns_St_5_Maintain_3;
       };
-      v_192 = v_190;
-      v_197 = v_195;
-      v_209 = v_200;
-      v_210 = v_201;
-      v_211 = v_202;
-      v_217 = v_215;
+      v_214 = v_212;
+      v_219 = v_217;
+      v_231 = v_222;
+      v_232 = v_223;
+      v_233 = v_224;
+      v_239 = v_237;
       if (ck_6_3_1_1) {
         if (ns_St_5_Heat_1) {
           ns_St_5_Heat_2_1 = ns_St_5_Heat_2;
@@ -2161,25 +2161,25 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
     } else {
       ck_6_3_1_0 = ck_6_3;
       if (ck_6_3_1_0) {
-        v_191 = 0;
-        v_196 = 0;
-        v_216 = true;
-        v_203 = true;
-        v_204 = true;
-        v_205 = true;
+        v_213 = 0;
+        v_218 = 0;
+        v_238 = true;
+        v_225 = true;
+        v_226 = true;
+        v_227 = true;
       } else {
         oven_power_St_5_Off = 0;
-        v_191 = oven_power_St_5_Off;
+        v_213 = oven_power_St_5_Off;
         oven_state_St_5_Off = 0;
-        v_196 = oven_state_St_5_Off;
+        v_218 = oven_state_St_5_Off;
         nr_St_5_Off = false;
-        v_216 = nr_St_5_Off;
+        v_238 = nr_St_5_Off;
         ns_St_5_Off_1 = true;
-        v_203 = ns_St_5_Off_1;
+        v_225 = ns_St_5_Off_1;
         ns_St_5_Off_2 = false;
-        v_204 = ns_St_5_Off_2;
+        v_226 = ns_St_5_Off_2;
         ns_St_5_Off_3 = false;
-        v_205 = ns_St_5_Off_3;
+        v_227 = ns_St_5_Off_3;
         if (ns_St_5_Off_1) {
           ns_St_5_Off_2_1 = ns_St_5_Off_2;
           if (ns_St_5_Off_2_1) {
@@ -2196,29 +2196,29 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
           };
         };
       };
-      v_192 = v_191;
-      v_197 = v_196;
-      v_209 = v_203;
-      v_210 = v_204;
-      v_211 = v_205;
-      v_217 = v_216;
+      v_214 = v_213;
+      v_219 = v_218;
+      v_231 = v_225;
+      v_232 = v_226;
+      v_233 = v_227;
+      v_239 = v_238;
     };
-    _out->oven_power = v_192;
-    _out->oven_state = v_197;
-    ns_1 = v_209;
-    ns_2 = v_210;
-    ns_3 = v_211;
-    nr = v_217;
+    _out->oven_power = v_214;
+    _out->oven_state = v_219;
+    ns_1 = v_231;
+    ns_2 = v_232;
+    ns_3 = v_233;
+    nr = v_239;
   } else {
     ck_6_2_0 = ck_6_2;
     if (ck_6_2_0) {
       ck_6_3_0_1 = ck_6_3;
-      v_194 = 0;
-      v_199 = 0;
-      v_212 = true;
-      v_213 = true;
-      v_214 = true;
-      v_219 = true;
+      v_216 = 0;
+      v_221 = 0;
+      v_234 = true;
+      v_235 = true;
+      v_236 = true;
+      v_241 = true;
     } else {
       ck_6_3_0_0 = ck_6_3;
       if (ck_6_3_0_0) {
@@ -2228,39 +2228,39 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
         ns_St_5_Reheat_1 = false;
         ns_St_5_Reheat_2 = false;
         ns_St_5_Reheat_3 = true;
-        v_193 = oven_power_St_5_Reheat;
-        v_198 = oven_state_St_5_Reheat;
-        v_218 = nr_St_5_Reheat;
-        v_206 = ns_St_5_Reheat_1;
-        v_207 = ns_St_5_Reheat_2;
-        v_208 = ns_St_5_Reheat_3;
+        v_215 = oven_power_St_5_Reheat;
+        v_220 = oven_state_St_5_Reheat;
+        v_240 = nr_St_5_Reheat;
+        v_228 = ns_St_5_Reheat_1;
+        v_229 = ns_St_5_Reheat_2;
+        v_230 = ns_St_5_Reheat_3;
       } else {
         oven_power_St_5_Standby = 0;
-        v_193 = oven_power_St_5_Standby;
+        v_215 = oven_power_St_5_Standby;
         oven_state_St_5_Standby = 4;
-        v_198 = oven_state_St_5_Standby;
+        v_220 = oven_state_St_5_Standby;
         nr_St_5_Standby = false;
-        v_218 = nr_St_5_Standby;
+        v_240 = nr_St_5_Standby;
         ns_St_5_Standby_1 = false;
-        v_206 = ns_St_5_Standby_1;
+        v_228 = ns_St_5_Standby_1;
         ns_St_5_Standby_2 = false;
-        v_207 = ns_St_5_Standby_2;
+        v_229 = ns_St_5_Standby_2;
         ns_St_5_Standby_3 = false;
-        v_208 = ns_St_5_Standby_3;
+        v_230 = ns_St_5_Standby_3;
       };
-      v_194 = v_193;
-      v_199 = v_198;
-      v_212 = v_206;
-      v_213 = v_207;
-      v_214 = v_208;
-      v_219 = v_218;
+      v_216 = v_215;
+      v_221 = v_220;
+      v_234 = v_228;
+      v_235 = v_229;
+      v_236 = v_230;
+      v_241 = v_240;
     };
-    _out->oven_power = v_194;
-    _out->oven_state = v_199;
-    ns_1 = v_212;
-    ns_2 = v_213;
-    ns_3 = v_214;
-    nr = v_219;
+    _out->oven_power = v_216;
+    _out->oven_state = v_221;
+    ns_1 = v_234;
+    ns_2 = v_235;
+    ns_3 = v_236;
+    nr = v_241;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -2367,31 +2367,31 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
     };
   };
   self->pnr = nr;
-  self->v_220 = ns_1;
-  self->v_221 = ns_2;
-  self->v_222 = ns_3;;
+  self->v_242 = ns_1;
+  self->v_243 = ns_2;
+  self->v_244 = ns_3;;
 }
 
 void System__management_policy_reset(System__management_policy_mem* self) {
   self->pnr = false;
-  self->v_253 = false;
-  self->v_254 = false;
+  self->v_275 = false;
+  self->v_276 = false;
 }
 
 void System__management_policy_step(int eco_input, int comfort_input,
                                     System__management_policy_out* _out,
                                     System__management_policy_mem* self) {
   
-  int v_252;
-  int v_251;
-  int v_250;
-  int v_249;
-  int v_248;
-  int v_247;
-  int v_246;
-  int v_245;
-  int v_244;
-  int v_243;
+  int v_274;
+  int v_273;
+  int v_272;
+  int v_271;
+  int v_270;
+  int v_269;
+  int v_268;
+  int v_267;
+  int v_266;
+  int v_265;
   int ns_St_6_Comfort_2_0;
   int ns_St_6_Comfort_2_1;
   int mode_St_6_Comfort_2_0;
@@ -2438,12 +2438,12 @@ void System__management_policy_step(int eco_input, int comfort_input,
   int v_43;
   int v_2;
   int v_1;
-  int v_260;
-  int v_259;
-  int v_258;
-  int v_257;
-  int v_256;
-  int v_255;
+  int v_282;
+  int v_281;
+  int v_280;
+  int v_279;
+  int v_278;
+  int v_277;
   int s_St_6_Comfort_2_0;
   int s_St_6_Comfort_2_1;
   int s_St_6_Eco_2_0;
@@ -2475,8 +2475,8 @@ void System__management_policy_step(int eco_input, int comfort_input,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_253;
-  ck_2 = self->v_254;
+  ck_1 = self->v_275;
+  ck_2 = self->v_276;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -2490,7 +2490,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         r_St_6_Comfort = v_43;
       };
-      v_259 = r_St_6_Comfort;
+      v_281 = r_St_6_Comfort;
       if (comfort_input) {
         v_1 = false;
       } else {
@@ -2501,7 +2501,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         s_St_6_Comfort_1 = v_1;
       };
-      v_255 = s_St_6_Comfort_1;
+      v_277 = s_St_6_Comfort_1;
       if (comfort_input) {
         v_2 = false;
       } else {
@@ -2512,7 +2512,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         s_St_6_Comfort_2 = v_2;
       };
-      v_256 = s_St_6_Comfort_2;
+      v_278 = s_St_6_Comfort_2;
     } else {
       if (comfort_input) {
         v_45 = true;
@@ -2544,19 +2544,19 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         s_St_6_Eco_2 = v_44_2;
       };
-      v_259 = r_St_6_Eco;
-      v_255 = s_St_6_Eco_1;
-      v_256 = s_St_6_Eco_2;
+      v_281 = r_St_6_Eco;
+      v_277 = s_St_6_Eco_1;
+      v_278 = s_St_6_Eco_2;
     };
-    s_1 = v_255;
-    s_2 = v_256;
-    r = v_259;
+    s_1 = v_277;
+    s_2 = v_278;
+    r = v_281;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
-      v_260 = true;
-      v_257 = true;
-      v_258 = true;
+      v_282 = true;
+      v_279 = true;
+      v_280 = true;
     } else {
       if (comfort_input) {
         v_47 = true;
@@ -2568,7 +2568,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         r_St_6_Minimal_safety = v_47;
       };
-      v_260 = r_St_6_Minimal_safety;
+      v_282 = r_St_6_Minimal_safety;
       if (comfort_input) {
         v_46_1 = true;
       } else {
@@ -2579,7 +2579,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         s_St_6_Minimal_safety_1 = v_46_1;
       };
-      v_257 = s_St_6_Minimal_safety_1;
+      v_279 = s_St_6_Minimal_safety_1;
       if (comfort_input) {
         v_46_2 = true;
       } else {
@@ -2590,7 +2590,7 @@ void System__management_policy_step(int eco_input, int comfort_input,
       } else {
         s_St_6_Minimal_safety_2 = v_46_2;
       };
-      v_258 = s_St_6_Minimal_safety_2;
+      v_280 = s_St_6_Minimal_safety_2;
       if (v_46_1) {
         v_46_2_1 = v_46_2;
       } else {
@@ -2602,9 +2602,9 @@ void System__management_policy_step(int eco_input, int comfort_input,
         s_St_6_Minimal_safety_2_0 = s_St_6_Minimal_safety_2;
       };
     };
-    s_1 = v_257;
-    s_2 = v_258;
-    r = v_260;
+    s_1 = v_279;
+    s_2 = v_280;
+    r = v_282;
   };
   ck_7_1 = s_1;
   ck_7_2 = s_2;
@@ -2612,51 +2612,51 @@ void System__management_policy_step(int eco_input, int comfort_input,
     ck_7_2_1 = ck_7_2;
     if (ck_7_2_1) {
       mode_St_6_Comfort_1 = true;
-      v_243 = mode_St_6_Comfort_1;
+      v_265 = mode_St_6_Comfort_1;
       mode_St_6_Comfort_2 = true;
-      v_244 = mode_St_6_Comfort_2;
+      v_266 = mode_St_6_Comfort_2;
       nr_St_6_Comfort = false;
-      v_251 = nr_St_6_Comfort;
+      v_273 = nr_St_6_Comfort;
       ns_St_6_Comfort_1 = true;
-      v_247 = ns_St_6_Comfort_1;
+      v_269 = ns_St_6_Comfort_1;
       ns_St_6_Comfort_2 = true;
-      v_248 = ns_St_6_Comfort_2;
+      v_270 = ns_St_6_Comfort_2;
     } else {
       mode_St_6_Eco_1 = true;
       mode_St_6_Eco_2 = false;
       nr_St_6_Eco = false;
       ns_St_6_Eco_1 = true;
       ns_St_6_Eco_2 = false;
-      v_243 = mode_St_6_Eco_1;
-      v_244 = mode_St_6_Eco_2;
-      v_251 = nr_St_6_Eco;
-      v_247 = ns_St_6_Eco_1;
-      v_248 = ns_St_6_Eco_2;
+      v_265 = mode_St_6_Eco_1;
+      v_266 = mode_St_6_Eco_2;
+      v_273 = nr_St_6_Eco;
+      v_269 = ns_St_6_Eco_1;
+      v_270 = ns_St_6_Eco_2;
     };
-    _out->mode_1 = v_243;
-    _out->mode_2 = v_244;
-    ns_1 = v_247;
-    ns_2 = v_248;
-    nr = v_251;
+    _out->mode_1 = v_265;
+    _out->mode_2 = v_266;
+    ns_1 = v_269;
+    ns_2 = v_270;
+    nr = v_273;
   } else {
     ck_7_2_0 = ck_7_2;
     if (ck_7_2_0) {
-      v_245 = true;
-      v_246 = true;
-      v_252 = true;
-      v_249 = true;
-      v_250 = true;
+      v_267 = true;
+      v_268 = true;
+      v_274 = true;
+      v_271 = true;
+      v_272 = true;
     } else {
       mode_St_6_Minimal_safety_1 = false;
-      v_245 = mode_St_6_Minimal_safety_1;
+      v_267 = mode_St_6_Minimal_safety_1;
       mode_St_6_Minimal_safety_2 = false;
-      v_246 = mode_St_6_Minimal_safety_2;
+      v_268 = mode_St_6_Minimal_safety_2;
       nr_St_6_Minimal_safety = false;
-      v_252 = nr_St_6_Minimal_safety;
+      v_274 = nr_St_6_Minimal_safety;
       ns_St_6_Minimal_safety_1 = false;
-      v_249 = ns_St_6_Minimal_safety_1;
+      v_271 = ns_St_6_Minimal_safety_1;
       ns_St_6_Minimal_safety_2 = false;
-      v_250 = ns_St_6_Minimal_safety_2;
+      v_272 = ns_St_6_Minimal_safety_2;
       if (mode_St_6_Minimal_safety_1) {
         mode_St_6_Minimal_safety_2_1 = mode_St_6_Minimal_safety_2;
       } else {
@@ -2668,11 +2668,11 @@ void System__management_policy_step(int eco_input, int comfort_input,
         ns_St_6_Minimal_safety_2_0 = ns_St_6_Minimal_safety_2;
       };
     };
-    _out->mode_1 = v_245;
-    _out->mode_2 = v_246;
-    ns_1 = v_249;
-    ns_2 = v_250;
-    nr = v_252;
+    _out->mode_1 = v_267;
+    _out->mode_2 = v_268;
+    ns_1 = v_271;
+    ns_2 = v_272;
+    nr = v_274;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -2740,8 +2740,8 @@ void System__management_policy_step(int eco_input, int comfort_input,
     };
   };
   self->pnr = nr;
-  self->v_253 = ns_1;
-  self->v_254 = ns_2;;
+  self->v_275 = ns_1;
+  self->v_276 = ns_2;;
 }
 
 void System__porta_reset(System__porta_mem* self) {
@@ -2759,8 +2759,6 @@ void System__porta_step(int push, int c_porta, System__porta_out* _out,
   int ns_St_7_Closed_1;
   int porta_open_St_7_Closed;
   int ck_8_1;
-  int v_49;
-  int v_48;
   int v;
   int r_St_7_Open;
   int s_St_7_Open_1;
@@ -2771,8 +2769,8 @@ void System__porta_step(int push, int c_porta, System__porta_out* _out,
   int r;
   int nr;
   if (self->ck_1) {
-    v_49 = (push&&c_porta);
-    if (v_49) {
+    v = !(c_porta);
+    if (v) {
       r_St_7_Closed = true;
       s_St_7_Closed_1 = false;
     } else {
@@ -2782,15 +2780,13 @@ void System__porta_step(int push, int c_porta, System__porta_out* _out,
     r = r_St_7_Closed;
     s_1 = s_St_7_Closed_1;
   } else {
-    v = !(c_porta);
-    v_48 = (push||v);
-    if (v_48) {
+    if (c_porta) {
       r_St_7_Open = true;
     } else {
       r_St_7_Open = self->pnr;
     };
     r = r_St_7_Open;
-    if (v_48) {
+    if (c_porta) {
       s_St_7_Open_1 = true;
     } else {
       s_St_7_Open_1 = false;
@@ -2971,7 +2967,6 @@ void System__pessoas_step(int arrived, System__pessoas_out* _out,
   int ns_St_10_Not_Present_1;
   int presence_St_10_Not_Present;
   int ck_11_1;
-  int v;
   int r_St_10_Preent;
   int s_St_10_Preent_1;
   int r_St_10_Not_Present;
@@ -2991,14 +2986,13 @@ void System__pessoas_step(int arrived, System__pessoas_out* _out,
     r = r_St_10_Not_Present;
     s_1 = s_St_10_Not_Present_1;
   } else {
-    v = !(arrived);
-    if (v) {
+    if (arrived) {
       r_St_10_Preent = true;
     } else {
       r_St_10_Preent = self->pnr;
     };
     r = r_St_10_Preent;
-    if (v) {
+    if (arrived) {
       s_St_10_Preent_1 = true;
     } else {
       s_St_10_Preent_1 = false;
@@ -3165,21 +3159,21 @@ void System__janelas_step(int c, System__janelas_out* _out,
 
 void System__luzes_reset(System__luzes_mem* self) {
   self->pnr = false;
-  self->v_269 = true;
-  self->v_270 = false;
+  self->v_291 = true;
+  self->v_292 = false;
 }
 
 void System__luzes_step(int c1, int c2, System__luzes_out* _out,
                         System__luzes_mem* self) {
   
-  int v_268;
-  int v_267;
-  int v_266;
-  int v_265;
-  int v_264;
-  int v_263;
-  int v_262;
-  int v_261;
+  int v_290;
+  int v_289;
+  int v_288;
+  int v_287;
+  int v_286;
+  int v_285;
+  int v_284;
+  int v_283;
   int ns_St_13_All_2_0;
   int ns_St_13_All_2_1;
   int ns_St_13_Some_2_0;
@@ -3202,30 +3196,30 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
   int l_state_St_13_None;
   int ck_14_2;
   int ck_14_1;
-  int v_56_2_0;
-  int v_56_2_1;
-  int v_57;
-  int v_56_2;
-  int v_56_1;
   int v_54_2_0;
   int v_54_2_1;
   int v_55;
   int v_54_2;
   int v_54_1;
+  int v_52_2_0;
+  int v_52_2_1;
   int v_53;
-  int v_51_2_0;
-  int v_51_2_1;
-  int v_52;
-  int v_51_2;
-  int v_51_1;
+  int v_52_2;
+  int v_52_1;
+  int v_51;
+  int v_49_2_0;
+  int v_49_2_1;
   int v_50;
+  int v_49_2;
+  int v_49_1;
+  int v_48;
   int v;
-  int v_276;
-  int v_275;
-  int v_274;
-  int v_273;
-  int v_272;
-  int v_271;
+  int v_298;
+  int v_297;
+  int v_296;
+  int v_295;
+  int v_294;
+  int v_293;
   int s_St_13_All_2_0;
   int s_St_13_All_2_1;
   int s_St_13_Some_2_0;
@@ -3255,122 +3249,122 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_269;
-  ck_2 = self->v_270;
+  ck_1 = self->v_291;
+  ck_2 = self->v_292;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
-      v_50 = !(c2);
-      if (v_50) {
-        v_52 = true;
-        v_51_1 = true;
-        v_51_2 = false;
+      v_48 = !(c2);
+      if (v_48) {
+        v_50 = true;
+        v_49_1 = true;
+        v_49_2 = false;
       } else {
-        v_52 = self->pnr;
-        v_51_1 = true;
-        v_51_2 = true;
+        v_50 = self->pnr;
+        v_49_1 = true;
+        v_49_2 = true;
       };
       v = !(c1);
       if (v) {
         r_St_13_All = true;
       } else {
-        r_St_13_All = v_52;
+        r_St_13_All = v_50;
       };
-      v_275 = r_St_13_All;
+      v_297 = r_St_13_All;
       if (v) {
         s_St_13_All_1 = false;
       } else {
-        s_St_13_All_1 = v_51_1;
+        s_St_13_All_1 = v_49_1;
       };
-      v_271 = s_St_13_All_1;
+      v_293 = s_St_13_All_1;
       if (v) {
         s_St_13_All_2 = false;
       } else {
-        s_St_13_All_2 = v_51_2;
+        s_St_13_All_2 = v_49_2;
       };
-      v_272 = s_St_13_All_2;
+      v_294 = s_St_13_All_2;
     } else {
       if (c2) {
-        v_57 = true;
+        v_55 = true;
       } else {
-        v_57 = self->pnr;
+        v_55 = self->pnr;
       };
       if (c1) {
         r_St_13_None = true;
       } else {
-        r_St_13_None = v_57;
+        r_St_13_None = v_55;
       };
       if (c2) {
-        v_56_1 = true;
+        v_54_1 = true;
       } else {
-        v_56_1 = true;
+        v_54_1 = true;
       };
       if (c1) {
         s_St_13_None_1 = false;
       } else {
-        s_St_13_None_1 = v_56_1;
+        s_St_13_None_1 = v_54_1;
       };
       if (c2) {
-        v_56_2 = true;
+        v_54_2 = true;
       } else {
-        v_56_2 = false;
+        v_54_2 = false;
       };
       if (c1) {
         s_St_13_None_2 = false;
       } else {
-        s_St_13_None_2 = v_56_2;
+        s_St_13_None_2 = v_54_2;
       };
-      v_275 = r_St_13_None;
-      v_271 = s_St_13_None_1;
-      v_272 = s_St_13_None_2;
-      if (v_56_1) {
-        v_56_2_1 = v_56_2;
-      } else {
-        v_56_2_0 = v_56_2;
-      };
-    };
-    s_1 = v_271;
-    s_2 = v_272;
-    r = v_275;
-  } else {
-    ck_2_0 = ck_2;
-    if (ck_2_0) {
-      v_276 = true;
-      v_273 = true;
-      v_274 = true;
-    } else {
-      if (c2) {
-        v_55 = true;
-        v_54_1 = true;
-        v_54_2 = true;
-      } else {
-        v_55 = self->pnr;
-        v_54_1 = false;
-        v_54_2 = false;
-      };
-      v_53 = !(c1);
-      if (v_53) {
-        r_St_13_Some = true;
-      } else {
-        r_St_13_Some = v_55;
-      };
-      v_276 = r_St_13_Some;
-      if (v_53) {
-        s_St_13_Some_1 = true;
-      } else {
-        s_St_13_Some_1 = v_54_1;
-      };
-      v_273 = s_St_13_Some_1;
-      if (v_53) {
-        s_St_13_Some_2 = false;
-      } else {
-        s_St_13_Some_2 = v_54_2;
-      };
-      v_274 = s_St_13_Some_2;
+      v_297 = r_St_13_None;
+      v_293 = s_St_13_None_1;
+      v_294 = s_St_13_None_2;
       if (v_54_1) {
         v_54_2_1 = v_54_2;
       } else {
         v_54_2_0 = v_54_2;
+      };
+    };
+    s_1 = v_293;
+    s_2 = v_294;
+    r = v_297;
+  } else {
+    ck_2_0 = ck_2;
+    if (ck_2_0) {
+      v_298 = true;
+      v_295 = true;
+      v_296 = true;
+    } else {
+      if (c2) {
+        v_53 = true;
+        v_52_1 = true;
+        v_52_2 = true;
+      } else {
+        v_53 = self->pnr;
+        v_52_1 = false;
+        v_52_2 = false;
+      };
+      v_51 = !(c1);
+      if (v_51) {
+        r_St_13_Some = true;
+      } else {
+        r_St_13_Some = v_53;
+      };
+      v_298 = r_St_13_Some;
+      if (v_51) {
+        s_St_13_Some_1 = true;
+      } else {
+        s_St_13_Some_1 = v_52_1;
+      };
+      v_295 = s_St_13_Some_1;
+      if (v_51) {
+        s_St_13_Some_2 = false;
+      } else {
+        s_St_13_Some_2 = v_52_2;
+      };
+      v_296 = s_St_13_Some_2;
+      if (v_52_1) {
+        v_52_2_1 = v_52_2;
+      } else {
+        v_52_2_0 = v_52_2;
       };
       if (s_St_13_Some_1) {
         s_St_13_Some_2_1 = s_St_13_Some_2;
@@ -3378,9 +3372,9 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
         s_St_13_Some_2_0 = s_St_13_Some_2;
       };
     };
-    s_1 = v_273;
-    s_2 = v_274;
-    r = v_276;
+    s_1 = v_295;
+    s_2 = v_296;
+    r = v_298;
   };
   ck_14_1 = s_1;
   ck_14_2 = s_2;
@@ -3388,53 +3382,53 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
     ck_14_2_1 = ck_14_2;
     if (ck_14_2_1) {
       l_state_St_13_All = 2;
-      v_261 = l_state_St_13_All;
+      v_283 = l_state_St_13_All;
       nr_St_13_All = false;
-      v_267 = nr_St_13_All;
+      v_289 = nr_St_13_All;
       ns_St_13_All_1 = true;
-      v_263 = ns_St_13_All_1;
+      v_285 = ns_St_13_All_1;
       ns_St_13_All_2 = true;
-      v_264 = ns_St_13_All_2;
+      v_286 = ns_St_13_All_2;
     } else {
       l_state_St_13_None = 0;
       nr_St_13_None = false;
       ns_St_13_None_1 = true;
       ns_St_13_None_2 = false;
-      v_261 = l_state_St_13_None;
-      v_267 = nr_St_13_None;
-      v_263 = ns_St_13_None_1;
-      v_264 = ns_St_13_None_2;
+      v_283 = l_state_St_13_None;
+      v_289 = nr_St_13_None;
+      v_285 = ns_St_13_None_1;
+      v_286 = ns_St_13_None_2;
     };
-    _out->l_state = v_261;
-    ns_1 = v_263;
-    ns_2 = v_264;
-    nr = v_267;
+    _out->l_state = v_283;
+    ns_1 = v_285;
+    ns_2 = v_286;
+    nr = v_289;
   } else {
     ck_14_2_0 = ck_14_2;
     if (ck_14_2_0) {
-      v_262 = 0;
-      v_268 = true;
-      v_265 = true;
-      v_266 = true;
+      v_284 = 0;
+      v_290 = true;
+      v_287 = true;
+      v_288 = true;
     } else {
       l_state_St_13_Some = 1;
-      v_262 = l_state_St_13_Some;
+      v_284 = l_state_St_13_Some;
       nr_St_13_Some = false;
-      v_268 = nr_St_13_Some;
+      v_290 = nr_St_13_Some;
       ns_St_13_Some_1 = false;
-      v_265 = ns_St_13_Some_1;
+      v_287 = ns_St_13_Some_1;
       ns_St_13_Some_2 = false;
-      v_266 = ns_St_13_Some_2;
+      v_288 = ns_St_13_Some_2;
       if (ns_St_13_Some_1) {
         ns_St_13_Some_2_1 = ns_St_13_Some_2;
       } else {
         ns_St_13_Some_2_0 = ns_St_13_Some_2;
       };
     };
-    _out->l_state = v_262;
-    ns_1 = v_265;
-    ns_2 = v_266;
-    nr = v_268;
+    _out->l_state = v_284;
+    ns_1 = v_287;
+    ns_2 = v_288;
+    nr = v_290;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -3463,10 +3457,10 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
   };
   if (ck_1) {
     if (ck_2_1) {
-      if (v_51_1) {
-        v_51_2_1 = v_51_2;
+      if (v_49_1) {
+        v_49_2_1 = v_49_2;
       } else {
-        v_51_2_0 = v_51_2;
+        v_49_2_0 = v_49_2;
       };
       if (s_St_13_All_1) {
         s_St_13_All_2_1 = s_St_13_All_2;
@@ -3482,27 +3476,27 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
     };
   };
   self->pnr = nr;
-  self->v_269 = ns_1;
-  self->v_270 = ns_2;;
+  self->v_291 = ns_1;
+  self->v_292 = ns_2;;
 }
 
 void System__persianas_reset(System__persianas_mem* self) {
   self->pnr = false;
-  self->v_285 = true;
-  self->v_286 = true;
+  self->v_307 = true;
+  self->v_308 = true;
 }
 
 void System__persianas_step(int c1, int c2, System__persianas_out* _out,
                             System__persianas_mem* self) {
   
-  int v_284;
-  int v_283;
-  int v_282;
-  int v_281;
-  int v_280;
-  int v_279;
-  int v_278;
-  int v_277;
+  int v_306;
+  int v_305;
+  int v_304;
+  int v_303;
+  int v_302;
+  int v_301;
+  int v_300;
+  int v_299;
   int ns_St_14_Up_2_0;
   int ns_St_14_Up_2_1;
   int ns_St_14_Mid_2_0;
@@ -3525,30 +3519,30 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
   int p_state_St_14_Down;
   int ck_15_2;
   int ck_15_1;
-  int v_64_2_0;
-  int v_64_2_1;
-  int v_65;
-  int v_64_2;
-  int v_64_1;
   int v_62_2_0;
   int v_62_2_1;
   int v_63;
   int v_62_2;
   int v_62_1;
+  int v_60_2_0;
+  int v_60_2_1;
   int v_61;
-  int v_59_2_0;
-  int v_59_2_1;
-  int v_60;
-  int v_59_2;
-  int v_59_1;
+  int v_60_2;
+  int v_60_1;
+  int v_59;
+  int v_57_2_0;
+  int v_57_2_1;
   int v_58;
+  int v_57_2;
+  int v_57_1;
+  int v_56;
   int v;
-  int v_292;
-  int v_291;
-  int v_290;
-  int v_289;
-  int v_288;
-  int v_287;
+  int v_314;
+  int v_313;
+  int v_312;
+  int v_311;
+  int v_310;
+  int v_309;
   int s_St_14_Up_2_0;
   int s_St_14_Up_2_1;
   int s_St_14_Mid_2_0;
@@ -3578,48 +3572,48 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_285;
-  ck_2 = self->v_286;
+  ck_1 = self->v_307;
+  ck_2 = self->v_308;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
       if (c2) {
-        v_65 = true;
+        v_63 = true;
       } else {
-        v_65 = self->pnr;
+        v_63 = self->pnr;
       };
       if (c1) {
         r_St_14_Down = true;
       } else {
-        r_St_14_Down = v_65;
+        r_St_14_Down = v_63;
       };
       if (c2) {
-        v_64_1 = false;
+        v_62_1 = false;
       } else {
-        v_64_1 = true;
+        v_62_1 = true;
       };
       if (c1) {
         s_St_14_Down_1 = true;
       } else {
-        s_St_14_Down_1 = v_64_1;
+        s_St_14_Down_1 = v_62_1;
       };
       if (c2) {
-        v_64_2 = false;
+        v_62_2 = false;
       } else {
-        v_64_2 = true;
+        v_62_2 = true;
       };
       if (c1) {
         s_St_14_Down_2 = false;
       } else {
-        s_St_14_Down_2 = v_64_2;
+        s_St_14_Down_2 = v_62_2;
       };
-      v_291 = r_St_14_Down;
-      v_287 = s_St_14_Down_1;
-      v_288 = s_St_14_Down_2;
-      if (v_64_1) {
-        v_64_2_1 = v_64_2;
+      v_313 = r_St_14_Down;
+      v_309 = s_St_14_Down_1;
+      v_310 = s_St_14_Down_2;
+      if (v_62_1) {
+        v_62_2_1 = v_62_2;
       } else {
-        v_64_2_0 = v_64_2;
+        v_62_2_0 = v_62_2;
       };
       if (s_St_14_Down_1) {
         s_St_14_Down_2_1 = s_St_14_Down_2;
@@ -3628,37 +3622,37 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
       };
     } else {
       if (c2) {
-        v_63 = true;
-        v_62_1 = false;
-        v_62_2 = false;
+        v_61 = true;
+        v_60_1 = false;
+        v_60_2 = false;
       } else {
-        v_63 = self->pnr;
-        v_62_1 = true;
-        v_62_2 = false;
+        v_61 = self->pnr;
+        v_60_1 = true;
+        v_60_2 = false;
       };
-      v_61 = !(c1);
-      if (v_61) {
+      v_59 = !(c1);
+      if (v_59) {
         r_St_14_Mid = true;
       } else {
-        r_St_14_Mid = v_63;
+        r_St_14_Mid = v_61;
       };
-      v_291 = r_St_14_Mid;
-      if (v_61) {
+      v_313 = r_St_14_Mid;
+      if (v_59) {
         s_St_14_Mid_1 = true;
       } else {
-        s_St_14_Mid_1 = v_62_1;
+        s_St_14_Mid_1 = v_60_1;
       };
-      v_287 = s_St_14_Mid_1;
-      if (v_61) {
+      v_309 = s_St_14_Mid_1;
+      if (v_59) {
         s_St_14_Mid_2 = true;
       } else {
-        s_St_14_Mid_2 = v_62_2;
+        s_St_14_Mid_2 = v_60_2;
       };
-      v_288 = s_St_14_Mid_2;
-      if (v_62_1) {
-        v_62_2_1 = v_62_2;
+      v_310 = s_St_14_Mid_2;
+      if (v_60_1) {
+        v_60_2_1 = v_60_2;
       } else {
-        v_62_2_0 = v_62_2;
+        v_60_2_0 = v_60_2;
       };
       if (s_St_14_Mid_1) {
         s_St_14_Mid_2_1 = s_St_14_Mid_2;
@@ -3666,49 +3660,49 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
         s_St_14_Mid_2_0 = s_St_14_Mid_2;
       };
     };
-    s_1 = v_287;
-    s_2 = v_288;
-    r = v_291;
+    s_1 = v_309;
+    s_2 = v_310;
+    r = v_313;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
-      v_292 = true;
-      v_289 = true;
-      v_290 = true;
+      v_314 = true;
+      v_311 = true;
+      v_312 = true;
     } else {
-      v_58 = !(c2);
-      if (v_58) {
-        v_60 = true;
-        v_59_1 = true;
-        v_59_2 = true;
+      v_56 = !(c2);
+      if (v_56) {
+        v_58 = true;
+        v_57_1 = true;
+        v_57_2 = true;
       } else {
-        v_60 = self->pnr;
-        v_59_1 = false;
-        v_59_2 = false;
+        v_58 = self->pnr;
+        v_57_1 = false;
+        v_57_2 = false;
       };
       v = !(c1);
       if (v) {
         r_St_14_Up = true;
       } else {
-        r_St_14_Up = v_60;
+        r_St_14_Up = v_58;
       };
-      v_292 = r_St_14_Up;
+      v_314 = r_St_14_Up;
       if (v) {
         s_St_14_Up_1 = true;
       } else {
-        s_St_14_Up_1 = v_59_1;
+        s_St_14_Up_1 = v_57_1;
       };
-      v_289 = s_St_14_Up_1;
+      v_311 = s_St_14_Up_1;
       if (v) {
         s_St_14_Up_2 = false;
       } else {
-        s_St_14_Up_2 = v_59_2;
+        s_St_14_Up_2 = v_57_2;
       };
-      v_290 = s_St_14_Up_2;
+      v_312 = s_St_14_Up_2;
     };
-    s_1 = v_289;
-    s_2 = v_290;
-    r = v_292;
+    s_1 = v_311;
+    s_2 = v_312;
+    r = v_314;
   };
   ck_15_1 = s_1;
   ck_15_2 = s_2;
@@ -3719,10 +3713,10 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
       nr_St_14_Down = false;
       ns_St_14_Down_1 = true;
       ns_St_14_Down_2 = true;
-      v_277 = p_state_St_14_Down;
-      v_283 = nr_St_14_Down;
-      v_279 = ns_St_14_Down_1;
-      v_280 = ns_St_14_Down_2;
+      v_299 = p_state_St_14_Down;
+      v_305 = nr_St_14_Down;
+      v_301 = ns_St_14_Down_1;
+      v_302 = ns_St_14_Down_2;
       if (ns_St_14_Down_1) {
         ns_St_14_Down_2_1 = ns_St_14_Down_2;
       } else {
@@ -3730,44 +3724,44 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
       };
     } else {
       p_state_St_14_Mid = 1;
-      v_277 = p_state_St_14_Mid;
+      v_299 = p_state_St_14_Mid;
       nr_St_14_Mid = false;
-      v_283 = nr_St_14_Mid;
+      v_305 = nr_St_14_Mid;
       ns_St_14_Mid_1 = true;
-      v_279 = ns_St_14_Mid_1;
+      v_301 = ns_St_14_Mid_1;
       ns_St_14_Mid_2 = false;
-      v_280 = ns_St_14_Mid_2;
+      v_302 = ns_St_14_Mid_2;
       if (ns_St_14_Mid_1) {
         ns_St_14_Mid_2_1 = ns_St_14_Mid_2;
       } else {
         ns_St_14_Mid_2_0 = ns_St_14_Mid_2;
       };
     };
-    _out->p_state = v_277;
-    ns_1 = v_279;
-    ns_2 = v_280;
-    nr = v_283;
+    _out->p_state = v_299;
+    ns_1 = v_301;
+    ns_2 = v_302;
+    nr = v_305;
   } else {
     ck_15_2_0 = ck_15_2;
     if (ck_15_2_0) {
-      v_278 = 0;
-      v_284 = true;
-      v_281 = true;
-      v_282 = true;
+      v_300 = 0;
+      v_306 = true;
+      v_303 = true;
+      v_304 = true;
     } else {
       p_state_St_14_Up = 2;
-      v_278 = p_state_St_14_Up;
+      v_300 = p_state_St_14_Up;
       nr_St_14_Up = false;
-      v_284 = nr_St_14_Up;
+      v_306 = nr_St_14_Up;
       ns_St_14_Up_1 = false;
-      v_281 = ns_St_14_Up_1;
+      v_303 = ns_St_14_Up_1;
       ns_St_14_Up_2 = false;
-      v_282 = ns_St_14_Up_2;
+      v_304 = ns_St_14_Up_2;
     };
-    _out->p_state = v_278;
-    ns_1 = v_281;
-    ns_2 = v_282;
-    nr = v_284;
+    _out->p_state = v_300;
+    ns_1 = v_303;
+    ns_2 = v_304;
+    nr = v_306;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -3790,10 +3784,10 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
   };
   if (!(ck_1)) {
     if (!(ck_2_0)) {
-      if (v_59_1) {
-        v_59_2_1 = v_59_2;
+      if (v_57_1) {
+        v_57_2_1 = v_57_2;
       } else {
-        v_59_2_0 = v_59_2;
+        v_57_2_0 = v_57_2;
       };
       if (s_St_14_Up_1) {
         s_St_14_Up_2_1 = s_St_14_Up_2;
@@ -3803,28 +3797,28 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
     };
   };
   self->pnr = nr;
-  self->v_285 = ns_1;
-  self->v_286 = ns_2;;
+  self->v_307 = ns_1;
+  self->v_308 = ns_2;;
 }
 
 void System__ar_condicionado_reset(System__ar_condicionado_mem* self) {
   self->pnr = false;
-  self->v_301 = false;
-  self->v_302 = false;
+  self->v_323 = false;
+  self->v_324 = false;
 }
 
 void System__ar_condicionado_step(int c1, int c2,
                                   System__ar_condicionado_out* _out,
                                   System__ar_condicionado_mem* self) {
   
-  int v_300;
-  int v_299;
-  int v_298;
-  int v_297;
-  int v_296;
-  int v_295;
-  int v_294;
-  int v_293;
+  int v_322;
+  int v_321;
+  int v_320;
+  int v_319;
+  int v_318;
+  int v_317;
+  int v_316;
+  int v_315;
   int ns_St_15_Max_2_0;
   int ns_St_15_Max_2_1;
   int ns_St_15_Min_2_0;
@@ -3847,30 +3841,30 @@ void System__ar_condicionado_step(int c1, int c2,
   int ar_state_St_15_Off;
   int ck_16_2;
   int ck_16_1;
-  int v_72_2_0;
-  int v_72_2_1;
-  int v_73;
-  int v_72_2;
-  int v_72_1;
   int v_70_2_0;
   int v_70_2_1;
   int v_71;
   int v_70_2;
   int v_70_1;
+  int v_68_2_0;
+  int v_68_2_1;
   int v_69;
-  int v_67_2_0;
-  int v_67_2_1;
-  int v_68;
-  int v_67_2;
-  int v_67_1;
+  int v_68_2;
+  int v_68_1;
+  int v_67;
+  int v_65_2_0;
+  int v_65_2_1;
   int v_66;
+  int v_65_2;
+  int v_65_1;
+  int v_64;
   int v;
-  int v_308;
-  int v_307;
-  int v_306;
-  int v_305;
-  int v_304;
-  int v_303;
+  int v_330;
+  int v_329;
+  int v_328;
+  int v_327;
+  int v_326;
+  int v_325;
   int s_St_15_Max_2_0;
   int s_St_15_Max_2_1;
   int s_St_15_Min_2_0;
@@ -3900,111 +3894,111 @@ void System__ar_condicionado_step(int c1, int c2,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_301;
-  ck_2 = self->v_302;
+  ck_1 = self->v_323;
+  ck_2 = self->v_324;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
-      v_66 = !(c2);
-      if (v_66) {
-        v_68 = true;
-        v_67_1 = false;
-        v_67_2 = false;
+      v_64 = !(c2);
+      if (v_64) {
+        v_66 = true;
+        v_65_1 = false;
+        v_65_2 = false;
       } else {
-        v_68 = self->pnr;
-        v_67_1 = true;
-        v_67_2 = true;
+        v_66 = self->pnr;
+        v_65_1 = true;
+        v_65_2 = true;
       };
       v = !(c1);
       if (v) {
         r_St_15_Max = true;
       } else {
-        r_St_15_Max = v_68;
+        r_St_15_Max = v_66;
       };
-      v_307 = r_St_15_Max;
+      v_329 = r_St_15_Max;
       if (v) {
         s_St_15_Max_1 = true;
       } else {
-        s_St_15_Max_1 = v_67_1;
+        s_St_15_Max_1 = v_65_1;
       };
-      v_303 = s_St_15_Max_1;
+      v_325 = s_St_15_Max_1;
       if (v) {
         s_St_15_Max_2 = false;
       } else {
-        s_St_15_Max_2 = v_67_2;
+        s_St_15_Max_2 = v_65_2;
       };
-      v_304 = s_St_15_Max_2;
+      v_326 = s_St_15_Max_2;
     } else {
       if (c2) {
-        v_71 = true;
-        v_70_1 = true;
-        v_70_2 = true;
+        v_69 = true;
+        v_68_1 = true;
+        v_68_2 = true;
       } else {
-        v_71 = self->pnr;
-        v_70_1 = true;
-        v_70_2 = false;
+        v_69 = self->pnr;
+        v_68_1 = true;
+        v_68_2 = false;
       };
-      v_69 = !(c1);
-      if (v_69) {
+      v_67 = !(c1);
+      if (v_67) {
         r_St_15_Min = true;
         s_St_15_Min_1 = false;
         s_St_15_Min_2 = false;
       } else {
-        r_St_15_Min = v_71;
-        s_St_15_Min_1 = v_70_1;
-        s_St_15_Min_2 = v_70_2;
+        r_St_15_Min = v_69;
+        s_St_15_Min_1 = v_68_1;
+        s_St_15_Min_2 = v_68_2;
       };
-      v_307 = r_St_15_Min;
-      v_303 = s_St_15_Min_1;
-      v_304 = s_St_15_Min_2;
+      v_329 = r_St_15_Min;
+      v_325 = s_St_15_Min_1;
+      v_326 = s_St_15_Min_2;
     };
-    s_1 = v_303;
-    s_2 = v_304;
-    r = v_307;
+    s_1 = v_325;
+    s_2 = v_326;
+    r = v_329;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
-      v_308 = true;
-      v_305 = true;
-      v_306 = true;
+      v_330 = true;
+      v_327 = true;
+      v_328 = true;
     } else {
       if (c2) {
-        v_73 = true;
+        v_71 = true;
       } else {
-        v_73 = self->pnr;
+        v_71 = self->pnr;
       };
       if (c1) {
         r_St_15_Off = true;
       } else {
-        r_St_15_Off = v_73;
+        r_St_15_Off = v_71;
       };
-      v_308 = r_St_15_Off;
+      v_330 = r_St_15_Off;
       if (c2) {
-        v_72_1 = true;
+        v_70_1 = true;
       } else {
-        v_72_1 = false;
+        v_70_1 = false;
       };
       if (c1) {
         s_St_15_Off_1 = true;
       } else {
-        s_St_15_Off_1 = v_72_1;
+        s_St_15_Off_1 = v_70_1;
       };
-      v_305 = s_St_15_Off_1;
+      v_327 = s_St_15_Off_1;
       if (c2) {
-        v_72_2 = true;
+        v_70_2 = true;
       } else {
-        v_72_2 = false;
+        v_70_2 = false;
       };
       if (c1) {
         s_St_15_Off_2 = false;
       } else {
-        s_St_15_Off_2 = v_72_2;
+        s_St_15_Off_2 = v_70_2;
       };
-      v_306 = s_St_15_Off_2;
-      if (v_72_1) {
-        v_72_2_1 = v_72_2;
+      v_328 = s_St_15_Off_2;
+      if (v_70_1) {
+        v_70_2_1 = v_70_2;
       } else {
-        v_72_2_0 = v_72_2;
+        v_70_2_0 = v_70_2;
       };
       if (s_St_15_Off_1) {
         s_St_15_Off_2_1 = s_St_15_Off_2;
@@ -4012,9 +4006,9 @@ void System__ar_condicionado_step(int c1, int c2,
         s_St_15_Off_2_0 = s_St_15_Off_2;
       };
     };
-    s_1 = v_305;
-    s_2 = v_306;
-    r = v_308;
+    s_1 = v_327;
+    s_2 = v_328;
+    r = v_330;
   };
   ck_16_1 = s_1;
   ck_16_2 = s_2;
@@ -4022,53 +4016,53 @@ void System__ar_condicionado_step(int c1, int c2,
     ck_16_2_1 = ck_16_2;
     if (ck_16_2_1) {
       ar_state_St_15_Max = 2;
-      v_293 = ar_state_St_15_Max;
+      v_315 = ar_state_St_15_Max;
       nr_St_15_Max = false;
-      v_299 = nr_St_15_Max;
+      v_321 = nr_St_15_Max;
       ns_St_15_Max_1 = true;
-      v_295 = ns_St_15_Max_1;
+      v_317 = ns_St_15_Max_1;
       ns_St_15_Max_2 = true;
-      v_296 = ns_St_15_Max_2;
+      v_318 = ns_St_15_Max_2;
     } else {
       ar_state_St_15_Min = 1;
       nr_St_15_Min = false;
       ns_St_15_Min_1 = true;
       ns_St_15_Min_2 = false;
-      v_293 = ar_state_St_15_Min;
-      v_299 = nr_St_15_Min;
-      v_295 = ns_St_15_Min_1;
-      v_296 = ns_St_15_Min_2;
+      v_315 = ar_state_St_15_Min;
+      v_321 = nr_St_15_Min;
+      v_317 = ns_St_15_Min_1;
+      v_318 = ns_St_15_Min_2;
     };
-    _out->ar_state = v_293;
-    ns_1 = v_295;
-    ns_2 = v_296;
-    nr = v_299;
+    _out->ar_state = v_315;
+    ns_1 = v_317;
+    ns_2 = v_318;
+    nr = v_321;
   } else {
     ck_16_2_0 = ck_16_2;
     if (ck_16_2_0) {
-      v_294 = 0;
-      v_300 = true;
-      v_297 = true;
-      v_298 = true;
+      v_316 = 0;
+      v_322 = true;
+      v_319 = true;
+      v_320 = true;
     } else {
       ar_state_St_15_Off = 0;
-      v_294 = ar_state_St_15_Off;
+      v_316 = ar_state_St_15_Off;
       nr_St_15_Off = false;
-      v_300 = nr_St_15_Off;
+      v_322 = nr_St_15_Off;
       ns_St_15_Off_1 = false;
-      v_297 = ns_St_15_Off_1;
+      v_319 = ns_St_15_Off_1;
       ns_St_15_Off_2 = false;
-      v_298 = ns_St_15_Off_2;
+      v_320 = ns_St_15_Off_2;
       if (ns_St_15_Off_1) {
         ns_St_15_Off_2_1 = ns_St_15_Off_2;
       } else {
         ns_St_15_Off_2_0 = ns_St_15_Off_2;
       };
     };
-    _out->ar_state = v_294;
-    ns_1 = v_297;
-    ns_2 = v_298;
-    nr = v_300;
+    _out->ar_state = v_316;
+    ns_1 = v_319;
+    ns_2 = v_320;
+    nr = v_322;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -4097,10 +4091,10 @@ void System__ar_condicionado_step(int c1, int c2,
   };
   if (ck_1) {
     if (ck_2_1) {
-      if (v_67_1) {
-        v_67_2_1 = v_67_2;
+      if (v_65_1) {
+        v_65_2_1 = v_65_2;
       } else {
-        v_67_2_0 = v_67_2;
+        v_65_2_0 = v_65_2;
       };
       if (s_St_15_Max_1) {
         s_St_15_Max_2_1 = s_St_15_Max_2;
@@ -4108,10 +4102,10 @@ void System__ar_condicionado_step(int c1, int c2,
         s_St_15_Max_2_0 = s_St_15_Max_2;
       };
     } else {
-      if (v_70_1) {
-        v_70_2_1 = v_70_2;
+      if (v_68_1) {
+        v_68_2_1 = v_68_2;
       } else {
-        v_70_2_0 = v_70_2;
+        v_68_2_0 = v_68_2;
       };
       if (s_St_15_Min_1) {
         s_St_15_Min_2_1 = s_St_15_Min_2;
@@ -4121,332 +4115,395 @@ void System__ar_condicionado_step(int c1, int c2,
     };
   };
   self->pnr = nr;
-  self->v_301 = ns_1;
-  self->v_302 = ns_2;;
+  self->v_323 = ns_1;
+  self->v_324 = ns_2;;
+}
+
+void System__turno_reset(System__turno_mem* self) {
+  self->pnr = false;
+  self->ck_1 = true;
+}
+
+void System__turno_step(int shift, System__turno_out* _out,
+                        System__turno_mem* self) {
+  
+  int nr_St_16_Noite;
+  int ns_St_16_Noite_1;
+  int turno_St_16_Noite;
+  int nr_St_16_Dia;
+  int ns_St_16_Dia_1;
+  int turno_St_16_Dia;
+  int ck_17_1;
+  int r_St_16_Noite;
+  int s_St_16_Noite_1;
+  int r_St_16_Dia;
+  int s_St_16_Dia_1;
+  int s_1;
+  int ns_1;
+  int r;
+  int nr;
+  if (self->ck_1) {
+    if (shift) {
+      r_St_16_Dia = true;
+      s_St_16_Dia_1 = false;
+    } else {
+      r_St_16_Dia = self->pnr;
+      s_St_16_Dia_1 = true;
+    };
+    r = r_St_16_Dia;
+    s_1 = s_St_16_Dia_1;
+  } else {
+    if (shift) {
+      r_St_16_Noite = true;
+    } else {
+      r_St_16_Noite = self->pnr;
+    };
+    r = r_St_16_Noite;
+    if (shift) {
+      s_St_16_Noite_1 = true;
+    } else {
+      s_St_16_Noite_1 = false;
+    };
+    s_1 = s_St_16_Noite_1;
+  };
+  ck_17_1 = s_1;
+  if (ck_17_1) {
+    turno_St_16_Dia = false;
+    nr_St_16_Dia = false;
+    ns_St_16_Dia_1 = true;
+    _out->turno = turno_St_16_Dia;
+    nr = nr_St_16_Dia;
+    ns_1 = ns_St_16_Dia_1;
+  } else {
+    turno_St_16_Noite = true;
+    _out->turno = turno_St_16_Noite;
+    nr_St_16_Noite = false;
+    nr = nr_St_16_Noite;
+    ns_St_16_Noite_1 = false;
+    ns_1 = ns_St_16_Noite_1;
+  };
+  self->pnr = nr;
+  self->ck_1 = ns_1;;
 }
 
 void System__controller_reset(System__controller_mem* self) {
   self->pnr = false;
-  self->v_317 = false;
-  self->v_318 = false;
+  self->v_339 = false;
+  self->v_340 = false;
   self->pnr_1 = false;
-  self->v_333 = true;
-  self->v_334 = true;
+  self->v_355 = true;
+  self->v_356 = true;
   self->pnr_2 = false;
-  self->v_349 = true;
-  self->v_350 = false;
+  self->v_371 = true;
+  self->v_372 = false;
   self->pnr_3 = false;
-  self->ck_26_1 = true;
+  self->ck_27_1 = true;
   self->pnr_4 = false;
-  self->ck_24_1 = true;
+  self->ck_25_1 = true;
   self->pnr_5 = false;
-  self->ck_22_1 = true;
+  self->ck_23_1 = true;
   self->pnr_6 = false;
-  self->ck_20_1 = true;
+  self->ck_21_1 = true;
   self->pnr_7 = false;
-  self->ck_18_1 = true;
+  self->ck_19_1 = true;
   self->pnr_8 = false;
   self->ck_1 = true;
 }
 
-void System__controller_step(int abre_porta, int p_arrived,
+void System__controller_step(int shift_turno, int abre_porta, int p_arrived,
                              System__controller_out* _out,
                              System__controller_mem* self) {
   Controller_controller__controller_controller_out Controller_controller__controller_controller_out_st;
   
-  int v_316;
-  int v_315;
-  int v_314;
-  int v_313;
-  int v_312;
-  int v_311;
-  int v_310;
-  int v_309;
-  int ns_St_16_Max_2_0;
-  int ns_St_16_Max_2_1;
-  int ns_St_16_Min_2_0;
-  int ns_St_16_Min_2_1;
-  int ns_St_16_Off_2_0;
-  int ns_St_16_Off_2_1;
-  int ck_33_2_0;
-  int ck_33_2_1;
-  int nr_St_16_Max;
-  int ns_St_16_Max_2;
-  int ns_St_16_Max_1;
-  int ar_state_1_St_16_Max;
-  int nr_St_16_Min;
-  int ns_St_16_Min_2;
-  int ns_St_16_Min_1;
-  int ar_state_1_St_16_Min;
-  int nr_St_16_Off;
-  int ns_St_16_Off_2;
-  int ns_St_16_Off_1;
-  int ar_state_1_St_16_Off;
-  int ck_33_2;
-  int ck_33_1;
-  int v_107_2_0;
-  int v_107_2_1;
-  int v_108;
-  int v_107_2;
-  int v_107_1;
-  int v_105_2_0;
-  int v_105_2_1;
-  int v_106;
-  int v_105_2;
-  int v_105_1;
-  int v_104;
-  int v_102_2_0;
-  int v_102_2_1;
-  int v_103;
-  int v_102_2;
-  int v_102_1;
-  int v_101;
-  int v_100;
-  int v_324;
-  int v_323;
-  int v_322;
-  int v_321;
-  int v_320;
-  int v_319;
-  int s_St_16_Max_2_0;
-  int s_St_16_Max_2_1;
-  int s_St_16_Min_2_0;
-  int s_St_16_Min_2_1;
-  int s_St_16_Off_2_0;
-  int s_St_16_Off_2_1;
-  int ck_32_2_0;
-  int ck_32_2_1;
-  int r_St_16_Max;
-  int s_St_16_Max_2;
-  int s_St_16_Max_1;
-  int r_St_16_Min;
-  int s_St_16_Min_2;
-  int s_St_16_Min_1;
-  int r_St_16_Off;
-  int s_St_16_Off_2;
-  int s_St_16_Off_1;
-  int ck_32_2;
-  int ck_32_1;
-  int v_332;
-  int v_331;
-  int v_330;
-  int v_329;
-  int v_328;
-  int v_327;
-  int v_326;
-  int v_325;
-  int ns_1_St_17_Up_2_0;
-  int ns_1_St_17_Up_2_1;
-  int ns_1_St_17_Mid_2_0;
-  int ns_1_St_17_Mid_2_1;
-  int ns_1_St_17_Down_2_0;
-  int ns_1_St_17_Down_2_1;
-  int ck_31_2_0;
-  int ck_31_2_1;
-  int nr_1_St_17_Up;
-  int ns_1_St_17_Up_2;
-  int ns_1_St_17_Up_1;
-  int p_state_1_St_17_Up;
-  int nr_1_St_17_Mid;
-  int ns_1_St_17_Mid_2;
-  int ns_1_St_17_Mid_1;
-  int p_state_1_St_17_Mid;
-  int nr_1_St_17_Down;
-  int ns_1_St_17_Down_2;
-  int ns_1_St_17_Down_1;
-  int p_state_1_St_17_Down;
-  int ck_31_2;
-  int ck_31_1;
-  int v_98_2_0;
-  int v_98_2_1;
-  int v_99;
-  int v_98_2;
-  int v_98_1;
-  int v_96_2_0;
-  int v_96_2_1;
-  int v_97;
-  int v_96_2;
-  int v_96_1;
-  int v_95;
-  int v_93_2_0;
-  int v_93_2_1;
-  int v_94;
-  int v_93_2;
-  int v_93_1;
-  int v_92;
-  int v_91;
-  int v_340;
-  int v_339;
   int v_338;
   int v_337;
   int v_336;
   int v_335;
-  int s_1_St_17_Up_2_0;
-  int s_1_St_17_Up_2_1;
-  int s_1_St_17_Mid_2_0;
-  int s_1_St_17_Mid_2_1;
-  int s_1_St_17_Down_2_0;
-  int s_1_St_17_Down_2_1;
-  int ck_30_2_0;
-  int ck_30_2_1;
-  int r_1_St_17_Up;
-  int s_1_St_17_Up_2;
-  int s_1_St_17_Up_1;
-  int r_1_St_17_Mid;
-  int s_1_St_17_Mid_2;
-  int s_1_St_17_Mid_1;
-  int r_1_St_17_Down;
-  int s_1_St_17_Down_2;
-  int s_1_St_17_Down_1;
-  int ck_30_2;
-  int ck_30_1;
-  int v_348;
-  int v_347;
+  int v_334;
+  int v_333;
+  int v_332;
+  int v_331;
+  int ns_St_17_Max_2_0;
+  int ns_St_17_Max_2_1;
+  int ns_St_17_Min_2_0;
+  int ns_St_17_Min_2_1;
+  int ns_St_17_Off_2_0;
+  int ns_St_17_Off_2_1;
+  int ck_34_2_0;
+  int ck_34_2_1;
+  int nr_St_17_Max;
+  int ns_St_17_Max_2;
+  int ns_St_17_Max_1;
+  int ar_state_1_St_17_Max;
+  int nr_St_17_Min;
+  int ns_St_17_Min_2;
+  int ns_St_17_Min_1;
+  int ar_state_1_St_17_Min;
+  int nr_St_17_Off;
+  int ns_St_17_Off_2;
+  int ns_St_17_Off_1;
+  int ar_state_1_St_17_Off;
+  int ck_34_2;
+  int ck_34_1;
+  int v_129_2_0;
+  int v_129_2_1;
+  int v_130;
+  int v_129_2;
+  int v_129_1;
+  int v_127_2_0;
+  int v_127_2_1;
+  int v_128;
+  int v_127_2;
+  int v_127_1;
+  int v_126;
+  int v_124_2_0;
+  int v_124_2_1;
+  int v_125;
+  int v_124_2;
+  int v_124_1;
+  int v_123;
+  int v_122;
   int v_346;
   int v_345;
   int v_344;
   int v_343;
   int v_342;
   int v_341;
-  int ns_2_St_18_All_2_0;
-  int ns_2_St_18_All_2_1;
-  int ns_2_St_18_Some_2_0;
-  int ns_2_St_18_Some_2_1;
-  int ns_2_St_18_None_2_0;
-  int ns_2_St_18_None_2_1;
-  int ck_29_2_0;
-  int ck_29_2_1;
-  int nr_2_St_18_All;
-  int ns_2_St_18_All_2;
-  int ns_2_St_18_All_1;
-  int l_state_1_St_18_All;
-  int nr_2_St_18_Some;
-  int ns_2_St_18_Some_2;
-  int ns_2_St_18_Some_1;
-  int l_state_1_St_18_Some;
-  int nr_2_St_18_None;
-  int ns_2_St_18_None_2;
-  int ns_2_St_18_None_1;
-  int l_state_1_St_18_None;
-  int ck_29_2;
-  int ck_29_1;
-  int v_89_2_0;
-  int v_89_2_1;
-  int v_90;
-  int v_89_2;
-  int v_89_1;
-  int v_87_2_0;
-  int v_87_2_1;
-  int v_88;
-  int v_87_2;
-  int v_87_1;
-  int v_86;
-  int v_84_2_0;
-  int v_84_2_1;
-  int v_85;
-  int v_84_2;
-  int v_84_1;
-  int v_83;
-  int v_82;
-  int v_356;
-  int v_355;
+  int s_St_17_Max_2_0;
+  int s_St_17_Max_2_1;
+  int s_St_17_Min_2_0;
+  int s_St_17_Min_2_1;
+  int s_St_17_Off_2_0;
+  int s_St_17_Off_2_1;
+  int ck_33_2_0;
+  int ck_33_2_1;
+  int r_St_17_Max;
+  int s_St_17_Max_2;
+  int s_St_17_Max_1;
+  int r_St_17_Min;
+  int s_St_17_Min_2;
+  int s_St_17_Min_1;
+  int r_St_17_Off;
+  int s_St_17_Off_2;
+  int s_St_17_Off_1;
+  int ck_33_2;
+  int ck_33_1;
   int v_354;
   int v_353;
   int v_352;
   int v_351;
-  int s_2_St_18_All_2_0;
-  int s_2_St_18_All_2_1;
-  int s_2_St_18_Some_2_0;
-  int s_2_St_18_Some_2_1;
-  int s_2_St_18_None_2_0;
-  int s_2_St_18_None_2_1;
-  int ck_28_2_0;
-  int ck_28_2_1;
-  int r_2_St_18_All;
-  int s_2_St_18_All_2;
-  int s_2_St_18_All_1;
-  int r_2_St_18_Some;
-  int s_2_St_18_Some_2;
-  int s_2_St_18_Some_1;
-  int r_2_St_18_None;
-  int s_2_St_18_None_2;
-  int s_2_St_18_None_1;
-  int ck_28_2;
+  int v_350;
+  int v_349;
+  int v_348;
+  int v_347;
+  int ns_1_St_18_Up_2_0;
+  int ns_1_St_18_Up_2_1;
+  int ns_1_St_18_Mid_2_0;
+  int ns_1_St_18_Mid_2_1;
+  int ns_1_St_18_Down_2_0;
+  int ns_1_St_18_Down_2_1;
+  int ck_32_2_0;
+  int ck_32_2_1;
+  int nr_1_St_18_Up;
+  int ns_1_St_18_Up_2;
+  int ns_1_St_18_Up_1;
+  int p_state_1_St_18_Up;
+  int nr_1_St_18_Mid;
+  int ns_1_St_18_Mid_2;
+  int ns_1_St_18_Mid_1;
+  int p_state_1_St_18_Mid;
+  int nr_1_St_18_Down;
+  int ns_1_St_18_Down_2;
+  int ns_1_St_18_Down_1;
+  int p_state_1_St_18_Down;
+  int ck_32_2;
+  int ck_32_1;
+  int v_120_2_0;
+  int v_120_2_1;
+  int v_121;
+  int v_120_2;
+  int v_120_1;
+  int v_118_2_0;
+  int v_118_2_1;
+  int v_119;
+  int v_118_2;
+  int v_118_1;
+  int v_117;
+  int v_115_2_0;
+  int v_115_2_1;
+  int v_116;
+  int v_115_2;
+  int v_115_1;
+  int v_114;
+  int v_113;
+  int v_362;
+  int v_361;
+  int v_360;
+  int v_359;
+  int v_358;
+  int v_357;
+  int s_1_St_18_Up_2_0;
+  int s_1_St_18_Up_2_1;
+  int s_1_St_18_Mid_2_0;
+  int s_1_St_18_Mid_2_1;
+  int s_1_St_18_Down_2_0;
+  int s_1_St_18_Down_2_1;
+  int ck_31_2_0;
+  int ck_31_2_1;
+  int r_1_St_18_Up;
+  int s_1_St_18_Up_2;
+  int s_1_St_18_Up_1;
+  int r_1_St_18_Mid;
+  int s_1_St_18_Mid_2;
+  int s_1_St_18_Mid_1;
+  int r_1_St_18_Down;
+  int s_1_St_18_Down_2;
+  int s_1_St_18_Down_1;
+  int ck_31_2;
+  int ck_31_1;
+  int v_370;
+  int v_369;
+  int v_368;
+  int v_367;
+  int v_366;
+  int v_365;
+  int v_364;
+  int v_363;
+  int ns_2_St_19_All_2_0;
+  int ns_2_St_19_All_2_1;
+  int ns_2_St_19_Some_2_0;
+  int ns_2_St_19_Some_2_1;
+  int ns_2_St_19_None_2_0;
+  int ns_2_St_19_None_2_1;
+  int ck_30_2_0;
+  int ck_30_2_1;
+  int nr_2_St_19_All;
+  int ns_2_St_19_All_2;
+  int ns_2_St_19_All_1;
+  int l_state_1_St_19_All;
+  int nr_2_St_19_Some;
+  int ns_2_St_19_Some_2;
+  int ns_2_St_19_Some_1;
+  int l_state_1_St_19_Some;
+  int nr_2_St_19_None;
+  int ns_2_St_19_None_2;
+  int ns_2_St_19_None_1;
+  int l_state_1_St_19_None;
+  int ck_30_2;
+  int ck_30_1;
+  int v_111_2_0;
+  int v_111_2_1;
+  int v_112;
+  int v_111_2;
+  int v_111_1;
+  int v_109_2_0;
+  int v_109_2_1;
+  int v_110;
+  int v_109_2;
+  int v_109_1;
+  int v_108;
+  int v_106_2_0;
+  int v_106_2_1;
+  int v_107;
+  int v_106_2;
+  int v_106_1;
+  int v_105;
+  int v_104;
+  int v_378;
+  int v_377;
+  int v_376;
+  int v_375;
+  int v_374;
+  int v_373;
+  int s_2_St_19_All_2_0;
+  int s_2_St_19_All_2_1;
+  int s_2_St_19_Some_2_0;
+  int s_2_St_19_Some_2_1;
+  int s_2_St_19_None_2_0;
+  int s_2_St_19_None_2_1;
+  int ck_29_2_0;
+  int ck_29_2_1;
+  int r_2_St_19_All;
+  int s_2_St_19_All_2;
+  int s_2_St_19_All_1;
+  int r_2_St_19_Some;
+  int s_2_St_19_Some_2;
+  int s_2_St_19_Some_1;
+  int r_2_St_19_None;
+  int s_2_St_19_None_2;
+  int s_2_St_19_None_1;
+  int ck_29_2;
+  int ck_29_1;
+  int nr_3_St_20_Open;
+  int ns_3_St_20_Open_1;
+  int w_open_1_St_20_Open;
+  int nr_3_St_20_Closed;
+  int ns_3_St_20_Closed_1;
+  int w_open_1_St_20_Closed;
   int ck_28_1;
-  int nr_3_St_19_Open;
-  int ns_3_St_19_Open_1;
-  int w_open_1_St_19_Open;
-  int nr_3_St_19_Closed;
-  int ns_3_St_19_Closed_1;
-  int w_open_1_St_19_Closed;
-  int ck_27_1;
-  int v_81;
-  int r_3_St_19_Open;
-  int s_3_St_19_Open_1;
-  int r_3_St_19_Closed;
-  int s_3_St_19_Closed_1;
-  int nr_4_St_20_On;
-  int ns_4_St_20_On_1;
-  int pc_on_1_St_20_On;
-  int nr_4_St_20_Off;
-  int ns_4_St_20_Off_1;
-  int pc_on_1_St_20_Off;
-  int ck_25_1;
-  int v_80;
-  int r_4_St_20_On;
-  int s_4_St_20_On_1;
-  int r_4_St_20_Off;
-  int s_4_St_20_Off_1;
-  int nr_5_St_21_Preent;
-  int ns_5_St_21_Preent_1;
-  int presence_1_St_21_Preent;
-  int nr_5_St_21_Not_Present;
-  int ns_5_St_21_Not_Present_1;
-  int presence_1_St_21_Not_Present;
-  int ck_23_1;
-  int v_79;
-  int r_5_St_21_Preent;
-  int s_5_St_21_Preent_1;
-  int r_5_St_21_Not_Present;
-  int s_5_St_21_Not_Present_1;
-  int nr_6_St_22_Open;
-  int ns_6_St_22_Open_1;
-  int arm_open_1_St_22_Open;
-  int nr_6_St_22_Locked;
-  int ns_6_St_22_Locked_1;
-  int arm_open_1_St_22_Locked;
-  int ck_21_1;
-  int v_78;
-  int r_6_St_22_Open;
-  int s_6_St_22_Open_1;
-  int r_6_St_22_Locked;
-  int s_6_St_22_Locked_1;
-  int nr_7_St_23_On;
-  int ns_7_St_23_On_1;
+  int v_103;
+  int r_3_St_20_Open;
+  int s_3_St_20_Open_1;
+  int r_3_St_20_Closed;
+  int s_3_St_20_Closed_1;
+  int nr_4_St_21_On;
+  int ns_4_St_21_On_1;
+  int pc_on_1_St_21_On;
+  int nr_4_St_21_Off;
+  int ns_4_St_21_Off_1;
+  int pc_on_1_St_21_Off;
+  int ck_26_1;
+  int v_102;
+  int r_4_St_21_On;
+  int s_4_St_21_On_1;
+  int r_4_St_21_Off;
+  int s_4_St_21_Off_1;
+  int nr_5_St_22_Preent;
+  int ns_5_St_22_Preent_1;
+  int presence_1_St_22_Preent;
+  int nr_5_St_22_Not_Present;
+  int ns_5_St_22_Not_Present_1;
+  int presence_1_St_22_Not_Present;
+  int ck_24_1;
+  int r_5_St_22_Preent;
+  int s_5_St_22_Preent_1;
+  int r_5_St_22_Not_Present;
+  int s_5_St_22_Not_Present_1;
+  int nr_6_St_23_On;
+  int ns_6_St_23_On_1;
   int r_on_St_23_On;
-  int nr_7_St_23_Off;
-  int ns_7_St_23_Off_1;
+  int nr_6_St_23_Off;
+  int ns_6_St_23_Off_1;
   int r_on_St_23_Off;
-  int ck_19_1;
-  int v_77;
-  int r_7_St_23_On;
-  int s_7_St_23_On_1;
-  int r_7_St_23_Off;
-  int s_7_St_23_Off_1;
-  int nr_8_St_24_Open;
-  int ns_8_St_24_Open_1;
+  int ck_22_1;
+  int v_101;
+  int r_6_St_23_On;
+  int s_6_St_23_On_1;
+  int r_6_St_23_Off;
+  int s_6_St_23_Off_1;
+  int nr_7_St_24_Open;
+  int ns_7_St_24_Open_1;
   int porta_open_St_24_Open;
-  int nr_8_St_24_Closed;
-  int ns_8_St_24_Closed_1;
+  int nr_7_St_24_Closed;
+  int ns_7_St_24_Closed_1;
   int porta_open_St_24_Closed;
-  int ck_17_1;
-  int v_76;
-  int v_75;
-  int v_74;
-  int r_8_St_24_Open;
-  int s_8_St_24_Open_1;
-  int r_8_St_24_Closed;
-  int s_8_St_24_Closed_1;
+  int ck_20_1;
+  int v_100;
+  int r_7_St_24_Open;
+  int s_7_St_24_Open_1;
+  int r_7_St_24_Closed;
+  int s_7_St_24_Closed_1;
+  int nr_8_St_25_Noite;
+  int ns_8_St_25_Noite_1;
+  int turno_St_25_Noite;
+  int nr_8_St_25_Dia;
+  int ns_8_St_25_Dia_1;
+  int turno_St_25_Dia;
+  int ck_18_1;
+  int r_8_St_25_Noite;
+  int s_8_St_25_Noite_1;
+  int r_8_St_25_Dia;
+  int s_8_St_25_Dia_1;
   int s_2_2_0;
   int s_2_2_1;
   int ns_2_2_0;
@@ -4510,21 +4567,54 @@ void System__controller_step(int abre_porta, int p_arrived,
   int c1;
   int c2;
   int l_state_1;
-  int c_3;
-  int w_open_1;
   int c_2;
+  int w_open_1;
+  int c_1;
   int pc_on_1;
   int arrived;
   int presence_1;
-  int c_1;
-  int arm_open_1;
   int c;
   int r_on;
   int push;
   int c_porta_1;
   int porta_open;
-  int rule1;
+  int shift;
+  int turno;
+  int rule7;
+  int rule6;
+  int rule5;
+  int rule4;
+  int rule3;
+  int rule2;
   int v;
+  int v_72;
+  int v_73;
+  int v_74;
+  int v_75;
+  int v_76;
+  int v_77;
+  int v_78;
+  int v_79;
+  int v_80;
+  int v_81;
+  int v_82;
+  int v_83;
+  int v_84;
+  int v_85;
+  int v_86;
+  int v_87;
+  int v_88;
+  int v_89;
+  int v_90;
+  int v_91;
+  int v_92;
+  int v_93;
+  int v_94;
+  int v_95;
+  int v_96;
+  int v_97;
+  int v_98;
+  int v_99;
   int c_ar2;
   int c_ar1;
   int c_per2;
@@ -4533,36 +4623,37 @@ void System__controller_step(int abre_porta, int p_arrived,
   int c_luz1;
   int c_jan;
   int c_pc;
-  int c_arm;
   int c_rot;
   int c_porta;
-  ck_32_1 = self->v_317;
-  ck_32_2 = self->v_318;
-  ck_30_1 = self->v_333;
-  ck_30_2 = self->v_334;
-  ck_28_1 = self->v_349;
-  ck_28_2 = self->v_350;
+  ck_33_1 = self->v_339;
+  ck_33_2 = self->v_340;
+  ck_31_1 = self->v_355;
+  ck_31_2 = self->v_356;
+  ck_29_1 = self->v_371;
+  ck_29_2 = self->v_372;
   arrived = p_arrived;
   push = abre_porta;
-  Controller_controller__controller_controller_step(abre_porta, p_arrived,
-                                                    self->ck_1, self->pnr_8,
-                                                    self->ck_18_1,
+  shift = shift_turno;
+  Controller_controller__controller_controller_step(shift_turno, abre_porta,
+                                                    p_arrived, self->ck_1,
+                                                    self->pnr_8,
+                                                    self->ck_19_1,
                                                     self->pnr_7,
-                                                    self->ck_20_1,
+                                                    self->ck_21_1,
                                                     self->pnr_6,
-                                                    self->ck_22_1,
+                                                    self->ck_23_1,
                                                     self->pnr_5,
-                                                    self->ck_24_1,
+                                                    self->ck_25_1,
                                                     self->pnr_4,
-                                                    self->ck_26_1,
-                                                    self->pnr_3, self->v_350,
-                                                    self->v_349, self->pnr_2,
-                                                    self->v_334, self->v_333,
-                                                    self->pnr_1, self->v_318,
-                                                    self->v_317, self->pnr,
+                                                    self->ck_27_1,
+                                                    self->pnr_3, self->v_372,
+                                                    self->v_371, self->pnr_2,
+                                                    self->v_356, self->v_355,
+                                                    self->pnr_1, self->v_340,
+                                                    self->v_339, self->pnr,
                                                     true, true, true, true,
                                                     true, true, true, true,
-                                                    true, true, true,
+                                                    true, true,
                                                     &Controller_controller__controller_controller_out_st);
   c_ar2 = Controller_controller__controller_controller_out_st.controller_c_ar2;
   c_ar1 = Controller_controller__controller_controller_out_st.controller_c_ar1;
@@ -4572,7 +4663,6 @@ void System__controller_step(int abre_porta, int p_arrived,
   c_luz1 = Controller_controller__controller_controller_out_st.controller_c_luz1;
   c_jan = Controller_controller__controller_controller_out_st.controller_c_jan;
   c_pc = Controller_controller__controller_controller_out_st.controller_c_pc;
-  c_arm = Controller_controller__controller_controller_out_st.controller_c_arm;
   c_rot = Controller_controller__controller_controller_out_st.controller_c_rot;
   c_porta = Controller_controller__controller_controller_out_st.controller_c_porta;
   c1_2 = c_ar1;
@@ -4581,197 +4671,198 @@ void System__controller_step(int abre_porta, int p_arrived,
   c2_1 = c_per2;
   c1 = c_luz1;
   c2 = c_luz2;
-  c_3 = c_jan;
-  c_2 = c_pc;
-  c_1 = c_arm;
+  c_2 = c_jan;
+  c_1 = c_pc;
   c = c_rot;
   c_porta_1 = c_porta;
-  if (ck_32_1) {
-    ck_32_2_1 = ck_32_2;
-    if (ck_32_2_1) {
-      v_101 = !(c2_2);
-      if (v_101) {
-        v_103 = true;
-        v_102_1 = false;
-        v_102_2 = false;
-      } else {
-        v_103 = self->pnr;
-        v_102_1 = true;
-        v_102_2 = true;
-      };
-      v_100 = !(c1_2);
-      if (v_100) {
-        r_St_16_Max = true;
-      } else {
-        r_St_16_Max = v_103;
-      };
-      v_323 = r_St_16_Max;
-      if (v_100) {
-        s_St_16_Max_1 = true;
-      } else {
-        s_St_16_Max_1 = v_102_1;
-      };
-      v_319 = s_St_16_Max_1;
-      if (v_100) {
-        s_St_16_Max_2 = false;
-      } else {
-        s_St_16_Max_2 = v_102_2;
-      };
-      v_320 = s_St_16_Max_2;
-    } else {
-      if (c2_2) {
-        v_106 = true;
-        v_105_1 = true;
-        v_105_2 = true;
-      } else {
-        v_106 = self->pnr;
-        v_105_1 = true;
-        v_105_2 = false;
-      };
-      v_104 = !(c1_2);
-      if (v_104) {
-        r_St_16_Min = true;
-        s_St_16_Min_1 = false;
-        s_St_16_Min_2 = false;
-      } else {
-        r_St_16_Min = v_106;
-        s_St_16_Min_1 = v_105_1;
-        s_St_16_Min_2 = v_105_2;
-      };
-      v_323 = r_St_16_Min;
-      v_319 = s_St_16_Min_1;
-      v_320 = s_St_16_Min_2;
-    };
-    s_1_3 = v_319;
-    s_2_3 = v_320;
-    r = v_323;
-  } else {
-    ck_32_2_0 = ck_32_2;
-    if (ck_32_2_0) {
-      v_324 = true;
-      v_321 = true;
-      v_322 = true;
-    } else {
-      if (c2_2) {
-        v_108 = true;
-      } else {
-        v_108 = self->pnr;
-      };
-      if (c1_2) {
-        r_St_16_Off = true;
-      } else {
-        r_St_16_Off = v_108;
-      };
-      v_324 = r_St_16_Off;
-      if (c2_2) {
-        v_107_1 = true;
-      } else {
-        v_107_1 = false;
-      };
-      if (c1_2) {
-        s_St_16_Off_1 = true;
-      } else {
-        s_St_16_Off_1 = v_107_1;
-      };
-      v_321 = s_St_16_Off_1;
-      if (c2_2) {
-        v_107_2 = true;
-      } else {
-        v_107_2 = false;
-      };
-      if (c1_2) {
-        s_St_16_Off_2 = false;
-      } else {
-        s_St_16_Off_2 = v_107_2;
-      };
-      v_322 = s_St_16_Off_2;
-      if (v_107_1) {
-        v_107_2_1 = v_107_2;
-      } else {
-        v_107_2_0 = v_107_2;
-      };
-      if (s_St_16_Off_1) {
-        s_St_16_Off_2_1 = s_St_16_Off_2;
-      } else {
-        s_St_16_Off_2_0 = s_St_16_Off_2;
-      };
-    };
-    s_1_3 = v_321;
-    s_2_3 = v_322;
-    r = v_324;
-  };
-  ck_33_1 = s_1_3;
-  ck_33_2 = s_2_3;
   if (ck_33_1) {
     ck_33_2_1 = ck_33_2;
     if (ck_33_2_1) {
-      ar_state_1_St_16_Max = 2;
-      v_309 = ar_state_1_St_16_Max;
-      nr_St_16_Max = false;
-      v_315 = nr_St_16_Max;
-      ns_St_16_Max_1 = true;
-      v_311 = ns_St_16_Max_1;
-      ns_St_16_Max_2 = true;
-      v_312 = ns_St_16_Max_2;
+      v_123 = !(c2_2);
+      if (v_123) {
+        v_125 = true;
+        v_124_1 = false;
+        v_124_2 = false;
+      } else {
+        v_125 = self->pnr;
+        v_124_1 = true;
+        v_124_2 = true;
+      };
+      v_122 = !(c1_2);
+      if (v_122) {
+        r_St_17_Max = true;
+      } else {
+        r_St_17_Max = v_125;
+      };
+      v_345 = r_St_17_Max;
+      if (v_122) {
+        s_St_17_Max_1 = true;
+      } else {
+        s_St_17_Max_1 = v_124_1;
+      };
+      v_341 = s_St_17_Max_1;
+      if (v_122) {
+        s_St_17_Max_2 = false;
+      } else {
+        s_St_17_Max_2 = v_124_2;
+      };
+      v_342 = s_St_17_Max_2;
     } else {
-      ar_state_1_St_16_Min = 1;
-      nr_St_16_Min = false;
-      ns_St_16_Min_1 = true;
-      ns_St_16_Min_2 = false;
-      v_309 = ar_state_1_St_16_Min;
-      v_315 = nr_St_16_Min;
-      v_311 = ns_St_16_Min_1;
-      v_312 = ns_St_16_Min_2;
+      if (c2_2) {
+        v_128 = true;
+        v_127_1 = true;
+        v_127_2 = true;
+      } else {
+        v_128 = self->pnr;
+        v_127_1 = true;
+        v_127_2 = false;
+      };
+      v_126 = !(c1_2);
+      if (v_126) {
+        r_St_17_Min = true;
+        s_St_17_Min_1 = false;
+        s_St_17_Min_2 = false;
+      } else {
+        r_St_17_Min = v_128;
+        s_St_17_Min_1 = v_127_1;
+        s_St_17_Min_2 = v_127_2;
+      };
+      v_345 = r_St_17_Min;
+      v_341 = s_St_17_Min_1;
+      v_342 = s_St_17_Min_2;
     };
-    ar_state_1 = v_309;
-    ns_1_3 = v_311;
-    ns_2_3 = v_312;
-    nr = v_315;
+    s_1_3 = v_341;
+    s_2_3 = v_342;
+    r = v_345;
   } else {
     ck_33_2_0 = ck_33_2;
     if (ck_33_2_0) {
-      v_310 = 0;
-      v_316 = true;
-      v_313 = true;
-      v_314 = true;
+      v_346 = true;
+      v_343 = true;
+      v_344 = true;
     } else {
-      ar_state_1_St_16_Off = 0;
-      v_310 = ar_state_1_St_16_Off;
-      nr_St_16_Off = false;
-      v_316 = nr_St_16_Off;
-      ns_St_16_Off_1 = false;
-      v_313 = ns_St_16_Off_1;
-      ns_St_16_Off_2 = false;
-      v_314 = ns_St_16_Off_2;
-      if (ns_St_16_Off_1) {
-        ns_St_16_Off_2_1 = ns_St_16_Off_2;
+      if (c2_2) {
+        v_130 = true;
       } else {
-        ns_St_16_Off_2_0 = ns_St_16_Off_2;
+        v_130 = self->pnr;
+      };
+      if (c1_2) {
+        r_St_17_Off = true;
+      } else {
+        r_St_17_Off = v_130;
+      };
+      v_346 = r_St_17_Off;
+      if (c2_2) {
+        v_129_1 = true;
+      } else {
+        v_129_1 = false;
+      };
+      if (c1_2) {
+        s_St_17_Off_1 = true;
+      } else {
+        s_St_17_Off_1 = v_129_1;
+      };
+      v_343 = s_St_17_Off_1;
+      if (c2_2) {
+        v_129_2 = true;
+      } else {
+        v_129_2 = false;
+      };
+      if (c1_2) {
+        s_St_17_Off_2 = false;
+      } else {
+        s_St_17_Off_2 = v_129_2;
+      };
+      v_344 = s_St_17_Off_2;
+      if (v_129_1) {
+        v_129_2_1 = v_129_2;
+      } else {
+        v_129_2_0 = v_129_2;
+      };
+      if (s_St_17_Off_1) {
+        s_St_17_Off_2_1 = s_St_17_Off_2;
+      } else {
+        s_St_17_Off_2_0 = s_St_17_Off_2;
       };
     };
-    ar_state_1 = v_310;
-    ns_1_3 = v_313;
-    ns_2_3 = v_314;
-    nr = v_316;
+    s_1_3 = v_343;
+    s_2_3 = v_344;
+    r = v_346;
+  };
+  ck_34_1 = s_1_3;
+  ck_34_2 = s_2_3;
+  if (ck_34_1) {
+    ck_34_2_1 = ck_34_2;
+    if (ck_34_2_1) {
+      ar_state_1_St_17_Max = 2;
+      v_331 = ar_state_1_St_17_Max;
+      nr_St_17_Max = false;
+      v_337 = nr_St_17_Max;
+      ns_St_17_Max_1 = true;
+      v_333 = ns_St_17_Max_1;
+      ns_St_17_Max_2 = true;
+      v_334 = ns_St_17_Max_2;
+    } else {
+      ar_state_1_St_17_Min = 1;
+      nr_St_17_Min = false;
+      ns_St_17_Min_1 = true;
+      ns_St_17_Min_2 = false;
+      v_331 = ar_state_1_St_17_Min;
+      v_337 = nr_St_17_Min;
+      v_333 = ns_St_17_Min_1;
+      v_334 = ns_St_17_Min_2;
+    };
+    ar_state_1 = v_331;
+    ns_1_3 = v_333;
+    ns_2_3 = v_334;
+    nr = v_337;
+  } else {
+    ck_34_2_0 = ck_34_2;
+    if (ck_34_2_0) {
+      v_332 = 0;
+      v_338 = true;
+      v_335 = true;
+      v_336 = true;
+    } else {
+      ar_state_1_St_17_Off = 0;
+      v_332 = ar_state_1_St_17_Off;
+      nr_St_17_Off = false;
+      v_338 = nr_St_17_Off;
+      ns_St_17_Off_1 = false;
+      v_335 = ns_St_17_Off_1;
+      ns_St_17_Off_2 = false;
+      v_336 = ns_St_17_Off_2;
+      if (ns_St_17_Off_1) {
+        ns_St_17_Off_2_1 = ns_St_17_Off_2;
+      } else {
+        ns_St_17_Off_2_0 = ns_St_17_Off_2;
+      };
+    };
+    ar_state_1 = v_332;
+    ns_1_3 = v_335;
+    ns_2_3 = v_336;
+    nr = v_338;
   };
   _out->ar_state = ar_state_1;
+  v_74 = (_out->ar_state==1);
+  v_84 = (_out->ar_state==0);
   if (ns_1_3) {
     ns_2_3_1 = ns_2_3;
   } else {
     ns_2_3_0 = ns_2_3;
   };
-  if (ck_33_1) {
-    if (ck_33_2_1) {
-      if (ns_St_16_Max_1) {
-        ns_St_16_Max_2_1 = ns_St_16_Max_2;
+  if (ck_34_1) {
+    if (ck_34_2_1) {
+      if (ns_St_17_Max_1) {
+        ns_St_17_Max_2_1 = ns_St_17_Max_2;
       } else {
-        ns_St_16_Max_2_0 = ns_St_16_Max_2;
+        ns_St_17_Max_2_0 = ns_St_17_Max_2;
       };
     } else {
-      if (ns_St_16_Min_1) {
-        ns_St_16_Min_2_1 = ns_St_16_Min_2;
+      if (ns_St_17_Min_1) {
+        ns_St_17_Min_2_1 = ns_St_17_Min_2;
       } else {
-        ns_St_16_Min_2_0 = ns_St_16_Min_2;
+        ns_St_17_Min_2_0 = ns_St_17_Min_2;
       };
     };
   };
@@ -4780,232 +4871,233 @@ void System__controller_step(int abre_porta, int p_arrived,
   } else {
     s_2_3_0 = s_2_3;
   };
-  if (ck_32_1) {
-    if (ck_32_2_1) {
-      if (v_102_1) {
-        v_102_2_1 = v_102_2;
+  if (ck_33_1) {
+    if (ck_33_2_1) {
+      if (v_124_1) {
+        v_124_2_1 = v_124_2;
       } else {
-        v_102_2_0 = v_102_2;
+        v_124_2_0 = v_124_2;
       };
-      if (s_St_16_Max_1) {
-        s_St_16_Max_2_1 = s_St_16_Max_2;
+      if (s_St_17_Max_1) {
+        s_St_17_Max_2_1 = s_St_17_Max_2;
       } else {
-        s_St_16_Max_2_0 = s_St_16_Max_2;
+        s_St_17_Max_2_0 = s_St_17_Max_2;
       };
     } else {
-      if (v_105_1) {
-        v_105_2_1 = v_105_2;
+      if (v_127_1) {
+        v_127_2_1 = v_127_2;
       } else {
-        v_105_2_0 = v_105_2;
+        v_127_2_0 = v_127_2;
       };
-      if (s_St_16_Min_1) {
-        s_St_16_Min_2_1 = s_St_16_Min_2;
+      if (s_St_17_Min_1) {
+        s_St_17_Min_2_1 = s_St_17_Min_2;
       } else {
-        s_St_16_Min_2_0 = s_St_16_Min_2;
+        s_St_17_Min_2_0 = s_St_17_Min_2;
       };
     };
   };
-  if (ck_30_1) {
-    ck_30_2_1 = ck_30_2;
-    if (ck_30_2_1) {
-      if (c2_1) {
-        v_99 = true;
-      } else {
-        v_99 = self->pnr_1;
-      };
-      if (c1_1) {
-        r_1_St_17_Down = true;
-      } else {
-        r_1_St_17_Down = v_99;
-      };
-      if (c2_1) {
-        v_98_1 = false;
-      } else {
-        v_98_1 = true;
-      };
-      if (c1_1) {
-        s_1_St_17_Down_1 = true;
-      } else {
-        s_1_St_17_Down_1 = v_98_1;
-      };
-      if (c2_1) {
-        v_98_2 = false;
-      } else {
-        v_98_2 = true;
-      };
-      if (c1_1) {
-        s_1_St_17_Down_2 = false;
-      } else {
-        s_1_St_17_Down_2 = v_98_2;
-      };
-      v_339 = r_1_St_17_Down;
-      v_335 = s_1_St_17_Down_1;
-      v_336 = s_1_St_17_Down_2;
-      if (v_98_1) {
-        v_98_2_1 = v_98_2;
-      } else {
-        v_98_2_0 = v_98_2;
-      };
-      if (s_1_St_17_Down_1) {
-        s_1_St_17_Down_2_1 = s_1_St_17_Down_2;
-      } else {
-        s_1_St_17_Down_2_0 = s_1_St_17_Down_2;
-      };
-    } else {
-      if (c2_1) {
-        v_97 = true;
-        v_96_1 = false;
-        v_96_2 = false;
-      } else {
-        v_97 = self->pnr_1;
-        v_96_1 = true;
-        v_96_2 = false;
-      };
-      v_95 = !(c1_1);
-      if (v_95) {
-        r_1_St_17_Mid = true;
-      } else {
-        r_1_St_17_Mid = v_97;
-      };
-      v_339 = r_1_St_17_Mid;
-      if (v_95) {
-        s_1_St_17_Mid_1 = true;
-      } else {
-        s_1_St_17_Mid_1 = v_96_1;
-      };
-      v_335 = s_1_St_17_Mid_1;
-      if (v_95) {
-        s_1_St_17_Mid_2 = true;
-      } else {
-        s_1_St_17_Mid_2 = v_96_2;
-      };
-      v_336 = s_1_St_17_Mid_2;
-      if (v_96_1) {
-        v_96_2_1 = v_96_2;
-      } else {
-        v_96_2_0 = v_96_2;
-      };
-      if (s_1_St_17_Mid_1) {
-        s_1_St_17_Mid_2_1 = s_1_St_17_Mid_2;
-      } else {
-        s_1_St_17_Mid_2_0 = s_1_St_17_Mid_2;
-      };
-    };
-    s_1_1 = v_335;
-    s_1_2 = v_336;
-    r_1 = v_339;
-  } else {
-    ck_30_2_0 = ck_30_2;
-    if (ck_30_2_0) {
-      v_340 = true;
-      v_337 = true;
-      v_338 = true;
-    } else {
-      v_92 = !(c2_1);
-      if (v_92) {
-        v_94 = true;
-        v_93_1 = true;
-        v_93_2 = true;
-      } else {
-        v_94 = self->pnr_1;
-        v_93_1 = false;
-        v_93_2 = false;
-      };
-      v_91 = !(c1_1);
-      if (v_91) {
-        r_1_St_17_Up = true;
-      } else {
-        r_1_St_17_Up = v_94;
-      };
-      v_340 = r_1_St_17_Up;
-      if (v_91) {
-        s_1_St_17_Up_1 = true;
-      } else {
-        s_1_St_17_Up_1 = v_93_1;
-      };
-      v_337 = s_1_St_17_Up_1;
-      if (v_91) {
-        s_1_St_17_Up_2 = false;
-      } else {
-        s_1_St_17_Up_2 = v_93_2;
-      };
-      v_338 = s_1_St_17_Up_2;
-    };
-    s_1_1 = v_337;
-    s_1_2 = v_338;
-    r_1 = v_340;
-  };
-  ck_31_1 = s_1_1;
-  ck_31_2 = s_1_2;
   if (ck_31_1) {
     ck_31_2_1 = ck_31_2;
     if (ck_31_2_1) {
-      p_state_1_St_17_Down = 0;
-      nr_1_St_17_Down = false;
-      ns_1_St_17_Down_1 = true;
-      ns_1_St_17_Down_2 = true;
-      v_325 = p_state_1_St_17_Down;
-      v_331 = nr_1_St_17_Down;
-      v_327 = ns_1_St_17_Down_1;
-      v_328 = ns_1_St_17_Down_2;
-      if (ns_1_St_17_Down_1) {
-        ns_1_St_17_Down_2_1 = ns_1_St_17_Down_2;
+      if (c2_1) {
+        v_121 = true;
       } else {
-        ns_1_St_17_Down_2_0 = ns_1_St_17_Down_2;
+        v_121 = self->pnr_1;
+      };
+      if (c1_1) {
+        r_1_St_18_Down = true;
+      } else {
+        r_1_St_18_Down = v_121;
+      };
+      if (c2_1) {
+        v_120_1 = false;
+      } else {
+        v_120_1 = true;
+      };
+      if (c1_1) {
+        s_1_St_18_Down_1 = true;
+      } else {
+        s_1_St_18_Down_1 = v_120_1;
+      };
+      if (c2_1) {
+        v_120_2 = false;
+      } else {
+        v_120_2 = true;
+      };
+      if (c1_1) {
+        s_1_St_18_Down_2 = false;
+      } else {
+        s_1_St_18_Down_2 = v_120_2;
+      };
+      v_361 = r_1_St_18_Down;
+      v_357 = s_1_St_18_Down_1;
+      v_358 = s_1_St_18_Down_2;
+      if (v_120_1) {
+        v_120_2_1 = v_120_2;
+      } else {
+        v_120_2_0 = v_120_2;
+      };
+      if (s_1_St_18_Down_1) {
+        s_1_St_18_Down_2_1 = s_1_St_18_Down_2;
+      } else {
+        s_1_St_18_Down_2_0 = s_1_St_18_Down_2;
       };
     } else {
-      p_state_1_St_17_Mid = 1;
-      v_325 = p_state_1_St_17_Mid;
-      nr_1_St_17_Mid = false;
-      v_331 = nr_1_St_17_Mid;
-      ns_1_St_17_Mid_1 = true;
-      v_327 = ns_1_St_17_Mid_1;
-      ns_1_St_17_Mid_2 = false;
-      v_328 = ns_1_St_17_Mid_2;
-      if (ns_1_St_17_Mid_1) {
-        ns_1_St_17_Mid_2_1 = ns_1_St_17_Mid_2;
+      if (c2_1) {
+        v_119 = true;
+        v_118_1 = false;
+        v_118_2 = false;
       } else {
-        ns_1_St_17_Mid_2_0 = ns_1_St_17_Mid_2;
+        v_119 = self->pnr_1;
+        v_118_1 = true;
+        v_118_2 = false;
+      };
+      v_117 = !(c1_1);
+      if (v_117) {
+        r_1_St_18_Mid = true;
+      } else {
+        r_1_St_18_Mid = v_119;
+      };
+      v_361 = r_1_St_18_Mid;
+      if (v_117) {
+        s_1_St_18_Mid_1 = true;
+      } else {
+        s_1_St_18_Mid_1 = v_118_1;
+      };
+      v_357 = s_1_St_18_Mid_1;
+      if (v_117) {
+        s_1_St_18_Mid_2 = true;
+      } else {
+        s_1_St_18_Mid_2 = v_118_2;
+      };
+      v_358 = s_1_St_18_Mid_2;
+      if (v_118_1) {
+        v_118_2_1 = v_118_2;
+      } else {
+        v_118_2_0 = v_118_2;
+      };
+      if (s_1_St_18_Mid_1) {
+        s_1_St_18_Mid_2_1 = s_1_St_18_Mid_2;
+      } else {
+        s_1_St_18_Mid_2_0 = s_1_St_18_Mid_2;
       };
     };
-    p_state_1 = v_325;
-    ns_1_1 = v_327;
-    ns_1_2 = v_328;
-    nr_1 = v_331;
+    s_1_1 = v_357;
+    s_1_2 = v_358;
+    r_1 = v_361;
   } else {
     ck_31_2_0 = ck_31_2;
     if (ck_31_2_0) {
-      v_326 = 0;
-      v_332 = true;
-      v_329 = true;
-      v_330 = true;
+      v_362 = true;
+      v_359 = true;
+      v_360 = true;
     } else {
-      p_state_1_St_17_Up = 2;
-      v_326 = p_state_1_St_17_Up;
-      nr_1_St_17_Up = false;
-      v_332 = nr_1_St_17_Up;
-      ns_1_St_17_Up_1 = false;
-      v_329 = ns_1_St_17_Up_1;
-      ns_1_St_17_Up_2 = false;
-      v_330 = ns_1_St_17_Up_2;
+      v_114 = !(c2_1);
+      if (v_114) {
+        v_116 = true;
+        v_115_1 = true;
+        v_115_2 = true;
+      } else {
+        v_116 = self->pnr_1;
+        v_115_1 = false;
+        v_115_2 = false;
+      };
+      v_113 = !(c1_1);
+      if (v_113) {
+        r_1_St_18_Up = true;
+      } else {
+        r_1_St_18_Up = v_116;
+      };
+      v_362 = r_1_St_18_Up;
+      if (v_113) {
+        s_1_St_18_Up_1 = true;
+      } else {
+        s_1_St_18_Up_1 = v_115_1;
+      };
+      v_359 = s_1_St_18_Up_1;
+      if (v_113) {
+        s_1_St_18_Up_2 = false;
+      } else {
+        s_1_St_18_Up_2 = v_115_2;
+      };
+      v_360 = s_1_St_18_Up_2;
     };
-    p_state_1 = v_326;
-    ns_1_1 = v_329;
-    ns_1_2 = v_330;
-    nr_1 = v_332;
+    s_1_1 = v_359;
+    s_1_2 = v_360;
+    r_1 = v_362;
+  };
+  ck_32_1 = s_1_1;
+  ck_32_2 = s_1_2;
+  if (ck_32_1) {
+    ck_32_2_1 = ck_32_2;
+    if (ck_32_2_1) {
+      p_state_1_St_18_Down = 0;
+      nr_1_St_18_Down = false;
+      ns_1_St_18_Down_1 = true;
+      ns_1_St_18_Down_2 = true;
+      v_347 = p_state_1_St_18_Down;
+      v_353 = nr_1_St_18_Down;
+      v_349 = ns_1_St_18_Down_1;
+      v_350 = ns_1_St_18_Down_2;
+      if (ns_1_St_18_Down_1) {
+        ns_1_St_18_Down_2_1 = ns_1_St_18_Down_2;
+      } else {
+        ns_1_St_18_Down_2_0 = ns_1_St_18_Down_2;
+      };
+    } else {
+      p_state_1_St_18_Mid = 1;
+      v_347 = p_state_1_St_18_Mid;
+      nr_1_St_18_Mid = false;
+      v_353 = nr_1_St_18_Mid;
+      ns_1_St_18_Mid_1 = true;
+      v_349 = ns_1_St_18_Mid_1;
+      ns_1_St_18_Mid_2 = false;
+      v_350 = ns_1_St_18_Mid_2;
+      if (ns_1_St_18_Mid_1) {
+        ns_1_St_18_Mid_2_1 = ns_1_St_18_Mid_2;
+      } else {
+        ns_1_St_18_Mid_2_0 = ns_1_St_18_Mid_2;
+      };
+    };
+    p_state_1 = v_347;
+    ns_1_1 = v_349;
+    ns_1_2 = v_350;
+    nr_1 = v_353;
+  } else {
+    ck_32_2_0 = ck_32_2;
+    if (ck_32_2_0) {
+      v_348 = 0;
+      v_354 = true;
+      v_351 = true;
+      v_352 = true;
+    } else {
+      p_state_1_St_18_Up = 2;
+      v_348 = p_state_1_St_18_Up;
+      nr_1_St_18_Up = false;
+      v_354 = nr_1_St_18_Up;
+      ns_1_St_18_Up_1 = false;
+      v_351 = ns_1_St_18_Up_1;
+      ns_1_St_18_Up_2 = false;
+      v_352 = ns_1_St_18_Up_2;
+    };
+    p_state_1 = v_348;
+    ns_1_1 = v_351;
+    ns_1_2 = v_352;
+    nr_1 = v_354;
   };
   _out->p_state = p_state_1;
+  v_82 = (_out->p_state==0);
   if (ns_1_1) {
     ns_1_2_1 = ns_1_2;
   } else {
     ns_1_2_0 = ns_1_2;
   };
-  if (!(ck_31_1)) {
-    if (!(ck_31_2_0)) {
-      if (ns_1_St_17_Up_1) {
-        ns_1_St_17_Up_2_1 = ns_1_St_17_Up_2;
+  if (!(ck_32_1)) {
+    if (!(ck_32_2_0)) {
+      if (ns_1_St_18_Up_1) {
+        ns_1_St_18_Up_2_1 = ns_1_St_18_Up_2;
       } else {
-        ns_1_St_17_Up_2_0 = ns_1_St_17_Up_2;
+        ns_1_St_18_Up_2_0 = ns_1_St_18_Up_2;
       };
     };
   };
@@ -5014,217 +5106,219 @@ void System__controller_step(int abre_porta, int p_arrived,
   } else {
     s_1_2_0 = s_1_2;
   };
-  if (!(ck_30_1)) {
-    if (!(ck_30_2_0)) {
-      if (v_93_1) {
-        v_93_2_1 = v_93_2;
+  if (!(ck_31_1)) {
+    if (!(ck_31_2_0)) {
+      if (v_115_1) {
+        v_115_2_1 = v_115_2;
       } else {
-        v_93_2_0 = v_93_2;
+        v_115_2_0 = v_115_2;
       };
-      if (s_1_St_17_Up_1) {
-        s_1_St_17_Up_2_1 = s_1_St_17_Up_2;
+      if (s_1_St_18_Up_1) {
+        s_1_St_18_Up_2_1 = s_1_St_18_Up_2;
       } else {
-        s_1_St_17_Up_2_0 = s_1_St_17_Up_2;
+        s_1_St_18_Up_2_0 = s_1_St_18_Up_2;
       };
     };
   };
-  if (ck_28_1) {
-    ck_28_2_1 = ck_28_2;
-    if (ck_28_2_1) {
-      v_83 = !(c2);
-      if (v_83) {
-        v_85 = true;
-        v_84_1 = true;
-        v_84_2 = false;
-      } else {
-        v_85 = self->pnr_2;
-        v_84_1 = true;
-        v_84_2 = true;
-      };
-      v_82 = !(c1);
-      if (v_82) {
-        r_2_St_18_All = true;
-      } else {
-        r_2_St_18_All = v_85;
-      };
-      v_355 = r_2_St_18_All;
-      if (v_82) {
-        s_2_St_18_All_1 = false;
-      } else {
-        s_2_St_18_All_1 = v_84_1;
-      };
-      v_351 = s_2_St_18_All_1;
-      if (v_82) {
-        s_2_St_18_All_2 = false;
-      } else {
-        s_2_St_18_All_2 = v_84_2;
-      };
-      v_352 = s_2_St_18_All_2;
-    } else {
-      if (c2) {
-        v_90 = true;
-      } else {
-        v_90 = self->pnr_2;
-      };
-      if (c1) {
-        r_2_St_18_None = true;
-      } else {
-        r_2_St_18_None = v_90;
-      };
-      if (c2) {
-        v_89_1 = true;
-      } else {
-        v_89_1 = true;
-      };
-      if (c1) {
-        s_2_St_18_None_1 = false;
-      } else {
-        s_2_St_18_None_1 = v_89_1;
-      };
-      if (c2) {
-        v_89_2 = true;
-      } else {
-        v_89_2 = false;
-      };
-      if (c1) {
-        s_2_St_18_None_2 = false;
-      } else {
-        s_2_St_18_None_2 = v_89_2;
-      };
-      v_355 = r_2_St_18_None;
-      v_351 = s_2_St_18_None_1;
-      v_352 = s_2_St_18_None_2;
-      if (v_89_1) {
-        v_89_2_1 = v_89_2;
-      } else {
-        v_89_2_0 = v_89_2;
-      };
-    };
-    s_2_1 = v_351;
-    s_2_2 = v_352;
-    r_2 = v_355;
-  } else {
-    ck_28_2_0 = ck_28_2;
-    if (ck_28_2_0) {
-      v_356 = true;
-      v_353 = true;
-      v_354 = true;
-    } else {
-      if (c2) {
-        v_88 = true;
-        v_87_1 = true;
-        v_87_2 = true;
-      } else {
-        v_88 = self->pnr_2;
-        v_87_1 = false;
-        v_87_2 = false;
-      };
-      v_86 = !(c1);
-      if (v_86) {
-        r_2_St_18_Some = true;
-      } else {
-        r_2_St_18_Some = v_88;
-      };
-      v_356 = r_2_St_18_Some;
-      if (v_86) {
-        s_2_St_18_Some_1 = true;
-      } else {
-        s_2_St_18_Some_1 = v_87_1;
-      };
-      v_353 = s_2_St_18_Some_1;
-      if (v_86) {
-        s_2_St_18_Some_2 = false;
-      } else {
-        s_2_St_18_Some_2 = v_87_2;
-      };
-      v_354 = s_2_St_18_Some_2;
-      if (v_87_1) {
-        v_87_2_1 = v_87_2;
-      } else {
-        v_87_2_0 = v_87_2;
-      };
-      if (s_2_St_18_Some_1) {
-        s_2_St_18_Some_2_1 = s_2_St_18_Some_2;
-      } else {
-        s_2_St_18_Some_2_0 = s_2_St_18_Some_2;
-      };
-    };
-    s_2_1 = v_353;
-    s_2_2 = v_354;
-    r_2 = v_356;
-  };
-  ck_29_1 = s_2_1;
-  ck_29_2 = s_2_2;
   if (ck_29_1) {
     ck_29_2_1 = ck_29_2;
     if (ck_29_2_1) {
-      l_state_1_St_18_All = 2;
-      v_341 = l_state_1_St_18_All;
-      nr_2_St_18_All = false;
-      v_347 = nr_2_St_18_All;
-      ns_2_St_18_All_1 = true;
-      v_343 = ns_2_St_18_All_1;
-      ns_2_St_18_All_2 = true;
-      v_344 = ns_2_St_18_All_2;
+      v_105 = !(c2);
+      if (v_105) {
+        v_107 = true;
+        v_106_1 = true;
+        v_106_2 = false;
+      } else {
+        v_107 = self->pnr_2;
+        v_106_1 = true;
+        v_106_2 = true;
+      };
+      v_104 = !(c1);
+      if (v_104) {
+        r_2_St_19_All = true;
+      } else {
+        r_2_St_19_All = v_107;
+      };
+      v_377 = r_2_St_19_All;
+      if (v_104) {
+        s_2_St_19_All_1 = false;
+      } else {
+        s_2_St_19_All_1 = v_106_1;
+      };
+      v_373 = s_2_St_19_All_1;
+      if (v_104) {
+        s_2_St_19_All_2 = false;
+      } else {
+        s_2_St_19_All_2 = v_106_2;
+      };
+      v_374 = s_2_St_19_All_2;
     } else {
-      l_state_1_St_18_None = 0;
-      nr_2_St_18_None = false;
-      ns_2_St_18_None_1 = true;
-      ns_2_St_18_None_2 = false;
-      v_341 = l_state_1_St_18_None;
-      v_347 = nr_2_St_18_None;
-      v_343 = ns_2_St_18_None_1;
-      v_344 = ns_2_St_18_None_2;
+      if (c2) {
+        v_112 = true;
+      } else {
+        v_112 = self->pnr_2;
+      };
+      if (c1) {
+        r_2_St_19_None = true;
+      } else {
+        r_2_St_19_None = v_112;
+      };
+      if (c2) {
+        v_111_1 = true;
+      } else {
+        v_111_1 = true;
+      };
+      if (c1) {
+        s_2_St_19_None_1 = false;
+      } else {
+        s_2_St_19_None_1 = v_111_1;
+      };
+      if (c2) {
+        v_111_2 = true;
+      } else {
+        v_111_2 = false;
+      };
+      if (c1) {
+        s_2_St_19_None_2 = false;
+      } else {
+        s_2_St_19_None_2 = v_111_2;
+      };
+      v_377 = r_2_St_19_None;
+      v_373 = s_2_St_19_None_1;
+      v_374 = s_2_St_19_None_2;
+      if (v_111_1) {
+        v_111_2_1 = v_111_2;
+      } else {
+        v_111_2_0 = v_111_2;
+      };
     };
-    l_state_1 = v_341;
-    ns_2_1 = v_343;
-    ns_2_2 = v_344;
-    nr_2 = v_347;
+    s_2_1 = v_373;
+    s_2_2 = v_374;
+    r_2 = v_377;
   } else {
     ck_29_2_0 = ck_29_2;
     if (ck_29_2_0) {
-      v_342 = 0;
-      v_348 = true;
-      v_345 = true;
-      v_346 = true;
+      v_378 = true;
+      v_375 = true;
+      v_376 = true;
     } else {
-      l_state_1_St_18_Some = 1;
-      v_342 = l_state_1_St_18_Some;
-      nr_2_St_18_Some = false;
-      v_348 = nr_2_St_18_Some;
-      ns_2_St_18_Some_1 = false;
-      v_345 = ns_2_St_18_Some_1;
-      ns_2_St_18_Some_2 = false;
-      v_346 = ns_2_St_18_Some_2;
-      if (ns_2_St_18_Some_1) {
-        ns_2_St_18_Some_2_1 = ns_2_St_18_Some_2;
+      if (c2) {
+        v_110 = true;
+        v_109_1 = true;
+        v_109_2 = true;
       } else {
-        ns_2_St_18_Some_2_0 = ns_2_St_18_Some_2;
+        v_110 = self->pnr_2;
+        v_109_1 = false;
+        v_109_2 = false;
+      };
+      v_108 = !(c1);
+      if (v_108) {
+        r_2_St_19_Some = true;
+      } else {
+        r_2_St_19_Some = v_110;
+      };
+      v_378 = r_2_St_19_Some;
+      if (v_108) {
+        s_2_St_19_Some_1 = true;
+      } else {
+        s_2_St_19_Some_1 = v_109_1;
+      };
+      v_375 = s_2_St_19_Some_1;
+      if (v_108) {
+        s_2_St_19_Some_2 = false;
+      } else {
+        s_2_St_19_Some_2 = v_109_2;
+      };
+      v_376 = s_2_St_19_Some_2;
+      if (v_109_1) {
+        v_109_2_1 = v_109_2;
+      } else {
+        v_109_2_0 = v_109_2;
+      };
+      if (s_2_St_19_Some_1) {
+        s_2_St_19_Some_2_1 = s_2_St_19_Some_2;
+      } else {
+        s_2_St_19_Some_2_0 = s_2_St_19_Some_2;
       };
     };
-    l_state_1 = v_342;
-    ns_2_1 = v_345;
-    ns_2_2 = v_346;
-    nr_2 = v_348;
+    s_2_1 = v_375;
+    s_2_2 = v_376;
+    r_2 = v_378;
+  };
+  ck_30_1 = s_2_1;
+  ck_30_2 = s_2_2;
+  if (ck_30_1) {
+    ck_30_2_1 = ck_30_2;
+    if (ck_30_2_1) {
+      l_state_1_St_19_All = 2;
+      v_363 = l_state_1_St_19_All;
+      nr_2_St_19_All = false;
+      v_369 = nr_2_St_19_All;
+      ns_2_St_19_All_1 = true;
+      v_365 = ns_2_St_19_All_1;
+      ns_2_St_19_All_2 = true;
+      v_366 = ns_2_St_19_All_2;
+    } else {
+      l_state_1_St_19_None = 0;
+      nr_2_St_19_None = false;
+      ns_2_St_19_None_1 = true;
+      ns_2_St_19_None_2 = false;
+      v_363 = l_state_1_St_19_None;
+      v_369 = nr_2_St_19_None;
+      v_365 = ns_2_St_19_None_1;
+      v_366 = ns_2_St_19_None_2;
+    };
+    l_state_1 = v_363;
+    ns_2_1 = v_365;
+    ns_2_2 = v_366;
+    nr_2 = v_369;
+  } else {
+    ck_30_2_0 = ck_30_2;
+    if (ck_30_2_0) {
+      v_364 = 0;
+      v_370 = true;
+      v_367 = true;
+      v_368 = true;
+    } else {
+      l_state_1_St_19_Some = 1;
+      v_364 = l_state_1_St_19_Some;
+      nr_2_St_19_Some = false;
+      v_370 = nr_2_St_19_Some;
+      ns_2_St_19_Some_1 = false;
+      v_367 = ns_2_St_19_Some_1;
+      ns_2_St_19_Some_2 = false;
+      v_368 = ns_2_St_19_Some_2;
+      if (ns_2_St_19_Some_1) {
+        ns_2_St_19_Some_2_1 = ns_2_St_19_Some_2;
+      } else {
+        ns_2_St_19_Some_2_0 = ns_2_St_19_Some_2;
+      };
+    };
+    l_state_1 = v_364;
+    ns_2_1 = v_367;
+    ns_2_2 = v_368;
+    nr_2 = v_370;
   };
   _out->l_state = l_state_1;
+  v_80 = (_out->l_state==0);
+  v_88 = (_out->l_state==2);
   if (ns_2_1) {
     ns_2_2_1 = ns_2_2;
   } else {
     ns_2_2_0 = ns_2_2;
   };
-  if (ck_29_1) {
-    if (ck_29_2_1) {
-      if (ns_2_St_18_All_1) {
-        ns_2_St_18_All_2_1 = ns_2_St_18_All_2;
+  if (ck_30_1) {
+    if (ck_30_2_1) {
+      if (ns_2_St_19_All_1) {
+        ns_2_St_19_All_2_1 = ns_2_St_19_All_2;
       } else {
-        ns_2_St_18_All_2_0 = ns_2_St_18_All_2;
+        ns_2_St_19_All_2_0 = ns_2_St_19_All_2;
       };
     } else {
-      if (ns_2_St_18_None_1) {
-        ns_2_St_18_None_2_1 = ns_2_St_18_None_2;
+      if (ns_2_St_19_None_1) {
+        ns_2_St_19_None_2_1 = ns_2_St_19_None_2;
       } else {
-        ns_2_St_18_None_2_0 = ns_2_St_18_None_2;
+        ns_2_St_19_None_2_0 = ns_2_St_19_None_2;
       };
     };
   };
@@ -5233,301 +5327,325 @@ void System__controller_step(int abre_porta, int p_arrived,
   } else {
     s_2_2_0 = s_2_2;
   };
+  if (ck_29_1) {
+    if (ck_29_2_1) {
+      if (v_106_1) {
+        v_106_2_1 = v_106_2;
+      } else {
+        v_106_2_0 = v_106_2;
+      };
+      if (s_2_St_19_All_1) {
+        s_2_St_19_All_2_1 = s_2_St_19_All_2;
+      } else {
+        s_2_St_19_All_2_0 = s_2_St_19_All_2;
+      };
+    } else {
+      if (s_2_St_19_None_1) {
+        s_2_St_19_None_2_1 = s_2_St_19_None_2;
+      } else {
+        s_2_St_19_None_2_0 = s_2_St_19_None_2;
+      };
+    };
+  };
+  if (self->ck_27_1) {
+    if (c_2) {
+      r_3_St_20_Closed = true;
+      s_3_St_20_Closed_1 = false;
+    } else {
+      r_3_St_20_Closed = self->pnr_3;
+      s_3_St_20_Closed_1 = true;
+    };
+    r_3 = r_3_St_20_Closed;
+    s_3_1 = s_3_St_20_Closed_1;
+  } else {
+    v_103 = !(c_2);
+    if (v_103) {
+      r_3_St_20_Open = true;
+    } else {
+      r_3_St_20_Open = self->pnr_3;
+    };
+    r_3 = r_3_St_20_Open;
+    if (v_103) {
+      s_3_St_20_Open_1 = true;
+    } else {
+      s_3_St_20_Open_1 = false;
+    };
+    s_3_1 = s_3_St_20_Open_1;
+  };
+  ck_28_1 = s_3_1;
   if (ck_28_1) {
-    if (ck_28_2_1) {
-      if (v_84_1) {
-        v_84_2_1 = v_84_2;
-      } else {
-        v_84_2_0 = v_84_2;
-      };
-      if (s_2_St_18_All_1) {
-        s_2_St_18_All_2_1 = s_2_St_18_All_2;
-      } else {
-        s_2_St_18_All_2_0 = s_2_St_18_All_2;
-      };
-    } else {
-      if (s_2_St_18_None_1) {
-        s_2_St_18_None_2_1 = s_2_St_18_None_2;
-      } else {
-        s_2_St_18_None_2_0 = s_2_St_18_None_2;
-      };
-    };
-  };
-  if (self->ck_26_1) {
-    if (c_3) {
-      r_3_St_19_Closed = true;
-      s_3_St_19_Closed_1 = false;
-    } else {
-      r_3_St_19_Closed = self->pnr_3;
-      s_3_St_19_Closed_1 = true;
-    };
-    r_3 = r_3_St_19_Closed;
-    s_3_1 = s_3_St_19_Closed_1;
+    w_open_1_St_20_Closed = false;
+    nr_3_St_20_Closed = false;
+    ns_3_St_20_Closed_1 = true;
+    w_open_1 = w_open_1_St_20_Closed;
+    nr_3 = nr_3_St_20_Closed;
+    ns_3_1 = ns_3_St_20_Closed_1;
   } else {
-    v_81 = !(c_3);
-    if (v_81) {
-      r_3_St_19_Open = true;
-    } else {
-      r_3_St_19_Open = self->pnr_3;
-    };
-    r_3 = r_3_St_19_Open;
-    if (v_81) {
-      s_3_St_19_Open_1 = true;
-    } else {
-      s_3_St_19_Open_1 = false;
-    };
-    s_3_1 = s_3_St_19_Open_1;
-  };
-  ck_27_1 = s_3_1;
-  if (ck_27_1) {
-    w_open_1_St_19_Closed = false;
-    nr_3_St_19_Closed = false;
-    ns_3_St_19_Closed_1 = true;
-    w_open_1 = w_open_1_St_19_Closed;
-    nr_3 = nr_3_St_19_Closed;
-    ns_3_1 = ns_3_St_19_Closed_1;
-  } else {
-    w_open_1_St_19_Open = true;
-    w_open_1 = w_open_1_St_19_Open;
-    nr_3_St_19_Open = false;
-    nr_3 = nr_3_St_19_Open;
-    ns_3_St_19_Open_1 = false;
-    ns_3_1 = ns_3_St_19_Open_1;
+    w_open_1_St_20_Open = true;
+    w_open_1 = w_open_1_St_20_Open;
+    nr_3_St_20_Open = false;
+    nr_3 = nr_3_St_20_Open;
+    ns_3_St_20_Open_1 = false;
+    ns_3_1 = ns_3_St_20_Open_1;
   };
   _out->w_open = w_open_1;
-  if (self->ck_24_1) {
-    if (c_2) {
-      r_4_St_20_Off = true;
-      s_4_St_20_Off_1 = false;
+  v_78 = !(_out->w_open);
+  if (self->ck_25_1) {
+    if (c_1) {
+      r_4_St_21_Off = true;
+      s_4_St_21_Off_1 = false;
     } else {
-      r_4_St_20_Off = self->pnr_4;
-      s_4_St_20_Off_1 = true;
+      r_4_St_21_Off = self->pnr_4;
+      s_4_St_21_Off_1 = true;
     };
-    r_4 = r_4_St_20_Off;
-    s_4_1 = s_4_St_20_Off_1;
+    r_4 = r_4_St_21_Off;
+    s_4_1 = s_4_St_21_Off_1;
   } else {
-    v_80 = !(c_2);
-    if (v_80) {
-      r_4_St_20_On = true;
+    v_102 = !(c_1);
+    if (v_102) {
+      r_4_St_21_On = true;
     } else {
-      r_4_St_20_On = self->pnr_4;
+      r_4_St_21_On = self->pnr_4;
     };
-    r_4 = r_4_St_20_On;
-    if (v_80) {
-      s_4_St_20_On_1 = true;
+    r_4 = r_4_St_21_On;
+    if (v_102) {
+      s_4_St_21_On_1 = true;
     } else {
-      s_4_St_20_On_1 = false;
+      s_4_St_21_On_1 = false;
     };
-    s_4_1 = s_4_St_20_On_1;
+    s_4_1 = s_4_St_21_On_1;
   };
-  ck_25_1 = s_4_1;
-  if (ck_25_1) {
-    pc_on_1_St_20_Off = false;
-    nr_4_St_20_Off = false;
-    ns_4_St_20_Off_1 = true;
-    pc_on_1 = pc_on_1_St_20_Off;
-    nr_4 = nr_4_St_20_Off;
-    ns_4_1 = ns_4_St_20_Off_1;
+  ck_26_1 = s_4_1;
+  if (ck_26_1) {
+    pc_on_1_St_21_Off = false;
+    nr_4_St_21_Off = false;
+    ns_4_St_21_Off_1 = true;
+    pc_on_1 = pc_on_1_St_21_Off;
+    nr_4 = nr_4_St_21_Off;
+    ns_4_1 = ns_4_St_21_Off_1;
   } else {
-    pc_on_1_St_20_On = true;
-    pc_on_1 = pc_on_1_St_20_On;
-    nr_4_St_20_On = false;
-    nr_4 = nr_4_St_20_On;
-    ns_4_St_20_On_1 = false;
-    ns_4_1 = ns_4_St_20_On_1;
+    pc_on_1_St_21_On = true;
+    pc_on_1 = pc_on_1_St_21_On;
+    nr_4_St_21_On = false;
+    nr_4 = nr_4_St_21_On;
+    ns_4_St_21_On_1 = false;
+    ns_4_1 = ns_4_St_21_On_1;
   };
   _out->pc_on = pc_on_1;
-  if (self->ck_22_1) {
+  v_76 = !(_out->pc_on);
+  if (self->ck_23_1) {
     if (arrived) {
-      r_5_St_21_Not_Present = true;
-      s_5_St_21_Not_Present_1 = false;
+      r_5_St_22_Not_Present = true;
+      s_5_St_22_Not_Present_1 = false;
     } else {
-      r_5_St_21_Not_Present = self->pnr_5;
-      s_5_St_21_Not_Present_1 = true;
+      r_5_St_22_Not_Present = self->pnr_5;
+      s_5_St_22_Not_Present_1 = true;
     };
-    r_5 = r_5_St_21_Not_Present;
-    s_5_1 = s_5_St_21_Not_Present_1;
+    r_5 = r_5_St_22_Not_Present;
+    s_5_1 = s_5_St_22_Not_Present_1;
   } else {
-    v_79 = !(arrived);
-    if (v_79) {
-      r_5_St_21_Preent = true;
+    if (arrived) {
+      r_5_St_22_Preent = true;
     } else {
-      r_5_St_21_Preent = self->pnr_5;
+      r_5_St_22_Preent = self->pnr_5;
     };
-    r_5 = r_5_St_21_Preent;
-    if (v_79) {
-      s_5_St_21_Preent_1 = true;
+    r_5 = r_5_St_22_Preent;
+    if (arrived) {
+      s_5_St_22_Preent_1 = true;
     } else {
-      s_5_St_21_Preent_1 = false;
+      s_5_St_22_Preent_1 = false;
     };
-    s_5_1 = s_5_St_21_Preent_1;
+    s_5_1 = s_5_St_22_Preent_1;
   };
-  ck_23_1 = s_5_1;
-  if (ck_23_1) {
-    presence_1_St_21_Not_Present = false;
-    nr_5_St_21_Not_Present = false;
-    ns_5_St_21_Not_Present_1 = true;
-    presence_1 = presence_1_St_21_Not_Present;
-    nr_5 = nr_5_St_21_Not_Present;
-    ns_5_1 = ns_5_St_21_Not_Present_1;
+  ck_24_1 = s_5_1;
+  if (ck_24_1) {
+    presence_1_St_22_Not_Present = false;
+    nr_5_St_22_Not_Present = false;
+    ns_5_St_22_Not_Present_1 = true;
+    presence_1 = presence_1_St_22_Not_Present;
+    nr_5 = nr_5_St_22_Not_Present;
+    ns_5_1 = ns_5_St_22_Not_Present_1;
   } else {
-    presence_1_St_21_Preent = true;
-    presence_1 = presence_1_St_21_Preent;
-    nr_5_St_21_Preent = false;
-    nr_5 = nr_5_St_21_Preent;
-    ns_5_St_21_Preent_1 = false;
-    ns_5_1 = ns_5_St_21_Preent_1;
+    presence_1_St_22_Preent = true;
+    presence_1 = presence_1_St_22_Preent;
+    nr_5_St_22_Preent = false;
+    nr_5 = nr_5_St_22_Preent;
+    ns_5_St_22_Preent_1 = false;
+    ns_5_1 = ns_5_St_22_Preent_1;
   };
   _out->presence = presence_1;
-  if (self->ck_20_1) {
-    if (c_1) {
-      r_6_St_22_Locked = true;
-      s_6_St_22_Locked_1 = false;
-    } else {
-      r_6_St_22_Locked = self->pnr_6;
-      s_6_St_22_Locked_1 = true;
-    };
-    r_6 = r_6_St_22_Locked;
-    s_6_1 = s_6_St_22_Locked_1;
-  } else {
-    v_78 = !(c_1);
-    if (v_78) {
-      r_6_St_22_Open = true;
-    } else {
-      r_6_St_22_Open = self->pnr_6;
-    };
-    r_6 = r_6_St_22_Open;
-    if (v_78) {
-      s_6_St_22_Open_1 = true;
-    } else {
-      s_6_St_22_Open_1 = false;
-    };
-    s_6_1 = s_6_St_22_Open_1;
-  };
-  ck_21_1 = s_6_1;
-  if (ck_21_1) {
-    arm_open_1_St_22_Locked = false;
-    nr_6_St_22_Locked = false;
-    ns_6_St_22_Locked_1 = true;
-    arm_open_1 = arm_open_1_St_22_Locked;
-    nr_6 = nr_6_St_22_Locked;
-    ns_6_1 = ns_6_St_22_Locked_1;
-  } else {
-    arm_open_1_St_22_Open = true;
-    arm_open_1 = arm_open_1_St_22_Open;
-    nr_6_St_22_Open = false;
-    nr_6 = nr_6_St_22_Open;
-    ns_6_St_22_Open_1 = false;
-    ns_6_1 = ns_6_St_22_Open_1;
-  };
-  _out->arm_open = arm_open_1;
-  v = !(_out->arm_open);
-  rule1 = (v&&_out->w_open);
-  if (self->ck_18_1) {
+  v_86 = !(_out->presence);
+  v_89 = !(_out->presence);
+  if (self->ck_21_1) {
     if (c) {
-      r_7_St_23_Off = true;
-      s_7_St_23_Off_1 = false;
+      r_6_St_23_Off = true;
+      s_6_St_23_Off_1 = false;
     } else {
-      r_7_St_23_Off = self->pnr_7;
-      s_7_St_23_Off_1 = true;
+      r_6_St_23_Off = self->pnr_6;
+      s_6_St_23_Off_1 = true;
     };
-    r_7 = r_7_St_23_Off;
-    s_7_1 = s_7_St_23_Off_1;
+    r_6 = r_6_St_23_Off;
+    s_6_1 = s_6_St_23_Off_1;
   } else {
-    v_77 = !(c);
-    if (v_77) {
-      r_7_St_23_On = true;
+    v_101 = !(c);
+    if (v_101) {
+      r_6_St_23_On = true;
     } else {
-      r_7_St_23_On = self->pnr_7;
+      r_6_St_23_On = self->pnr_6;
     };
-    r_7 = r_7_St_23_On;
-    if (v_77) {
-      s_7_St_23_On_1 = true;
+    r_6 = r_6_St_23_On;
+    if (v_101) {
+      s_6_St_23_On_1 = true;
     } else {
-      s_7_St_23_On_1 = false;
+      s_6_St_23_On_1 = false;
     };
-    s_7_1 = s_7_St_23_On_1;
+    s_6_1 = s_6_St_23_On_1;
   };
-  ck_19_1 = s_7_1;
-  if (ck_19_1) {
+  ck_22_1 = s_6_1;
+  if (ck_22_1) {
     r_on_St_23_Off = false;
-    nr_7_St_23_Off = false;
-    ns_7_St_23_Off_1 = true;
+    nr_6_St_23_Off = false;
+    ns_6_St_23_Off_1 = true;
     r_on = r_on_St_23_Off;
-    nr_7 = nr_7_St_23_Off;
-    ns_7_1 = ns_7_St_23_Off_1;
+    nr_6 = nr_6_St_23_Off;
+    ns_6_1 = ns_6_St_23_Off_1;
   } else {
     r_on_St_23_On = true;
     r_on = r_on_St_23_On;
-    nr_7_St_23_On = false;
-    nr_7 = nr_7_St_23_On;
-    ns_7_St_23_On_1 = false;
-    ns_7_1 = ns_7_St_23_On_1;
+    nr_6_St_23_On = false;
+    nr_6 = nr_6_St_23_On;
+    ns_6_St_23_On_1 = false;
+    ns_6_1 = ns_6_St_23_On_1;
   };
   _out->r_on1 = r_on;
-  if (self->ck_1) {
-    v_76 = (push&&c_porta_1);
-    if (v_76) {
-      r_8_St_24_Closed = true;
-      s_8_St_24_Closed_1 = false;
+  v_75 = !(_out->r_on1);
+  v_77 = (v_75&&v_76);
+  v_79 = (v_77&&v_78);
+  v_81 = (v_79&&v_80);
+  v_83 = (v_81&&v_82);
+  v_85 = (v_83&&v_84);
+  rule6 = (_out->presence||v_85);
+  if (self->ck_19_1) {
+    v_100 = !(c_porta_1);
+    if (v_100) {
+      r_7_St_24_Closed = true;
+      s_7_St_24_Closed_1 = false;
     } else {
-      r_8_St_24_Closed = self->pnr_8;
-      s_8_St_24_Closed_1 = true;
+      r_7_St_24_Closed = self->pnr_7;
+      s_7_St_24_Closed_1 = true;
     };
-    r_8 = r_8_St_24_Closed;
-    s_8_1 = s_8_St_24_Closed_1;
+    r_7 = r_7_St_24_Closed;
+    s_7_1 = s_7_St_24_Closed_1;
   } else {
-    v_74 = !(c_porta_1);
-    v_75 = (push||v_74);
-    if (v_75) {
-      r_8_St_24_Open = true;
+    if (c_porta_1) {
+      r_7_St_24_Open = true;
     } else {
-      r_8_St_24_Open = self->pnr_8;
+      r_7_St_24_Open = self->pnr_7;
     };
-    r_8 = r_8_St_24_Open;
-    if (v_75) {
-      s_8_St_24_Open_1 = true;
+    r_7 = r_7_St_24_Open;
+    if (c_porta_1) {
+      s_7_St_24_Open_1 = true;
     } else {
-      s_8_St_24_Open_1 = false;
+      s_7_St_24_Open_1 = false;
     };
-    s_8_1 = s_8_St_24_Open_1;
+    s_7_1 = s_7_St_24_Open_1;
   };
-  ck_17_1 = s_8_1;
-  if (ck_17_1) {
+  ck_20_1 = s_7_1;
+  if (ck_20_1) {
     porta_open_St_24_Closed = false;
-    nr_8_St_24_Closed = false;
-    ns_8_St_24_Closed_1 = true;
+    nr_7_St_24_Closed = false;
+    ns_7_St_24_Closed_1 = true;
     porta_open = porta_open_St_24_Closed;
-    nr_8 = nr_8_St_24_Closed;
-    ns_8_1 = ns_8_St_24_Closed_1;
+    nr_7 = nr_7_St_24_Closed;
+    ns_7_1 = ns_7_St_24_Closed_1;
   } else {
     porta_open_St_24_Open = true;
     porta_open = porta_open_St_24_Open;
-    nr_8_St_24_Open = false;
-    nr_8 = nr_8_St_24_Open;
-    ns_8_St_24_Open_1 = false;
-    ns_8_1 = ns_8_St_24_Open_1;
+    nr_7_St_24_Open = false;
+    nr_7 = nr_7_St_24_Open;
+    ns_7_St_24_Open_1 = false;
+    ns_7_1 = ns_7_St_24_Open_1;
   };
   _out->p_open = porta_open;
+  v_92 = !(_out->p_open);
+  v_94 = !(_out->p_open);
+  v_95 = (_out->presence&&v_94);
+  rule2 = !(v_95);
+  if (self->ck_1) {
+    if (shift) {
+      r_8_St_25_Dia = true;
+      s_8_St_25_Dia_1 = false;
+    } else {
+      r_8_St_25_Dia = self->pnr_8;
+      s_8_St_25_Dia_1 = true;
+    };
+    r_8 = r_8_St_25_Dia;
+    s_8_1 = s_8_St_25_Dia_1;
+  } else {
+    if (shift) {
+      r_8_St_25_Noite = true;
+    } else {
+      r_8_St_25_Noite = self->pnr_8;
+    };
+    r_8 = r_8_St_25_Noite;
+    if (shift) {
+      s_8_St_25_Noite_1 = true;
+    } else {
+      s_8_St_25_Noite_1 = false;
+    };
+    s_8_1 = s_8_St_25_Noite_1;
+  };
+  ck_18_1 = s_8_1;
+  if (ck_18_1) {
+    turno_St_25_Dia = false;
+    nr_8_St_25_Dia = false;
+    ns_8_St_25_Dia_1 = true;
+    turno = turno_St_25_Dia;
+    nr_8 = nr_8_St_25_Dia;
+    ns_8_1 = ns_8_St_25_Dia_1;
+  } else {
+    turno_St_25_Noite = true;
+    turno = turno_St_25_Noite;
+    nr_8_St_25_Noite = false;
+    nr_8 = nr_8_St_25_Noite;
+    ns_8_St_25_Noite_1 = false;
+    ns_8_1 = ns_8_St_25_Noite_1;
+  };
+  _out->night = turno;
+  v = !(_out->night);
+  v_72 = (_out->presence&&v);
+  v_73 = !(v_72);
+  rule7 = (v_73||v_74);
+  v_87 = (v_86&&_out->night);
+  rule5 = (v_87||v_88);
+  v_90 = (v_89&&_out->night);
+  rule4 = (v_90||_out->p_open);
+  v_91 = !(_out->night);
+  v_93 = (v_91&&v_92);
+  rule3 = !(v_93);
+  v_96 = (rule2&&rule3);
+  v_97 = (v_96&&rule4);
+  v_98 = (v_97&&rule6);
+  v_99 = (v_98&&rule7);
   self->pnr = nr;
-  self->v_317 = ns_1_3;
-  self->v_318 = ns_2_3;
+  self->v_339 = ns_1_3;
+  self->v_340 = ns_2_3;
   self->pnr_1 = nr_1;
-  self->v_333 = ns_1_1;
-  self->v_334 = ns_1_2;
+  self->v_355 = ns_1_1;
+  self->v_356 = ns_1_2;
   self->pnr_2 = nr_2;
-  self->v_349 = ns_2_1;
-  self->v_350 = ns_2_2;
+  self->v_371 = ns_2_1;
+  self->v_372 = ns_2_2;
   self->pnr_3 = nr_3;
-  self->ck_26_1 = ns_3_1;
+  self->ck_27_1 = ns_3_1;
   self->pnr_4 = nr_4;
-  self->ck_24_1 = ns_4_1;
+  self->ck_25_1 = ns_4_1;
   self->pnr_5 = nr_5;
-  self->ck_22_1 = ns_5_1;
+  self->ck_23_1 = ns_5_1;
   self->pnr_6 = nr_6;
-  self->ck_20_1 = ns_6_1;
+  self->ck_21_1 = ns_6_1;
   self->pnr_7 = nr_7;
-  self->ck_18_1 = ns_7_1;
+  self->ck_19_1 = ns_7_1;
   self->pnr_8 = nr_8;
   self->ck_1 = ns_8_1;;
 }

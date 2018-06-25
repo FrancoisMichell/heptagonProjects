@@ -1,25 +1,26 @@
-node controller_controller_controller_c_ar2(controller_abre_porta : bool;
+node controller_controller_controller_c_ar2(controller_shift_turno : bool;
+                                             controller_abre_porta : bool;
                                              controller_p_arrived : bool;
                                              controller_ck_1 : bool;
                                              controller_pnr_8 : bool;
-                                             controller_ck_18_1 : bool;
+                                             controller_ck_19_1 : bool;
                                              controller_pnr_7 : bool;
-                                             controller_ck_20_1 : bool;
+                                             controller_ck_21_1 : bool;
                                              controller_pnr_6 : bool;
-                                             controller_ck_22_1 : bool;
+                                             controller_ck_23_1 : bool;
                                              controller_pnr_5 : bool;
-                                             controller_ck_24_1 : bool;
+                                             controller_ck_25_1 : bool;
                                              controller_pnr_4 : bool;
-                                             controller_ck_26_1 : bool;
+                                             controller_ck_27_1 : bool;
                                              controller_pnr_3 : bool;
-                                             controller_v_350 : bool;
-                                             controller_v_349 : bool;
+                                             controller_v_372 : bool;
+                                             controller_v_371 : bool;
                                              controller_pnr_2 : bool;
-                                             controller_v_334 : bool;
-                                             controller_v_333 : bool;
+                                             controller_v_356 : bool;
+                                             controller_v_355 : bool;
                                              controller_pnr_1 : bool;
-                                             controller_v_318 : bool;
-                                             controller_v_317 : bool;
+                                             controller_v_340 : bool;
+                                             controller_v_339 : bool;
                                              controller_pnr : bool;
                                              p_controller_c_ar2 : bool;
                                              p_controller_c_ar1 : bool;
@@ -29,7 +30,6 @@ node controller_controller_controller_c_ar2(controller_abre_porta : bool;
                                              p_controller_c_luz1 : bool;
                                              p_controller_c_jan : bool;
                                              p_controller_c_pc : bool;
-                                             p_controller_c_arm : bool;
                                              p_controller_c_rot : bool;
                                              p_controller_c_porta : bool;
                                              controller_c_ar1 : bool;
@@ -39,50 +39,167 @@ node controller_controller_controller_c_ar2(controller_abre_porta : bool;
                                              controller_c_luz1 : bool;
                                              controller_c_jan : bool;
                                              controller_c_pc : bool;
-                                             controller_c_arm : bool;
                                              controller_c_rot : bool;
                                              controller_c_porta : bool)
 returns (controller_c_ar2 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
-    sub_10 : bool;
+var v_37 : bool; v_36 : bool; v_35 : bool; v_34 : bool; v_33 : bool;
+    v_32 : bool; v_31 : bool; v_30 : bool; v_29 : bool; v_28 : bool;
+    v_27 : bool; v_26 : bool; v_25 : bool; v_24 : bool; v_23 : bool;
+    v_22 : bool; v_21 : bool; v_20 : bool; v_19 : bool; v_18 : bool;
+    v_17 : bool; v_16 : bool; v_15 : bool; v_14 : bool; v_13 : bool;
+    v_12 : bool; v_11 : bool; v_10 : bool; v_9 : bool; v_8 : bool;
+    v_7 : bool; v_6 : bool; v_5 : bool; v_4 : bool; v_3 : bool; v_2 : bool;
+    v_1 : bool; v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool;
+    sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool;
+    sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool;
+    sub_13 : bool; sub_14 : bool; sub_15 : bool; sub_16 : bool;
+    sub_17 : bool; sub_18 : bool; sub_19 : bool; sub_20 : bool;
+    sub_21 : bool; sub_22 : bool; sub_23 : bool; sub_24 : bool;
+    sub_25 : bool; sub_26 : bool; sub_27 : bool; sub_28 : bool;
+    sub_29 : bool; sub_30 : bool; sub_31 : bool; sub_32 : bool;
+    sub_33 : bool; sub_34 : bool; sub_35 : bool; sub_36 : bool;
+    sub_37 : bool; sub_38 : bool; sub_39 : bool; sub_40 : bool;
+    sub_41 : bool; sub_42 : bool; sub_43 : bool; sub_44 : bool;
+    sub_45 : bool; sub_46 : bool; sub_47 : bool; sub_48 : bool;
+    sub_49 : bool; sub_50 : bool; sub_51 : bool; sub_52 : bool;
+    sub_53 : bool; sub_54 : bool; sub_55 : bool; sub_56 : bool;
+    sub_57 : bool; sub_58 : bool; sub_59 : bool; sub_60 : bool;
+    sub_61 : bool; sub_62 : bool; sub_63 : bool; sub_64 : bool;
+    sub_65 : bool; sub_66 : bool; sub_67 : bool; sub_68 : bool;
 let
   controller_c_ar2 = sub_0;
-  sub_10 = p_controller_c_ar2;
-  sub_9 = sub_10;
-  sub_8 = if controller_c_arm then false else sub_9;
-  sub_7 = if controller_c_jan then sub_8 else false;
-  sub_6 = sub_7;
-  sub_5 = sub_6;
+  sub_68 = sub_61;
+  sub_67 = if controller_p_arrived then sub_68 else sub_50;
+  v = if controller_p_arrived then sub_50 else sub_68;
+  sub_66 = if controller_ck_23_1 then v else sub_67;
+  sub_65 = sub_64;
+  v_1 = if controller_v_339 then sub_46 else sub_12;
+  sub_64 = if controller_c_ar1 then sub_14 else v_1;
+  sub_63 = if controller_c_per2 then false else sub_64;
+  v_2 = if controller_v_356 then sub_65 else sub_63;
+  v_3 = if controller_v_356 then sub_65 else false;
+  sub_62 = if controller_c_per1 then v_2 else v_3;
+  v_4 = if controller_v_356 then sub_63 else sub_65;
+  v_5 = if controller_c_per1 then false else v_4;
+  sub_61 = if controller_v_355 then v_5 else sub_62;
+  sub_60 = if controller_c_porta then false else sub_61;
+  sub_59 = if controller_p_arrived then sub_60 else sub_43;
+  v_6 = if controller_p_arrived then sub_43 else sub_60;
+  sub_58 = if controller_ck_23_1 then v_6 else sub_59;
+  sub_57 = if controller_shift_turno then sub_58 else sub_66;
+  v_7 = if controller_shift_turno then sub_66 else sub_58;
+  sub_56 = if controller_ck_1 then v_7 else sub_57;
+  sub_55 = if controller_v_372 then sub_39 else sub_56;
+  sub_54 = if controller_c_luz1 then sub_39 else sub_55;
+  sub_53 = sub_54;
+  sub_52 = sub_47;
+  sub_51 = sub_52;
+  sub_50 = if controller_c_porta then false else sub_51;
+  sub_49 = if controller_p_arrived then false else sub_50;
+  v_8 = if controller_p_arrived then sub_50 else false;
+  sub_48 = if controller_ck_23_1 then v_8 else sub_49;
+  sub_47 = true;
+  sub_46 = if controller_v_340 then false else sub_47;
+  v_9 = if controller_v_339 then sub_12 else sub_46;
+  v_10 = if controller_v_340 then sub_47 else false;
+  v_11 = if controller_v_339 then v_10 else false;
+  sub_45 = if controller_c_ar1 then v_9 else v_11;
+  sub_44 = sub_45;
+  sub_43 = if controller_c_porta then false else sub_44;
+  sub_42 = if controller_p_arrived then false else sub_43;
+  v_12 = if controller_p_arrived then sub_43 else false;
+  sub_41 = if controller_ck_23_1 then v_12 else sub_42;
+  sub_40 = if controller_shift_turno then sub_41 else sub_48;
+  v_13 = if controller_shift_turno then sub_48 else sub_41;
+  sub_39 = if controller_ck_1 then v_13 else sub_40;
+  sub_38 = sub_39;
+  sub_37 = sub_38;
+  sub_36 = sub_37;
+  sub_35 = sub_28;
+  sub_34 = if controller_p_arrived then sub_35 else sub_17;
+  v_14 = if controller_p_arrived then sub_17 else sub_35;
+  sub_33 = if controller_ck_23_1 then v_14 else sub_34;
+  sub_32 = sub_31;
+  sub_31 = if controller_c_ar1 then sub_14 else sub_12;
+  sub_30 = if controller_c_per2 then false else sub_31;
+  v_15 = if controller_v_356 then sub_32 else sub_30;
+  v_16 = if controller_v_356 then sub_32 else false;
+  sub_29 = if controller_c_per1 then v_15 else v_16;
+  v_17 = if controller_v_356 then sub_30 else sub_32;
+  v_18 = if controller_c_per1 then false else v_17;
+  sub_28 = if controller_v_355 then v_18 else sub_29;
+  sub_27 = if controller_c_porta then false else sub_28;
+  sub_26 = if controller_p_arrived then sub_27 else sub_9;
+  v_19 = if controller_p_arrived then sub_9 else sub_27;
+  sub_25 = if controller_ck_23_1 then v_19 else sub_26;
+  sub_24 = if controller_shift_turno then sub_25 else sub_33;
+  v_20 = if controller_shift_turno then sub_33 else sub_25;
+  sub_23 = if controller_ck_1 then v_20 else sub_24;
+  sub_22 = if controller_v_372 then sub_5 else sub_23;
+  sub_21 = if controller_c_luz1 then sub_5 else sub_22;
+  sub_20 = sub_21;
+  sub_19 = sub_13;
+  sub_18 = sub_19;
+  sub_17 = if controller_c_porta then false else sub_18;
+  sub_16 = if controller_p_arrived then false else sub_17;
+  v_21 = if controller_p_arrived then sub_17 else false;
+  sub_15 = if controller_ck_23_1 then v_21 else sub_16;
+  v_22 = if controller_v_340 then sub_13 else false;
+  sub_14 = if controller_v_339 then v_22 else false;
+  sub_13 = false;
+  sub_12 = if controller_v_340 then false else sub_13;
+  sub_11 = if controller_c_ar1 then sub_12 else sub_14;
+  sub_10 = sub_11;
+  sub_9 = if controller_c_porta then false else sub_10;
+  sub_8 = if controller_p_arrived then false else sub_9;
+  v_23 = if controller_p_arrived then sub_9 else false;
+  sub_7 = if controller_ck_23_1 then v_23 else sub_8;
+  sub_6 = if controller_shift_turno then sub_7 else sub_15;
+  v_24 = if controller_shift_turno then sub_15 else sub_7;
+  sub_5 = if controller_ck_1 then v_24 else sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
   sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  v_25 = if controller_v_372 then sub_23 else sub_5;
+  v_26 = if controller_c_luz1 then v_25 else sub_22;
+  v_27 = if controller_c_luz2 then sub_4 else v_26;
+  v_28 = if controller_v_371 then v_27 else sub_20;
+  v_29 = if controller_c_jan then sub_3 else v_28;
+  v_30 = if controller_c_pc then sub_2 else v_29;
+  sub_1 = if controller_c_rot then sub_2 else v_30;
+  v_31 = if controller_v_372 then sub_56 else sub_39;
+  v_32 = if controller_c_luz1 then v_31 else sub_55;
+  v_33 = if controller_c_luz2 then sub_38 else v_32;
+  v_34 = if controller_v_371 then v_33 else sub_53;
+  v_35 = if controller_c_jan then sub_37 else v_34;
+  v_36 = if controller_c_pc then sub_36 else v_35;
+  v_37 = if controller_c_rot then sub_36 else v_36;
+  sub_0 = if p_controller_c_ar2 then v_37 else sub_1
 tel
 
-node controller_controller_controller_c_ar1(controller_abre_porta : bool;
+node controller_controller_controller_c_ar1(controller_shift_turno : bool;
+                                             controller_abre_porta : bool;
                                              controller_p_arrived : bool;
                                              controller_ck_1 : bool;
                                              controller_pnr_8 : bool;
-                                             controller_ck_18_1 : bool;
+                                             controller_ck_19_1 : bool;
                                              controller_pnr_7 : bool;
-                                             controller_ck_20_1 : bool;
+                                             controller_ck_21_1 : bool;
                                              controller_pnr_6 : bool;
-                                             controller_ck_22_1 : bool;
+                                             controller_ck_23_1 : bool;
                                              controller_pnr_5 : bool;
-                                             controller_ck_24_1 : bool;
+                                             controller_ck_25_1 : bool;
                                              controller_pnr_4 : bool;
-                                             controller_ck_26_1 : bool;
+                                             controller_ck_27_1 : bool;
                                              controller_pnr_3 : bool;
-                                             controller_v_350 : bool;
-                                             controller_v_349 : bool;
+                                             controller_v_372 : bool;
+                                             controller_v_371 : bool;
                                              controller_pnr_2 : bool;
-                                             controller_v_334 : bool;
-                                             controller_v_333 : bool;
+                                             controller_v_356 : bool;
+                                             controller_v_355 : bool;
                                              controller_pnr_1 : bool;
-                                             controller_v_318 : bool;
-                                             controller_v_317 : bool;
+                                             controller_v_340 : bool;
+                                             controller_v_339 : bool;
                                              controller_pnr : bool;
                                              p_controller_c_ar2 : bool;
                                              p_controller_c_ar1 : bool;
@@ -92,7 +209,6 @@ node controller_controller_controller_c_ar1(controller_abre_porta : bool;
                                              p_controller_c_luz1 : bool;
                                              p_controller_c_jan : bool;
                                              p_controller_c_pc : bool;
-                                             p_controller_c_arm : bool;
                                              p_controller_c_rot : bool;
                                              p_controller_c_porta : bool;
                                              controller_c_per2 : bool;
@@ -101,48 +217,113 @@ node controller_controller_controller_c_ar1(controller_abre_porta : bool;
                                              controller_c_luz1 : bool;
                                              controller_c_jan : bool;
                                              controller_c_pc : bool;
-                                             controller_c_arm : bool;
                                              controller_c_rot : bool;
                                              controller_c_porta : bool)
 returns (controller_c_ar1 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+var v_58 : bool; v_57 : bool; v_56 : bool; v_55 : bool; v_54 : bool;
+    v_53 : bool; v_52 : bool; v_51 : bool; v_50 : bool; v_49 : bool;
+    v_48 : bool; v_47 : bool; v_46 : bool; v_45 : bool; v_44 : bool;
+    v_43 : bool; v_42 : bool; v_41 : bool; v_40 : bool; v_39 : bool;
+    v_38 : bool; v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool;
+    sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool;
+    sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool;
+    sub_13 : bool; sub_14 : bool; sub_15 : bool; sub_16 : bool;
+    sub_17 : bool; sub_18 : bool; sub_19 : bool; sub_20 : bool;
+    sub_21 : bool; sub_22 : bool; sub_23 : bool; sub_24 : bool;
+    sub_25 : bool; sub_26 : bool; sub_27 : bool; sub_28 : bool;
+    sub_29 : bool; sub_30 : bool; sub_31 : bool; sub_32 : bool;
+    sub_33 : bool; sub_34 : bool; sub_35 : bool; sub_36 : bool;
+    sub_37 : bool; sub_38 : bool; sub_39 : bool; sub_40 : bool;
 let
   controller_c_ar1 = sub_0;
-  sub_9 = p_controller_c_ar1;
-  sub_8 = sub_9;
-  sub_7 = if controller_c_arm then false else sub_8;
-  sub_6 = if controller_c_jan then sub_7 else false;
-  sub_5 = sub_6;
-  sub_4 = sub_5;
+  sub_40 = if controller_p_arrived then sub_39 else sub_20;
+  sub_39 = sub_30;
+  sub_38 = if controller_p_arrived then sub_39 else sub_17;
+  v = if controller_p_arrived then sub_17 else sub_39;
+  sub_37 = if controller_ck_23_1 then v else sub_38;
+  v_38 = if controller_p_arrived then sub_20 else sub_39;
+  v_39 = if controller_ck_23_1 then v_38 else sub_40;
+  sub_36 = if p_controller_c_ar1 then v_39 else sub_37;
+  sub_35 = sub_33;
+  sub_34 = if controller_v_340 then false else sub_13;
+  v_40 = if controller_v_340 then sub_12 else sub_13;
+  sub_33 = if controller_v_339 then v_40 else sub_34;
+  sub_32 = if controller_c_per2 then false else sub_33;
+  v_41 = if controller_v_356 then sub_35 else sub_32;
+  v_42 = if controller_v_356 then sub_35 else false;
+  sub_31 = if controller_c_per1 then v_41 else v_42;
+  v_43 = if controller_v_356 then sub_32 else sub_35;
+  v_44 = if controller_c_per1 then false else v_43;
+  sub_30 = if controller_v_355 then v_44 else sub_31;
+  sub_29 = if controller_c_porta then false else sub_30;
+  sub_28 = if controller_p_arrived then sub_29 else sub_8;
+  v_45 = if controller_p_arrived then sub_8 else sub_29;
+  sub_27 = if controller_ck_23_1 then v_45 else sub_28;
+  sub_26 = if controller_shift_turno then sub_27 else sub_36;
+  v_46 = if controller_shift_turno then sub_36 else sub_27;
+  sub_25 = if controller_ck_1 then v_46 else sub_26;
+  sub_24 = if controller_v_372 then sub_4 else sub_25;
+  sub_23 = if controller_c_luz1 then sub_4 else sub_24;
+  sub_22 = sub_23;
+  sub_21 = sub_12;
+  sub_20 = if controller_c_porta then false else sub_21;
+  sub_19 = if controller_p_arrived then false else sub_20;
+  sub_18 = sub_13;
+  sub_17 = if controller_c_porta then false else sub_18;
+  sub_16 = if controller_p_arrived then false else sub_17;
+  v_47 = if controller_p_arrived then sub_17 else false;
+  sub_15 = if controller_ck_23_1 then v_47 else sub_16;
+  v_48 = if controller_p_arrived then sub_20 else false;
+  v_49 = if controller_ck_23_1 then v_48 else sub_19;
+  sub_14 = if p_controller_c_ar1 then v_49 else sub_15;
+  sub_13 = false;
+  sub_12 = true;
+  sub_11 = if controller_v_340 then false else sub_12;
+  v_50 = if controller_v_340 then sub_13 else sub_12;
+  sub_10 = if controller_v_339 then v_50 else sub_11;
+  sub_9 = sub_10;
+  sub_8 = if controller_c_porta then false else sub_9;
+  sub_7 = if controller_p_arrived then false else sub_8;
+  v_51 = if controller_p_arrived then sub_8 else false;
+  sub_6 = if controller_ck_23_1 then v_51 else sub_7;
+  sub_5 = if controller_shift_turno then sub_6 else sub_14;
+  v_52 = if controller_shift_turno then sub_14 else sub_6;
+  sub_4 = if controller_ck_1 then v_52 else sub_5;
   sub_3 = sub_4;
   sub_2 = sub_3;
   sub_1 = sub_2;
-  sub_0 = sub_1
+  v_53 = if controller_v_372 then sub_25 else sub_4;
+  v_54 = if controller_c_luz1 then v_53 else sub_24;
+  v_55 = if controller_c_luz2 then sub_3 else v_54;
+  v_56 = if controller_v_371 then v_55 else sub_22;
+  v_57 = if controller_c_jan then sub_2 else v_56;
+  v_58 = if controller_c_pc then sub_1 else v_57;
+  sub_0 = if controller_c_rot then sub_1 else v_58
 tel
 
-node controller_controller_controller_c_per2(controller_abre_porta : bool;
+node controller_controller_controller_c_per2(controller_shift_turno : bool;
+                                              controller_abre_porta : bool;
                                               controller_p_arrived : bool;
                                               controller_ck_1 : bool;
                                               controller_pnr_8 : bool;
-                                              controller_ck_18_1 : bool;
+                                              controller_ck_19_1 : bool;
                                               controller_pnr_7 : bool;
-                                              controller_ck_20_1 : bool;
+                                              controller_ck_21_1 : bool;
                                               controller_pnr_6 : bool;
-                                              controller_ck_22_1 : bool;
+                                              controller_ck_23_1 : bool;
                                               controller_pnr_5 : bool;
-                                              controller_ck_24_1 : bool;
+                                              controller_ck_25_1 : bool;
                                               controller_pnr_4 : bool;
-                                              controller_ck_26_1 : bool;
+                                              controller_ck_27_1 : bool;
                                               controller_pnr_3 : bool;
-                                              controller_v_350 : bool;
-                                              controller_v_349 : bool;
+                                              controller_v_372 : bool;
+                                              controller_v_371 : bool;
                                               controller_pnr_2 : bool;
-                                              controller_v_334 : bool;
-                                              controller_v_333 : bool;
+                                              controller_v_356 : bool;
+                                              controller_v_355 : bool;
                                               controller_pnr_1 : bool;
-                                              controller_v_318 : bool;
-                                              controller_v_317 : bool;
+                                              controller_v_340 : bool;
+                                              controller_v_339 : bool;
                                               controller_pnr : bool;
                                               p_controller_c_ar2 : bool;
                                               p_controller_c_ar1 : bool;
@@ -152,7 +333,6 @@ node controller_controller_controller_c_per2(controller_abre_porta : bool;
                                               p_controller_c_luz1 : bool;
                                               p_controller_c_jan : bool;
                                               p_controller_c_pc : bool;
-                                              p_controller_c_arm : bool;
                                               p_controller_c_rot : bool;
                                               p_controller_c_porta : bool;
                                               controller_c_per1 : bool;
@@ -160,47 +340,143 @@ node controller_controller_controller_c_per2(controller_abre_porta : bool;
                                               controller_c_luz1 : bool;
                                               controller_c_jan : bool;
                                               controller_c_pc : bool;
-                                              controller_c_arm : bool;
                                               controller_c_rot : bool;
                                               controller_c_porta : bool)
 returns (controller_c_per2 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+var v_88 : bool; v_87 : bool; v_86 : bool; v_85 : bool; v_84 : bool;
+    v_83 : bool; v_82 : bool; v_81 : bool; v_80 : bool; v_79 : bool;
+    v_78 : bool; v_77 : bool; v_76 : bool; v_75 : bool; v_74 : bool;
+    v_73 : bool; v_72 : bool; v_71 : bool; v_70 : bool; v_69 : bool;
+    v_68 : bool; v_67 : bool; v_66 : bool; v_65 : bool; v_64 : bool;
+    v_63 : bool; v_62 : bool; v_61 : bool; v_60 : bool; v_59 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool;
 let
   controller_c_per2 = sub_0;
-  sub_8 = p_controller_c_per2;
-  sub_7 = sub_8;
-  sub_6 = if controller_c_arm then false else sub_7;
-  sub_5 = if controller_c_jan then sub_6 else false;
+  sub_55 = sub_51;
+  sub_54 = if controller_p_arrived then sub_55 else sub_42;
+  v = if controller_p_arrived then sub_42 else sub_55;
+  sub_53 = if controller_ck_23_1 then v else sub_54;
+  v_59 = if controller_v_356 then sub_37 else sub_10;
+  v_60 = if controller_v_356 then sub_37 else false;
+  sub_52 = if controller_c_per1 then v_59 else v_60;
+  v_61 = if controller_v_356 then sub_10 else sub_37;
+  v_62 = if controller_c_per1 then false else v_61;
+  sub_51 = if controller_v_355 then v_62 else sub_52;
+  sub_50 = if controller_c_porta then false else sub_51;
+  sub_49 = if controller_p_arrived then sub_50 else sub_36;
+  v_63 = if controller_p_arrived then sub_36 else sub_50;
+  sub_48 = if controller_ck_23_1 then v_63 else sub_49;
+  sub_47 = if controller_shift_turno then sub_48 else sub_53;
+  v_64 = if controller_shift_turno then sub_53 else sub_48;
+  sub_46 = if controller_ck_1 then v_64 else sub_47;
+  sub_45 = if controller_v_372 then sub_32 else sub_46;
+  sub_44 = if controller_c_luz1 then sub_32 else sub_45;
+  sub_43 = sub_44;
+  sub_42 = if controller_c_porta then false else sub_39;
+  sub_41 = if controller_p_arrived then false else sub_42;
+  v_65 = if controller_p_arrived then sub_42 else false;
+  sub_40 = if controller_ck_23_1 then v_65 else sub_41;
+  sub_39 = true;
+  sub_38 = if controller_v_340 then false else sub_39;
+  sub_37 = if controller_v_339 then sub_39 else sub_38;
+  sub_36 = if controller_c_porta then false else sub_37;
+  sub_35 = if controller_p_arrived then false else sub_36;
+  v_66 = if controller_p_arrived then sub_36 else false;
+  sub_34 = if controller_ck_23_1 then v_66 else sub_35;
+  sub_33 = if controller_shift_turno then sub_34 else sub_40;
+  v_67 = if controller_shift_turno then sub_40 else sub_34;
+  sub_32 = if controller_ck_1 then v_67 else sub_33;
+  sub_31 = sub_32;
+  sub_30 = sub_31;
+  sub_29 = sub_30;
+  sub_28 = sub_24;
+  sub_27 = if controller_p_arrived then sub_28 else sub_15;
+  v_68 = if controller_p_arrived then sub_15 else sub_28;
+  sub_26 = if controller_ck_23_1 then v_68 else sub_27;
+  v_69 = if controller_v_356 then sub_10 else false;
+  sub_25 = if controller_c_per1 then sub_10 else v_69;
+  v_70 = if controller_c_per1 then false else sub_10;
+  sub_24 = if controller_v_355 then v_70 else sub_25;
+  sub_23 = if controller_c_porta then false else sub_24;
+  sub_22 = if controller_p_arrived then sub_23 else sub_9;
+  v_71 = if controller_p_arrived then sub_9 else sub_23;
+  sub_21 = if controller_ck_23_1 then v_71 else sub_22;
+  sub_20 = if controller_shift_turno then sub_21 else sub_26;
+  v_72 = if controller_shift_turno then sub_26 else sub_21;
+  sub_19 = if controller_ck_1 then v_72 else sub_20;
+  sub_18 = if controller_v_372 then sub_5 else sub_19;
+  sub_17 = if controller_c_luz1 then sub_5 else sub_18;
+  sub_16 = sub_17;
+  sub_15 = if controller_c_porta then false else sub_12;
+  sub_14 = if controller_p_arrived then false else sub_15;
+  v_73 = if controller_p_arrived then sub_15 else false;
+  sub_13 = if controller_ck_23_1 then v_73 else sub_14;
+  sub_12 = false;
+  sub_11 = if controller_v_340 then false else sub_12;
+  sub_10 = if controller_v_339 then sub_12 else sub_11;
+  sub_9 = if controller_c_porta then false else sub_10;
+  sub_8 = if controller_p_arrived then false else sub_9;
+  v_74 = if controller_p_arrived then sub_9 else false;
+  sub_7 = if controller_ck_23_1 then v_74 else sub_8;
+  sub_6 = if controller_shift_turno then sub_7 else sub_13;
+  v_75 = if controller_shift_turno then sub_13 else sub_7;
+  sub_5 = if controller_ck_1 then v_75 else sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
   sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  v_76 = if controller_v_372 then sub_19 else sub_5;
+  v_77 = if controller_c_luz1 then v_76 else sub_18;
+  v_78 = if controller_c_luz2 then sub_4 else v_77;
+  v_79 = if controller_v_371 then v_78 else sub_16;
+  v_80 = if controller_c_jan then sub_3 else v_79;
+  v_81 = if controller_c_pc then sub_2 else v_80;
+  sub_1 = if controller_c_rot then sub_2 else v_81;
+  v_82 = if controller_v_372 then sub_46 else sub_32;
+  v_83 = if controller_c_luz1 then v_82 else sub_45;
+  v_84 = if controller_c_luz2 then sub_31 else v_83;
+  v_85 = if controller_v_371 then v_84 else sub_43;
+  v_86 = if controller_c_jan then sub_30 else v_85;
+  v_87 = if controller_c_pc then sub_29 else v_86;
+  v_88 = if controller_c_rot then sub_29 else v_87;
+  sub_0 = if p_controller_c_per2 then v_88 else sub_1
 tel
 
-node controller_controller_controller_c_per1(controller_abre_porta : bool;
+node controller_controller_controller_c_per1(controller_shift_turno : bool;
+                                              controller_abre_porta : bool;
                                               controller_p_arrived : bool;
                                               controller_ck_1 : bool;
                                               controller_pnr_8 : bool;
-                                              controller_ck_18_1 : bool;
+                                              controller_ck_19_1 : bool;
                                               controller_pnr_7 : bool;
-                                              controller_ck_20_1 : bool;
+                                              controller_ck_21_1 : bool;
                                               controller_pnr_6 : bool;
-                                              controller_ck_22_1 : bool;
+                                              controller_ck_23_1 : bool;
                                               controller_pnr_5 : bool;
-                                              controller_ck_24_1 : bool;
+                                              controller_ck_25_1 : bool;
                                               controller_pnr_4 : bool;
-                                              controller_ck_26_1 : bool;
+                                              controller_ck_27_1 : bool;
                                               controller_pnr_3 : bool;
-                                              controller_v_350 : bool;
-                                              controller_v_349 : bool;
+                                              controller_v_372 : bool;
+                                              controller_v_371 : bool;
                                               controller_pnr_2 : bool;
-                                              controller_v_334 : bool;
-                                              controller_v_333 : bool;
+                                              controller_v_356 : bool;
+                                              controller_v_355 : bool;
                                               controller_pnr_1 : bool;
-                                              controller_v_318 : bool;
-                                              controller_v_317 : bool;
+                                              controller_v_340 : bool;
+                                              controller_v_339 : bool;
                                               controller_pnr : bool;
                                               p_controller_c_ar2 : bool;
                                               p_controller_c_ar1 : bool;
@@ -210,53 +486,141 @@ node controller_controller_controller_c_per1(controller_abre_porta : bool;
                                               p_controller_c_luz1 : bool;
                                               p_controller_c_jan : bool;
                                               p_controller_c_pc : bool;
-                                              p_controller_c_arm : bool;
                                               p_controller_c_rot : bool;
                                               p_controller_c_porta : bool;
                                               controller_c_luz2 : bool;
                                               controller_c_luz1 : bool;
                                               controller_c_jan : bool;
                                               controller_c_pc : bool;
-                                              controller_c_arm : bool;
                                               controller_c_rot : bool;
                                               controller_c_porta : bool)
 returns (controller_c_per1 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool; sub_6 : bool; sub_7 : bool;
+var v_112 : bool; v_111 : bool; v_110 : bool; v_109 : bool; v_108 : bool;
+    v_107 : bool; v_106 : bool; v_105 : bool; v_104 : bool; v_103 : bool;
+    v_102 : bool; v_101 : bool; v_100 : bool; v_99 : bool; v_98 : bool;
+    v_97 : bool; v_96 : bool; v_95 : bool; v_94 : bool; v_93 : bool;
+    v_92 : bool; v_91 : bool; v_90 : bool; v_89 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool;
 let
   controller_c_per1 = sub_0;
-  sub_7 = p_controller_c_per1;
-  sub_6 = sub_7;
-  sub_5 = if controller_c_arm then false else sub_6;
-  sub_4 = if controller_c_jan then sub_5 else false;
+  sub_54 = sub_51;
+  sub_53 = if controller_p_arrived then sub_54 else sub_42;
+  v = if controller_p_arrived then sub_42 else sub_54;
+  sub_52 = if controller_ck_23_1 then v else sub_53;
+  sub_51 = if controller_v_355 then sub_10 else sub_26;
+  sub_50 = if controller_c_porta then false else sub_51;
+  sub_49 = if controller_p_arrived then sub_50 else sub_39;
+  v_89 = if controller_p_arrived then sub_39 else sub_50;
+  sub_48 = if controller_ck_23_1 then v_89 else sub_49;
+  sub_47 = if controller_shift_turno then sub_48 else sub_52;
+  v_90 = if controller_shift_turno then sub_52 else sub_48;
+  sub_46 = if controller_ck_1 then v_90 else sub_47;
+  sub_45 = if controller_v_372 then sub_35 else sub_46;
+  sub_44 = if controller_c_luz1 then sub_35 else sub_45;
+  sub_43 = sub_44;
+  sub_42 = if controller_c_porta then false else sub_28;
+  sub_41 = if controller_p_arrived then false else sub_42;
+  v_91 = if controller_p_arrived then sub_42 else false;
+  sub_40 = if controller_ck_23_1 then v_91 else sub_41;
+  sub_39 = if controller_c_porta then false else sub_26;
+  sub_38 = if controller_p_arrived then false else sub_39;
+  v_92 = if controller_p_arrived then sub_39 else false;
+  sub_37 = if controller_ck_23_1 then v_92 else sub_38;
+  sub_36 = if controller_shift_turno then sub_37 else sub_40;
+  v_93 = if controller_shift_turno then sub_40 else sub_37;
+  sub_35 = if controller_ck_1 then v_93 else sub_36;
+  sub_34 = sub_35;
+  sub_33 = sub_34;
+  sub_32 = sub_33;
+  sub_31 = sub_24;
+  sub_30 = if controller_p_arrived then sub_31 else sub_15;
+  v_94 = if controller_p_arrived then sub_15 else sub_31;
+  sub_29 = if controller_ck_23_1 then v_94 else sub_30;
+  sub_28 = true;
+  sub_27 = if controller_v_340 then false else sub_28;
+  sub_26 = if controller_v_339 then sub_28 else sub_27;
+  sub_25 = if controller_v_356 then sub_10 else sub_26;
+  sub_24 = if controller_v_355 then sub_10 else sub_25;
+  sub_23 = if controller_c_porta then false else sub_24;
+  sub_22 = if controller_p_arrived then sub_23 else sub_9;
+  v_95 = if controller_p_arrived then sub_9 else sub_23;
+  sub_21 = if controller_ck_23_1 then v_95 else sub_22;
+  sub_20 = if controller_shift_turno then sub_21 else sub_29;
+  v_96 = if controller_shift_turno then sub_29 else sub_21;
+  sub_19 = if controller_ck_1 then v_96 else sub_20;
+  sub_18 = if controller_v_372 then sub_5 else sub_19;
+  sub_17 = if controller_c_luz1 then sub_5 else sub_18;
+  sub_16 = sub_17;
+  sub_15 = if controller_c_porta then false else sub_12;
+  sub_14 = if controller_p_arrived then false else sub_15;
+  v_97 = if controller_p_arrived then sub_15 else false;
+  sub_13 = if controller_ck_23_1 then v_97 else sub_14;
+  sub_12 = false;
+  sub_11 = if controller_v_340 then false else sub_12;
+  sub_10 = if controller_v_339 then sub_12 else sub_11;
+  sub_9 = if controller_c_porta then false else sub_10;
+  sub_8 = if controller_p_arrived then false else sub_9;
+  v_98 = if controller_p_arrived then sub_9 else false;
+  sub_7 = if controller_ck_23_1 then v_98 else sub_8;
+  sub_6 = if controller_shift_turno then sub_7 else sub_13;
+  v_99 = if controller_shift_turno then sub_13 else sub_7;
+  sub_5 = if controller_ck_1 then v_99 else sub_6;
+  sub_4 = sub_5;
   sub_3 = sub_4;
   sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  v_100 = if controller_v_372 then sub_19 else sub_5;
+  v_101 = if controller_c_luz1 then v_100 else sub_18;
+  v_102 = if controller_c_luz2 then sub_4 else v_101;
+  v_103 = if controller_v_371 then v_102 else sub_16;
+  v_104 = if controller_c_jan then sub_3 else v_103;
+  v_105 = if controller_c_pc then sub_2 else v_104;
+  sub_1 = if controller_c_rot then sub_2 else v_105;
+  v_106 = if controller_v_372 then sub_46 else sub_35;
+  v_107 = if controller_c_luz1 then v_106 else sub_45;
+  v_108 = if controller_c_luz2 then sub_34 else v_107;
+  v_109 = if controller_v_371 then v_108 else sub_43;
+  v_110 = if controller_c_jan then sub_33 else v_109;
+  v_111 = if controller_c_pc then sub_32 else v_110;
+  v_112 = if controller_c_rot then sub_32 else v_111;
+  sub_0 = if p_controller_c_per1 then v_112 else sub_1
 tel
 
-node controller_controller_controller_c_luz2(controller_abre_porta : bool;
+node controller_controller_controller_c_luz2(controller_shift_turno : bool;
+                                              controller_abre_porta : bool;
                                               controller_p_arrived : bool;
                                               controller_ck_1 : bool;
                                               controller_pnr_8 : bool;
-                                              controller_ck_18_1 : bool;
+                                              controller_ck_19_1 : bool;
                                               controller_pnr_7 : bool;
-                                              controller_ck_20_1 : bool;
+                                              controller_ck_21_1 : bool;
                                               controller_pnr_6 : bool;
-                                              controller_ck_22_1 : bool;
+                                              controller_ck_23_1 : bool;
                                               controller_pnr_5 : bool;
-                                              controller_ck_24_1 : bool;
+                                              controller_ck_25_1 : bool;
                                               controller_pnr_4 : bool;
-                                              controller_ck_26_1 : bool;
+                                              controller_ck_27_1 : bool;
                                               controller_pnr_3 : bool;
-                                              controller_v_350 : bool;
-                                              controller_v_349 : bool;
+                                              controller_v_372 : bool;
+                                              controller_v_371 : bool;
                                               controller_pnr_2 : bool;
-                                              controller_v_334 : bool;
-                                              controller_v_333 : bool;
+                                              controller_v_356 : bool;
+                                              controller_v_355 : bool;
                                               controller_pnr_1 : bool;
-                                              controller_v_318 : bool;
-                                              controller_v_317 : bool;
+                                              controller_v_340 : bool;
+                                              controller_v_339 : bool;
                                               controller_pnr : bool;
                                               p_controller_c_ar2 : bool;
                                               p_controller_c_ar1 : bool;
@@ -266,51 +630,133 @@ node controller_controller_controller_c_luz2(controller_abre_porta : bool;
                                               p_controller_c_luz1 : bool;
                                               p_controller_c_jan : bool;
                                               p_controller_c_pc : bool;
-                                              p_controller_c_arm : bool;
                                               p_controller_c_rot : bool;
                                               p_controller_c_porta : bool;
                                               controller_c_luz1 : bool;
                                               controller_c_jan : bool;
                                               controller_c_pc : bool;
-                                              controller_c_arm : bool;
                                               controller_c_rot : bool;
                                               controller_c_porta : bool)
 returns (controller_c_luz2 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool; sub_6 : bool;
+var v_137 : bool; v_136 : bool; v_135 : bool; v_134 : bool; v_133 : bool;
+    v_132 : bool; v_131 : bool; v_130 : bool; v_129 : bool; v_128 : bool;
+    v_127 : bool; v_126 : bool; v_125 : bool; v_124 : bool; v_123 : bool;
+    v_122 : bool; v_121 : bool; v_120 : bool; v_119 : bool; v_118 : bool;
+    v_117 : bool; v_116 : bool; v_115 : bool; v_114 : bool; v_113 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool;
 let
   controller_c_luz2 = sub_0;
-  sub_6 = p_controller_c_luz2;
-  sub_5 = sub_6;
-  sub_4 = if controller_c_arm then false else sub_5;
-  sub_3 = if controller_c_jan then sub_4 else false;
+  sub_48 = if controller_p_arrived then sub_22 else sub_35;
+  v = if controller_p_arrived then sub_35 else sub_22;
+  sub_47 = if controller_ck_23_1 then v else sub_48;
+  sub_46 = if controller_p_arrived then sub_8 else sub_29;
+  v_113 = if controller_p_arrived then sub_29 else sub_8;
+  sub_45 = if controller_ck_23_1 then v_113 else sub_46;
+  sub_44 = if controller_shift_turno then sub_45 else sub_47;
+  v_114 = if controller_shift_turno then sub_47 else sub_45;
+  sub_43 = if controller_ck_1 then v_114 else sub_44;
+  sub_42 = sub_30;
+  sub_41 = if controller_p_arrived then sub_42 else sub_35;
+  v_115 = if controller_p_arrived then sub_35 else sub_42;
+  sub_40 = if controller_ck_23_1 then v_115 else sub_41;
+  sub_39 = sub_29;
+  sub_38 = if controller_shift_turno then sub_39 else sub_40;
+  v_116 = if controller_shift_turno then sub_40 else sub_39;
+  sub_37 = if controller_ck_1 then v_116 else sub_38;
+  v_117 = if controller_v_372 then sub_25 else sub_37;
+  sub_36 = if controller_c_luz1 then sub_25 else v_117;
+  sub_35 = if controller_c_porta then false else sub_32;
+  sub_34 = if controller_p_arrived then false else sub_35;
+  v_118 = if controller_p_arrived then sub_35 else false;
+  sub_33 = if controller_ck_23_1 then v_118 else sub_34;
+  sub_32 = true;
+  sub_31 = if controller_v_340 then false else sub_32;
+  sub_30 = if controller_v_339 then sub_32 else sub_31;
+  sub_29 = if controller_c_porta then false else sub_30;
+  sub_28 = if controller_p_arrived then false else sub_29;
+  v_119 = if controller_p_arrived then sub_29 else false;
+  sub_27 = if controller_ck_23_1 then v_119 else sub_28;
+  sub_26 = if controller_shift_turno then sub_27 else sub_33;
+  v_120 = if controller_shift_turno then sub_33 else sub_27;
+  sub_25 = if controller_ck_1 then v_120 else sub_26;
+  sub_24 = sub_25;
+  sub_23 = sub_24;
+  sub_22 = sub_9;
+  sub_21 = if controller_p_arrived then sub_22 else sub_14;
+  v_121 = if controller_p_arrived then sub_14 else sub_22;
+  sub_20 = if controller_ck_23_1 then v_121 else sub_21;
+  sub_19 = sub_8;
+  sub_18 = if controller_shift_turno then sub_19 else sub_20;
+  v_122 = if controller_shift_turno then sub_20 else sub_19;
+  sub_17 = if controller_ck_1 then v_122 else sub_18;
+  sub_16 = if controller_v_372 then sub_4 else sub_17;
+  sub_15 = if controller_c_luz1 then sub_4 else sub_16;
+  sub_14 = if controller_c_porta then false else sub_11;
+  sub_13 = if controller_p_arrived then false else sub_14;
+  v_123 = if controller_p_arrived then sub_14 else false;
+  sub_12 = if controller_ck_23_1 then v_123 else sub_13;
+  sub_11 = false;
+  sub_10 = if controller_v_340 then false else sub_11;
+  sub_9 = if controller_v_339 then sub_11 else sub_10;
+  sub_8 = if controller_c_porta then false else sub_9;
+  sub_7 = if controller_p_arrived then false else sub_8;
+  v_124 = if controller_p_arrived then sub_8 else false;
+  sub_6 = if controller_ck_23_1 then v_124 else sub_7;
+  sub_5 = if controller_shift_turno then sub_6 else sub_12;
+  v_125 = if controller_shift_turno then sub_12 else sub_6;
+  sub_4 = if controller_ck_1 then v_125 else sub_5;
+  sub_3 = sub_4;
   sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  v_126 = if controller_v_372 then sub_17 else sub_4;
+  v_127 = if controller_c_luz1 then v_126 else sub_16;
+  v_128 = if controller_v_371 then v_127 else sub_15;
+  v_129 = if controller_c_jan then sub_3 else v_128;
+  v_130 = if controller_c_pc then sub_2 else v_129;
+  sub_1 = if controller_c_rot then sub_2 else v_130;
+  v_131 = if controller_v_372 then sub_43 else sub_25;
+  v_132 = if controller_v_372 then sub_25 else sub_43;
+  v_133 = if controller_c_luz1 then v_131 else v_132;
+  v_134 = if controller_v_371 then v_133 else sub_36;
+  v_135 = if controller_c_jan then sub_24 else v_134;
+  v_136 = if controller_c_pc then sub_23 else v_135;
+  v_137 = if controller_c_rot then sub_23 else v_136;
+  sub_0 = if p_controller_c_luz2 then v_137 else sub_1
 tel
 
-node controller_controller_controller_c_luz1(controller_abre_porta : bool;
+node controller_controller_controller_c_luz1(controller_shift_turno : bool;
+                                              controller_abre_porta : bool;
                                               controller_p_arrived : bool;
                                               controller_ck_1 : bool;
                                               controller_pnr_8 : bool;
-                                              controller_ck_18_1 : bool;
+                                              controller_ck_19_1 : bool;
                                               controller_pnr_7 : bool;
-                                              controller_ck_20_1 : bool;
+                                              controller_ck_21_1 : bool;
                                               controller_pnr_6 : bool;
-                                              controller_ck_22_1 : bool;
+                                              controller_ck_23_1 : bool;
                                               controller_pnr_5 : bool;
-                                              controller_ck_24_1 : bool;
+                                              controller_ck_25_1 : bool;
                                               controller_pnr_4 : bool;
-                                              controller_ck_26_1 : bool;
+                                              controller_ck_27_1 : bool;
                                               controller_pnr_3 : bool;
-                                              controller_v_350 : bool;
-                                              controller_v_349 : bool;
+                                              controller_v_372 : bool;
+                                              controller_v_371 : bool;
                                               controller_pnr_2 : bool;
-                                              controller_v_334 : bool;
-                                              controller_v_333 : bool;
+                                              controller_v_356 : bool;
+                                              controller_v_355 : bool;
                                               controller_pnr_1 : bool;
-                                              controller_v_318 : bool;
-                                              controller_v_317 : bool;
+                                              controller_v_340 : bool;
+                                              controller_v_339 : bool;
                                               controller_pnr : bool;
                                               p_controller_c_ar2 : bool;
                                               p_controller_c_ar1 : bool;
@@ -320,49 +766,100 @@ node controller_controller_controller_c_luz1(controller_abre_porta : bool;
                                               p_controller_c_luz1 : bool;
                                               p_controller_c_jan : bool;
                                               p_controller_c_pc : bool;
-                                              p_controller_c_arm : bool;
                                               p_controller_c_rot : bool;
                                               p_controller_c_porta : bool;
                                               controller_c_jan : bool;
                                               controller_c_pc : bool;
-                                              controller_c_arm : bool;
                                               controller_c_rot : bool;
                                               controller_c_porta : bool)
 returns (controller_c_luz1 : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
-    sub_5 : bool;
+var v_151 : bool; v_150 : bool; v_149 : bool; v_148 : bool; v_147 : bool;
+    v_146 : bool; v_145 : bool; v_144 : bool; v_143 : bool; v_142 : bool;
+    v_141 : bool; v_140 : bool; v_139 : bool; v_138 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
 let
   controller_c_luz1 = sub_0;
-  sub_5 = p_controller_c_luz1;
-  sub_4 = sub_5;
-  sub_3 = if controller_c_arm then false else sub_4;
-  sub_2 = if controller_c_jan then sub_3 else false;
+  sub_33 = sub_29;
+  sub_32 = if controller_p_arrived then sub_33 else sub_13;
+  v = if controller_p_arrived then sub_13 else sub_33;
+  sub_31 = if controller_ck_23_1 then v else sub_32;
+  sub_30 = if controller_v_340 then false else sub_10;
+  sub_29 = if controller_v_339 then sub_10 else sub_30;
+  sub_28 = if controller_c_porta then false else sub_29;
+  sub_27 = if controller_p_arrived then sub_28 else sub_6;
+  v_138 = if controller_p_arrived then sub_6 else sub_28;
+  sub_26 = if controller_ck_23_1 then v_138 else sub_27;
+  sub_25 = if controller_shift_turno then sub_26 else sub_31;
+  sub_24 = sub_20;
+  sub_23 = if controller_p_arrived then sub_24 else sub_13;
+  v_139 = if controller_p_arrived then sub_13 else sub_24;
+  sub_22 = if controller_ck_23_1 then v_139 else sub_23;
+  sub_21 = if controller_v_340 then false else sub_9;
+  sub_20 = if controller_v_339 then sub_9 else sub_21;
+  sub_19 = if controller_c_porta then false else sub_20;
+  sub_18 = if controller_p_arrived then sub_19 else sub_6;
+  v_140 = if controller_p_arrived then sub_6 else sub_19;
+  sub_17 = if controller_ck_23_1 then v_140 else sub_18;
+  sub_16 = if controller_shift_turno then sub_17 else sub_22;
+  v_141 = if controller_shift_turno then sub_22 else sub_17;
+  sub_15 = if controller_ck_1 then v_141 else sub_16;
+  sub_14 = if controller_v_372 then sub_2 else sub_15;
+  sub_13 = if controller_c_porta then false else sub_8;
+  sub_12 = if controller_p_arrived then false else sub_13;
+  v_142 = if controller_p_arrived then sub_13 else false;
+  sub_11 = if controller_ck_23_1 then v_142 else sub_12;
+  sub_10 = true;
+  sub_9 = false;
+  sub_8 = if p_controller_c_luz1 then sub_10 else sub_9;
+  sub_7 = if controller_v_340 then false else sub_8;
+  v_143 = if controller_v_339 then sub_8 else sub_7;
+  sub_6 = if controller_c_porta then false else v_143;
+  sub_5 = if controller_p_arrived then false else sub_6;
+  v_144 = if controller_p_arrived then sub_6 else false;
+  sub_4 = if controller_ck_23_1 then v_144 else sub_5;
+  sub_3 = if controller_shift_turno then sub_4 else sub_11;
+  v_145 = if controller_shift_turno then sub_11 else sub_4;
+  sub_2 = if controller_ck_1 then v_145 else sub_3;
   sub_1 = sub_2;
-  sub_0 = sub_1
+  v_146 = if controller_shift_turno then sub_31 else sub_26;
+  v_147 = if controller_ck_1 then v_146 else sub_25;
+  v_148 = if controller_v_372 then v_147 else sub_15;
+  v_149 = if controller_v_371 then v_148 else sub_14;
+  v_150 = if controller_c_jan then sub_2 else v_149;
+  v_151 = if controller_c_pc then sub_1 else v_150;
+  sub_0 = if controller_c_rot then sub_1 else v_151
 tel
 
-node controller_controller_controller_c_jan(controller_abre_porta : bool;
+node controller_controller_controller_c_jan(controller_shift_turno : bool;
+                                             controller_abre_porta : bool;
                                              controller_p_arrived : bool;
                                              controller_ck_1 : bool;
                                              controller_pnr_8 : bool;
-                                             controller_ck_18_1 : bool;
+                                             controller_ck_19_1 : bool;
                                              controller_pnr_7 : bool;
-                                             controller_ck_20_1 : bool;
+                                             controller_ck_21_1 : bool;
                                              controller_pnr_6 : bool;
-                                             controller_ck_22_1 : bool;
+                                             controller_ck_23_1 : bool;
                                              controller_pnr_5 : bool;
-                                             controller_ck_24_1 : bool;
+                                             controller_ck_25_1 : bool;
                                              controller_pnr_4 : bool;
-                                             controller_ck_26_1 : bool;
+                                             controller_ck_27_1 : bool;
                                              controller_pnr_3 : bool;
-                                             controller_v_350 : bool;
-                                             controller_v_349 : bool;
+                                             controller_v_372 : bool;
+                                             controller_v_371 : bool;
                                              controller_pnr_2 : bool;
-                                             controller_v_334 : bool;
-                                             controller_v_333 : bool;
+                                             controller_v_356 : bool;
+                                             controller_v_355 : bool;
                                              controller_pnr_1 : bool;
-                                             controller_v_318 : bool;
-                                             controller_v_317 : bool;
+                                             controller_v_340 : bool;
+                                             controller_v_339 : bool;
                                              controller_pnr : bool;
                                              p_controller_c_ar2 : bool;
                                              p_controller_c_ar1 : bool;
@@ -372,46 +869,78 @@ node controller_controller_controller_c_jan(controller_abre_porta : bool;
                                              p_controller_c_luz1 : bool;
                                              p_controller_c_jan : bool;
                                              p_controller_c_pc : bool;
-                                             p_controller_c_arm : bool;
                                              p_controller_c_rot : bool;
                                              p_controller_c_porta : bool;
                                              controller_c_pc : bool;
-                                             controller_c_arm : bool;
                                              controller_c_rot : bool;
                                              controller_c_porta : bool)
 returns (controller_c_jan : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+var v_159 : bool; v_158 : bool; v_157 : bool; v_156 : bool; v_155 : bool;
+    v_154 : bool; v_153 : bool; v_152 : bool; v : bool; sub_0 : bool;
+    sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool;
+    sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool;
+    sub_11 : bool; sub_12 : bool; sub_13 : bool; sub_14 : bool;
+    sub_15 : bool; sub_16 : bool; sub_17 : bool; sub_18 : bool;
+    sub_19 : bool; sub_20 : bool; sub_21 : bool; sub_22 : bool;
 let
   controller_c_jan = sub_0;
-  sub_4 = true;
-  sub_3 = if controller_c_arm then false else sub_4;
-  sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  sub_22 = sub_18;
+  sub_21 = if controller_p_arrived then sub_22 else sub_11;
+  v = if controller_p_arrived then sub_11 else sub_22;
+  sub_20 = if controller_ck_23_1 then v else sub_21;
+  sub_19 = if controller_v_340 then false else sub_8;
+  sub_18 = if controller_v_339 then sub_8 else sub_19;
+  sub_17 = if controller_c_porta then false else sub_18;
+  sub_16 = if controller_p_arrived then sub_17 else sub_5;
+  v_152 = if controller_p_arrived then sub_5 else sub_17;
+  sub_15 = if controller_ck_23_1 then v_152 else sub_16;
+  sub_14 = if controller_shift_turno then sub_15 else sub_20;
+  v_153 = if controller_shift_turno then sub_20 else sub_15;
+  sub_13 = if controller_ck_1 then v_153 else sub_14;
+  sub_12 = if controller_v_372 then sub_1 else sub_13;
+  sub_11 = if controller_c_porta then false else sub_7;
+  sub_10 = if controller_p_arrived then false else sub_11;
+  v_154 = if controller_p_arrived then sub_11 else false;
+  sub_9 = if controller_ck_23_1 then v_154 else sub_10;
+  sub_8 = false;
+  sub_7 = if p_controller_c_jan then true else sub_8;
+  sub_6 = if controller_v_340 then false else sub_7;
+  v_155 = if controller_v_339 then sub_7 else sub_6;
+  sub_5 = if controller_c_porta then false else v_155;
+  sub_4 = if controller_p_arrived then false else sub_5;
+  v_156 = if controller_p_arrived then sub_5 else false;
+  sub_3 = if controller_ck_23_1 then v_156 else sub_4;
+  sub_2 = if controller_shift_turno then sub_3 else sub_9;
+  v_157 = if controller_shift_turno then sub_9 else sub_3;
+  sub_1 = if controller_ck_1 then v_157 else sub_2;
+  v_158 = if controller_v_371 then sub_13 else sub_12;
+  v_159 = if controller_c_pc then sub_1 else v_158;
+  sub_0 = if controller_c_rot then sub_1 else v_159
 tel
 
-node controller_controller_controller_c_pc(controller_abre_porta : bool;
+node controller_controller_controller_c_pc(controller_shift_turno : bool;
+                                            controller_abre_porta : bool;
                                             controller_p_arrived : bool;
                                             controller_ck_1 : bool;
                                             controller_pnr_8 : bool;
-                                            controller_ck_18_1 : bool;
+                                            controller_ck_19_1 : bool;
                                             controller_pnr_7 : bool;
-                                            controller_ck_20_1 : bool;
+                                            controller_ck_21_1 : bool;
                                             controller_pnr_6 : bool;
-                                            controller_ck_22_1 : bool;
+                                            controller_ck_23_1 : bool;
                                             controller_pnr_5 : bool;
-                                            controller_ck_24_1 : bool;
+                                            controller_ck_25_1 : bool;
                                             controller_pnr_4 : bool;
-                                            controller_ck_26_1 : bool;
+                                            controller_ck_27_1 : bool;
                                             controller_pnr_3 : bool;
-                                            controller_v_350 : bool;
-                                            controller_v_349 : bool;
+                                            controller_v_372 : bool;
+                                            controller_v_371 : bool;
                                             controller_pnr_2 : bool;
-                                            controller_v_334 : bool;
-                                            controller_v_333 : bool;
+                                            controller_v_356 : bool;
+                                            controller_v_355 : bool;
                                             controller_pnr_1 : bool;
-                                            controller_v_318 : bool;
-                                            controller_v_317 : bool;
+                                            controller_v_340 : bool;
+                                            controller_v_339 : bool;
                                             controller_pnr : bool;
                                             p_controller_c_ar2 : bool;
                                             p_controller_c_ar1 : bool;
@@ -421,45 +950,100 @@ node controller_controller_controller_c_pc(controller_abre_porta : bool;
                                             p_controller_c_luz1 : bool;
                                             p_controller_c_jan : bool;
                                             p_controller_c_pc : bool;
-                                            p_controller_c_arm : bool;
                                             p_controller_c_rot : bool;
                                             p_controller_c_porta : bool;
-                                            controller_c_arm : bool;
                                             controller_c_rot : bool;
                                             controller_c_porta : bool)
 returns (controller_c_pc : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+var v_173 : bool; v_172 : bool; v_171 : bool; v_170 : bool; v_169 : bool;
+    v_168 : bool; v_167 : bool; v_166 : bool; v_165 : bool; v_164 : bool;
+    v_163 : bool; v_162 : bool; v_161 : bool; v_160 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool;
 let
   controller_c_pc = sub_0;
-  sub_4 = p_controller_c_pc;
-  sub_3 = sub_4;
-  sub_2 = if controller_c_arm then false else sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  sub_34 = if controller_p_arrived then sub_29 else sub_21;
+  v = if controller_p_arrived then sub_21 else sub_29;
+  sub_33 = if controller_ck_23_1 then v else sub_34;
+  sub_32 = if controller_p_arrived then sub_6 else sub_16;
+  v_160 = if controller_p_arrived then sub_16 else sub_6;
+  sub_31 = if controller_ck_23_1 then v_160 else sub_32;
+  sub_30 = if controller_shift_turno then sub_31 else sub_33;
+  sub_29 = sub_7;
+  sub_28 = if controller_p_arrived then sub_29 else sub_12;
+  v_161 = if controller_p_arrived then sub_12 else sub_29;
+  sub_27 = if controller_ck_23_1 then v_161 else sub_28;
+  sub_26 = sub_6;
+  sub_25 = if controller_shift_turno then sub_26 else sub_27;
+  v_162 = if controller_shift_turno then sub_27 else sub_26;
+  sub_24 = if controller_ck_1 then v_162 else sub_25;
+  v_163 = if controller_shift_turno then sub_33 else sub_31;
+  v_164 = if controller_ck_1 then v_163 else sub_30;
+  sub_23 = if p_controller_c_pc then v_164 else sub_24;
+  sub_22 = if controller_v_372 then sub_1 else sub_23;
+  sub_21 = if controller_c_porta then false else sub_18;
+  sub_20 = if controller_p_arrived then false else sub_21;
+  v_165 = if controller_p_arrived then sub_21 else false;
+  sub_19 = if controller_ck_23_1 then v_165 else sub_20;
+  sub_18 = true;
+  sub_17 = if controller_v_340 then false else sub_18;
+  v_166 = if controller_v_339 then sub_18 else sub_17;
+  sub_16 = if controller_c_porta then false else v_166;
+  sub_15 = if controller_p_arrived then false else sub_16;
+  v_167 = if controller_p_arrived then sub_16 else false;
+  sub_14 = if controller_ck_23_1 then v_167 else sub_15;
+  sub_13 = if controller_shift_turno then sub_14 else sub_19;
+  sub_12 = if controller_c_porta then false else sub_9;
+  sub_11 = if controller_p_arrived then false else sub_12;
+  v_168 = if controller_p_arrived then sub_12 else false;
+  sub_10 = if controller_ck_23_1 then v_168 else sub_11;
+  sub_9 = false;
+  sub_8 = if controller_v_340 then false else sub_9;
+  sub_7 = if controller_v_339 then sub_9 else sub_8;
+  sub_6 = if controller_c_porta then false else sub_7;
+  sub_5 = if controller_p_arrived then false else sub_6;
+  v_169 = if controller_p_arrived then sub_6 else false;
+  sub_4 = if controller_ck_23_1 then v_169 else sub_5;
+  sub_3 = if controller_shift_turno then sub_4 else sub_10;
+  v_170 = if controller_shift_turno then sub_10 else sub_4;
+  sub_2 = if controller_ck_1 then v_170 else sub_3;
+  v_171 = if controller_shift_turno then sub_19 else sub_14;
+  v_172 = if controller_ck_1 then v_171 else sub_13;
+  sub_1 = if p_controller_c_pc then v_172 else sub_2;
+  v_173 = if controller_v_371 then sub_23 else sub_22;
+  sub_0 = if controller_c_rot then sub_1 else v_173
 tel
 
-node controller_controller_controller_c_arm(controller_abre_porta : bool;
+node controller_controller_controller_c_rot(controller_shift_turno : bool;
+                                             controller_abre_porta : bool;
                                              controller_p_arrived : bool;
                                              controller_ck_1 : bool;
                                              controller_pnr_8 : bool;
-                                             controller_ck_18_1 : bool;
+                                             controller_ck_19_1 : bool;
                                              controller_pnr_7 : bool;
-                                             controller_ck_20_1 : bool;
+                                             controller_ck_21_1 : bool;
                                              controller_pnr_6 : bool;
-                                             controller_ck_22_1 : bool;
+                                             controller_ck_23_1 : bool;
                                              controller_pnr_5 : bool;
-                                             controller_ck_24_1 : bool;
+                                             controller_ck_25_1 : bool;
                                              controller_pnr_4 : bool;
-                                             controller_ck_26_1 : bool;
+                                             controller_ck_27_1 : bool;
                                              controller_pnr_3 : bool;
-                                             controller_v_350 : bool;
-                                             controller_v_349 : bool;
+                                             controller_v_372 : bool;
+                                             controller_v_371 : bool;
                                              controller_pnr_2 : bool;
-                                             controller_v_334 : bool;
-                                             controller_v_333 : bool;
+                                             controller_v_356 : bool;
+                                             controller_v_355 : bool;
                                              controller_pnr_1 : bool;
-                                             controller_v_318 : bool;
-                                             controller_v_317 : bool;
+                                             controller_v_340 : bool;
+                                             controller_v_339 : bool;
                                              controller_pnr : bool;
                                              p_controller_c_ar2 : bool;
                                              p_controller_c_ar1 : bool;
@@ -469,88 +1053,97 @@ node controller_controller_controller_c_arm(controller_abre_porta : bool;
                                              p_controller_c_luz1 : bool;
                                              p_controller_c_jan : bool;
                                              p_controller_c_pc : bool;
-                                             p_controller_c_arm : bool;
-                                             p_controller_c_rot : bool;
-                                             p_controller_c_porta : bool;
-                                             controller_c_rot : bool;
-                                             controller_c_porta : bool)
-returns (controller_c_arm : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
-let
-  controller_c_arm = sub_0;
-  sub_3 = false;
-  sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
-tel
-
-node controller_controller_controller_c_rot(controller_abre_porta : bool;
-                                             controller_p_arrived : bool;
-                                             controller_ck_1 : bool;
-                                             controller_pnr_8 : bool;
-                                             controller_ck_18_1 : bool;
-                                             controller_pnr_7 : bool;
-                                             controller_ck_20_1 : bool;
-                                             controller_pnr_6 : bool;
-                                             controller_ck_22_1 : bool;
-                                             controller_pnr_5 : bool;
-                                             controller_ck_24_1 : bool;
-                                             controller_pnr_4 : bool;
-                                             controller_ck_26_1 : bool;
-                                             controller_pnr_3 : bool;
-                                             controller_v_350 : bool;
-                                             controller_v_349 : bool;
-                                             controller_pnr_2 : bool;
-                                             controller_v_334 : bool;
-                                             controller_v_333 : bool;
-                                             controller_pnr_1 : bool;
-                                             controller_v_318 : bool;
-                                             controller_v_317 : bool;
-                                             controller_pnr : bool;
-                                             p_controller_c_ar2 : bool;
-                                             p_controller_c_ar1 : bool;
-                                             p_controller_c_per2 : bool;
-                                             p_controller_c_per1 : bool;
-                                             p_controller_c_luz2 : bool;
-                                             p_controller_c_luz1 : bool;
-                                             p_controller_c_jan : bool;
-                                             p_controller_c_pc : bool;
-                                             p_controller_c_arm : bool;
                                              p_controller_c_rot : bool;
                                              p_controller_c_porta : bool;
                                              controller_c_porta : bool)
 returns (controller_c_rot : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+var v_187 : bool; v_186 : bool; v_185 : bool; v_184 : bool; v_183 : bool;
+    v_182 : bool; v_181 : bool; v_180 : bool; v_179 : bool; v_178 : bool;
+    v_177 : bool; v_176 : bool; v_175 : bool; v_174 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
 let
   controller_c_rot = sub_0;
-  sub_3 = p_controller_c_rot;
-  sub_2 = sub_3;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  sub_33 = if controller_p_arrived then false else sub_22;
+  v = if controller_p_arrived then sub_22 else false;
+  sub_32 = if controller_ck_23_1 then v else sub_33;
+  sub_31 = if controller_p_arrived then false else sub_17;
+  v_174 = if controller_p_arrived then sub_17 else false;
+  sub_30 = if controller_ck_23_1 then v_174 else sub_31;
+  sub_29 = if controller_shift_turno then sub_30 else sub_32;
+  sub_28 = if controller_p_arrived then false else sub_13;
+  v_175 = if controller_p_arrived then sub_13 else false;
+  sub_27 = if controller_ck_23_1 then v_175 else sub_28;
+  sub_26 = if controller_p_arrived then false else sub_6;
+  v_176 = if controller_p_arrived then sub_6 else false;
+  sub_25 = if controller_ck_23_1 then v_176 else sub_26;
+  sub_24 = if controller_shift_turno then sub_25 else sub_27;
+  v_177 = if controller_shift_turno then sub_27 else sub_25;
+  sub_23 = if controller_ck_1 then v_177 else sub_24;
+  sub_22 = if controller_c_porta then false else sub_19;
+  sub_21 = if controller_p_arrived then sub_12 else sub_22;
+  v_178 = if controller_p_arrived then sub_22 else sub_12;
+  sub_20 = if controller_ck_23_1 then v_178 else sub_21;
+  sub_19 = true;
+  sub_18 = if controller_v_340 then false else sub_19;
+  v_179 = if controller_v_339 then sub_19 else sub_18;
+  sub_17 = if controller_c_porta then false else v_179;
+  sub_16 = if controller_p_arrived then sub_6 else sub_17;
+  v_180 = if controller_p_arrived then sub_17 else sub_6;
+  sub_15 = if controller_ck_23_1 then v_180 else sub_16;
+  sub_14 = if controller_shift_turno then sub_15 else sub_20;
+  sub_13 = if controller_c_porta then false else sub_9;
+  sub_12 = sub_7;
+  sub_11 = if controller_p_arrived then sub_12 else sub_13;
+  v_181 = if controller_p_arrived then sub_13 else sub_12;
+  sub_10 = if controller_ck_23_1 then v_181 else sub_11;
+  sub_9 = false;
+  sub_8 = if controller_v_340 then false else sub_9;
+  sub_7 = if controller_v_339 then sub_9 else sub_8;
+  sub_6 = if controller_c_porta then false else sub_7;
+  sub_5 = sub_6;
+  sub_4 = if controller_shift_turno then sub_5 else sub_10;
+  v_182 = if controller_shift_turno then sub_10 else sub_5;
+  sub_3 = if controller_ck_1 then v_182 else sub_4;
+  v_183 = if controller_shift_turno then sub_20 else sub_15;
+  v_184 = if controller_ck_1 then v_183 else sub_14;
+  sub_2 = if p_controller_c_rot then v_184 else sub_3;
+  v_185 = if controller_shift_turno then sub_32 else sub_30;
+  v_186 = if controller_ck_1 then v_185 else sub_29;
+  v_187 = if p_controller_c_rot then v_186 else sub_23;
+  sub_1 = if controller_v_372 then v_187 else sub_2;
+  sub_0 = if controller_v_371 then sub_2 else sub_1
 tel
 
-node controller_controller_controller_c_porta(controller_abre_porta : bool;
+node controller_controller_controller_c_porta(controller_shift_turno : bool;
+                                               controller_abre_porta : bool;
                                                controller_p_arrived : bool;
                                                controller_ck_1 : bool;
                                                controller_pnr_8 : bool;
-                                               controller_ck_18_1 : bool;
+                                               controller_ck_19_1 : bool;
                                                controller_pnr_7 : bool;
-                                               controller_ck_20_1 : bool;
+                                               controller_ck_21_1 : bool;
                                                controller_pnr_6 : bool;
-                                               controller_ck_22_1 : bool;
+                                               controller_ck_23_1 : bool;
                                                controller_pnr_5 : bool;
-                                               controller_ck_24_1 : bool;
+                                               controller_ck_25_1 : bool;
                                                controller_pnr_4 : bool;
-                                               controller_ck_26_1 : bool;
+                                               controller_ck_27_1 : bool;
                                                controller_pnr_3 : bool;
-                                               controller_v_350 : bool;
-                                               controller_v_349 : bool;
+                                               controller_v_372 : bool;
+                                               controller_v_371 : bool;
                                                controller_pnr_2 : bool;
-                                               controller_v_334 : bool;
-                                               controller_v_333 : bool;
+                                               controller_v_356 : bool;
+                                               controller_v_355 : bool;
                                                controller_pnr_1 : bool;
-                                               controller_v_318 : bool;
-                                               controller_v_317 : bool;
+                                               controller_v_340 : bool;
+                                               controller_v_339 : bool;
                                                controller_pnr : bool;
                                                p_controller_c_ar2 : bool;
                                                p_controller_c_ar1 : bool;
@@ -560,35 +1153,62 @@ node controller_controller_controller_c_porta(controller_abre_porta : bool;
                                                p_controller_c_luz1 : bool;
                                                p_controller_c_jan : bool;
                                                p_controller_c_pc : bool;
-                                               p_controller_c_arm : bool;
                                                p_controller_c_rot : bool;
                                                p_controller_c_porta : bool)
 returns (controller_c_porta : bool)
-var sub_0 : bool; sub_1 : bool; sub_2 : bool;
+var v_193 : bool; v_192 : bool; v_191 : bool; v_190 : bool; v_189 : bool;
+    v_188 : bool; v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool;
+    sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool;
+    sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool;
+    sub_13 : bool; sub_14 : bool; sub_15 : bool; sub_16 : bool;
+    sub_17 : bool;
 let
   controller_c_porta = sub_0;
-  sub_2 = p_controller_c_porta;
-  sub_1 = sub_2;
-  sub_0 = sub_1
+  sub_17 = if controller_p_arrived then false else sub_7;
+  v = if controller_p_arrived then sub_7 else false;
+  sub_16 = if controller_ck_23_1 then v else sub_17;
+  sub_15 = if controller_p_arrived then false else sub_5;
+  v_188 = if controller_p_arrived then sub_5 else false;
+  sub_14 = if controller_ck_23_1 then v_188 else sub_15;
+  sub_13 = if controller_shift_turno then sub_14 else sub_16;
+  sub_12 = true;
+  sub_11 = if controller_v_340 then false else sub_12;
+  v_189 = if controller_v_339 then sub_12 else sub_11;
+  sub_10 = if p_controller_c_porta then v_189 else sub_5;
+  sub_9 = if controller_p_arrived then sub_10 else sub_7;
+  v_190 = if controller_p_arrived then sub_7 else sub_10;
+  sub_8 = if controller_ck_23_1 then v_190 else sub_9;
+  sub_7 = false;
+  sub_6 = if controller_v_340 then false else sub_7;
+  sub_5 = if controller_v_339 then sub_7 else sub_6;
+  sub_4 = sub_5;
+  sub_3 = if controller_shift_turno then sub_4 else sub_8;
+  v_191 = if controller_shift_turno then sub_8 else sub_4;
+  sub_2 = if controller_ck_1 then v_191 else sub_3;
+  v_192 = if controller_shift_turno then sub_16 else sub_14;
+  v_193 = if controller_ck_1 then v_192 else sub_13;
+  sub_1 = if controller_v_372 then v_193 else sub_2;
+  sub_0 = if controller_v_371 then sub_2 else sub_1
 tel
 
-node controller_controller(controller_abre_porta : bool;
+node controller_controller(controller_shift_turno : bool;
+                            controller_abre_porta : bool;
                             controller_p_arrived : bool;
                             controller_ck_1 : bool; controller_pnr_8 : bool;
-                            controller_ck_18_1 : bool;
+                            controller_ck_19_1 : bool;
                             controller_pnr_7 : bool;
-                            controller_ck_20_1 : bool;
+                            controller_ck_21_1 : bool;
                             controller_pnr_6 : bool;
-                            controller_ck_22_1 : bool;
+                            controller_ck_23_1 : bool;
                             controller_pnr_5 : bool;
-                            controller_ck_24_1 : bool;
+                            controller_ck_25_1 : bool;
                             controller_pnr_4 : bool;
-                            controller_ck_26_1 : bool;
-                            controller_pnr_3 : bool; controller_v_350 : bool;
-                            controller_v_349 : bool; controller_pnr_2 : bool;
-                            controller_v_334 : bool; controller_v_333 : bool;
-                            controller_pnr_1 : bool; controller_v_318 : bool;
-                            controller_v_317 : bool; controller_pnr : bool;
+                            controller_ck_27_1 : bool;
+                            controller_pnr_3 : bool; controller_v_372 : bool;
+                            controller_v_371 : bool; controller_pnr_2 : bool;
+                            controller_v_356 : bool; controller_v_355 : bool;
+                            controller_pnr_1 : bool; controller_v_340 : bool;
+                            controller_v_339 : bool; controller_pnr : bool;
                             p_controller_c_ar2 : bool;
                             p_controller_c_ar1 : bool;
                             p_controller_c_per2 : bool;
@@ -597,176 +1217,158 @@ node controller_controller(controller_abre_porta : bool;
                             p_controller_c_luz1 : bool;
                             p_controller_c_jan : bool;
                             p_controller_c_pc : bool;
-                            p_controller_c_arm : bool;
                             p_controller_c_rot : bool;
                             p_controller_c_porta : bool)
 returns (controller_c_ar2 : bool; controller_c_ar1 : bool;
           controller_c_per2 : bool; controller_c_per1 : bool;
           controller_c_luz2 : bool; controller_c_luz1 : bool;
           controller_c_jan : bool; controller_c_pc : bool;
-          controller_c_arm : bool; controller_c_rot : bool;
-          controller_c_porta : bool)
+          controller_c_rot : bool; controller_c_porta : bool)
 let
   controller_c_porta =
     controller_controller_controller_c_porta
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta);
   controller_c_rot =
     controller_controller_controller_c_rot
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_porta);
-  controller_c_arm =
-    controller_controller_controller_c_arm
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
-      p_controller_c_rot, p_controller_c_porta, controller_c_rot,
-      controller_c_porta);
   controller_c_pc =
     controller_controller_controller_c_pc
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
-      p_controller_c_rot, p_controller_c_porta, controller_c_arm,
-      controller_c_rot, controller_c_porta);
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
+      p_controller_c_rot, p_controller_c_porta, controller_c_rot,
+      controller_c_porta);
   controller_c_jan =
     controller_controller_controller_c_jan
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_pc,
-      controller_c_arm, controller_c_rot, controller_c_porta);
+      controller_c_rot, controller_c_porta);
   controller_c_luz1 =
     controller_controller_controller_c_luz1
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_jan,
-      controller_c_pc, controller_c_arm, controller_c_rot,
-      controller_c_porta);
+      controller_c_pc, controller_c_rot, controller_c_porta);
   controller_c_luz2 =
     controller_controller_controller_c_luz2
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_luz1,
-      controller_c_jan, controller_c_pc, controller_c_arm, controller_c_rot,
+      controller_c_jan, controller_c_pc, controller_c_rot,
       controller_c_porta);
   controller_c_per1 =
     controller_controller_controller_c_per1
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_luz2,
-      controller_c_luz1, controller_c_jan, controller_c_pc, controller_c_arm,
-      controller_c_rot, controller_c_porta);
+      controller_c_luz1, controller_c_jan, controller_c_pc, controller_c_rot,
+      controller_c_porta);
   controller_c_per2 =
     controller_controller_controller_c_per2
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_per1,
       controller_c_luz2, controller_c_luz1, controller_c_jan,
-      controller_c_pc, controller_c_arm, controller_c_rot,
-      controller_c_porta);
+      controller_c_pc, controller_c_rot, controller_c_porta);
   controller_c_ar1 =
     controller_controller_controller_c_ar1
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_per2,
       controller_c_per1, controller_c_luz2, controller_c_luz1,
-      controller_c_jan, controller_c_pc, controller_c_arm, controller_c_rot,
+      controller_c_jan, controller_c_pc, controller_c_rot,
       controller_c_porta);
   controller_c_ar2 =
     controller_controller_controller_c_ar2
-    (controller_abre_porta, controller_p_arrived, controller_ck_1,
-      controller_pnr_8, controller_ck_18_1, controller_pnr_7,
-      controller_ck_20_1, controller_pnr_6, controller_ck_22_1,
-      controller_pnr_5, controller_ck_24_1, controller_pnr_4,
-      controller_ck_26_1, controller_pnr_3, controller_v_350,
-      controller_v_349, controller_pnr_2, controller_v_334, controller_v_333,
-      controller_pnr_1, controller_v_318, controller_v_317, controller_pnr,
-      p_controller_c_ar2, p_controller_c_ar1, p_controller_c_per2,
-      p_controller_c_per1, p_controller_c_luz2, p_controller_c_luz1,
-      p_controller_c_jan, p_controller_c_pc, p_controller_c_arm,
+    (controller_shift_turno, controller_abre_porta, controller_p_arrived,
+      controller_ck_1, controller_pnr_8, controller_ck_19_1,
+      controller_pnr_7, controller_ck_21_1, controller_pnr_6,
+      controller_ck_23_1, controller_pnr_5, controller_ck_25_1,
+      controller_pnr_4, controller_ck_27_1, controller_pnr_3,
+      controller_v_372, controller_v_371, controller_pnr_2, controller_v_356,
+      controller_v_355, controller_pnr_1, controller_v_340, controller_v_339,
+      controller_pnr, p_controller_c_ar2, p_controller_c_ar1,
+      p_controller_c_per2, p_controller_c_per1, p_controller_c_luz2,
+      p_controller_c_luz1, p_controller_c_jan, p_controller_c_pc,
       p_controller_c_rot, p_controller_c_porta, controller_c_ar1,
       controller_c_per2, controller_c_per1, controller_c_luz2,
-      controller_c_luz1, controller_c_jan, controller_c_pc, controller_c_arm,
-      controller_c_rot, controller_c_porta)
+      controller_c_luz1, controller_c_jan, controller_c_pc, controller_c_rot,
+      controller_c_porta)
 tel
 

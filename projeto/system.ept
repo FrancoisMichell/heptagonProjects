@@ -1,3 +1,4 @@
+(*link pros slides: https://drive.google.com/open?id=1QGEjtj41JJPet6rVrFoiDohjFCYRYAhd7RuK-l4HRhs*)
 node room ( presence : bool ) returns ( occupied : bool )
 	let
     automaton
@@ -167,10 +168,10 @@ node porta( push, c_porta : bool ) returns ( porta_open : bool )
 	    automaton
 		    state Closed do
 		  	    porta_open = false;
-		    unless push & c_porta then Open
+		    unless not c_porta then Open
 		    state Open do
 		    	porta_open = true;
-		    unless push or not c_porta then Closed
+		    unless c_porta then Closed
 	    end
 	tel
 
@@ -206,7 +207,7 @@ node pessoas ( arrived : bool ) returns ( presence : bool )
 				unless arrived then Preent
 			state Preent do
 				presence = true;
-				unless not arrived then Not_Present
+				unless arrived then Not_Present
 		end
 	tel
 
@@ -288,24 +289,42 @@ node ar_condicionado ( c1, c2 : bool ) returns ( ar_state : int )
 		end
 	tel
 
-node controller( abre_porta, p_arrived : bool ) 
-	returns ( p_open, r_on1, arm_open, presence, pc_on, w_open : bool; l_state, p_state, ar_state : int;)
+node turno (shift : bool) returns ( turno : bool)
+	let
+		automaton
+			state Dia do
+				turno = false
+				unless shift then Noite
+			state Noite do
+				turno = true
+				unless shift then Dia
+		end
+	tel
+
+node controller( shift_turno, abre_porta, p_arrived : bool ) 
+	returns (night, p_open, r_on1, presence, pc_on, w_open : bool; l_state, p_state, ar_state : int;)
   	
   	contract
-		var rule1: bool;
+		var rule2, rule3, rule4, rule5, rule6, rule7: bool;
 
 		let
-			rule1 = ( not arm_open & w_open );
+			rule2 = not (presence & not p_open);
+			rule3 = not (not night & not p_open);
+			rule4 = (not presence & night) or p_open;
+			rule5 = (not presence & night) or l_state = 2;
+			rule6 = presence or (not r_on1 & not pc_on & not w_open & l_state = 0 & p_state = 0 & ar_state = 0);
+			rule7 = not (presence & not night) or ar_state = 1;			
 		tel
-    enforce rule1
-    with ( c_porta, c_rot, c_arm, c_pc, c_jan, c_luz1, c_luz2, c_per1, c_per2, c_ar1, c_ar2 : bool )
+    enforce (rule2 & rule3 & rule4 & rule6 & rule7)
+    with ( c_porta, c_rot, c_pc, c_jan, c_luz1, c_luz2, c_per1, c_per2, c_ar1, c_ar2 : bool )
 
   	let
+  		night = inlined turno (shift_turno);
 		p_open = inlined porta (abre_porta, c_porta);
 		r_on1 = inlined roteador (c_rot);
-		arm_open = inlined armario_de_servico (c_arm);
+		(*arm_open = inlined armario_de_servico (c_arm);*)
 		presence = inlined pessoas (p_arrived);
-		pc_on = inlined comfort_inputputadores (c_pc);
+		pc_on = inlined computadores (c_pc);
 		w_open = inlined janelas (c_jan);
 		l_state = inlined luzes (c_luz1, c_luz2);
 		p_state = inlined persianas (c_per1, c_per2);
