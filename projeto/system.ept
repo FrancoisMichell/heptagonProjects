@@ -305,17 +305,21 @@ node controller( shift_turno, abre_porta, p_arrived : bool )
 	returns (night, p_open, r_on1, presence, pc_on, w_open : bool; l_state, p_state, ar_state : int;)
   	
   	contract
-		var rule2, rule3, rule4, rule5, rule6, rule7: bool;
+		var rule1, rule2, rule3, rule4 : bool;
 
 		let
-			rule2 = not (presence & not p_open);
-			rule3 = not (not night & not p_open);
-			rule4 = (not presence & night) or p_open;
-			rule5 = (not presence & night) or l_state = 2;
-			rule6 = presence or (not r_on1 & not pc_on & not w_open & l_state = 0 & p_state = 0 & ar_state = 0);
-			rule7 = not (presence & not night) or ar_state = 1;			
+		    rule1 = not (presence & night) or (l_state = 2 & p_open);
+		    rule2 =not (not presence & night) or (not p_open & (not r_on1 & not pc_on & not w_open & l_state = 0 & p_state = 0 & ar_state = 0));
+		    rule3 =not (presence & not night) or (ar_state = 1 & p_open);
+		    rule4 =not (not presence & not night) or (p_open & (not r_on1 & not pc_on & not w_open & l_state = 0 & p_state = 0 & ar_state = 0));
+			(*rule2 = not (presence) or p_open;*)
+			(*rule3 = not (not night) or p_open;*)
+			(*rule4 = not (not presence & night) or not p_open;*)
+			(*rule5 = not (presence & night) or l_state = 2;*)
+			(*rule6 = not (not presence) or (not r_on1 & not pc_on & not w_open & l_state = 0 & p_state = 0 & ar_state = 0);*)
+			(*rule7 = not (presence & not night) or ar_state = 1;*)
 		tel
-    enforce (rule2 & rule3 & rule4 & rule6 & rule7)
+    enforce (rule1 & rule2 & rule3 & rule4)
     with ( c_porta, c_rot, c_pc, c_jan, c_luz1, c_luz2, c_per1, c_per2, c_ar1, c_ar2 : bool )
 
   	let

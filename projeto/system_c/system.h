@@ -1,4 +1,4 @@
-/* --- Generated the 25/6/2018 at 10:48 --- */
+/* --- Generated the 27/6/2018 at 10:43 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -51,8 +51,8 @@ void System__door_step(int push, int c_door, System__door_out* _out,
                        System__door_mem* self);
 
 typedef struct System__rad_mem {
-  int v_142;
-  int v_141;
+  int v_157;
+  int v_156;
   int pnr;
 } System__rad_mem;
 
@@ -68,9 +68,9 @@ void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
                       System__rad_mem* self);
 
 typedef struct System__washing_machine_mem {
-  int v_187;
-  int v_186;
-  int v_185;
+  int v_202;
+  int v_201;
+  int v_200;
   int pnr;
 } System__washing_machine_mem;
 
@@ -86,9 +86,9 @@ void System__washing_machine_step(int start, int finish, int c_wash,
                                   System__washing_machine_mem* self);
 
 typedef struct System__oven_mem {
-  int v_244;
-  int v_243;
-  int v_242;
+  int v_259;
+  int v_258;
+  int v_257;
   int pnr;
 } System__oven_mem;
 
@@ -104,8 +104,8 @@ void System__oven_step(int start, int finish, int temp_ok, int cold,
                        System__oven_mem* self);
 
 typedef struct System__management_policy_mem {
-  int v_276;
-  int v_275;
+  int v_291;
+  int v_290;
   int pnr;
 } System__management_policy_mem;
 
@@ -206,8 +206,8 @@ void System__janelas_step(int c, System__janelas_out* _out,
                           System__janelas_mem* self);
 
 typedef struct System__luzes_mem {
-  int v_292;
-  int v_291;
+  int v_307;
+  int v_306;
   int pnr;
 } System__luzes_mem;
 
@@ -221,8 +221,8 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
                         System__luzes_mem* self);
 
 typedef struct System__persianas_mem {
-  int v_308;
-  int v_307;
+  int v_323;
+  int v_322;
   int pnr;
 } System__persianas_mem;
 
@@ -236,8 +236,8 @@ void System__persianas_step(int c1, int c2, System__persianas_out* _out,
                             System__persianas_mem* self);
 
 typedef struct System__ar_condicionado_mem {
-  int v_324;
-  int v_323;
+  int v_339;
+  int v_338;
   int pnr;
 } System__ar_condicionado_mem;
 
@@ -266,12 +266,12 @@ void System__turno_step(int shift, System__turno_out* _out,
                         System__turno_mem* self);
 
 typedef struct System__controller_mem {
-  int v_340;
-  int v_339;
-  int v_356;
   int v_355;
-  int v_372;
+  int v_354;
   int v_371;
+  int v_370;
+  int v_387;
+  int v_386;
   int ck_27_1;
   int ck_25_1;
   int ck_23_1;
