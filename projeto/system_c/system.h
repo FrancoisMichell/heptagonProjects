@@ -1,5 +1,5 @@
-/* --- Generated the 27/6/2018 at 10:43 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 2/7/2018 at 20:29 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -7,105 +7,9 @@
 
 #include "system_types.h"
 #include "controller_controller.h"
-typedef struct System__room_mem {
-  int ck_1_2;
-  int pnr;
-} System__room_mem;
-
-typedef struct System__room_out {
-  int occupied;
-} System__room_out;
-
-void System__room_reset(System__room_mem* self);
-
-void System__room_step(int presence, System__room_out* _out,
-                       System__room_mem* self);
-
-typedef struct System__light_source_mem {
-  int ck_1;
-  int pnr;
-} System__light_source_mem;
-
-typedef struct System__light_source_out {
-  int source_on;
-} System__light_source_out;
-
-void System__light_source_reset(System__light_source_mem* self);
-
-void System__light_source_step(int source_switch, int c_source1,
-                               int c_source2, System__light_source_out* _out,
-                               System__light_source_mem* self);
-
-typedef struct System__door_mem {
-  int ck_1;
-  int pnr;
-} System__door_mem;
-
-typedef struct System__door_out {
-  int door_open;
-} System__door_out;
-
-void System__door_reset(System__door_mem* self);
-
-void System__door_step(int push, int c_door, System__door_out* _out,
-                       System__door_mem* self);
-
-typedef struct System__rad_mem {
-  int v_157;
-  int v_156;
-  int pnr;
-} System__rad_mem;
-
-typedef struct System__rad_out {
-  int rad_power;
-  int rad_state;
-} System__rad_out;
-
-void System__rad_reset(System__rad_mem* self);
-
-void System__rad_step(int up1, int down1, int up2, int down2, int c_rad1,
-                      int c_rad2, System__rad_out* _out,
-                      System__rad_mem* self);
-
-typedef struct System__washing_machine_mem {
-  int v_202;
-  int v_201;
-  int v_200;
-  int pnr;
-} System__washing_machine_mem;
-
-typedef struct System__washing_machine_out {
-  int wash_power;
-  int wash_state;
-} System__washing_machine_out;
-
-void System__washing_machine_reset(System__washing_machine_mem* self);
-
-void System__washing_machine_step(int start, int finish, int c_wash,
-                                  System__washing_machine_out* _out,
-                                  System__washing_machine_mem* self);
-
-typedef struct System__oven_mem {
-  int v_259;
-  int v_258;
-  int v_257;
-  int pnr;
-} System__oven_mem;
-
-typedef struct System__oven_out {
-  int oven_power;
-  int oven_state;
-} System__oven_out;
-
-void System__oven_reset(System__oven_mem* self);
-
-void System__oven_step(int start, int finish, int temp_ok, int cold,
-                       int c_oven, System__oven_out* _out,
-                       System__oven_mem* self);
-
 typedef struct System__management_policy_mem {
-  int v_291;
-  int v_290;
+  int v_142;
+  int v_141;
   int pnr;
 } System__management_policy_mem;
 
@@ -119,6 +23,24 @@ void System__management_policy_reset(System__management_policy_mem* self);
 void System__management_policy_step(int eco_input, int comfort_input,
                                     System__management_policy_out* _out,
                                     System__management_policy_mem* self);
+
+typedef struct System__ilumination_policy_mem {
+  int v_162;
+  int v_161;
+  int pnr;
+} System__ilumination_policy_mem;
+
+typedef struct System__ilumination_policy_out {
+  int l_state;
+  int p_state;
+  int policy;
+} System__ilumination_policy_out;
+
+void System__ilumination_policy_reset(System__ilumination_policy_mem* self);
+
+void System__ilumination_policy_step(int up, int down, int night,
+                                     System__ilumination_policy_out* _out,
+                                     System__ilumination_policy_mem* self);
 
 typedef struct System__porta_mem {
   int ck_1;
@@ -206,8 +128,8 @@ void System__janelas_step(int c, System__janelas_out* _out,
                           System__janelas_mem* self);
 
 typedef struct System__luzes_mem {
-  int v_307;
-  int v_306;
+  int v_178;
+  int v_177;
   int pnr;
 } System__luzes_mem;
 
@@ -221,8 +143,8 @@ void System__luzes_step(int c1, int c2, System__luzes_out* _out,
                         System__luzes_mem* self);
 
 typedef struct System__persianas_mem {
-  int v_323;
-  int v_322;
+  int v_194;
+  int v_193;
   int pnr;
 } System__persianas_mem;
 
@@ -232,12 +154,12 @@ typedef struct System__persianas_out {
 
 void System__persianas_reset(System__persianas_mem* self);
 
-void System__persianas_step(int c1, int c2, System__persianas_out* _out,
+void System__persianas_step(int policy, System__persianas_out* _out,
                             System__persianas_mem* self);
 
 typedef struct System__ar_condicionado_mem {
-  int v_339;
-  int v_338;
+  int v_210;
+  int v_209;
   int pnr;
 } System__ar_condicionado_mem;
 
@@ -266,18 +188,19 @@ void System__turno_step(int shift, System__turno_out* _out,
                         System__turno_mem* self);
 
 typedef struct System__controller_mem {
-  int v_355;
-  int v_354;
-  int v_371;
-  int v_370;
-  int v_387;
-  int v_386;
-  int ck_27_1;
+  int v_230;
+  int v_229;
+  int v_246;
+  int v_245;
   int ck_25_1;
   int ck_23_1;
   int ck_21_1;
   int ck_19_1;
+  int ck_17_1;
+  int ck_15_1;
+  int ck_13_1;
   int ck_1;
+  int pnr_9;
   int pnr_8;
   int pnr_7;
   int pnr_6;
@@ -294,16 +217,21 @@ typedef struct System__controller_out {
   int p_open;
   int r_on1;
   int presence;
+  int presence_t;
   int pc_on;
   int w_open;
-  int l_state;
-  int p_state;
+  int arm_open;
+  int lampada;
+  int persiana;
   int ar_state;
+  int policy;
 } System__controller_out;
 
 void System__controller_reset(System__controller_mem* self);
 
 void System__controller_step(int shift_turno, int abre_porta, int p_arrived,
+                             int p1_arrived, int ilumination_up,
+                             int ilumination_down,
                              System__controller_out* _out,
                              System__controller_mem* self);
 
