@@ -42,7 +42,7 @@ node ilumination_policy (up, down, night : bool) returns ( l_state, p_state, pol
 				p_state = 2;
 				policy = 3
 				unless down & night then Half
-					| not night then Natural
+					
 		end
 	tel
 
@@ -51,10 +51,10 @@ node porta( push, c_porta : bool ) returns ( porta_open : bool )
 	let
 	    automaton
 		    state Closed do
-		  	    porta_open = false;
+			porta_open = false;
 		    unless not c_porta then Open
 		    state Open do
-		    	porta_open = true;
+			porta_open = true;
 		    unless c_porta then Closed
 	    end
 	tel
