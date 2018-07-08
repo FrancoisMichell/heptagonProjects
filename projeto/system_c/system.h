@@ -1,4 +1,4 @@
-/* --- Generated the 2/7/2018 at 20:29 --- */
+/* --- Generated the 8/7/2018 at 14:29 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -7,40 +7,25 @@
 
 #include "system_types.h"
 #include "controller_controller.h"
-typedef struct System__management_policy_mem {
-  int v_142;
-  int v_141;
+typedef struct System__ilumination_mem {
+  int v_253;
+  int v_252;
+  int v_251;
   int pnr;
-} System__management_policy_mem;
+} System__ilumination_mem;
 
-typedef struct System__management_policy_out {
-  int mode_2;
-  int mode_1;
-} System__management_policy_out;
-
-void System__management_policy_reset(System__management_policy_mem* self);
-
-void System__management_policy_step(int eco_input, int comfort_input,
-                                    System__management_policy_out* _out,
-                                    System__management_policy_mem* self);
-
-typedef struct System__ilumination_policy_mem {
-  int v_162;
-  int v_161;
-  int pnr;
-} System__ilumination_policy_mem;
-
-typedef struct System__ilumination_policy_out {
-  int l_state;
-  int p_state;
+typedef struct System__ilumination_out {
+  int lamp;
+  int pers;
   int policy;
-} System__ilumination_policy_out;
+} System__ilumination_out;
 
-void System__ilumination_policy_reset(System__ilumination_policy_mem* self);
+void System__ilumination_reset(System__ilumination_mem* self);
 
-void System__ilumination_policy_step(int up, int down, int night,
-                                     System__ilumination_policy_out* _out,
-                                     System__ilumination_policy_mem* self);
+void System__ilumination_step(int c1, int c2, int c_up, int c_down, int up,
+                              int down, int ar_fail, int shift,
+                              System__ilumination_out* _out,
+                              System__ilumination_mem* self);
 
 typedef struct System__porta_mem {
   int ck_1;
@@ -127,39 +112,9 @@ void System__janelas_reset(System__janelas_mem* self);
 void System__janelas_step(int c, System__janelas_out* _out,
                           System__janelas_mem* self);
 
-typedef struct System__luzes_mem {
-  int v_178;
-  int v_177;
-  int pnr;
-} System__luzes_mem;
-
-typedef struct System__luzes_out {
-  int l_state;
-} System__luzes_out;
-
-void System__luzes_reset(System__luzes_mem* self);
-
-void System__luzes_step(int c1, int c2, System__luzes_out* _out,
-                        System__luzes_mem* self);
-
-typedef struct System__persianas_mem {
-  int v_194;
-  int v_193;
-  int pnr;
-} System__persianas_mem;
-
-typedef struct System__persianas_out {
-  int p_state;
-} System__persianas_out;
-
-void System__persianas_reset(System__persianas_mem* self);
-
-void System__persianas_step(int policy, System__persianas_out* _out,
-                            System__persianas_mem* self);
-
 typedef struct System__ar_condicionado_mem {
-  int v_210;
-  int v_209;
+  int v_283;
+  int v_282;
   int pnr;
 } System__ar_condicionado_mem;
 
@@ -187,19 +142,82 @@ void System__turno_reset(System__turno_mem* self);
 void System__turno_step(int shift, System__turno_out* _out,
                         System__turno_mem* self);
 
-typedef struct System__controller_mem {
-  int v_230;
-  int v_229;
-  int v_246;
-  int v_245;
-  int ck_25_1;
-  int ck_23_1;
-  int ck_21_1;
-  int ck_19_1;
-  int ck_17_1;
-  int ck_15_1;
-  int ck_13_1;
+typedef struct System__falha_mem {
   int ck_1;
+  int pnr;
+} System__falha_mem;
+
+typedef struct System__falha_out {
+  int failed;
+} System__falha_out;
+
+void System__falha_reset(System__falha_mem* self);
+
+void System__falha_step(int falhou, int recuperou, System__falha_out* _out,
+                        System__falha_mem* self);
+
+typedef struct System__l_status_mem {
+  int ck_12_1;
+  int v_327;
+  int v_326;
+  int v_325;
+  int pnr_1;
+  int pnr;
+} System__l_status_mem;
+
+typedef struct System__l_status_out {
+  int failed;
+  int lamp;
+  int pers;
+  int policy;
+} System__l_status_out;
+
+void System__l_status_reset(System__l_status_mem* self);
+
+void System__l_status_step(int c1, int c2, int c_up, int c_down, int up,
+                           int down, int falhou, int recuperou, int ar_fail,
+                           int shift, System__l_status_out* _out,
+                           System__l_status_mem* self);
+
+typedef struct System__ar_failed_mem {
+  int ck_15_1;
+  int v_357;
+  int v_356;
+  int pnr_2;
+  int pnr;
+} System__ar_failed_mem;
+
+typedef struct System__ar_failed_out {
+  int ar_state;
+  int working;
+} System__ar_failed_out;
+
+void System__ar_failed_reset(System__ar_failed_mem* self);
+
+void System__ar_failed_step(int c1, int c2, int falhou, int recuperou,
+                            System__ar_failed_out* _out,
+                            System__ar_failed_mem* self);
+
+typedef struct System__controller_mem {
+  int ck_38_1;
+  int v_401;
+  int v_400;
+  int v_399;
+  int ck_34_1;
+  int v_431;
+  int v_430;
+  int ck_30_1;
+  int ck_28_1;
+  int ck_26_1;
+  int ck_24_1;
+  int ck_22_1;
+  int ck_20_1;
+  int ck_18_1;
+  int ck_1;
+  int pnr_13;
+  int pnr_12;
+  int pnr_11;
+  int pnr_10;
   int pnr_9;
   int pnr_8;
   int pnr_7;
@@ -207,8 +225,6 @@ typedef struct System__controller_mem {
   int pnr_5;
   int pnr_4;
   int pnr_3;
-  int pnr_2;
-  int pnr_1;
   int pnr;
 } System__controller_mem;
 
@@ -221,18 +237,20 @@ typedef struct System__controller_out {
   int pc_on;
   int w_open;
   int arm_open;
-  int lampada;
-  int persiana;
+  int ar_fail;
+  int l_fail;
+  int lamp;
+  int pers;
   int ar_state;
-  int policy;
+  int mopa;
 } System__controller_out;
 
 void System__controller_reset(System__controller_mem* self);
 
-void System__controller_step(int shift_turno, int abre_porta, int p_arrived,
-                             int p1_arrived, int ilumination_up,
-                             int ilumination_down,
-                             System__controller_out* _out,
+void System__controller_step(int up, int down, int shift_turno,
+                             int abre_porta, int p_arrived, int p1_arrived,
+                             int ar_failed, int ar_recovered, int l_failed,
+                             int l_recovered, System__controller_out* _out,
                              System__controller_mem* self);
 
 #endif // SYSTEM_H

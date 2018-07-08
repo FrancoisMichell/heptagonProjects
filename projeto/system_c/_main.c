@@ -1,4 +1,4 @@
-/* --- Generated the 2/7/2018 at 20:29 --- */
+/* --- Generated the 8/7/2018 at 14:29 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -11,12 +11,16 @@ System__controller_mem mem;
 int main(int argc, char** argv) {
   int step_c;
   int step_max;
+  int up;
+  int down;
   int shift_turno;
   int abre_porta;
   int p_arrived;
   int p1_arrived;
-  int ilumination_up;
-  int ilumination_down;
+  int ar_failed;
+  int ar_recovered;
+  int l_failed;
+  int l_recovered;
   System__controller_out _res;
   step_c = 0;
   step_max = 0;
@@ -26,6 +30,12 @@ int main(int argc, char** argv) {
   System__controller_reset(&mem);
   while ((!(step_max)||(step_c<step_max))) {
     step_c = (step_c+1);
+    
+    printf("up ? ");
+    scanf("%d", &up);;
+    
+    printf("down ? ");
+    scanf("%d", &down);;
     
     printf("shift_turno ? ");
     scanf("%d", &shift_turno);;
@@ -39,13 +49,20 @@ int main(int argc, char** argv) {
     printf("p1_arrived ? ");
     scanf("%d", &p1_arrived);;
     
-    printf("ilumination_up ? ");
-    scanf("%d", &ilumination_up);;
+    printf("ar_failed ? ");
+    scanf("%d", &ar_failed);;
     
-    printf("ilumination_down ? ");
-    scanf("%d", &ilumination_down);;
-    System__controller_step(shift_turno, abre_porta, p_arrived, p1_arrived,
-                            ilumination_up, ilumination_down, &_res, &mem);
+    printf("ar_recovered ? ");
+    scanf("%d", &ar_recovered);;
+    
+    printf("l_failed ? ");
+    scanf("%d", &l_failed);;
+    
+    printf("l_recovered ? ");
+    scanf("%d", &l_recovered);;
+    System__controller_step(up, down, shift_turno, abre_porta, p_arrived,
+                            p1_arrived, ar_failed, ar_recovered, l_failed,
+                            l_recovered, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.night);
     printf("=> ");
@@ -63,13 +80,17 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.arm_open);
     printf("=> ");
-    printf("%d ", _res.lampada);
+    printf("%d ", _res.ar_fail);
     printf("=> ");
-    printf("%d ", _res.persiana);
+    printf("%d ", _res.l_fail);
+    printf("=> ");
+    printf("%d ", _res.lamp);
+    printf("=> ");
+    printf("%d ", _res.pers);
     printf("=> ");
     printf("%d ", _res.ar_state);
     printf("=> ");
-    printf("%d ", _res.policy);
+    printf("%d ", _res.mopa);
     puts("");
     fflush(stdout);
   };
