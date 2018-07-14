@@ -1,17 +1,5 @@
 (*link pros slides: https://drive.google.com/open?id=1QGEjtj41JJPet6rVrFoiDohjFCYRYAhd7RuK-l4HRhs*)
 
-(*nenhuma fechada
-alguns fechada
-todos fechada
-
-alguns meio aberta
-
-nenhuma aberta
-alguns aberta
-todos aberta
-
-falha aberta*)
-
 node ilumination ( c1, c2, c_up, c_down, up, down, ar_fail, shift : bool ) returns (  lamp, pers, policy : int )
 	let
 		automaton
@@ -24,11 +12,11 @@ node ilumination ( c1, c2, c_up, c_down, up, down, ar_fail, shift : bool ) retur
 					(* | ar_fail then Off_Up *)
 
 			state Off_Up do
-				lamp = 0;
+				lamp = 2;
 				pers = 0;
 				policy = 4;
 				unless not ar_fail & shift then Off
-					| not ar_fail & not shift then Off
+					| not ar_fail & not shift then Max
 		
 			state Min do
 				lamp = 1;
@@ -44,6 +32,7 @@ node ilumination ( c1, c2, c_up, c_down, up, down, ar_fail, shift : bool ) retur
 				policy = 2;
 				unless not c1 or (down & c_down) then Min
 					| not c2 then Off
+					| ar_fail then Off_Up
 					(* | ar_fail then Off_Up *)
 
 			state Max_Up do
@@ -55,28 +44,44 @@ node ilumination ( c1, c2, c_up, c_down, up, down, ar_fail, shift : bool ) retur
 		end
 	tel
 
-node porta( push, c_porta : bool ) returns ( porta_open : bool )
-	let
-	    automaton
-		    state Closed do
-			porta_open = false;
-		    unless not c_porta then Open
-		    state Open do
-			porta_open = true;
-		    unless c_porta then Closed
-	    end
-	tel
-
-node roteador ( c : bool ) returns ( r_on : bool )
+node lamp ( sw, c1, c2: bool ) returns (  status : bool )
 	let
 		automaton
 			state Off do
-				r_on = false;
-				unless c then On
+				status = false;
+				unless (c1 & sw) or not c2 then On
+
 			state On do
-				r_on = true;
-				unless not c then Off
+				status = true;
+				unless (c1 & sw) or not c2 then Off
 		end
+	tel
+
+node persiana ( sw, c1, c2: bool ) returns ( status : bool )
+	let
+		automaton
+			state Up do
+				status = false;
+				unless (c1 & sw) or not c2 then Down
+
+			state Down do
+				status = true;
+				unless (c1 & sw) or not c2 then Up
+		end
+	tel
+
+
+
+node porta( push, c_porta : bool ) returns ( status : bool )
+	let
+	    automaton
+		    state Closed do
+				status = false;
+			    unless not c_porta then Open
+		    state Open do
+				status = true;
+			    unless c_porta then Closed
+	    end
 	tel
 
 node armario_de_servico ( c : bool ) returns ( arm_open : bool )
@@ -180,28 +185,45 @@ node l_status ( c1, c2, c_up, c_down, up, down, falhou, recuperou, ar_fail, shif
 node ar_failed (c1, c2, falhou, recuperou:bool) returns (ar_state:int; working:bool)
 	let
 		ar_state = inlined ar_condicionado (c1, c2);
-		working = inlined falha(falhou, recuperou)
+		working = inlined falha(falhou, recuperou);
+	tel
+
+node lamp_fail (sw, c1, c2, fail, reco: bool) returns (lamp, failed: bool)
+	let
+		lamp = inlined lamp(sw, c1, c2);
+		failed = inlined falha(fail, reco);	
+	tel
+
+node pers_fail (sw, c1, c2, fail, reco: bool) returns (persiana, failed: bool)
+	let
+		persiana = inlined persiana(sw, c1, c2);
+		failed = inlined falha(fail, reco);	
 	tel
 
 node controller( up, down, shift_turno, abre_porta, p_arrived, p1_arrived, (* ilumination_up, ilumination_down, *) ar_failed, ar_recovered, l_failed, l_recovered : bool ) 
-	returns (night, p_open, r_on1, presence, presence_t, pc_on, w_open, arm_open, ar_fail, l_fail : bool; lamp, pers, ar_state, (* policy, *) mopa : int;)
+	returns (night, p_open, presence, presence_t, pc_on, w_open, arm_open, ar_fail, l_fail : bool; lamp, pers, ar_state, (* policy, *) mopa : int;)
   	
   	contract
 		var rule0, rule1, rule1_5, rule2, rule3, rule4, rule5, rule6, rule7 : bool;
 
 		let
+		    (* SE A LUZ TIVER FALHADO ENTÃO A LÂMPADA DEVE ESTAR DESLIGADA *)
 		    rule0 = not (l_fail & not night) or (lamp = 0);
-		    rule1 = not ((presence or presence_t) & night & not l_fail & not ar_fail) or (lamp = 2 & p_open);
-		    rule1_5 = not ((presence or presence_t) & night & (l_fail or ar_fail)) or (lamp = 0 & p_open);
+			(* SE O AR CONDICIONADO FALHAR ENTÃO O AR CONDICIONADO DEVE FICAR DESLIGADO E AS JANELAS DEVEM ABRIR *)
+			rule7 = not ar_fail or (ar_state = 0 & w_open);
+			(* SE HOUVER PRESENCA, FOR NOITE E NÃO HOUVER FALHA DA LUZ E DO AR CONDICIONADO ENTÃO AS LAMPADAS DEVEM ESTAR LIGADAS, O AR CONDICIONADO NO MÍNIMO E A PORTA ABERTA *)
+		    rule1 = not ((presence or presence_t) & night & not l_fail & not ar_fail) or (lamp = 2 & ar_state = 1 & p_open);
+		    (* SE HOUVER PRESENÇA, FOR NOiTE E O AR CONDICIONADO FALHOU ENTÃO AS PERSIANAS DEVEM SE ABRIR *)
+		    rule1_5 = not ((presence or presence_t) & night & not l_fail & ar_fail) or (pers = 0 & p_open);
+		    (* SE HOUVER PRESENÇA,  *)
 		    rule2 = not ((presence or presence_t) & not night) or (p_open);
 
-		    rule3 = not (not presence & not presence_t & night & not ar_fail) or (not p_open & (not r_on1 & not pc_on & not w_open) &  ar_state = 0(*  & mopa = 0 *));
-		    rule4 = not (not presence & not presence_t & not night & not ar_fail) or (p_open & (not r_on1 & not pc_on & not w_open) &  ar_state = 0(*  & mopa = 0 *));
+		    rule3 = not (not presence & not presence_t & night & not ar_fail) or (not p_open & (not pc_on & not w_open) &  ar_state = 0 & mopa = 0);
+		    rule4 = not (not presence & not presence_t & not night & not ar_fail) or (p_open & (not pc_on & not w_open) &  ar_state = 0 & mopa = 0);
 		    
-		    rule5 = not (presence & not night & pc_on & not w_open & not ar_fail) or ar_state = 2;
-		    rule6 = not (presence_t & not ar_fail) or (p_open & (not r_on1 & not pc_on) & arm_open & ar_state = 1);
+		    rule5 = not (presence & not night & pc_on & (lamp = 1 or lamp = 2) & not w_open & not ar_fail) or ar_state = 2;
+		    rule6 = not (presence_t & not ar_fail) or (p_open & (not pc_on) & arm_open & ar_state = 1);
 
-			rule7 = not ar_fail or (ar_state = 0 & w_open);
 			
 			
 		tel
@@ -211,7 +233,6 @@ node controller( up, down, shift_turno, abre_porta, p_arrived, p1_arrived, (* il
   	let
   		night = inlined turno (shift_turno);
 		p_open = inlined porta (abre_porta, c_porta);
-		r_on1 = inlined roteador (c_rot);
 		arm_open = inlined armario_de_servico (c_arm);
 		presence = inlined pessoas (p_arrived);
 		presence_t = inlined pessoas (p1_arrived);
@@ -219,8 +240,5 @@ node controller( up, down, shift_turno, abre_porta, p_arrived, p1_arrived, (* il
 		w_open = inlined janelas (c_jan);
 		(ar_state, ar_fail) = inlined ar_failed (c_ar1, c_ar2, ar_failed, ar_recovered);
   		(l_fail, lamp, pers, mopa) = inlined l_status (cl1, cl2, cup, cdown, up, down, l_failed, l_recovered, ar_fail, night);
-		(* (lampada, persiana, policy) = inlined ilumination_policy(ilumination_up, ilumination_down, c_policy, ar_fail); *)
-		(* (l_fail, lampada, persiana, policy) = inlined light_status(ilumination_up, ilumination_down, c_policy, ar_fail, l_failed, l_recovered); *)
-
 	tel
 
