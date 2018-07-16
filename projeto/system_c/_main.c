@@ -1,4 +1,4 @@
-/* --- Generated the 8/7/2018 at 14:29 --- */
+/* --- Generated the 16/7/2018 at 14:7 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -11,16 +11,14 @@ System__controller_mem mem;
 int main(int argc, char** argv) {
   int step_c;
   int step_max;
-  int up;
-  int down;
-  int shift_turno;
-  int abre_porta;
-  int p_arrived;
-  int p1_arrived;
-  int ar_failed;
-  int ar_recovered;
-  int l_failed;
-  int l_recovered;
+  int change_shift;
+  int worker;
+  int cleaner;
+  int air_failed_recovered;
+  int light_switch;
+  int light_failed_recovered;
+  int blind_switch;
+  int blind_failed_recovered;
   System__controller_out _res;
   step_c = 0;
   step_max = 0;
@@ -31,66 +29,59 @@ int main(int argc, char** argv) {
   while ((!(step_max)||(step_c<step_max))) {
     step_c = (step_c+1);
     
-    printf("up ? ");
-    scanf("%d", &up);;
+    printf("change_shift ? ");
+    scanf("%d", &change_shift);;
     
-    printf("down ? ");
-    scanf("%d", &down);;
+    printf("worker ? ");
+    scanf("%d", &worker);;
     
-    printf("shift_turno ? ");
-    scanf("%d", &shift_turno);;
+    printf("cleaner ? ");
+    scanf("%d", &cleaner);;
     
-    printf("abre_porta ? ");
-    scanf("%d", &abre_porta);;
+    printf("air_failed_recovered ? ");
+    scanf("%d", &air_failed_recovered);;
     
-    printf("p_arrived ? ");
-    scanf("%d", &p_arrived);;
+    printf("light_switch ? ");
+    scanf("%d", &light_switch);;
     
-    printf("p1_arrived ? ");
-    scanf("%d", &p1_arrived);;
+    printf("light_failed_recovered ? ");
+    scanf("%d", &light_failed_recovered);;
     
-    printf("ar_failed ? ");
-    scanf("%d", &ar_failed);;
+    printf("blind_switch ? ");
+    scanf("%d", &blind_switch);;
     
-    printf("ar_recovered ? ");
-    scanf("%d", &ar_recovered);;
-    
-    printf("l_failed ? ");
-    scanf("%d", &l_failed);;
-    
-    printf("l_recovered ? ");
-    scanf("%d", &l_recovered);;
-    System__controller_step(up, down, shift_turno, abre_porta, p_arrived,
-                            p1_arrived, ar_failed, ar_recovered, l_failed,
-                            l_recovered, &_res, &mem);
+    printf("blind_failed_recovered ? ");
+    scanf("%d", &blind_failed_recovered);;
+    System__controller_step(change_shift, worker, cleaner,
+                            air_failed_recovered, light_switch,
+                            light_failed_recovered, blind_switch,
+                            blind_failed_recovered, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.night);
     printf("=> ");
-    printf("%d ", _res.p_open);
+    printf("%d ", _res.door_open);
     printf("=> ");
-    printf("%d ", _res.r_on1);
+    printf("%d ", _res.worker_presence);
     printf("=> ");
-    printf("%d ", _res.presence);
-    printf("=> ");
-    printf("%d ", _res.presence_t);
+    printf("%d ", _res.cleaner_presence);
     printf("=> ");
     printf("%d ", _res.pc_on);
     printf("=> ");
-    printf("%d ", _res.w_open);
+    printf("%d ", _res.window_open);
     printf("=> ");
-    printf("%d ", _res.arm_open);
+    printf("%d ", _res.closet_open);
     printf("=> ");
-    printf("%d ", _res.ar_fail);
+    printf("%d ", _res.air_failed);
     printf("=> ");
-    printf("%d ", _res.l_fail);
+    printf("%d ", _res.light_on);
     printf("=> ");
-    printf("%d ", _res.lamp);
+    printf("%d ", _res.light_failed);
     printf("=> ");
-    printf("%d ", _res.pers);
+    printf("%d ", _res.blind_up);
     printf("=> ");
-    printf("%d ", _res.ar_state);
+    printf("%d ", _res.blind_failed);
     printf("=> ");
-    printf("%d ", _res.mopa);
+    printf("%d ", _res.air_state);
     puts("");
     fflush(stdout);
   };
