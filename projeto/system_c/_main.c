@@ -1,5 +1,5 @@
-/* --- Generated the 16/7/2018 at 14:7 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 18/7/2018 at 10:59 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -71,17 +71,13 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.closet_open);
     printf("=> ");
-    printf("%d ", _res.air_failed);
-    printf("=> ");
-    printf("%d ", _res.light_on);
-    printf("=> ");
-    printf("%d ", _res.light_failed);
-    printf("=> ");
     printf("%d ", _res.blind_up);
     printf("=> ");
     printf("%d ", _res.blind_failed);
     printf("=> ");
-    printf("%d ", _res.air_state);
+    printf("%d ", _res.air_out);
+    printf("=> ");
+    printf("%d ", _res.light_out);
     puts("");
     fflush(stdout);
   };
