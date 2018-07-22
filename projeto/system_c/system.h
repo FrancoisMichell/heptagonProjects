@@ -1,4 +1,4 @@
-/* --- Generated the 21/7/2018 at 18:39 --- */
+/* --- Generated the 22/7/2018 at 16:16 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -92,8 +92,8 @@ void System__window_step(int c, System__window_out* _out,
                          System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_240;
-  int v_239;
+  int v_96;
+  int v_95;
   int pnr;
 } System__air_conditioner_mem;
 
@@ -121,76 +121,18 @@ void System__day_shift_reset(System__day_shift_mem* self);
 void System__day_shift_step(int change, System__day_shift_out* _out,
                             System__day_shift_mem* self);
 
-typedef struct System__fail_mem {
-  int ck_1;
-  int pnr;
-} System__fail_mem;
-
-typedef struct System__fail_out {
-  int failed;
-} System__fail_out;
-
-void System__fail_reset(System__fail_mem* self);
-
-void System__fail_step(int failed_recovered, System__fail_out* _out,
-                       System__fail_mem* self);
-
-typedef struct System__air_fail_mem {
-  int ck_12_1;
-  int v_256;
-  int v_255;
-  int pnr_1;
-  int pnr;
-} System__air_fail_mem;
-
-typedef struct System__air_fail_out {
-  int out;
-} System__air_fail_out;
-
-void System__air_fail_reset(System__air_fail_mem* self);
-
-void System__air_fail_step(int c1, int c2, int failed_recovered,
-                           System__air_fail_out* _out,
-                           System__air_fail_mem* self);
-
-typedef struct System__light_source_fail_mem {
+typedef struct System__controller_mem {
+  int ck_26_1;
+  int ck_24_1;
+  int v_112;
+  int v_111;
+  int ck_20_1;
+  int ck_18_1;
   int ck_16_1;
   int ck_14_1;
-  int pnr_2;
-  int pnr;
-} System__light_source_fail_mem;
-
-typedef struct System__light_source_fail_out {
-  int out;
-} System__light_source_fail_out;
-
-void System__light_source_fail_reset(System__light_source_fail_mem* self);
-
-void System__light_source_fail_step(int sw, int c1, int c2,
-                                    int failed_recovered,
-                                    System__light_source_fail_out* _out,
-                                    System__light_source_fail_mem* self);
-
-typedef struct System__controller_mem {
-  int ck_44_1;
-  int ck_42_1;
-  int ck_39_1;
-  int ck_37_1;
-  int ck_34_1;
-  int v_272;
-  int v_271;
-  int ck_29_1;
-  int ck_27_1;
-  int ck_25_1;
-  int ck_23_1;
-  int ck_21_1;
-  int ck_19_1;
+  int ck_12_1;
+  int ck_10_1;
   int ck_1;
-  int pnr_14;
-  int pnr_13;
-  int pnr_12;
-  int pnr_11;
-  int pnr_10;
   int pnr_9;
   int pnr_8;
   int pnr_7;
@@ -198,6 +140,8 @@ typedef struct System__controller_mem {
   int pnr_5;
   int pnr_4;
   int pnr_3;
+  int pnr_2;
+  int pnr_1;
   int pnr;
 } System__controller_mem;
 
@@ -209,17 +153,15 @@ typedef struct System__controller_out {
   int pc_on;
   int window_open;
   int closet_open;
-  int air_status;
   int light_status;
   int blind_status;
+  int air_status;
 } System__controller_out;
 
 void System__controller_reset(System__controller_mem* self);
 
 void System__controller_step(int change_shift, int worker, int cleaner,
-                             int air_failed_recovered, int light_switch,
-                             int light_failed_recovered, int blind_switch,
-                             int blind_failed_recovered,
+                             int light_switch, int blind_switch,
                              System__controller_out* _out,
                              System__controller_mem* self);
 
