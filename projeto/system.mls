@@ -171,7 +171,7 @@ let
   v_8_2_0 = (v_8_2 when false(v_8_1));
   r_St_On_fail = if v_2 then true else v_4;
   s_St_On_fail_1 = if v_2 then true else v_3_1;
-  s_St_On_fail_2 = if v_2 then true else v_3_2;
+  s_St_On_fail_2 = if v_2 then false else v_3_2;
   v_4 =
     if ((failed_recovered when false(ck_1_3)) when false(ck_2_0))
     then true
@@ -1905,7 +1905,7 @@ contract
     v_298_2_0 = (v_298_2 when false(v_298_1));
     r_St_9_On_fail = if v_292 then true else v_294;
     s_St_9_On_fail_1 = if v_292 then true else v_293_1;
-    s_St_9_On_fail_2 = if v_292 then true else v_293_2;
+    s_St_9_On_fail_2 = if v_292 then false else v_293_2;
     v_294 =
       if ((failed_recovered_2 when false(ck_27_1)) when false(ck_27_2_0))
       then true
@@ -2083,7 +2083,7 @@ contract
     v_278_2_0 = (v_278_2 when false(v_278_1));
     r_1_St_10_On_fail = if v_272 then true else v_274;
     s_1_St_10_On_fail_1 = if v_272 then true else v_273_1;
-    s_1_St_10_On_fail_2 = if v_272 then true else v_273_2;
+    s_1_St_10_On_fail_2 = if v_272 then false else v_273_2;
     v_274 =
       if ((failed_recovered_1 when false(ck_25_1)) when false(ck_25_2_0))
       then true

@@ -1,7 +1,9 @@
 (*link pros slides: https://drive.google.com/open?id=1QGEjtj41JJPet6rVrFoiDohjFCYRYAhd7RuK-l4HRhs*)
 
 node light_source ( c1, c2, sw, failed_recovered : bool ) returns ( light_source_status : int )
+	(* var last x: int = 0; *)
 	let
+		(* end = x; *)
 		automaton
 			state Off do
 				light_source_status = 0;
@@ -20,7 +22,7 @@ node light_source ( c1, c2, sw, failed_recovered : bool ) returns ( light_source
 
 			state On_fail do
 				light_source_status = 3;
-				unless (c1 & sw) or not c2 then Off
+				unless (c1 & sw) or not c2 then Off_fail
 				| failed_recovered then On
 		end
 	tel
@@ -152,28 +154,6 @@ node fail (failed_recovered: bool) returns (failed : bool)
 				unless failed_recovered then Funcionando
 		end
 	tel
-
-(* node air_fail (c1, c2, failed_recovered:bool) returns (out: int;)
-	var air_state : int; failed : bool;
-	let
-		air_state = inlined air_conditioner (c1, c2);
-		failed = inlined fail(failed_recovered);
-		switch failed
-		 | true do out = air_state + 3
-		 | false do out = air_state
-		end
-	tel *)
-
-(* node light_source_fail (sw, c1, c2, failed_recovered: bool) returns (out: int;)
-	var light_source : int; failed: bool;
-	let
-		light_source = inlined light_source (sw, c1, c2);
-		failed = inlined fail (failed_recovered);
-		switch failed
-		 | true do out = light_source + 2
-		 | false do out = light_source
-		end
-	tel *)
 
 node controller( change_shift, worker, cleaner, air_failed_recovered, light_switch, light_failed_recovered, blind_switch, blind_failed_recovered: bool)
 	

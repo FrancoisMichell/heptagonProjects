@@ -1,5 +1,5 @@
-/* --- Generated the 24/7/2018 at 21:21 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 25/7/2018 at 10:17 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -262,7 +262,7 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       };
       v_322 = s_St_On_fail_1;
       if (v_2) {
-        s_St_On_fail_2 = true;
+        s_St_On_fail_2 = false;
       } else {
         s_St_On_fail_2 = v_3_2;
       };
@@ -3268,7 +3268,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
       v_395 = s_St_9_On_fail_1;
       if (v_292) {
-        s_St_9_On_fail_2 = true;
+        s_St_9_On_fail_2 = false;
       } else {
         s_St_9_On_fail_2 = v_293_2;
       };
@@ -3544,7 +3544,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
       v_411 = s_1_St_10_On_fail_1;
       if (v_272) {
-        s_1_St_10_On_fail_2 = true;
+        s_1_St_10_On_fail_2 = false;
       } else {
         s_1_St_10_On_fail_2 = v_273_2;
       };
