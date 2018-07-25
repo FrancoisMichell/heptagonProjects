@@ -418,7 +418,7 @@ contract
     v_31 = not(pc_on);
     v_32 = (air_status = 0);
     v_33 = (v_31 & v_32);
-    v_34 = (blind_status = 0);
+    v_34 = (light_status = 0);
     v_35 = (v_33 & v_34);
     v_36 = (blind_status = 0);
     v_37 = (v_35 & v_36);

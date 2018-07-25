@@ -1,5 +1,5 @@
-/* --- Generated the 22/7/2018 at 16:16 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 25/7/2018 at 10:56 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -1270,7 +1270,6 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_1_2 = ns_St_8_On_1;
   };
   _out->blind_status = light_source_on_1;
-  v_34 = (_out->blind_status==0);
   v_36 = (_out->blind_status==0);
   v_45 = (_out->blind_status==1);
   v_51 = (_out->blind_status==0);
@@ -1322,6 +1321,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   _out->light_status = light_source_on;
   v_19 = (_out->light_status==1);
+  v_34 = (_out->light_status==0);
   v_44 = (_out->light_status==1);
   v_46 = (v_44||v_45);
   v_50 = (_out->light_status==1);
