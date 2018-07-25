@@ -1,15 +1,27 @@
 (*link pros slides: https://drive.google.com/open?id=1QGEjtj41JJPet6rVrFoiDohjFCYRYAhd7RuK-l4HRhs*)
 
-node light_source ( c1, c2, sw : bool ) returns ( light_source_on : int )
+node light_source ( c1, c2, sw, failed_recovered : bool ) returns ( light_source_status : int )
 	let
 		automaton
 			state Off do
-				light_source_on = 0;
+				light_source_status = 0;
 				unless (c1 & sw) or not c2 then On
+				| failed_recovered then Off_fail
+
+			state Off_fail do
+				light_source_status = 2;
+				unless (c1 & sw) or not c2 then On_fail
+				| failed_recovered then Off
 
 			state On do
-				light_source_on = 1;
+				light_source_status = 1;
 				unless (c1 & sw) or not c2 then Off
+				| failed_recovered then On_fail
+
+			state On_fail do
+				light_source_status = 3;
+				unless (c1 & sw) or not c2 then Off
+				| failed_recovered then On
 		end
 	tel
 
@@ -54,7 +66,7 @@ node computer ( c : bool ) returns ( computer_on : bool )
 		automaton
 			state Off do
 				computer_on = false;
-				unless not c then On
+				unless c then On
 			state On do
 				computer_on = true;
 				unless not c then Off
@@ -75,21 +87,45 @@ node window ( c : bool ) returns ( window_open : bool )
 		end
 	tel
 
-node air_conditioner ( c1, c2 : bool ) returns ( air_state : int )
+node air_conditioner ( c1, c2, failed_recovered : bool ) returns ( air_status : int )
 	let
 		automaton
 			state Off do
-				air_state = 0;
+				air_status = 0;
 				unless c1 then Min
 					| not c2 then Max
+					| failed_recovered then Off_fail
+
+			state Off_fail do
+				air_status = 3;
+				unless c1 then Min_fail
+				| not c2 then Max_fail
+				| failed_recovered then Off
+
 			state Min do
-				air_state = 1;
+				air_status = 1;
 				unless not c1 then Off
 					| not c2 then Max
+					| failed_recovered then Min_fail
+
+			state Min_fail do
+				air_status = 4;
+				unless not c1 then Off_fail
+				| not c2 then Max_fail
+				| failed_recovered then Min
+			
 			state Max do
-				air_state = 2;
+				air_status = 2;
 				unless not c1 then Min
 					| not c2 then Off
+					| failed_recovered then Max_fail
+
+			state Max_fail do
+				air_status = 5;
+				unless not c1 then Min_fail
+				| not c2 then Off_fail
+				| failed_recovered then Max
+
 		end
 	tel
 
@@ -105,27 +141,75 @@ node day_shift (change : bool) returns ( night : bool)
 		end
 	tel
 
-node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool)
+node fail (failed_recovered: bool) returns (failed : bool)
+	let
+		automaton
+			state Funcionando do
+				failed = false
+				unless failed_recovered then Falha
+			state Falha do
+				failed = true
+				unless failed_recovered then Funcionando
+		end
+	tel
+
+(* node air_fail (c1, c2, failed_recovered:bool) returns (out: int;)
+	var air_state : int; failed : bool;
+	let
+		air_state = inlined air_conditioner (c1, c2);
+		failed = inlined fail(failed_recovered);
+		switch failed
+		 | true do out = air_state + 3
+		 | false do out = air_state
+		end
+	tel *)
+
+(* node light_source_fail (sw, c1, c2, failed_recovered: bool) returns (out: int;)
+	var light_source : int; failed: bool;
+	let
+		light_source = inlined light_source (sw, c1, c2);
+		failed = inlined fail (failed_recovered);
+		switch failed
+		 | true do out = light_source + 2
+		 | false do out = light_source
+		end
+	tel *)
+
+node controller( change_shift, worker, cleaner, air_failed_recovered, light_switch, light_failed_recovered, blind_switch, blind_failed_recovered: bool)
 	
 	returns (night, door_open, worker_presence, cleaner_presence, pc_on, window_open, 
-	closet_open: bool; light_status, blind_status, air_status : int;)
+	closet_open: bool; air_status, light_status, blind_status : int;)
   	
   	contract
-		var rule1, rule2, rule3, rule4, rule5, rule6 : bool;
+		var rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule8, rule9, rule10, rule11, rule12, rule13, rule14, rule15 : bool;
 
 		let
-			rule1 = not ((worker_presence or cleaner_presence) & night) or (light_status = 1 & blind_status = 0);
-		    rule2 = not ((worker_presence or cleaner_presence) & not night) or (light_status = 1 or blind_status = 1);
+			rule1 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status < 3) or (light_status = 1 & air_status = 1);
 
-		    rule3 = not (not worker_presence & not cleaner_presence) or 
-		    	(not pc_on & air_status = 0 & blind_status = 0 & blind_status = 0 & not closet_open);
+		    rule2 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status > 2 & blind_status < 2) or (window_open & blind_status = 1 & door_open);
+		    rule3 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status > 2 & blind_status > 1) or (window_open & door_open);
 		    
-		    rule4 = not (worker_presence) or pc_on;
+		    rule4 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status < 3 & blind_status < 2) or (blind_status = 1 & air_status = 1);
+		    
+		    rule5 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status > 2 & blind_status < 2) or (window_open & blind_status = 1 & door_open);
+		    rule6 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status > 2 & blind_status > 1) or (window_open & door_open);
 
-		    rule5 = not (not night & (pc_on & light_status = 1) or (worker_presence & cleaner_presence)) or air_status = 2;
-		    rule6 = not (cleaner_presence) or closet_open;
+		    rule7 = not (not worker_presence & not cleaner_presence & night) or (not pc_on & not window_open & light_status <> 1 & blind_status <> 1 & air_status <> 1);
+		    rule8 = not (not worker_presence & not cleaner_presence & not night) or (not pc_on & not window_open & light_status <> 1 & blind_status <> 1 & air_status <> 1);
+
+		    rule9 = not (not night & pc_on & light_status = 1 & not window_open & air_status < 3) or air_status = 2;
+		    rule10 = not (not night & pc_on & light_status <> 1 & not window_open & air_status < 3) or air_status = 1;
+		    
+		    rule11 = not (cleaner_presence & air_status < 3) or ((not pc_on) & closet_open & air_status = 1);
+		    
+		    rule12 = not ((worker_presence or cleaner_presence) & not night & light_status < 2) or (light_status = 1);
+		    
+		    rule13 = not ((worker_presence or cleaner_presence) & not night & air_status > 2 & blind_status < 2) or ( window_open & blind_status = 1 & door_open);
+		    rule14 = not ((worker_presence or cleaner_presence) & not night & air_status > 2 & blind_status > 1) or (door_open);
+
+		    rule15 = not ((worker_presence or cleaner_presence) & not night & blind_status < 2) or (light_status = 1 or blind_status = 1);
 		tel
-    enforce (rule1 & rule2 & rule3 & rule4 & rule5 & rule6 )
+    enforce (rule1 & rule2 & rule3 & rule4 & rule5 & rule6 & rule7 & rule8 & rule9 & rule10 & rule11 & rule12 & rule13 & rule14 & rule15)
     with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_light_2, c_blind_1, c_blind_2 : bool )
 
   	let
@@ -136,7 +220,7 @@ node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool
 		cleaner_presence = inlined person (cleaner);
 		pc_on = inlined computer (c_pc);
 		window_open = inlined window (c_window);
-		air_status = inlined air_conditioner (c_air_1, c_air_2);
-  		light_status = inlined light_source (light_switch, c_light_1, c_light_2);
-  		blind_status = inlined light_source (blind_switch, c_blind_1, c_blind_2);
+		air_status = inlined air_conditioner (c_air_1, c_air_2, air_failed_recovered);
+  		light_status = inlined light_source(light_switch, c_light_1, c_light_2, light_failed_recovered);
+  		blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
 	tel
