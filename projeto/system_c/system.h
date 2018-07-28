@@ -1,4 +1,4 @@
-/* --- Generated the 22/7/2018 at 16:16 --- */
+/* --- Generated the 28/7/2018 at 20:10 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -92,8 +92,8 @@ void System__window_step(int c, System__window_out* _out,
                          System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_96;
-  int v_95;
+  int v_107;
+  int v_106;
   int pnr;
 } System__air_conditioner_mem;
 
@@ -124,8 +124,8 @@ void System__day_shift_step(int change, System__day_shift_out* _out,
 typedef struct System__controller_mem {
   int ck_26_1;
   int ck_24_1;
-  int v_112;
-  int v_111;
+  int v_123;
+  int v_122;
   int ck_20_1;
   int ck_18_1;
   int ck_16_1;

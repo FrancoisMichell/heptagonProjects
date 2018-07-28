@@ -1,4 +1,4 @@
-/* --- Generated the 22/7/2018 at 16:16 --- */
+/* --- Generated the 28/7/2018 at 20:10 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -435,22 +435,22 @@ void System__window_step(int c, System__window_out* _out,
 
 void System__air_conditioner_reset(System__air_conditioner_mem* self) {
   self->pnr = false;
-  self->v_95 = false;
-  self->v_96 = false;
+  self->v_106 = false;
+  self->v_107 = false;
 }
 
 void System__air_conditioner_step(int c1, int c2,
                                   System__air_conditioner_out* _out,
                                   System__air_conditioner_mem* self) {
   
-  int v_94;
-  int v_93;
-  int v_92;
-  int v_91;
-  int v_90;
-  int v_89;
-  int v_88;
-  int v_87;
+  int v_105;
+  int v_104;
+  int v_103;
+  int v_102;
+  int v_101;
+  int v_100;
+  int v_99;
+  int v_98;
   int ns_St_6_Max_2_0;
   int ns_St_6_Max_2_1;
   int ns_St_6_Min_2_0;
@@ -493,12 +493,12 @@ void System__air_conditioner_step(int c1, int c2,
   int v_9_1;
   int v_8;
   int v;
-  int v_102;
-  int v_101;
-  int v_100;
-  int v_99;
-  int v_98;
-  int v_97;
+  int v_113;
+  int v_112;
+  int v_111;
+  int v_110;
+  int v_109;
+  int v_108;
   int s_St_6_Max_2_0;
   int s_St_6_Max_2_1;
   int s_St_6_Min_2_0;
@@ -528,8 +528,8 @@ void System__air_conditioner_step(int c1, int c2,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_95;
-  ck_2 = self->v_96;
+  ck_1 = self->v_106;
+  ck_2 = self->v_107;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -549,19 +549,19 @@ void System__air_conditioner_step(int c1, int c2,
       } else {
         r_St_6_Max = v_10;
       };
-      v_101 = r_St_6_Max;
+      v_112 = r_St_6_Max;
       if (v) {
         s_St_6_Max_1 = true;
       } else {
         s_St_6_Max_1 = v_9_1;
       };
-      v_97 = s_St_6_Max_1;
+      v_108 = s_St_6_Max_1;
       if (v) {
         s_St_6_Max_2 = false;
       } else {
         s_St_6_Max_2 = v_9_2;
       };
-      v_98 = s_St_6_Max_2;
+      v_109 = s_St_6_Max_2;
     } else {
       v_12 = !(c2);
       if (v_12) {
@@ -583,19 +583,19 @@ void System__air_conditioner_step(int c1, int c2,
         s_St_6_Min_1 = v_13_1;
         s_St_6_Min_2 = v_13_2;
       };
-      v_101 = r_St_6_Min;
-      v_97 = s_St_6_Min_1;
-      v_98 = s_St_6_Min_2;
+      v_112 = r_St_6_Min;
+      v_108 = s_St_6_Min_1;
+      v_109 = s_St_6_Min_2;
     };
-    s_1 = v_97;
-    s_2 = v_98;
-    r = v_101;
+    s_1 = v_108;
+    s_2 = v_109;
+    r = v_112;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
-      v_102 = true;
-      v_99 = true;
-      v_100 = true;
+      v_113 = true;
+      v_110 = true;
+      v_111 = true;
     } else {
       v_15 = !(c2);
       if (v_15) {
@@ -608,7 +608,7 @@ void System__air_conditioner_step(int c1, int c2,
       } else {
         r_St_6_Off = v_17;
       };
-      v_102 = r_St_6_Off;
+      v_113 = r_St_6_Off;
       if (v_15) {
         v_16_1 = true;
       } else {
@@ -619,7 +619,7 @@ void System__air_conditioner_step(int c1, int c2,
       } else {
         s_St_6_Off_1 = v_16_1;
       };
-      v_99 = s_St_6_Off_1;
+      v_110 = s_St_6_Off_1;
       if (v_15) {
         v_16_2 = true;
       } else {
@@ -630,7 +630,7 @@ void System__air_conditioner_step(int c1, int c2,
       } else {
         s_St_6_Off_2 = v_16_2;
       };
-      v_100 = s_St_6_Off_2;
+      v_111 = s_St_6_Off_2;
       if (v_16_1) {
         v_16_2_1 = v_16_2;
       } else {
@@ -642,9 +642,9 @@ void System__air_conditioner_step(int c1, int c2,
         s_St_6_Off_2_0 = s_St_6_Off_2;
       };
     };
-    s_1 = v_99;
-    s_2 = v_100;
-    r = v_102;
+    s_1 = v_110;
+    s_2 = v_111;
+    r = v_113;
   };
   ck_7_1 = s_1;
   ck_7_2 = s_2;
@@ -652,53 +652,53 @@ void System__air_conditioner_step(int c1, int c2,
     ck_7_2_1 = ck_7_2;
     if (ck_7_2_1) {
       air_state_St_6_Max = 2;
-      v_87 = air_state_St_6_Max;
+      v_98 = air_state_St_6_Max;
       nr_St_6_Max = false;
-      v_93 = nr_St_6_Max;
+      v_104 = nr_St_6_Max;
       ns_St_6_Max_1 = true;
-      v_89 = ns_St_6_Max_1;
+      v_100 = ns_St_6_Max_1;
       ns_St_6_Max_2 = true;
-      v_90 = ns_St_6_Max_2;
+      v_101 = ns_St_6_Max_2;
     } else {
       air_state_St_6_Min = 1;
       nr_St_6_Min = false;
       ns_St_6_Min_1 = true;
       ns_St_6_Min_2 = false;
-      v_87 = air_state_St_6_Min;
-      v_93 = nr_St_6_Min;
-      v_89 = ns_St_6_Min_1;
-      v_90 = ns_St_6_Min_2;
+      v_98 = air_state_St_6_Min;
+      v_104 = nr_St_6_Min;
+      v_100 = ns_St_6_Min_1;
+      v_101 = ns_St_6_Min_2;
     };
-    _out->air_state = v_87;
-    ns_1 = v_89;
-    ns_2 = v_90;
-    nr = v_93;
+    _out->air_state = v_98;
+    ns_1 = v_100;
+    ns_2 = v_101;
+    nr = v_104;
   } else {
     ck_7_2_0 = ck_7_2;
     if (ck_7_2_0) {
-      v_88 = 0;
-      v_94 = true;
-      v_91 = true;
-      v_92 = true;
+      v_99 = 0;
+      v_105 = true;
+      v_102 = true;
+      v_103 = true;
     } else {
       air_state_St_6_Off = 0;
-      v_88 = air_state_St_6_Off;
+      v_99 = air_state_St_6_Off;
       nr_St_6_Off = false;
-      v_94 = nr_St_6_Off;
+      v_105 = nr_St_6_Off;
       ns_St_6_Off_1 = false;
-      v_91 = ns_St_6_Off_1;
+      v_102 = ns_St_6_Off_1;
       ns_St_6_Off_2 = false;
-      v_92 = ns_St_6_Off_2;
+      v_103 = ns_St_6_Off_2;
       if (ns_St_6_Off_1) {
         ns_St_6_Off_2_1 = ns_St_6_Off_2;
       } else {
         ns_St_6_Off_2_0 = ns_St_6_Off_2;
       };
     };
-    _out->air_state = v_88;
-    ns_1 = v_91;
-    ns_2 = v_92;
-    nr = v_94;
+    _out->air_state = v_99;
+    ns_1 = v_102;
+    ns_2 = v_103;
+    nr = v_105;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -751,8 +751,8 @@ void System__air_conditioner_step(int c1, int c2,
     };
   };
   self->pnr = nr;
-  self->v_95 = ns_1;
-  self->v_96 = ns_2;;
+  self->v_106 = ns_1;
+  self->v_107 = ns_2;;
 }
 
 void System__day_shift_reset(System__day_shift_mem* self) {
@@ -828,8 +828,8 @@ void System__controller_reset(System__controller_mem* self) {
   self->pnr_1 = false;
   self->ck_24_1 = true;
   self->pnr_2 = false;
-  self->v_111 = false;
-  self->v_112 = false;
+  self->v_122 = false;
+  self->v_123 = false;
   self->pnr_3 = false;
   self->ck_20_1 = true;
   self->pnr_4 = false;
@@ -859,12 +859,12 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_St_8_Off_1;
   int light_source_on_1_St_8_Off;
   int ck_27_1;
-  int v_86;
-  int v_85;
-  int v_84;
-  int v_83;
-  int v_82;
-  int v_81;
+  int v_97;
+  int v_96;
+  int v_95;
+  int v_94;
+  int v_93;
+  int v_92;
   int r_St_8_On;
   int s_St_8_On_1;
   int r_St_8_Off;
@@ -876,24 +876,24 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_1_St_9_Off_1;
   int light_source_on_St_9_Off;
   int ck_25_1;
-  int v_80;
-  int v_79;
-  int v_78;
-  int v_77;
-  int v_76;
-  int v_75;
+  int v_91;
+  int v_90;
+  int v_89;
+  int v_88;
+  int v_87;
+  int v_86;
   int r_1_St_9_On;
   int s_1_St_9_On_1;
   int r_1_St_9_Off;
   int s_1_St_9_Off_1;
-  int v_110;
-  int v_109;
-  int v_108;
-  int v_107;
-  int v_106;
-  int v_105;
-  int v_104;
-  int v_103;
+  int v_121;
+  int v_120;
+  int v_119;
+  int v_118;
+  int v_117;
+  int v_116;
+  int v_115;
+  int v_114;
   int ns_2_St_10_Max_2_0;
   int ns_2_St_10_Max_2_1;
   int ns_2_St_10_Min_2_0;
@@ -916,32 +916,32 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int air_state_St_10_Off;
   int ck_23_2;
   int ck_23_1;
-  int v_73_2_0;
-  int v_73_2_1;
-  int v_74;
-  int v_73_2;
-  int v_73_1;
-  int v_72;
-  int v_70_2_0;
-  int v_70_2_1;
-  int v_71;
-  int v_70_2;
-  int v_70_1;
-  int v_69;
-  int v_68;
-  int v_66_2_0;
-  int v_66_2_1;
-  int v_67;
-  int v_66_2;
-  int v_66_1;
-  int v_65;
-  int v_64;
-  int v_118;
-  int v_117;
-  int v_116;
-  int v_115;
-  int v_114;
-  int v_113;
+  int v_84_2_0;
+  int v_84_2_1;
+  int v_85;
+  int v_84_2;
+  int v_84_1;
+  int v_83;
+  int v_81_2_0;
+  int v_81_2_1;
+  int v_82;
+  int v_81_2;
+  int v_81_1;
+  int v_80;
+  int v_79;
+  int v_77_2_0;
+  int v_77_2_1;
+  int v_78;
+  int v_77_2;
+  int v_77_1;
+  int v_76;
+  int v_75;
+  int v_129;
+  int v_128;
+  int v_127;
+  int v_126;
+  int v_125;
+  int v_124;
   int s_2_St_10_Max_2_0;
   int s_2_St_10_Max_2_1;
   int s_2_St_10_Min_2_0;
@@ -968,7 +968,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_3_St_11_Closed_1;
   int window_open_1_St_11_Closed;
   int ck_21_1;
-  int v_63;
+  int v_74;
   int r_3_St_11_Open;
   int s_3_St_11_Open_1;
   int r_3_St_11_Closed;
@@ -980,8 +980,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_4_St_12_Off_1;
   int computer_on_St_12_Off;
   int ck_19_1;
-  int v_62;
-  int v_61;
+  int v_73;
+  int v_72;
   int r_4_St_12_On;
   int s_4_St_12_On_1;
   int r_4_St_12_Off;
@@ -1015,7 +1015,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_7_St_15_Locked_1;
   int closet_open_1_St_15_Locked;
   int ck_13_1;
-  int v_60;
+  int v_71;
   int r_7_St_15_Open;
   int s_7_St_15_Open_1;
   int r_7_St_15_Locked;
@@ -1027,8 +1027,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_8_St_16_Closed_1;
   int door_open_1_St_16_Closed;
   int ck_11_1;
-  int v_59;
-  int v_58;
+  int v_70;
+  int v_69;
   int r_8_St_16_Open;
   int s_8_St_16_Open_1;
   int r_8_St_16_Closed;
@@ -1115,6 +1115,9 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int door_open_1;
   int change;
   int night_1;
+  int rule7_5;
+  int rule7;
+  int rule6_5;
   int rule6;
   int rule5;
   int rule4;
@@ -1162,6 +1165,17 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int v_55;
   int v_56;
   int v_57;
+  int v_58;
+  int v_59;
+  int v_60;
+  int v_61;
+  int v_62;
+  int v_63;
+  int v_64;
+  int v_65;
+  int v_66;
+  int v_67;
+  int v_68;
   int c_blind_2;
   int c_blind_1;
   int c_light_2;
@@ -1174,8 +1188,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int c_door;
   c1_2 = blind_switch;
   c1_1 = light_switch;
-  ck_22_1 = self->v_111;
-  ck_22_2 = self->v_112;
+  ck_22_1 = self->v_122;
+  ck_22_2 = self->v_123;
   arrived_1 = cleaner;
   arrived = worker;
   change = change_shift;
@@ -1194,8 +1208,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
                                                     self->ck_18_1,
                                                     self->pnr_4,
                                                     self->ck_20_1,
-                                                    self->pnr_3, self->v_112,
-                                                    self->v_111, self->pnr_2,
+                                                    self->pnr_3, self->v_123,
+                                                    self->v_122, self->pnr_2,
                                                     self->ck_24_1,
                                                     self->pnr_1,
                                                     self->ck_26_1, self->pnr,
@@ -1224,10 +1238,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   c_1 = c_closet;
   c = c_door;
   if (self->ck_26_1) {
-    v_85 = !(c2_2);
-    v_84 = (c1_2&&sw_1);
-    v_86 = (v_84||v_85);
-    if (v_86) {
+    v_96 = !(c2_2);
+    v_95 = (c1_2&&sw_1);
+    v_97 = (v_95||v_96);
+    if (v_97) {
       r_St_8_Off = true;
       s_St_8_Off_1 = false;
     } else {
@@ -1237,16 +1251,16 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r = r_St_8_Off;
     s_1_2 = s_St_8_Off_1;
   } else {
-    v_82 = !(c2_2);
-    v_81 = (c1_2&&sw_1);
-    v_83 = (v_81||v_82);
-    if (v_83) {
+    v_93 = !(c2_2);
+    v_92 = (c1_2&&sw_1);
+    v_94 = (v_92||v_93);
+    if (v_94) {
       r_St_8_On = true;
     } else {
       r_St_8_On = self->pnr;
     };
     r = r_St_8_On;
-    if (v_83) {
+    if (v_94) {
       s_St_8_On_1 = true;
     } else {
       s_St_8_On_1 = false;
@@ -1270,15 +1284,15 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_1_2 = ns_St_8_On_1;
   };
   _out->blind_status = light_source_on_1;
-  v_34 = (_out->blind_status==0);
-  v_36 = (_out->blind_status==0);
-  v_45 = (_out->blind_status==1);
-  v_51 = (_out->blind_status==0);
+  v_42 = (_out->blind_status==0);
+  v_44 = (_out->blind_status==0);
+  v_53 = (_out->blind_status==1);
+  v_59 = (_out->blind_status==0);
   if (self->ck_24_1) {
-    v_79 = !(c2_1);
-    v_78 = (c1_1&&sw);
-    v_80 = (v_78||v_79);
-    if (v_80) {
+    v_90 = !(c2_1);
+    v_89 = (c1_1&&sw);
+    v_91 = (v_89||v_90);
+    if (v_91) {
       r_1_St_9_Off = true;
       s_1_St_9_Off_1 = false;
     } else {
@@ -1288,16 +1302,16 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r_1 = r_1_St_9_Off;
     s_1_1 = s_1_St_9_Off_1;
   } else {
-    v_76 = !(c2_1);
-    v_75 = (c1_1&&sw);
-    v_77 = (v_75||v_76);
-    if (v_77) {
+    v_87 = !(c2_1);
+    v_86 = (c1_1&&sw);
+    v_88 = (v_86||v_87);
+    if (v_88) {
       r_1_St_9_On = true;
     } else {
       r_1_St_9_On = self->pnr_1;
     };
     r_1 = r_1_St_9_On;
-    if (v_77) {
+    if (v_88) {
       s_1_St_9_On_1 = true;
     } else {
       s_1_St_9_On_1 = false;
@@ -1321,116 +1335,115 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_1_1 = ns_1_St_9_On_1;
   };
   _out->light_status = light_source_on;
-  v_19 = (_out->light_status==1);
-  v_44 = (_out->light_status==1);
-  v_46 = (v_44||v_45);
-  v_50 = (_out->light_status==1);
-  v_52 = (v_50&&v_51);
+  v_52 = (_out->light_status==1);
+  v_54 = (v_52||v_53);
+  v_58 = (_out->light_status==1);
+  v_60 = (v_58&&v_59);
   if (ck_22_1) {
     ck_22_2_1 = ck_22_2;
     if (ck_22_2_1) {
-      v_65 = !(c2);
-      if (v_65) {
-        v_67 = true;
-        v_66_1 = false;
-        v_66_2 = false;
+      v_76 = !(c2);
+      if (v_76) {
+        v_78 = true;
+        v_77_1 = false;
+        v_77_2 = false;
       } else {
-        v_67 = self->pnr_2;
-        v_66_1 = true;
-        v_66_2 = true;
+        v_78 = self->pnr_2;
+        v_77_1 = true;
+        v_77_2 = true;
       };
-      v_64 = !(c1);
-      if (v_64) {
+      v_75 = !(c1);
+      if (v_75) {
         r_2_St_10_Max = true;
       } else {
-        r_2_St_10_Max = v_67;
+        r_2_St_10_Max = v_78;
       };
-      v_117 = r_2_St_10_Max;
-      if (v_64) {
+      v_128 = r_2_St_10_Max;
+      if (v_75) {
         s_2_St_10_Max_1 = true;
       } else {
-        s_2_St_10_Max_1 = v_66_1;
+        s_2_St_10_Max_1 = v_77_1;
       };
-      v_113 = s_2_St_10_Max_1;
-      if (v_64) {
+      v_124 = s_2_St_10_Max_1;
+      if (v_75) {
         s_2_St_10_Max_2 = false;
       } else {
-        s_2_St_10_Max_2 = v_66_2;
+        s_2_St_10_Max_2 = v_77_2;
       };
-      v_114 = s_2_St_10_Max_2;
+      v_125 = s_2_St_10_Max_2;
     } else {
-      v_69 = !(c2);
-      if (v_69) {
-        v_71 = true;
-        v_70_1 = true;
-        v_70_2 = true;
+      v_80 = !(c2);
+      if (v_80) {
+        v_82 = true;
+        v_81_1 = true;
+        v_81_2 = true;
       } else {
-        v_71 = self->pnr_2;
-        v_70_1 = true;
-        v_70_2 = false;
+        v_82 = self->pnr_2;
+        v_81_1 = true;
+        v_81_2 = false;
       };
-      v_68 = !(c1);
-      if (v_68) {
+      v_79 = !(c1);
+      if (v_79) {
         r_2_St_10_Min = true;
         s_2_St_10_Min_1 = false;
         s_2_St_10_Min_2 = false;
       } else {
-        r_2_St_10_Min = v_71;
-        s_2_St_10_Min_1 = v_70_1;
-        s_2_St_10_Min_2 = v_70_2;
+        r_2_St_10_Min = v_82;
+        s_2_St_10_Min_1 = v_81_1;
+        s_2_St_10_Min_2 = v_81_2;
       };
-      v_117 = r_2_St_10_Min;
-      v_113 = s_2_St_10_Min_1;
-      v_114 = s_2_St_10_Min_2;
+      v_128 = r_2_St_10_Min;
+      v_124 = s_2_St_10_Min_1;
+      v_125 = s_2_St_10_Min_2;
     };
-    s_2_1 = v_113;
-    s_2_2 = v_114;
-    r_2 = v_117;
+    s_2_1 = v_124;
+    s_2_2 = v_125;
+    r_2 = v_128;
   } else {
     ck_22_2_0 = ck_22_2;
     if (ck_22_2_0) {
-      v_118 = true;
-      v_115 = true;
-      v_116 = true;
+      v_129 = true;
+      v_126 = true;
+      v_127 = true;
     } else {
-      v_72 = !(c2);
-      if (v_72) {
-        v_74 = true;
+      v_83 = !(c2);
+      if (v_83) {
+        v_85 = true;
       } else {
-        v_74 = self->pnr_2;
+        v_85 = self->pnr_2;
       };
       if (c1) {
         r_2_St_10_Off = true;
       } else {
-        r_2_St_10_Off = v_74;
+        r_2_St_10_Off = v_85;
       };
-      v_118 = r_2_St_10_Off;
-      if (v_72) {
-        v_73_1 = true;
+      v_129 = r_2_St_10_Off;
+      if (v_83) {
+        v_84_1 = true;
       } else {
-        v_73_1 = false;
+        v_84_1 = false;
       };
       if (c1) {
         s_2_St_10_Off_1 = true;
       } else {
-        s_2_St_10_Off_1 = v_73_1;
+        s_2_St_10_Off_1 = v_84_1;
       };
-      v_115 = s_2_St_10_Off_1;
-      if (v_72) {
-        v_73_2 = true;
+      v_126 = s_2_St_10_Off_1;
+      if (v_83) {
+        v_84_2 = true;
       } else {
-        v_73_2 = false;
+        v_84_2 = false;
       };
       if (c1) {
         s_2_St_10_Off_2 = false;
       } else {
-        s_2_St_10_Off_2 = v_73_2;
+        s_2_St_10_Off_2 = v_84_2;
       };
-      v_116 = s_2_St_10_Off_2;
-      if (v_73_1) {
-        v_73_2_1 = v_73_2;
+      v_127 = s_2_St_10_Off_2;
+      if (v_84_1) {
+        v_84_2_1 = v_84_2;
       } else {
-        v_73_2_0 = v_73_2;
+        v_84_2_0 = v_84_2;
       };
       if (s_2_St_10_Off_1) {
         s_2_St_10_Off_2_1 = s_2_St_10_Off_2;
@@ -1438,9 +1451,9 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_2_St_10_Off_2_0 = s_2_St_10_Off_2;
       };
     };
-    s_2_1 = v_115;
-    s_2_2 = v_116;
-    r_2 = v_118;
+    s_2_1 = v_126;
+    s_2_2 = v_127;
+    r_2 = v_129;
   };
   ck_23_1 = s_2_1;
   ck_23_2 = s_2_2;
@@ -1448,57 +1461,58 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ck_23_2_1 = ck_23_2;
     if (ck_23_2_1) {
       air_state_St_10_Max = 2;
-      v_103 = air_state_St_10_Max;
+      v_114 = air_state_St_10_Max;
       nr_2_St_10_Max = false;
-      v_109 = nr_2_St_10_Max;
+      v_120 = nr_2_St_10_Max;
       ns_2_St_10_Max_1 = true;
-      v_105 = ns_2_St_10_Max_1;
+      v_116 = ns_2_St_10_Max_1;
       ns_2_St_10_Max_2 = true;
-      v_106 = ns_2_St_10_Max_2;
+      v_117 = ns_2_St_10_Max_2;
     } else {
       air_state_St_10_Min = 1;
       nr_2_St_10_Min = false;
       ns_2_St_10_Min_1 = true;
       ns_2_St_10_Min_2 = false;
-      v_103 = air_state_St_10_Min;
-      v_109 = nr_2_St_10_Min;
-      v_105 = ns_2_St_10_Min_1;
-      v_106 = ns_2_St_10_Min_2;
+      v_114 = air_state_St_10_Min;
+      v_120 = nr_2_St_10_Min;
+      v_116 = ns_2_St_10_Min_1;
+      v_117 = ns_2_St_10_Min_2;
     };
-    air_state = v_103;
-    ns_2_1 = v_105;
-    ns_2_2 = v_106;
-    nr_2 = v_109;
+    air_state = v_114;
+    ns_2_1 = v_116;
+    ns_2_2 = v_117;
+    nr_2 = v_120;
   } else {
     ck_23_2_0 = ck_23_2;
     if (ck_23_2_0) {
-      v_104 = 0;
-      v_110 = true;
-      v_107 = true;
-      v_108 = true;
+      v_115 = 0;
+      v_121 = true;
+      v_118 = true;
+      v_119 = true;
     } else {
       air_state_St_10_Off = 0;
-      v_104 = air_state_St_10_Off;
+      v_115 = air_state_St_10_Off;
       nr_2_St_10_Off = false;
-      v_110 = nr_2_St_10_Off;
+      v_121 = nr_2_St_10_Off;
       ns_2_St_10_Off_1 = false;
-      v_107 = ns_2_St_10_Off_1;
+      v_118 = ns_2_St_10_Off_1;
       ns_2_St_10_Off_2 = false;
-      v_108 = ns_2_St_10_Off_2;
+      v_119 = ns_2_St_10_Off_2;
       if (ns_2_St_10_Off_1) {
         ns_2_St_10_Off_2_1 = ns_2_St_10_Off_2;
       } else {
         ns_2_St_10_Off_2_0 = ns_2_St_10_Off_2;
       };
     };
-    air_state = v_104;
-    ns_2_1 = v_107;
-    ns_2_2 = v_108;
-    nr_2 = v_110;
+    air_state = v_115;
+    ns_2_1 = v_118;
+    ns_2_2 = v_119;
+    nr_2 = v_121;
   };
   _out->air_status = air_state;
-  v_25 = (_out->air_status==2);
-  v_32 = (_out->air_status==0);
+  v_31 = (_out->air_status==1);
+  v_34 = (_out->air_status==2);
+  v_40 = (_out->air_status==0);
   if (ns_2_1) {
     ns_2_2_1 = ns_2_2;
   } else {
@@ -1526,10 +1540,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   if (ck_22_1) {
     if (ck_22_2_1) {
-      if (v_66_1) {
-        v_66_2_1 = v_66_2;
+      if (v_77_1) {
+        v_77_2_1 = v_77_2;
       } else {
-        v_66_2_0 = v_66_2;
+        v_77_2_0 = v_77_2;
       };
       if (s_2_St_10_Max_1) {
         s_2_St_10_Max_2_1 = s_2_St_10_Max_2;
@@ -1537,10 +1551,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_2_St_10_Max_2_0 = s_2_St_10_Max_2;
       };
     } else {
-      if (v_70_1) {
-        v_70_2_1 = v_70_2;
+      if (v_81_1) {
+        v_81_2_1 = v_81_2;
       } else {
-        v_70_2_0 = v_70_2;
+        v_81_2_0 = v_81_2;
       };
       if (s_2_St_10_Min_1) {
         s_2_St_10_Min_2_1 = s_2_St_10_Min_2;
@@ -1550,8 +1564,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     };
   };
   if (self->ck_20_1) {
-    v_63 = !(c_3);
-    if (v_63) {
+    v_74 = !(c_3);
+    if (v_74) {
       r_3_St_11_Closed = true;
       s_3_St_11_Closed_1 = false;
     } else {
@@ -1592,8 +1606,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   _out->window_open = window_open_1;
   if (self->ck_18_1) {
-    v_62 = !(c_2);
-    if (v_62) {
+    v_73 = !(c_2);
+    if (v_73) {
       r_4_St_12_Off = true;
       s_4_St_12_Off_1 = false;
     } else {
@@ -1603,14 +1617,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r_4 = r_4_St_12_Off;
     s_4_1 = s_4_St_12_Off_1;
   } else {
-    v_61 = !(c_2);
-    if (v_61) {
+    v_72 = !(c_2);
+    if (v_72) {
       r_4_St_12_On = true;
     } else {
       r_4_St_12_On = self->pnr_4;
     };
     r_4 = r_4_St_12_On;
-    if (v_61) {
+    if (v_72) {
       s_4_St_12_On_1 = true;
     } else {
       s_4_St_12_On_1 = false;
@@ -1634,11 +1648,11 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_4_1 = ns_4_St_12_On_1;
   };
   _out->pc_on = computer_on;
-  v_20 = (_out->pc_on&&v_19);
-  v_31 = !(_out->pc_on);
-  v_33 = (v_31&&v_32);
-  v_35 = (v_33&&v_34);
-  v_37 = (v_35&&v_36);
+  v_23 = !(_out->pc_on);
+  v_39 = !(_out->pc_on);
+  v_41 = (v_39&&v_40);
+  v_43 = (v_41&&v_42);
+  v_45 = (v_43&&v_44);
   if (self->ck_16_1) {
     if (arrived_1) {
       r_5_St_13_Not_Present = true;
@@ -1681,7 +1695,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   _out->cleaner_presence = presence_1;
   v = !(_out->cleaner_presence);
-  v_28 = !(_out->cleaner_presence);
+  v_18 = !(v);
+  v_20 = !(_out->cleaner_presence);
+  v_25 = !(_out->cleaner_presence);
+  v_36 = !(_out->cleaner_presence);
   if (self->ck_14_1) {
     if (arrived) {
       r_6_St_14_Not_Present = true;
@@ -1723,17 +1740,28 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_6_1 = ns_6_St_14_Present_1;
   };
   _out->worker_presence = presence;
-  v_22 = (_out->worker_presence&&_out->cleaner_presence);
-  v_26 = !(_out->worker_presence);
-  rule4 = (v_26||_out->pc_on);
+  v_21 = !(_out->worker_presence);
+  v_22 = !(v_21);
+  rule6_5 = (v_22||v_23);
+  v_24 = !(_out->worker_presence);
+  rule6 = (v_24||_out->pc_on);
+  v_26 = (_out->worker_presence&&v_25);
   v_27 = !(_out->worker_presence);
-  v_29 = (v_27&&v_28);
+  v_28 = (v_27&&_out->cleaner_presence);
+  v_29 = (v_26||v_28);
   v_30 = !(v_29);
-  v_40 = (_out->worker_presence||_out->cleaner_presence);
-  v_47 = (_out->worker_presence||_out->cleaner_presence);
+  rule5 = (v_30||v_31);
+  v_32 = (_out->worker_presence&&_out->cleaner_presence);
+  v_33 = !(v_32);
+  rule4 = (v_33||v_34);
+  v_35 = !(_out->worker_presence);
+  v_37 = (v_35&&v_36);
+  v_38 = !(v_37);
+  v_48 = (_out->worker_presence||_out->cleaner_presence);
+  v_55 = (_out->worker_presence||_out->cleaner_presence);
   if (self->ck_12_1) {
-    v_60 = !(c_1);
-    if (v_60) {
+    v_71 = !(c_1);
+    if (v_71) {
       r_7_St_15_Locked = true;
       s_7_St_15_Locked_1 = false;
     } else {
@@ -1773,13 +1801,15 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_7_1 = ns_7_St_15_Open_1;
   };
   _out->closet_open = closet_open_1;
-  rule6 = (v||_out->closet_open);
-  v_38 = !(_out->closet_open);
-  v_39 = (v_37&&v_38);
-  rule3 = (v_30||v_39);
+  v_19 = !(_out->closet_open);
+  rule7_5 = (v_18||v_19);
+  rule7 = (v_20||_out->closet_open);
+  v_46 = !(_out->closet_open);
+  v_47 = (v_45&&v_46);
+  rule3 = (v_38||v_47);
   if (self->ck_10_1) {
-    v_59 = !(c);
-    if (v_59) {
+    v_70 = !(c);
+    if (v_70) {
       r_8_St_16_Closed = true;
       s_8_St_16_Closed_1 = false;
     } else {
@@ -1789,14 +1819,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r_8 = r_8_St_16_Closed;
     s_8_1 = s_8_St_16_Closed_1;
   } else {
-    v_58 = !(c);
-    if (v_58) {
+    v_69 = !(c);
+    if (v_69) {
       r_8_St_16_Open = true;
     } else {
       r_8_St_16_Open = self->pnr_8;
     };
     r_8 = r_8_St_16_Open;
-    if (v_58) {
+    if (v_69) {
       s_8_St_16_Open_1 = true;
     } else {
       s_8_St_16_Open_1 = false;
@@ -1861,30 +1891,28 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ns_9_1 = ns_9_St_17_Noite_1;
   };
   _out->night = night_1;
-  v_18 = !(_out->night);
-  v_21 = (v_18&&v_20);
-  v_23 = (v_21||v_22);
-  v_24 = !(v_23);
-  rule5 = (v_24||v_25);
-  v_41 = !(_out->night);
-  v_42 = (v_40&&v_41);
-  v_43 = !(v_42);
-  rule2 = (v_43||v_46);
-  v_48 = (v_47&&_out->night);
-  v_49 = !(v_48);
-  rule1 = (v_49||v_52);
-  v_53 = (rule1&&rule2);
-  v_54 = (v_53&&rule3);
-  v_55 = (v_54&&rule4);
-  v_56 = (v_55&&rule5);
-  v_57 = (v_56&&rule6);
+  v_49 = !(_out->night);
+  v_50 = (v_48&&v_49);
+  v_51 = !(v_50);
+  rule2 = (v_51||v_54);
+  v_56 = (v_55&&_out->night);
+  v_57 = !(v_56);
+  rule1 = (v_57||v_60);
+  v_61 = (rule1&&rule2);
+  v_62 = (v_61&&rule3);
+  v_63 = (v_62&&rule4);
+  v_64 = (v_63&&rule5);
+  v_65 = (v_64&&rule6);
+  v_66 = (v_65&&rule6_5);
+  v_67 = (v_66&&rule7);
+  v_68 = (v_67&&rule7_5);
   self->pnr = nr;
   self->ck_26_1 = ns_1_2;
   self->pnr_1 = nr_1;
   self->ck_24_1 = ns_1_1;
   self->pnr_2 = nr_2;
-  self->v_111 = ns_2_1;
-  self->v_112 = ns_2_2;
+  self->v_122 = ns_2_1;
+  self->v_123 = ns_2_2;
   self->pnr_3 = nr_3;
   self->ck_20_1 = ns_3_1;
   self->pnr_4 = nr_4;

@@ -111,7 +111,7 @@ node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool
 	closet_open: bool; light_status, blind_status, air_status : int;)
   	
   	contract
-		var rule1, rule2, rule3, rule4, rule5, rule6 : bool;
+		var rule1, rule2, rule3, rule4, rule5, rule6, rule6_5, rule7, rule7_5 : bool;
 
 		let
 			rule1 = not ((worker_presence or cleaner_presence) & night) or (light_status = 1 & blind_status = 0);
@@ -120,12 +120,17 @@ node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool
 		    rule3 = not (not worker_presence & not cleaner_presence) or 
 		    	(not pc_on & air_status = 0 & blind_status = 0 & blind_status = 0 & not closet_open);
 		    
-		    rule4 = not (worker_presence) or pc_on;
+		    rule4 = not (worker_presence & cleaner_presence) or air_status = 2;
+		    rule5 = not ((worker_presence & not cleaner_presence) or (not worker_presence & cleaner_presence)) or air_status = 1;
 
-		    rule5 = not (not night & (pc_on & light_status = 1) or (worker_presence & cleaner_presence)) or air_status = 2;
-		    rule6 = not (cleaner_presence) or closet_open;
+		    rule6 = not (worker_presence) or pc_on;
+		    rule6_5 = not (not worker_presence) or not pc_on;
+		    
+		    rule7 = not (cleaner_presence) or closet_open;
+			rule7_5 = not (not cleaner_presence) or not closet_open;
+
 		tel
-    enforce (rule1 & rule2 & rule3 & rule4 & rule5 & rule6 )
+    enforce (rule1 & rule2 & rule3 & rule4 & rule5 & rule6 & rule6_5 & rule7 & rule7_5)
     with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_light_2, c_blind_1, c_blind_2 : bool )
 
   	let
