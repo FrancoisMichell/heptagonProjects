@@ -1,5 +1,5 @@
-/* --- Generated the 25/7/2018 at 10:17 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 29/7/2018 at 13:21 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -9,22 +9,22 @@
 
 void System__light_source_reset(System__light_source_mem* self) {
   self->pnr = false;
-  self->v_318 = true;
-  self->v_319 = true;
+  self->v_321 = true;
+  self->v_322 = true;
 }
 
 void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
                                System__light_source_out* _out,
                                System__light_source_mem* self) {
   
+  int v_320;
+  int v_319;
+  int v_318;
   int v_317;
   int v_316;
   int v_315;
   int v_314;
   int v_313;
-  int v_312;
-  int v_311;
-  int v_310;
   int ns_St_On_fail_2_0;
   int ns_St_On_fail_2_1;
   int ns_St_On_2_0;
@@ -85,12 +85,12 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
   int v_2;
   int v_1;
   int v;
+  int v_328;
+  int v_327;
+  int v_326;
   int v_325;
   int v_324;
   int v_323;
-  int v_322;
-  int v_321;
-  int v_320;
   int s_St_On_fail_2_0;
   int s_St_On_fail_2_1;
   int s_St_On_2_0;
@@ -125,8 +125,8 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
   int ns_1;
   int r;
   int nr;
-  ck_1_3 = self->v_318;
-  ck_2 = self->v_319;
+  ck_1_3 = self->v_321;
+  ck_2 = self->v_322;
   if (ck_1_3) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -151,9 +151,9 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
         s_St_Off_1 = v_18_1;
         s_St_Off_2 = v_18_2;
       };
-      v_324 = r_St_Off;
-      v_320 = s_St_Off_1;
-      v_321 = s_St_Off_2;
+      v_327 = r_St_Off;
+      v_323 = s_St_Off_1;
+      v_324 = s_St_Off_2;
       if (v_18_1) {
         v_18_2_1 = v_18_2;
       } else {
@@ -182,19 +182,19 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       } else {
         r_St_Off_fail = v_14;
       };
-      v_324 = r_St_Off_fail;
+      v_327 = r_St_Off_fail;
       if (v_12) {
         s_St_Off_fail_1 = false;
       } else {
         s_St_Off_fail_1 = v_13_1;
       };
-      v_320 = s_St_Off_fail_1;
+      v_323 = s_St_Off_fail_1;
       if (v_12) {
         s_St_Off_fail_2 = false;
       } else {
         s_St_Off_fail_2 = v_13_2;
       };
-      v_321 = s_St_Off_fail_2;
+      v_324 = s_St_Off_fail_2;
       if (v_13_1) {
         v_13_2_1 = v_13_2;
       } else {
@@ -206,9 +206,9 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
         s_St_Off_fail_2_0 = s_St_Off_fail_2;
       };
     };
-    s_1 = v_320;
-    s_2 = v_321;
-    r = v_324;
+    s_1 = v_323;
+    s_2 = v_324;
+    r = v_327;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
@@ -233,9 +233,9 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
         s_St_On_1 = v_8_1;
         s_St_On_2 = v_8_2;
       };
-      v_325 = r_St_On;
-      v_322 = s_St_On_1;
-      v_323 = s_St_On_2;
+      v_328 = r_St_On;
+      v_325 = s_St_On_1;
+      v_326 = s_St_On_2;
     } else {
       if (failed_recovered) {
         v_4 = true;
@@ -254,23 +254,23 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       } else {
         r_St_On_fail = v_4;
       };
-      v_325 = r_St_On_fail;
+      v_328 = r_St_On_fail;
       if (v_2) {
         s_St_On_fail_1 = true;
       } else {
         s_St_On_fail_1 = v_3_1;
       };
-      v_322 = s_St_On_fail_1;
+      v_325 = s_St_On_fail_1;
       if (v_2) {
         s_St_On_fail_2 = false;
       } else {
         s_St_On_fail_2 = v_3_2;
       };
-      v_323 = s_St_On_fail_2;
+      v_326 = s_St_On_fail_2;
     };
-    s_1 = v_322;
-    s_2 = v_323;
-    r = v_325;
+    s_1 = v_325;
+    s_2 = v_326;
+    r = v_328;
   };
   ck_1_1 = s_1;
   ck_1_2 = s_2;
@@ -281,10 +281,10 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       nr_St_Off = false;
       ns_St_Off_1 = true;
       ns_St_Off_2 = true;
-      v_310 = light_source_status_St_Off;
-      v_316 = nr_St_Off;
-      v_312 = ns_St_Off_1;
-      v_313 = ns_St_Off_2;
+      v_313 = light_source_status_St_Off;
+      v_319 = nr_St_Off;
+      v_315 = ns_St_Off_1;
+      v_316 = ns_St_Off_2;
       if (ns_St_Off_1) {
         ns_St_Off_2_1 = ns_St_Off_2;
       } else {
@@ -292,23 +292,23 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       };
     } else {
       light_source_status_St_Off_fail = 2;
-      v_310 = light_source_status_St_Off_fail;
+      v_313 = light_source_status_St_Off_fail;
       nr_St_Off_fail = false;
-      v_316 = nr_St_Off_fail;
+      v_319 = nr_St_Off_fail;
       ns_St_Off_fail_1 = true;
-      v_312 = ns_St_Off_fail_1;
+      v_315 = ns_St_Off_fail_1;
       ns_St_Off_fail_2 = false;
-      v_313 = ns_St_Off_fail_2;
+      v_316 = ns_St_Off_fail_2;
       if (ns_St_Off_fail_1) {
         ns_St_Off_fail_2_1 = ns_St_Off_fail_2;
       } else {
         ns_St_Off_fail_2_0 = ns_St_Off_fail_2;
       };
     };
-    _out->light_source_status = v_310;
-    ns_1 = v_312;
-    ns_2 = v_313;
-    nr = v_316;
+    _out->light_source_status = v_313;
+    ns_1 = v_315;
+    ns_2 = v_316;
+    nr = v_319;
   } else {
     ck_1_2_0 = ck_1_2;
     if (ck_1_2_0) {
@@ -316,24 +316,24 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
       nr_St_On = false;
       ns_St_On_1 = false;
       ns_St_On_2 = true;
-      v_311 = light_source_status_St_On;
-      v_317 = nr_St_On;
-      v_314 = ns_St_On_1;
-      v_315 = ns_St_On_2;
+      v_314 = light_source_status_St_On;
+      v_320 = nr_St_On;
+      v_317 = ns_St_On_1;
+      v_318 = ns_St_On_2;
     } else {
       light_source_status_St_On_fail = 3;
-      v_311 = light_source_status_St_On_fail;
+      v_314 = light_source_status_St_On_fail;
       nr_St_On_fail = false;
-      v_317 = nr_St_On_fail;
+      v_320 = nr_St_On_fail;
       ns_St_On_fail_1 = false;
-      v_314 = ns_St_On_fail_1;
+      v_317 = ns_St_On_fail_1;
       ns_St_On_fail_2 = false;
-      v_315 = ns_St_On_fail_2;
+      v_318 = ns_St_On_fail_2;
     };
-    _out->light_source_status = v_311;
-    ns_1 = v_314;
-    ns_2 = v_315;
-    nr = v_317;
+    _out->light_source_status = v_314;
+    ns_1 = v_317;
+    ns_2 = v_318;
+    nr = v_320;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -386,8 +386,8 @@ void System__light_source_step(int c1, int c2, int sw, int failed_recovered,
     };
   };
   self->pnr = nr;
-  self->v_318 = ns_1;
-  self->v_319 = ns_2;;
+  self->v_321 = ns_1;
+  self->v_322 = ns_2;;
 }
 
 void System__door_reset(System__door_mem* self) {
@@ -736,15 +736,18 @@ void System__window_step(int c, System__window_out* _out,
 
 void System__air_conditioner_reset(System__air_conditioner_mem* self) {
   self->pnr = false;
-  self->v_356 = false;
-  self->v_357 = true;
-  self->v_358 = false;
+  self->v_359 = false;
+  self->v_360 = true;
+  self->v_361 = false;
 }
 
 void System__air_conditioner_step(int c1, int c2, int failed_recovered,
                                   System__air_conditioner_out* _out,
                                   System__air_conditioner_mem* self) {
   
+  int v_358;
+  int v_357;
+  int v_356;
   int v_355;
   int v_354;
   int v_353;
@@ -772,9 +775,6 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
   int v_331;
   int v_330;
   int v_329;
-  int v_328;
-  int v_327;
-  int v_326;
   int ns_St_6_Max_fail_2_0;
   int ns_St_6_Max_fail_3_0_0;
   int ns_St_6_Max_fail_3_0_1;
@@ -980,6 +980,9 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
   int v_22_1;
   int v_21;
   int v;
+  int v_385;
+  int v_384;
+  int v_383;
   int v_382;
   int v_381;
   int v_380;
@@ -1001,9 +1004,6 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
   int v_364;
   int v_363;
   int v_362;
-  int v_361;
-  int v_360;
-  int v_359;
   int s_St_6_Max_fail_2_0;
   int s_St_6_Max_fail_3_0_0;
   int s_St_6_Max_fail_3_0_1;
@@ -1093,9 +1093,9 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
   int ns_1;
   int r;
   int nr;
-  ck_1 = self->v_356;
-  ck_2 = self->v_357;
-  ck_3 = self->v_358;
+  ck_1 = self->v_359;
+  ck_2 = self->v_360;
+  ck_3 = self->v_361;
   if (ck_1) {
     ck_2_1 = ck_2;
     if (ck_2_1) {
@@ -1136,10 +1136,10 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           s_St_6_Max_2 = v_30_2;
           s_St_6_Max_3 = v_30_3;
         };
-        v_377 = r_St_6_Max;
-        v_359 = s_St_6_Max_1;
-        v_360 = s_St_6_Max_2;
-        v_361 = s_St_6_Max_3;
+        v_380 = r_St_6_Max;
+        v_362 = s_St_6_Max_1;
+        v_363 = s_St_6_Max_2;
+        v_364 = s_St_6_Max_3;
       } else {
         if (failed_recovered) {
           v_23 = true;
@@ -1170,30 +1170,30 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           r_St_6_Max_fail = v_25;
         };
-        v_377 = r_St_6_Max_fail;
+        v_380 = r_St_6_Max_fail;
         if (v) {
           s_St_6_Max_fail_1 = false;
         } else {
           s_St_6_Max_fail_1 = v_24_1;
         };
-        v_359 = s_St_6_Max_fail_1;
+        v_362 = s_St_6_Max_fail_1;
         if (v) {
           s_St_6_Max_fail_2 = true;
         } else {
           s_St_6_Max_fail_2 = v_24_2;
         };
-        v_360 = s_St_6_Max_fail_2;
+        v_363 = s_St_6_Max_fail_2;
         if (v) {
           s_St_6_Max_fail_3 = true;
         } else {
           s_St_6_Max_fail_3 = v_24_3;
         };
-        v_361 = s_St_6_Max_fail_3;
+        v_364 = s_St_6_Max_fail_3;
       };
-      v_371 = v_359;
-      v_372 = v_360;
-      v_373 = v_361;
-      v_379 = v_377;
+      v_374 = v_362;
+      v_375 = v_363;
+      v_376 = v_364;
+      v_382 = v_380;
       if (ck_3_1_1) {
         if (v_28_1) {
           v_28_2_1 = v_28_2;
@@ -1290,10 +1290,10 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
     } else {
       ck_3_1_0 = ck_3;
       if (ck_3_1_0) {
-        v_378 = true;
-        v_362 = true;
-        v_363 = true;
-        v_364 = true;
+        v_381 = true;
+        v_365 = true;
+        v_366 = true;
+        v_367 = true;
       } else {
         if (failed_recovered) {
           v_41 = true;
@@ -1324,25 +1324,25 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           r_St_6_Min = v_43;
         };
-        v_378 = r_St_6_Min;
+        v_381 = r_St_6_Min;
         if (v_38) {
           s_St_6_Min_1 = false;
         } else {
           s_St_6_Min_1 = v_42_1;
         };
-        v_362 = s_St_6_Min_1;
+        v_365 = s_St_6_Min_1;
         if (v_38) {
           s_St_6_Min_2 = true;
         } else {
           s_St_6_Min_2 = v_42_2;
         };
-        v_363 = s_St_6_Min_2;
+        v_366 = s_St_6_Min_2;
         if (v_38) {
           s_St_6_Min_3 = false;
         } else {
           s_St_6_Min_3 = v_42_3;
         };
-        v_364 = s_St_6_Min_3;
+        v_367 = s_St_6_Min_3;
         if (v_40_1) {
           v_40_2_1 = v_40_2;
           if (v_40_2_1) {
@@ -1389,15 +1389,15 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           };
         };
       };
-      v_371 = v_362;
-      v_372 = v_363;
-      v_373 = v_364;
-      v_379 = v_378;
+      v_374 = v_365;
+      v_375 = v_366;
+      v_376 = v_367;
+      v_382 = v_381;
     };
-    s_1 = v_371;
-    s_2 = v_372;
-    s_3 = v_373;
-    r = v_379;
+    s_1 = v_374;
+    s_2 = v_375;
+    s_3 = v_376;
+    r = v_382;
   } else {
     ck_2_0 = ck_2;
     if (ck_2_0) {
@@ -1432,25 +1432,25 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           r_St_6_Min_fail = v_37;
         };
-        v_380 = r_St_6_Min_fail;
+        v_383 = r_St_6_Min_fail;
         if (v_32) {
           s_St_6_Min_fail_1 = false;
         } else {
           s_St_6_Min_fail_1 = v_36_1;
         };
-        v_365 = s_St_6_Min_fail_1;
+        v_368 = s_St_6_Min_fail_1;
         if (v_32) {
           s_St_6_Min_fail_2 = false;
         } else {
           s_St_6_Min_fail_2 = v_36_2;
         };
-        v_366 = s_St_6_Min_fail_2;
+        v_369 = s_St_6_Min_fail_2;
         if (v_32) {
           s_St_6_Min_fail_3 = false;
         } else {
           s_St_6_Min_fail_3 = v_36_3;
         };
-        v_367 = s_St_6_Min_fail_3;
+        v_370 = s_St_6_Min_fail_3;
       } else {
         if (failed_recovered) {
           v_51 = true;
@@ -1504,10 +1504,10 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           s_St_6_Off_3 = v_52_3;
         };
-        v_380 = r_St_6_Off;
-        v_365 = s_St_6_Off_1;
-        v_366 = s_St_6_Off_2;
-        v_367 = s_St_6_Off_3;
+        v_383 = r_St_6_Off;
+        v_368 = s_St_6_Off_1;
+        v_369 = s_St_6_Off_2;
+        v_370 = s_St_6_Off_3;
         if (v_50_1) {
           v_50_2_1 = v_50_2;
           if (v_50_2_1) {
@@ -1539,17 +1539,17 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           };
         };
       };
-      v_374 = v_365;
-      v_375 = v_366;
-      v_376 = v_367;
-      v_382 = v_380;
+      v_377 = v_368;
+      v_378 = v_369;
+      v_379 = v_370;
+      v_385 = v_383;
     } else {
       ck_3_0_0 = ck_3;
       if (ck_3_0_0) {
-        v_381 = true;
-        v_368 = true;
-        v_369 = true;
-        v_370 = true;
+        v_384 = true;
+        v_371 = true;
+        v_372 = true;
+        v_373 = true;
       } else {
         if (failed_recovered) {
           v_46 = true;
@@ -1573,7 +1573,7 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           r_St_6_Off_fail = v_48;
         };
-        v_381 = r_St_6_Off_fail;
+        v_384 = r_St_6_Off_fail;
         if (v_44) {
           v_47_1 = true;
         } else {
@@ -1584,7 +1584,7 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           s_St_6_Off_fail_1 = v_47_1;
         };
-        v_368 = s_St_6_Off_fail_1;
+        v_371 = s_St_6_Off_fail_1;
         if (v_44) {
           v_47_2 = true;
         } else {
@@ -1595,7 +1595,7 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           s_St_6_Off_fail_2 = v_47_2;
         };
-        v_369 = s_St_6_Off_fail_2;
+        v_372 = s_St_6_Off_fail_2;
         if (v_44) {
           v_47_3 = false;
         } else {
@@ -1606,7 +1606,7 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         } else {
           s_St_6_Off_fail_3 = v_47_3;
         };
-        v_370 = s_St_6_Off_fail_3;
+        v_373 = s_St_6_Off_fail_3;
         if (v_45_1) {
           v_45_2_1 = v_45_2;
           if (v_45_2_1) {
@@ -1653,15 +1653,15 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           };
         };
       };
-      v_374 = v_368;
-      v_375 = v_369;
-      v_376 = v_370;
-      v_382 = v_381;
+      v_377 = v_371;
+      v_378 = v_372;
+      v_379 = v_373;
+      v_385 = v_384;
     };
-    s_1 = v_374;
-    s_2 = v_375;
-    s_3 = v_376;
-    r = v_382;
+    s_1 = v_377;
+    s_2 = v_378;
+    s_3 = v_379;
+    r = v_385;
   };
   ck_7_1 = s_1;
   ck_7_2 = s_2;
@@ -1676,28 +1676,28 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
         ns_St_6_Max_1 = true;
         ns_St_6_Max_2 = true;
         ns_St_6_Max_3 = true;
-        v_326 = air_status_St_6_Max;
-        v_350 = nr_St_6_Max;
-        v_332 = ns_St_6_Max_1;
-        v_333 = ns_St_6_Max_2;
-        v_334 = ns_St_6_Max_3;
+        v_329 = air_status_St_6_Max;
+        v_353 = nr_St_6_Max;
+        v_335 = ns_St_6_Max_1;
+        v_336 = ns_St_6_Max_2;
+        v_337 = ns_St_6_Max_3;
       } else {
         air_status_St_6_Max_fail = 5;
-        v_326 = air_status_St_6_Max_fail;
+        v_329 = air_status_St_6_Max_fail;
         nr_St_6_Max_fail = false;
-        v_350 = nr_St_6_Max_fail;
+        v_353 = nr_St_6_Max_fail;
         ns_St_6_Max_fail_1 = true;
-        v_332 = ns_St_6_Max_fail_1;
+        v_335 = ns_St_6_Max_fail_1;
         ns_St_6_Max_fail_2 = true;
-        v_333 = ns_St_6_Max_fail_2;
+        v_336 = ns_St_6_Max_fail_2;
         ns_St_6_Max_fail_3 = false;
-        v_334 = ns_St_6_Max_fail_3;
+        v_337 = ns_St_6_Max_fail_3;
       };
-      v_328 = v_326;
-      v_344 = v_332;
-      v_345 = v_333;
-      v_346 = v_334;
-      v_352 = v_350;
+      v_331 = v_329;
+      v_347 = v_335;
+      v_348 = v_336;
+      v_349 = v_337;
+      v_355 = v_353;
       if (ck_7_3_1_1) {
         if (ns_St_6_Max_1) {
           ns_St_6_Max_2_1 = ns_St_6_Max_2;
@@ -1734,22 +1734,22 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
     } else {
       ck_7_3_1_0 = ck_7_3;
       if (ck_7_3_1_0) {
-        v_327 = 0;
-        v_351 = true;
-        v_335 = true;
-        v_336 = true;
-        v_337 = true;
+        v_330 = 0;
+        v_354 = true;
+        v_338 = true;
+        v_339 = true;
+        v_340 = true;
       } else {
         air_status_St_6_Min = 1;
-        v_327 = air_status_St_6_Min;
+        v_330 = air_status_St_6_Min;
         nr_St_6_Min = false;
-        v_351 = nr_St_6_Min;
+        v_354 = nr_St_6_Min;
         ns_St_6_Min_1 = true;
-        v_335 = ns_St_6_Min_1;
+        v_338 = ns_St_6_Min_1;
         ns_St_6_Min_2 = false;
-        v_336 = ns_St_6_Min_2;
+        v_339 = ns_St_6_Min_2;
         ns_St_6_Min_3 = false;
-        v_337 = ns_St_6_Min_3;
+        v_340 = ns_St_6_Min_3;
         if (ns_St_6_Min_1) {
           ns_St_6_Min_2_1 = ns_St_6_Min_2;
           if (ns_St_6_Min_2_1) {
@@ -1766,68 +1766,68 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           };
         };
       };
-      v_328 = v_327;
-      v_344 = v_335;
-      v_345 = v_336;
-      v_346 = v_337;
-      v_352 = v_351;
+      v_331 = v_330;
+      v_347 = v_338;
+      v_348 = v_339;
+      v_349 = v_340;
+      v_355 = v_354;
     };
-    _out->air_status = v_328;
-    ns_1 = v_344;
-    ns_2 = v_345;
-    ns_3 = v_346;
-    nr = v_352;
+    _out->air_status = v_331;
+    ns_1 = v_347;
+    ns_2 = v_348;
+    ns_3 = v_349;
+    nr = v_355;
   } else {
     ck_7_2_0 = ck_7_2;
     if (ck_7_2_0) {
       ck_7_3_0_1 = ck_7_3;
       if (ck_7_3_0_1) {
         air_status_St_6_Min_fail = 4;
-        v_329 = air_status_St_6_Min_fail;
+        v_332 = air_status_St_6_Min_fail;
         nr_St_6_Min_fail = false;
-        v_353 = nr_St_6_Min_fail;
+        v_356 = nr_St_6_Min_fail;
         ns_St_6_Min_fail_1 = false;
-        v_338 = ns_St_6_Min_fail_1;
+        v_341 = ns_St_6_Min_fail_1;
         ns_St_6_Min_fail_2 = true;
-        v_339 = ns_St_6_Min_fail_2;
+        v_342 = ns_St_6_Min_fail_2;
         ns_St_6_Min_fail_3 = true;
-        v_340 = ns_St_6_Min_fail_3;
+        v_343 = ns_St_6_Min_fail_3;
       } else {
         air_status_St_6_Off = 0;
         nr_St_6_Off = false;
         ns_St_6_Off_1 = false;
         ns_St_6_Off_2 = true;
         ns_St_6_Off_3 = false;
-        v_329 = air_status_St_6_Off;
-        v_353 = nr_St_6_Off;
-        v_338 = ns_St_6_Off_1;
-        v_339 = ns_St_6_Off_2;
-        v_340 = ns_St_6_Off_3;
+        v_332 = air_status_St_6_Off;
+        v_356 = nr_St_6_Off;
+        v_341 = ns_St_6_Off_1;
+        v_342 = ns_St_6_Off_2;
+        v_343 = ns_St_6_Off_3;
       };
-      v_331 = v_329;
-      v_347 = v_338;
-      v_348 = v_339;
-      v_349 = v_340;
-      v_355 = v_353;
+      v_334 = v_332;
+      v_350 = v_341;
+      v_351 = v_342;
+      v_352 = v_343;
+      v_358 = v_356;
     } else {
       ck_7_3_0_0 = ck_7_3;
       if (ck_7_3_0_0) {
-        v_330 = 0;
-        v_354 = true;
-        v_341 = true;
-        v_342 = true;
-        v_343 = true;
+        v_333 = 0;
+        v_357 = true;
+        v_344 = true;
+        v_345 = true;
+        v_346 = true;
       } else {
         air_status_St_6_Off_fail = 3;
-        v_330 = air_status_St_6_Off_fail;
+        v_333 = air_status_St_6_Off_fail;
         nr_St_6_Off_fail = false;
-        v_354 = nr_St_6_Off_fail;
+        v_357 = nr_St_6_Off_fail;
         ns_St_6_Off_fail_1 = false;
-        v_341 = ns_St_6_Off_fail_1;
+        v_344 = ns_St_6_Off_fail_1;
         ns_St_6_Off_fail_2 = false;
-        v_342 = ns_St_6_Off_fail_2;
+        v_345 = ns_St_6_Off_fail_2;
         ns_St_6_Off_fail_3 = false;
-        v_343 = ns_St_6_Off_fail_3;
+        v_346 = ns_St_6_Off_fail_3;
         if (ns_St_6_Off_fail_1) {
           ns_St_6_Off_fail_2_1 = ns_St_6_Off_fail_2;
           if (ns_St_6_Off_fail_2_1) {
@@ -1844,17 +1844,17 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
           };
         };
       };
-      v_331 = v_330;
-      v_347 = v_341;
-      v_348 = v_342;
-      v_349 = v_343;
-      v_355 = v_354;
+      v_334 = v_333;
+      v_350 = v_344;
+      v_351 = v_345;
+      v_352 = v_346;
+      v_358 = v_357;
     };
-    _out->air_status = v_331;
-    ns_1 = v_347;
-    ns_2 = v_348;
-    ns_3 = v_349;
-    nr = v_355;
+    _out->air_status = v_334;
+    ns_1 = v_350;
+    ns_2 = v_351;
+    ns_3 = v_352;
+    nr = v_358;
   };
   if (ns_1) {
     ns_2_1 = ns_2;
@@ -1991,9 +1991,9 @@ void System__air_conditioner_step(int c1, int c2, int failed_recovered,
     };
   };
   self->pnr = nr;
-  self->v_356 = ns_1;
-  self->v_357 = ns_2;
-  self->v_358 = ns_3;;
+  self->v_359 = ns_1;
+  self->v_360 = ns_2;
+  self->v_361 = ns_3;;
 }
 
 void System__day_shift_reset(System__day_shift_mem* self) {
@@ -2132,15 +2132,15 @@ void System__fail_step(int failed_recovered, System__fail_out* _out,
 
 void System__controller_reset(System__controller_mem* self) {
   self->pnr = false;
-  self->v_391 = true;
-  self->v_392 = true;
+  self->v_394 = true;
+  self->v_395 = true;
   self->pnr_1 = false;
-  self->v_407 = true;
-  self->v_408 = true;
+  self->v_410 = true;
+  self->v_411 = true;
   self->pnr_2 = false;
-  self->v_445 = false;
-  self->v_446 = true;
-  self->v_447 = false;
+  self->v_448 = false;
+  self->v_449 = true;
+  self->v_450 = false;
   self->pnr_3 = false;
   self->ck_21_1 = true;
   self->pnr_4 = false;
@@ -2165,14 +2165,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
                              System__controller_mem* self) {
   Controller_controller__controller_controller_out Controller_controller__controller_controller_out_st;
   
+  int v_393;
+  int v_392;
+  int v_391;
   int v_390;
   int v_389;
   int v_388;
   int v_387;
   int v_386;
-  int v_385;
-  int v_384;
-  int v_383;
   int ns_St_9_On_fail_2_0;
   int ns_St_9_On_fail_2_1;
   int ns_St_9_On_2_0;
@@ -2201,44 +2201,44 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int light_source_status_1_St_9_Off;
   int ck_28_2;
   int ck_28_1;
-  int v_308_2_0;
-  int v_308_2_1;
+  int v_311_2_0;
+  int v_311_2_1;
+  int v_312;
+  int v_311_2;
+  int v_311_1;
+  int v_310;
   int v_309;
-  int v_308_2;
-  int v_308_1;
+  int v_308;
+  int v_306_2_0;
+  int v_306_2_1;
   int v_307;
-  int v_306;
+  int v_306_2;
+  int v_306_1;
   int v_305;
-  int v_303_2_0;
-  int v_303_2_1;
   int v_304;
-  int v_303_2;
-  int v_303_1;
+  int v_303;
+  int v_301_2_0;
+  int v_301_2_1;
   int v_302;
-  int v_301;
+  int v_301_2;
+  int v_301_1;
   int v_300;
-  int v_298_2_0;
-  int v_298_2_1;
   int v_299;
-  int v_298_2;
-  int v_298_1;
+  int v_298;
+  int v_296_2_0;
+  int v_296_2_1;
   int v_297;
-  int v_296;
+  int v_296_2;
+  int v_296_1;
   int v_295;
-  int v_293_2_0;
-  int v_293_2_1;
   int v_294;
-  int v_293_2;
-  int v_293_1;
-  int v_292;
-  int v_291;
-  int v_290;
+  int v_293;
+  int v_401;
+  int v_400;
+  int v_399;
   int v_398;
   int v_397;
   int v_396;
-  int v_395;
-  int v_394;
-  int v_393;
   int s_St_9_On_fail_2_0;
   int s_St_9_On_fail_2_1;
   int s_St_9_On_2_0;
@@ -2263,14 +2263,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int s_St_9_Off_1;
   int ck_27_2;
   int ck_27_1;
+  int v_409;
+  int v_408;
+  int v_407;
   int v_406;
   int v_405;
   int v_404;
   int v_403;
   int v_402;
-  int v_401;
-  int v_400;
-  int v_399;
   int ns_1_St_10_On_fail_2_0;
   int ns_1_St_10_On_fail_2_1;
   int ns_1_St_10_On_2_0;
@@ -2299,44 +2299,44 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int light_source_status_St_10_Off;
   int ck_26_2;
   int ck_26_1;
-  int v_288_2_0;
-  int v_288_2_1;
+  int v_291_2_0;
+  int v_291_2_1;
+  int v_292;
+  int v_291_2;
+  int v_291_1;
+  int v_290;
   int v_289;
-  int v_288_2;
-  int v_288_1;
+  int v_288;
+  int v_286_2_0;
+  int v_286_2_1;
   int v_287;
-  int v_286;
+  int v_286_2;
+  int v_286_1;
   int v_285;
-  int v_283_2_0;
-  int v_283_2_1;
   int v_284;
-  int v_283_2;
-  int v_283_1;
+  int v_283;
+  int v_281_2_0;
+  int v_281_2_1;
   int v_282;
-  int v_281;
+  int v_281_2;
+  int v_281_1;
   int v_280;
-  int v_278_2_0;
-  int v_278_2_1;
   int v_279;
-  int v_278_2;
-  int v_278_1;
+  int v_278;
+  int v_276_2_0;
+  int v_276_2_1;
   int v_277;
-  int v_276;
+  int v_276_2;
+  int v_276_1;
   int v_275;
-  int v_273_2_0;
-  int v_273_2_1;
   int v_274;
-  int v_273_2;
-  int v_273_1;
-  int v_272;
-  int v_271;
-  int v_270;
+  int v_273;
+  int v_417;
+  int v_416;
+  int v_415;
   int v_414;
   int v_413;
   int v_412;
-  int v_411;
-  int v_410;
-  int v_409;
   int s_1_St_10_On_fail_2_0;
   int s_1_St_10_On_fail_2_1;
   int s_1_St_10_On_2_0;
@@ -2361,6 +2361,9 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int s_1_St_10_Off_1;
   int ck_25_2;
   int ck_25_1;
+  int v_447;
+  int v_446;
+  int v_445;
   int v_444;
   int v_443;
   int v_442;
@@ -2388,9 +2391,6 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int v_420;
   int v_419;
   int v_418;
-  int v_417;
-  int v_416;
-  int v_415;
   int ns_2_St_11_Max_fail_2_0;
   int ns_2_St_11_Max_fail_3_0_0;
   int ns_2_St_11_Max_fail_3_0_1;
@@ -2466,136 +2466,139 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ck_24_3;
   int ck_24_2;
   int ck_24_1;
-  int v_268_2_0;
-  int v_268_3_0_0;
-  int v_268_3_0_1;
-  int v_268_2_1;
-  int v_268_3_1_0;
-  int v_268_3_1_1;
+  int v_271_2_0;
+  int v_271_3_0_0;
+  int v_271_3_0_1;
+  int v_271_2_1;
+  int v_271_3_1_0;
+  int v_271_3_1_1;
+  int v_269_2_0;
+  int v_269_3_0_0;
+  int v_269_3_0_1;
+  int v_269_2_1;
+  int v_269_3_1_0;
+  int v_269_3_1_1;
+  int v_272;
+  int v_271_3;
+  int v_271_2;
+  int v_271_1;
+  int v_270;
+  int v_269_3;
+  int v_269_2;
+  int v_269_1;
+  int v_268;
   int v_266_2_0;
   int v_266_3_0_0;
   int v_266_3_0_1;
   int v_266_2_1;
   int v_266_3_1_0;
   int v_266_3_1_1;
-  int v_269;
-  int v_268_3;
-  int v_268_2;
-  int v_268_1;
+  int v_264_2_0;
+  int v_264_3_0_0;
+  int v_264_3_0_1;
+  int v_264_2_1;
+  int v_264_3_1_0;
+  int v_264_3_1_1;
   int v_267;
   int v_266_3;
   int v_266_2;
   int v_266_1;
   int v_265;
-  int v_263_2_0;
-  int v_263_3_0_0;
-  int v_263_3_0_1;
-  int v_263_2_1;
-  int v_263_3_1_0;
-  int v_263_3_1_1;
+  int v_264_3;
+  int v_264_2;
+  int v_264_1;
+  int v_263;
   int v_261_2_0;
   int v_261_3_0_0;
   int v_261_3_0_1;
   int v_261_2_1;
   int v_261_3_1_0;
   int v_261_3_1_1;
-  int v_264;
-  int v_263_3;
-  int v_263_2;
-  int v_263_1;
+  int v_259_2_0;
+  int v_259_3_0_0;
+  int v_259_3_0_1;
+  int v_259_2_1;
+  int v_259_3_1_0;
+  int v_259_3_1_1;
   int v_262;
   int v_261_3;
   int v_261_2;
   int v_261_1;
   int v_260;
-  int v_258_2_0;
-  int v_258_3_0_0;
-  int v_258_3_0_1;
-  int v_258_2_1;
-  int v_258_3_1_0;
-  int v_258_3_1_1;
-  int v_256_2_0;
-  int v_256_3_0_0;
-  int v_256_3_0_1;
-  int v_256_2_1;
-  int v_256_3_1_0;
-  int v_256_3_1_1;
-  int v_259;
-  int v_258_3;
-  int v_258_2;
-  int v_258_1;
+  int v_259_3;
+  int v_259_2;
+  int v_259_1;
+  int v_258;
   int v_257;
-  int v_256_3;
-  int v_256_2;
-  int v_256_1;
-  int v_255;
+  int v_255_2_0;
+  int v_255_3_0_0;
+  int v_255_3_0_1;
+  int v_255_2_1;
+  int v_255_3_1_0;
+  int v_255_3_1_1;
+  int v_253_2_0;
+  int v_253_3_0_0;
+  int v_253_3_0_1;
+  int v_253_2_1;
+  int v_253_3_1_0;
+  int v_253_3_1_1;
+  int v_256;
+  int v_255_3;
+  int v_255_2;
+  int v_255_1;
   int v_254;
-  int v_252_2_0;
-  int v_252_3_0_0;
-  int v_252_3_0_1;
-  int v_252_2_1;
-  int v_252_3_1_0;
-  int v_252_3_1_1;
-  int v_250_2_0;
-  int v_250_3_0_0;
-  int v_250_3_0_1;
-  int v_250_2_1;
-  int v_250_3_1_0;
-  int v_250_3_1_1;
-  int v_253;
-  int v_252_3;
-  int v_252_2;
-  int v_252_1;
+  int v_253_3;
+  int v_253_2;
+  int v_253_1;
+  int v_252;
   int v_251;
-  int v_250_3;
-  int v_250_2;
-  int v_250_1;
-  int v_249;
+  int v_249_2_0;
+  int v_249_3_0_0;
+  int v_249_3_0_1;
+  int v_249_2_1;
+  int v_249_3_1_0;
+  int v_249_3_1_1;
+  int v_247_2_0;
+  int v_247_3_0_0;
+  int v_247_3_0_1;
+  int v_247_2_1;
+  int v_247_3_1_0;
+  int v_247_3_1_1;
+  int v_250;
+  int v_249_3;
+  int v_249_2;
+  int v_249_1;
   int v_248;
-  int v_246_2_0;
-  int v_246_3_0_0;
-  int v_246_3_0_1;
-  int v_246_2_1;
-  int v_246_3_1_0;
-  int v_246_3_1_1;
-  int v_244_2_0;
-  int v_244_3_0_0;
-  int v_244_3_0_1;
-  int v_244_2_1;
-  int v_244_3_1_0;
-  int v_244_3_1_1;
-  int v_247;
-  int v_246_3;
-  int v_246_2;
-  int v_246_1;
+  int v_247_3;
+  int v_247_2;
+  int v_247_1;
+  int v_246;
   int v_245;
-  int v_244_3;
-  int v_244_2;
-  int v_244_1;
-  int v_243;
+  int v_243_2_0;
+  int v_243_3_0_0;
+  int v_243_3_0_1;
+  int v_243_2_1;
+  int v_243_3_1_0;
+  int v_243_3_1_1;
+  int v_241_2_0;
+  int v_241_3_0_0;
+  int v_241_3_0_1;
+  int v_241_2_1;
+  int v_241_3_1_0;
+  int v_241_3_1_1;
+  int v_244;
+  int v_243_3;
+  int v_243_2;
+  int v_243_1;
   int v_242;
-  int v_240_2_0;
-  int v_240_3_0_0;
-  int v_240_3_0_1;
-  int v_240_2_1;
-  int v_240_3_1_0;
-  int v_240_3_1_1;
-  int v_238_2_0;
-  int v_238_3_0_0;
-  int v_238_3_0_1;
-  int v_238_2_1;
-  int v_238_3_1_0;
-  int v_238_3_1_1;
-  int v_241;
-  int v_240_3;
-  int v_240_2;
-  int v_240_1;
+  int v_241_3;
+  int v_241_2;
+  int v_241_1;
+  int v_240;
   int v_239;
-  int v_238_3;
-  int v_238_2;
-  int v_238_1;
-  int v_237;
-  int v_236;
+  int v_474;
+  int v_473;
+  int v_472;
   int v_471;
   int v_470;
   int v_469;
@@ -2617,9 +2620,6 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int v_453;
   int v_452;
   int v_451;
-  int v_450;
-  int v_449;
-  int v_448;
   int s_2_St_11_Max_fail_2_0;
   int s_2_St_11_Max_fail_3_0_0;
   int s_2_St_11_Max_fail_3_0_1;
@@ -2696,7 +2696,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_3_St_12_Closed_1;
   int window_open_1_St_12_Closed;
   int ck_22_1;
-  int v_235;
+  int v_238;
   int r_3_St_12_Open;
   int s_3_St_12_Open_1;
   int r_3_St_12_Closed;
@@ -2708,7 +2708,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_4_St_13_Off_1;
   int computer_on_St_13_Off;
   int ck_20_1;
-  int v_234;
+  int v_237;
   int r_4_St_13_On;
   int s_4_St_13_On_1;
   int r_4_St_13_Off;
@@ -2742,7 +2742,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_7_St_16_Locked_1;
   int closet_open_1_St_16_Locked;
   int ck_14_1;
-  int v_233;
+  int v_236;
   int r_7_St_16_Open;
   int s_7_St_16_Open_1;
   int r_7_St_16_Locked;
@@ -2754,8 +2754,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int ns_8_St_17_Closed_1;
   int door_open_1_St_17_Closed;
   int ck_12_1;
-  int v_232;
-  int v_231;
+  int v_235;
+  int v_234;
   int r_8_St_17_Open;
   int s_8_St_17_Open_1;
   int r_8_St_17_Closed;
@@ -3060,6 +3060,9 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int v_228;
   int v_229;
   int v_230;
+  int v_231;
+  int v_232;
+  int v_233;
   int c_blind_2;
   int c_blind_1;
   int c_light_2;
@@ -3072,16 +3075,16 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   int c_door;
   c1_2 = blind_switch;
   failed_recovered_2 = blind_failed_recovered;
-  ck_27_1 = self->v_391;
-  ck_27_2 = self->v_392;
+  ck_27_1 = self->v_394;
+  ck_27_2 = self->v_395;
   c1_1 = light_switch;
   failed_recovered_1 = light_failed_recovered;
-  ck_25_1 = self->v_407;
-  ck_25_2 = self->v_408;
+  ck_25_1 = self->v_410;
+  ck_25_2 = self->v_411;
   failed_recovered = air_failed_recovered;
-  ck_23_1 = self->v_445;
-  ck_23_2 = self->v_446;
-  ck_23_3 = self->v_447;
+  ck_23_1 = self->v_448;
+  ck_23_2 = self->v_449;
+  ck_23_3 = self->v_450;
   arrived_1 = cleaner;
   arrived = worker;
   change = change_shift;
@@ -3104,11 +3107,11 @@ void System__controller_step(int change_shift, int worker, int cleaner,
                                                     self->ck_19_1,
                                                     self->pnr_4,
                                                     self->ck_21_1,
-                                                    self->pnr_3, self->v_447,
-                                                    self->v_446, self->v_445,
-                                                    self->pnr_2, self->v_408,
-                                                    self->v_407, self->pnr_1,
-                                                    self->v_392, self->v_391,
+                                                    self->pnr_3, self->v_450,
+                                                    self->v_449, self->v_448,
+                                                    self->pnr_2, self->v_411,
+                                                    self->v_410, self->pnr_1,
+                                                    self->v_395, self->v_394,
                                                     self->pnr, true, true,
                                                     true, true, true, true,
                                                     true, true, true, true,
@@ -3137,33 +3140,33 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ck_27_2_1 = ck_27_2;
     if (ck_27_2_1) {
       if (failed_recovered_2) {
-        v_309 = true;
-        v_308_1 = true;
-        v_308_2 = false;
+        v_312 = true;
+        v_311_1 = true;
+        v_311_2 = false;
       } else {
-        v_309 = self->pnr;
-        v_308_1 = true;
-        v_308_2 = true;
+        v_312 = self->pnr;
+        v_311_1 = true;
+        v_311_2 = true;
       };
-      v_306 = !(c2_2);
-      v_305 = (c1_2&&sw_1);
-      v_307 = (v_305||v_306);
-      if (v_307) {
+      v_309 = !(c2_2);
+      v_308 = (c1_2&&sw_1);
+      v_310 = (v_308||v_309);
+      if (v_310) {
         r_St_9_Off = true;
         s_St_9_Off_1 = false;
         s_St_9_Off_2 = true;
       } else {
-        r_St_9_Off = v_309;
-        s_St_9_Off_1 = v_308_1;
-        s_St_9_Off_2 = v_308_2;
+        r_St_9_Off = v_312;
+        s_St_9_Off_1 = v_311_1;
+        s_St_9_Off_2 = v_311_2;
       };
-      v_397 = r_St_9_Off;
-      v_393 = s_St_9_Off_1;
-      v_394 = s_St_9_Off_2;
-      if (v_308_1) {
-        v_308_2_1 = v_308_2;
+      v_400 = r_St_9_Off;
+      v_396 = s_St_9_Off_1;
+      v_397 = s_St_9_Off_2;
+      if (v_311_1) {
+        v_311_2_1 = v_311_2;
       } else {
-        v_308_2_0 = v_308_2;
+        v_311_2_0 = v_311_2;
       };
       if (s_St_9_Off_1) {
         s_St_9_Off_2_1 = s_St_9_Off_2;
@@ -3172,39 +3175,39 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
     } else {
       if (failed_recovered_2) {
-        v_304 = true;
-        v_303_1 = true;
-        v_303_2 = true;
+        v_307 = true;
+        v_306_1 = true;
+        v_306_2 = true;
       } else {
-        v_304 = self->pnr;
-        v_303_1 = true;
-        v_303_2 = false;
+        v_307 = self->pnr;
+        v_306_1 = true;
+        v_306_2 = false;
       };
-      v_301 = !(c2_2);
-      v_300 = (c1_2&&sw_1);
-      v_302 = (v_300||v_301);
-      if (v_302) {
+      v_304 = !(c2_2);
+      v_303 = (c1_2&&sw_1);
+      v_305 = (v_303||v_304);
+      if (v_305) {
         r_St_9_Off_fail = true;
       } else {
-        r_St_9_Off_fail = v_304;
+        r_St_9_Off_fail = v_307;
       };
-      v_397 = r_St_9_Off_fail;
-      if (v_302) {
+      v_400 = r_St_9_Off_fail;
+      if (v_305) {
         s_St_9_Off_fail_1 = false;
       } else {
-        s_St_9_Off_fail_1 = v_303_1;
+        s_St_9_Off_fail_1 = v_306_1;
       };
-      v_393 = s_St_9_Off_fail_1;
-      if (v_302) {
+      v_396 = s_St_9_Off_fail_1;
+      if (v_305) {
         s_St_9_Off_fail_2 = false;
       } else {
-        s_St_9_Off_fail_2 = v_303_2;
+        s_St_9_Off_fail_2 = v_306_2;
       };
-      v_394 = s_St_9_Off_fail_2;
-      if (v_303_1) {
-        v_303_2_1 = v_303_2;
+      v_397 = s_St_9_Off_fail_2;
+      if (v_306_1) {
+        v_306_2_1 = v_306_2;
       } else {
-        v_303_2_0 = v_303_2;
+        v_306_2_0 = v_306_2;
       };
       if (s_St_9_Off_fail_1) {
         s_St_9_Off_fail_2_1 = s_St_9_Off_fail_2;
@@ -3212,71 +3215,71 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_St_9_Off_fail_2_0 = s_St_9_Off_fail_2;
       };
     };
-    s_1_3 = v_393;
-    s_2_4 = v_394;
-    r = v_397;
+    s_1_3 = v_396;
+    s_2_4 = v_397;
+    r = v_400;
   } else {
     ck_27_2_0 = ck_27_2;
     if (ck_27_2_0) {
       if (failed_recovered_2) {
-        v_299 = true;
-        v_298_1 = false;
-        v_298_2 = false;
+        v_302 = true;
+        v_301_1 = false;
+        v_301_2 = false;
       } else {
-        v_299 = self->pnr;
-        v_298_1 = false;
-        v_298_2 = true;
+        v_302 = self->pnr;
+        v_301_1 = false;
+        v_301_2 = true;
       };
-      v_296 = !(c2_2);
-      v_295 = (c1_2&&sw_1);
-      v_297 = (v_295||v_296);
-      if (v_297) {
+      v_299 = !(c2_2);
+      v_298 = (c1_2&&sw_1);
+      v_300 = (v_298||v_299);
+      if (v_300) {
         r_St_9_On = true;
         s_St_9_On_1 = true;
         s_St_9_On_2 = true;
       } else {
-        r_St_9_On = v_299;
-        s_St_9_On_1 = v_298_1;
-        s_St_9_On_2 = v_298_2;
+        r_St_9_On = v_302;
+        s_St_9_On_1 = v_301_1;
+        s_St_9_On_2 = v_301_2;
       };
-      v_398 = r_St_9_On;
-      v_395 = s_St_9_On_1;
-      v_396 = s_St_9_On_2;
+      v_401 = r_St_9_On;
+      v_398 = s_St_9_On_1;
+      v_399 = s_St_9_On_2;
     } else {
       if (failed_recovered_2) {
-        v_294 = true;
-        v_293_1 = false;
-        v_293_2 = true;
+        v_297 = true;
+        v_296_1 = false;
+        v_296_2 = true;
       } else {
-        v_294 = self->pnr;
-        v_293_1 = false;
-        v_293_2 = false;
+        v_297 = self->pnr;
+        v_296_1 = false;
+        v_296_2 = false;
       };
-      v_291 = !(c2_2);
-      v_290 = (c1_2&&sw_1);
-      v_292 = (v_290||v_291);
-      if (v_292) {
+      v_294 = !(c2_2);
+      v_293 = (c1_2&&sw_1);
+      v_295 = (v_293||v_294);
+      if (v_295) {
         r_St_9_On_fail = true;
       } else {
-        r_St_9_On_fail = v_294;
+        r_St_9_On_fail = v_297;
       };
-      v_398 = r_St_9_On_fail;
-      if (v_292) {
+      v_401 = r_St_9_On_fail;
+      if (v_295) {
         s_St_9_On_fail_1 = true;
       } else {
-        s_St_9_On_fail_1 = v_293_1;
+        s_St_9_On_fail_1 = v_296_1;
       };
-      v_395 = s_St_9_On_fail_1;
-      if (v_292) {
+      v_398 = s_St_9_On_fail_1;
+      if (v_295) {
         s_St_9_On_fail_2 = false;
       } else {
-        s_St_9_On_fail_2 = v_293_2;
+        s_St_9_On_fail_2 = v_296_2;
       };
-      v_396 = s_St_9_On_fail_2;
+      v_399 = s_St_9_On_fail_2;
     };
-    s_1_3 = v_395;
-    s_2_4 = v_396;
-    r = v_398;
+    s_1_3 = v_398;
+    s_2_4 = v_399;
+    r = v_401;
   };
   ck_28_1 = s_1_3;
   ck_28_2 = s_2_4;
@@ -3287,10 +3290,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       nr_St_9_Off = false;
       ns_St_9_Off_1 = true;
       ns_St_9_Off_2 = true;
-      v_383 = light_source_status_1_St_9_Off;
-      v_389 = nr_St_9_Off;
-      v_385 = ns_St_9_Off_1;
-      v_386 = ns_St_9_Off_2;
+      v_386 = light_source_status_1_St_9_Off;
+      v_392 = nr_St_9_Off;
+      v_388 = ns_St_9_Off_1;
+      v_389 = ns_St_9_Off_2;
       if (ns_St_9_Off_1) {
         ns_St_9_Off_2_1 = ns_St_9_Off_2;
       } else {
@@ -3298,23 +3301,23 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
     } else {
       light_source_status_1_St_9_Off_fail = 2;
-      v_383 = light_source_status_1_St_9_Off_fail;
+      v_386 = light_source_status_1_St_9_Off_fail;
       nr_St_9_Off_fail = false;
-      v_389 = nr_St_9_Off_fail;
+      v_392 = nr_St_9_Off_fail;
       ns_St_9_Off_fail_1 = true;
-      v_385 = ns_St_9_Off_fail_1;
+      v_388 = ns_St_9_Off_fail_1;
       ns_St_9_Off_fail_2 = false;
-      v_386 = ns_St_9_Off_fail_2;
+      v_389 = ns_St_9_Off_fail_2;
       if (ns_St_9_Off_fail_1) {
         ns_St_9_Off_fail_2_1 = ns_St_9_Off_fail_2;
       } else {
         ns_St_9_Off_fail_2_0 = ns_St_9_Off_fail_2;
       };
     };
-    light_source_status_1 = v_383;
-    ns_1_3 = v_385;
-    ns_2_4 = v_386;
-    nr = v_389;
+    light_source_status_1 = v_386;
+    ns_1_3 = v_388;
+    ns_2_4 = v_389;
+    nr = v_392;
   } else {
     ck_28_2_0 = ck_28_2;
     if (ck_28_2_0) {
@@ -3322,24 +3325,24 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       nr_St_9_On = false;
       ns_St_9_On_1 = false;
       ns_St_9_On_2 = true;
-      v_384 = light_source_status_1_St_9_On;
-      v_390 = nr_St_9_On;
-      v_387 = ns_St_9_On_1;
-      v_388 = ns_St_9_On_2;
+      v_387 = light_source_status_1_St_9_On;
+      v_393 = nr_St_9_On;
+      v_390 = ns_St_9_On_1;
+      v_391 = ns_St_9_On_2;
     } else {
       light_source_status_1_St_9_On_fail = 3;
-      v_384 = light_source_status_1_St_9_On_fail;
+      v_387 = light_source_status_1_St_9_On_fail;
       nr_St_9_On_fail = false;
-      v_390 = nr_St_9_On_fail;
+      v_393 = nr_St_9_On_fail;
       ns_St_9_On_fail_1 = false;
-      v_387 = ns_St_9_On_fail_1;
+      v_390 = ns_St_9_On_fail_1;
       ns_St_9_On_fail_2 = false;
-      v_388 = ns_St_9_On_fail_2;
+      v_391 = ns_St_9_On_fail_2;
     };
-    light_source_status_1 = v_384;
-    ns_1_3 = v_387;
-    ns_2_4 = v_388;
-    nr = v_390;
+    light_source_status_1 = v_387;
+    ns_1_3 = v_390;
+    ns_2_4 = v_391;
+    nr = v_393;
   };
   _out->blind_status = light_source_status_1;
   v_56 = (_out->blind_status<2);
@@ -3351,14 +3354,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_129 = !(v_128);
   v_145 = (_out->blind_status==1);
   v_146 = !(v_145);
-  v_157 = (_out->blind_status>1);
-  v_167 = (_out->blind_status<2);
-  v_170 = (_out->blind_status==1);
-  v_179 = (_out->blind_status<2);
-  v_182 = (_out->blind_status==1);
-  v_191 = (_out->blind_status>1);
-  v_201 = (_out->blind_status<2);
-  v_204 = (_out->blind_status==1);
+  v_160 = (_out->blind_status>1);
+  v_170 = (_out->blind_status<2);
+  v_173 = (_out->blind_status==1);
+  v_182 = (_out->blind_status<2);
+  v_185 = (_out->blind_status==1);
+  v_194 = (_out->blind_status>1);
+  v_204 = (_out->blind_status<2);
+  v_207 = (_out->blind_status==1);
   if (ns_1_3) {
     ns_2_4_1 = ns_2_4;
   } else {
@@ -3386,10 +3389,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   if (!(ck_27_1)) {
     if (ck_27_2_0) {
-      if (v_298_1) {
-        v_298_2_1 = v_298_2;
+      if (v_301_1) {
+        v_301_2_1 = v_301_2;
       } else {
-        v_298_2_0 = v_298_2;
+        v_301_2_0 = v_301_2;
       };
       if (s_St_9_On_1) {
         s_St_9_On_2_1 = s_St_9_On_2;
@@ -3397,10 +3400,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_St_9_On_2_0 = s_St_9_On_2;
       };
     } else {
-      if (v_293_1) {
-        v_293_2_1 = v_293_2;
+      if (v_296_1) {
+        v_296_2_1 = v_296_2;
       } else {
-        v_293_2_0 = v_293_2;
+        v_296_2_0 = v_296_2;
       };
       if (s_St_9_On_fail_1) {
         s_St_9_On_fail_2_1 = s_St_9_On_fail_2;
@@ -3413,33 +3416,33 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     ck_25_2_1 = ck_25_2;
     if (ck_25_2_1) {
       if (failed_recovered_1) {
-        v_289 = true;
-        v_288_1 = true;
-        v_288_2 = false;
+        v_292 = true;
+        v_291_1 = true;
+        v_291_2 = false;
       } else {
-        v_289 = self->pnr_1;
-        v_288_1 = true;
-        v_288_2 = true;
+        v_292 = self->pnr_1;
+        v_291_1 = true;
+        v_291_2 = true;
       };
-      v_286 = !(c2_1);
-      v_285 = (c1_1&&sw);
-      v_287 = (v_285||v_286);
-      if (v_287) {
+      v_289 = !(c2_1);
+      v_288 = (c1_1&&sw);
+      v_290 = (v_288||v_289);
+      if (v_290) {
         r_1_St_10_Off = true;
         s_1_St_10_Off_1 = false;
         s_1_St_10_Off_2 = true;
       } else {
-        r_1_St_10_Off = v_289;
-        s_1_St_10_Off_1 = v_288_1;
-        s_1_St_10_Off_2 = v_288_2;
+        r_1_St_10_Off = v_292;
+        s_1_St_10_Off_1 = v_291_1;
+        s_1_St_10_Off_2 = v_291_2;
       };
-      v_413 = r_1_St_10_Off;
-      v_409 = s_1_St_10_Off_1;
-      v_410 = s_1_St_10_Off_2;
-      if (v_288_1) {
-        v_288_2_1 = v_288_2;
+      v_416 = r_1_St_10_Off;
+      v_412 = s_1_St_10_Off_1;
+      v_413 = s_1_St_10_Off_2;
+      if (v_291_1) {
+        v_291_2_1 = v_291_2;
       } else {
-        v_288_2_0 = v_288_2;
+        v_291_2_0 = v_291_2;
       };
       if (s_1_St_10_Off_1) {
         s_1_St_10_Off_2_1 = s_1_St_10_Off_2;
@@ -3448,39 +3451,39 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
     } else {
       if (failed_recovered_1) {
-        v_284 = true;
-        v_283_1 = true;
-        v_283_2 = true;
+        v_287 = true;
+        v_286_1 = true;
+        v_286_2 = true;
       } else {
-        v_284 = self->pnr_1;
-        v_283_1 = true;
-        v_283_2 = false;
+        v_287 = self->pnr_1;
+        v_286_1 = true;
+        v_286_2 = false;
       };
-      v_281 = !(c2_1);
-      v_280 = (c1_1&&sw);
-      v_282 = (v_280||v_281);
-      if (v_282) {
+      v_284 = !(c2_1);
+      v_283 = (c1_1&&sw);
+      v_285 = (v_283||v_284);
+      if (v_285) {
         r_1_St_10_Off_fail = true;
       } else {
-        r_1_St_10_Off_fail = v_284;
+        r_1_St_10_Off_fail = v_287;
       };
-      v_413 = r_1_St_10_Off_fail;
-      if (v_282) {
+      v_416 = r_1_St_10_Off_fail;
+      if (v_285) {
         s_1_St_10_Off_fail_1 = false;
       } else {
-        s_1_St_10_Off_fail_1 = v_283_1;
+        s_1_St_10_Off_fail_1 = v_286_1;
       };
-      v_409 = s_1_St_10_Off_fail_1;
-      if (v_282) {
+      v_412 = s_1_St_10_Off_fail_1;
+      if (v_285) {
         s_1_St_10_Off_fail_2 = false;
       } else {
-        s_1_St_10_Off_fail_2 = v_283_2;
+        s_1_St_10_Off_fail_2 = v_286_2;
       };
-      v_410 = s_1_St_10_Off_fail_2;
-      if (v_283_1) {
-        v_283_2_1 = v_283_2;
+      v_413 = s_1_St_10_Off_fail_2;
+      if (v_286_1) {
+        v_286_2_1 = v_286_2;
       } else {
-        v_283_2_0 = v_283_2;
+        v_286_2_0 = v_286_2;
       };
       if (s_1_St_10_Off_fail_1) {
         s_1_St_10_Off_fail_2_1 = s_1_St_10_Off_fail_2;
@@ -3488,71 +3491,71 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_1_St_10_Off_fail_2_0 = s_1_St_10_Off_fail_2;
       };
     };
-    s_1_1 = v_409;
-    s_1_2 = v_410;
-    r_1 = v_413;
+    s_1_1 = v_412;
+    s_1_2 = v_413;
+    r_1 = v_416;
   } else {
     ck_25_2_0 = ck_25_2;
     if (ck_25_2_0) {
       if (failed_recovered_1) {
-        v_279 = true;
-        v_278_1 = false;
-        v_278_2 = false;
+        v_282 = true;
+        v_281_1 = false;
+        v_281_2 = false;
       } else {
-        v_279 = self->pnr_1;
-        v_278_1 = false;
-        v_278_2 = true;
+        v_282 = self->pnr_1;
+        v_281_1 = false;
+        v_281_2 = true;
       };
-      v_276 = !(c2_1);
-      v_275 = (c1_1&&sw);
-      v_277 = (v_275||v_276);
-      if (v_277) {
+      v_279 = !(c2_1);
+      v_278 = (c1_1&&sw);
+      v_280 = (v_278||v_279);
+      if (v_280) {
         r_1_St_10_On = true;
         s_1_St_10_On_1 = true;
         s_1_St_10_On_2 = true;
       } else {
-        r_1_St_10_On = v_279;
-        s_1_St_10_On_1 = v_278_1;
-        s_1_St_10_On_2 = v_278_2;
+        r_1_St_10_On = v_282;
+        s_1_St_10_On_1 = v_281_1;
+        s_1_St_10_On_2 = v_281_2;
       };
-      v_414 = r_1_St_10_On;
-      v_411 = s_1_St_10_On_1;
-      v_412 = s_1_St_10_On_2;
+      v_417 = r_1_St_10_On;
+      v_414 = s_1_St_10_On_1;
+      v_415 = s_1_St_10_On_2;
     } else {
       if (failed_recovered_1) {
-        v_274 = true;
-        v_273_1 = false;
-        v_273_2 = true;
+        v_277 = true;
+        v_276_1 = false;
+        v_276_2 = true;
       } else {
-        v_274 = self->pnr_1;
-        v_273_1 = false;
-        v_273_2 = false;
+        v_277 = self->pnr_1;
+        v_276_1 = false;
+        v_276_2 = false;
       };
-      v_271 = !(c2_1);
-      v_270 = (c1_1&&sw);
-      v_272 = (v_270||v_271);
-      if (v_272) {
+      v_274 = !(c2_1);
+      v_273 = (c1_1&&sw);
+      v_275 = (v_273||v_274);
+      if (v_275) {
         r_1_St_10_On_fail = true;
       } else {
-        r_1_St_10_On_fail = v_274;
+        r_1_St_10_On_fail = v_277;
       };
-      v_414 = r_1_St_10_On_fail;
-      if (v_272) {
+      v_417 = r_1_St_10_On_fail;
+      if (v_275) {
         s_1_St_10_On_fail_1 = true;
       } else {
-        s_1_St_10_On_fail_1 = v_273_1;
+        s_1_St_10_On_fail_1 = v_276_1;
       };
-      v_411 = s_1_St_10_On_fail_1;
-      if (v_272) {
+      v_414 = s_1_St_10_On_fail_1;
+      if (v_275) {
         s_1_St_10_On_fail_2 = false;
       } else {
-        s_1_St_10_On_fail_2 = v_273_2;
+        s_1_St_10_On_fail_2 = v_276_2;
       };
-      v_412 = s_1_St_10_On_fail_2;
+      v_415 = s_1_St_10_On_fail_2;
     };
-    s_1_1 = v_411;
-    s_1_2 = v_412;
-    r_1 = v_414;
+    s_1_1 = v_414;
+    s_1_2 = v_415;
+    r_1 = v_417;
   };
   ck_26_1 = s_1_1;
   ck_26_2 = s_1_2;
@@ -3563,10 +3566,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       nr_1_St_10_Off = false;
       ns_1_St_10_Off_1 = true;
       ns_1_St_10_Off_2 = true;
-      v_399 = light_source_status_St_10_Off;
-      v_405 = nr_1_St_10_Off;
-      v_401 = ns_1_St_10_Off_1;
-      v_402 = ns_1_St_10_Off_2;
+      v_402 = light_source_status_St_10_Off;
+      v_408 = nr_1_St_10_Off;
+      v_404 = ns_1_St_10_Off_1;
+      v_405 = ns_1_St_10_Off_2;
       if (ns_1_St_10_Off_1) {
         ns_1_St_10_Off_2_1 = ns_1_St_10_Off_2;
       } else {
@@ -3574,23 +3577,23 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       };
     } else {
       light_source_status_St_10_Off_fail = 2;
-      v_399 = light_source_status_St_10_Off_fail;
+      v_402 = light_source_status_St_10_Off_fail;
       nr_1_St_10_Off_fail = false;
-      v_405 = nr_1_St_10_Off_fail;
+      v_408 = nr_1_St_10_Off_fail;
       ns_1_St_10_Off_fail_1 = true;
-      v_401 = ns_1_St_10_Off_fail_1;
+      v_404 = ns_1_St_10_Off_fail_1;
       ns_1_St_10_Off_fail_2 = false;
-      v_402 = ns_1_St_10_Off_fail_2;
+      v_405 = ns_1_St_10_Off_fail_2;
       if (ns_1_St_10_Off_fail_1) {
         ns_1_St_10_Off_fail_2_1 = ns_1_St_10_Off_fail_2;
       } else {
         ns_1_St_10_Off_fail_2_0 = ns_1_St_10_Off_fail_2;
       };
     };
-    light_source_status = v_399;
-    ns_1_1 = v_401;
-    ns_1_2 = v_402;
-    nr_1 = v_405;
+    light_source_status = v_402;
+    ns_1_1 = v_404;
+    ns_1_2 = v_405;
+    nr_1 = v_408;
   } else {
     ck_26_2_0 = ck_26_2;
     if (ck_26_2_0) {
@@ -3598,24 +3601,24 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       nr_1_St_10_On = false;
       ns_1_St_10_On_1 = false;
       ns_1_St_10_On_2 = true;
-      v_400 = light_source_status_St_10_On;
-      v_406 = nr_1_St_10_On;
-      v_403 = ns_1_St_10_On_1;
-      v_404 = ns_1_St_10_On_2;
+      v_403 = light_source_status_St_10_On;
+      v_409 = nr_1_St_10_On;
+      v_406 = ns_1_St_10_On_1;
+      v_407 = ns_1_St_10_On_2;
     } else {
       light_source_status_St_10_On_fail = 3;
-      v_400 = light_source_status_St_10_On_fail;
+      v_403 = light_source_status_St_10_On_fail;
       nr_1_St_10_On_fail = false;
-      v_406 = nr_1_St_10_On_fail;
+      v_409 = nr_1_St_10_On_fail;
       ns_1_St_10_On_fail_1 = false;
-      v_403 = ns_1_St_10_On_fail_1;
+      v_406 = ns_1_St_10_On_fail_1;
       ns_1_St_10_On_fail_2 = false;
-      v_404 = ns_1_St_10_On_fail_2;
+      v_407 = ns_1_St_10_On_fail_2;
     };
-    light_source_status = v_400;
-    ns_1_1 = v_403;
-    ns_1_2 = v_404;
-    nr_1 = v_406;
+    light_source_status = v_403;
+    ns_1_1 = v_406;
+    ns_1_2 = v_407;
+    nr_1 = v_409;
   };
   _out->light_status = light_source_status;
   v_59 = (_out->light_status==1);
@@ -3629,13 +3632,13 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_126 = !(v_125);
   v_142 = (_out->light_status==1);
   v_143 = !(v_142);
-  v_153 = (_out->light_status>1);
-  v_163 = (_out->light_status>1);
-  v_175 = (_out->light_status>1);
-  v_187 = (_out->light_status<2);
-  v_197 = (_out->light_status<2);
-  v_209 = (_out->light_status<2);
-  v_214 = (_out->light_status==1);
+  v_156 = (_out->light_status>1);
+  v_166 = (_out->light_status>1);
+  v_178 = (_out->light_status>1);
+  v_190 = (_out->light_status<2);
+  v_200 = (_out->light_status<2);
+  v_212 = (_out->light_status<2);
+  v_217 = (_out->light_status==1);
   if (ns_1_1) {
     ns_1_2_1 = ns_1_2;
   } else {
@@ -3663,10 +3666,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   if (!(ck_25_1)) {
     if (ck_25_2_0) {
-      if (v_278_1) {
-        v_278_2_1 = v_278_2;
+      if (v_281_1) {
+        v_281_2_1 = v_281_2;
       } else {
-        v_278_2_0 = v_278_2;
+        v_281_2_0 = v_281_2;
       };
       if (s_1_St_10_On_1) {
         s_1_St_10_On_2_1 = s_1_St_10_On_2;
@@ -3674,10 +3677,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         s_1_St_10_On_2_0 = s_1_St_10_On_2;
       };
     } else {
-      if (v_273_1) {
-        v_273_2_1 = v_273_2;
+      if (v_276_1) {
+        v_276_2_1 = v_276_2;
       } else {
-        v_273_2_0 = v_273_2;
+        v_276_2_0 = v_276_2;
       };
       if (s_1_St_10_On_fail_1) {
         s_1_St_10_On_fail_2_1 = s_1_St_10_On_fail_2;
@@ -3692,127 +3695,127 @@ void System__controller_step(int change_shift, int worker, int cleaner,
       ck_23_3_1_1 = ck_23_3;
       if (ck_23_3_1_1) {
         if (failed_recovered) {
-          v_245 = true;
-          v_244_1 = true;
-          v_244_2 = true;
-          v_244_3 = false;
+          v_248 = true;
+          v_247_1 = true;
+          v_247_2 = true;
+          v_247_3 = false;
         } else {
-          v_245 = self->pnr_2;
-          v_244_1 = true;
-          v_244_2 = true;
-          v_244_3 = true;
+          v_248 = self->pnr_2;
+          v_247_1 = true;
+          v_247_2 = true;
+          v_247_3 = true;
         };
-        v_243 = !(c2);
-        if (v_243) {
-          v_247 = true;
-          v_246_1 = false;
-          v_246_2 = true;
-          v_246_3 = false;
+        v_246 = !(c2);
+        if (v_246) {
+          v_250 = true;
+          v_249_1 = false;
+          v_249_2 = true;
+          v_249_3 = false;
         } else {
-          v_247 = v_245;
-          v_246_1 = v_244_1;
-          v_246_2 = v_244_2;
-          v_246_3 = v_244_3;
+          v_250 = v_248;
+          v_249_1 = v_247_1;
+          v_249_2 = v_247_2;
+          v_249_3 = v_247_3;
         };
-        v_242 = !(c1);
-        if (v_242) {
+        v_245 = !(c1);
+        if (v_245) {
           r_2_St_11_Max = true;
           s_2_St_11_Max_1 = true;
           s_2_St_11_Max_2 = false;
           s_2_St_11_Max_3 = false;
         } else {
-          r_2_St_11_Max = v_247;
-          s_2_St_11_Max_1 = v_246_1;
-          s_2_St_11_Max_2 = v_246_2;
-          s_2_St_11_Max_3 = v_246_3;
+          r_2_St_11_Max = v_250;
+          s_2_St_11_Max_1 = v_249_1;
+          s_2_St_11_Max_2 = v_249_2;
+          s_2_St_11_Max_3 = v_249_3;
         };
-        v_466 = r_2_St_11_Max;
-        v_448 = s_2_St_11_Max_1;
-        v_449 = s_2_St_11_Max_2;
-        v_450 = s_2_St_11_Max_3;
+        v_469 = r_2_St_11_Max;
+        v_451 = s_2_St_11_Max_1;
+        v_452 = s_2_St_11_Max_2;
+        v_453 = s_2_St_11_Max_3;
       } else {
         if (failed_recovered) {
-          v_239 = true;
-          v_238_1 = true;
-          v_238_2 = true;
-          v_238_3 = true;
+          v_242 = true;
+          v_241_1 = true;
+          v_241_2 = true;
+          v_241_3 = true;
         } else {
-          v_239 = self->pnr_2;
-          v_238_1 = true;
-          v_238_2 = true;
-          v_238_3 = false;
+          v_242 = self->pnr_2;
+          v_241_1 = true;
+          v_241_2 = true;
+          v_241_3 = false;
         };
-        v_237 = !(c2);
-        if (v_237) {
-          v_241 = true;
-          v_240_1 = false;
-          v_240_2 = false;
-          v_240_3 = false;
+        v_240 = !(c2);
+        if (v_240) {
+          v_244 = true;
+          v_243_1 = false;
+          v_243_2 = false;
+          v_243_3 = false;
         } else {
-          v_241 = v_239;
-          v_240_1 = v_238_1;
-          v_240_2 = v_238_2;
-          v_240_3 = v_238_3;
+          v_244 = v_242;
+          v_243_1 = v_241_1;
+          v_243_2 = v_241_2;
+          v_243_3 = v_241_3;
         };
-        v_236 = !(c1);
-        if (v_236) {
+        v_239 = !(c1);
+        if (v_239) {
           r_2_St_11_Max_fail = true;
         } else {
-          r_2_St_11_Max_fail = v_241;
+          r_2_St_11_Max_fail = v_244;
         };
-        v_466 = r_2_St_11_Max_fail;
-        if (v_236) {
+        v_469 = r_2_St_11_Max_fail;
+        if (v_239) {
           s_2_St_11_Max_fail_1 = false;
         } else {
-          s_2_St_11_Max_fail_1 = v_240_1;
+          s_2_St_11_Max_fail_1 = v_243_1;
         };
-        v_448 = s_2_St_11_Max_fail_1;
-        if (v_236) {
+        v_451 = s_2_St_11_Max_fail_1;
+        if (v_239) {
           s_2_St_11_Max_fail_2 = true;
         } else {
-          s_2_St_11_Max_fail_2 = v_240_2;
+          s_2_St_11_Max_fail_2 = v_243_2;
         };
-        v_449 = s_2_St_11_Max_fail_2;
-        if (v_236) {
+        v_452 = s_2_St_11_Max_fail_2;
+        if (v_239) {
           s_2_St_11_Max_fail_3 = true;
         } else {
-          s_2_St_11_Max_fail_3 = v_240_3;
+          s_2_St_11_Max_fail_3 = v_243_3;
         };
-        v_450 = s_2_St_11_Max_fail_3;
+        v_453 = s_2_St_11_Max_fail_3;
       };
-      v_460 = v_448;
-      v_461 = v_449;
-      v_462 = v_450;
-      v_468 = v_466;
+      v_463 = v_451;
+      v_464 = v_452;
+      v_465 = v_453;
+      v_471 = v_469;
       if (ck_23_3_1_1) {
-        if (v_244_1) {
-          v_244_2_1 = v_244_2;
-          if (v_244_2_1) {
-            v_244_3_1_1 = v_244_3;
+        if (v_247_1) {
+          v_247_2_1 = v_247_2;
+          if (v_247_2_1) {
+            v_247_3_1_1 = v_247_3;
           } else {
-            v_244_3_1_0 = v_244_3;
+            v_247_3_1_0 = v_247_3;
           };
         } else {
-          v_244_2_0 = v_244_2;
-          if (v_244_2_0) {
-            v_244_3_0_1 = v_244_3;
+          v_247_2_0 = v_247_2;
+          if (v_247_2_0) {
+            v_247_3_0_1 = v_247_3;
           } else {
-            v_244_3_0_0 = v_244_3;
+            v_247_3_0_0 = v_247_3;
           };
         };
-        if (v_246_1) {
-          v_246_2_1 = v_246_2;
-          if (v_246_2_1) {
-            v_246_3_1_1 = v_246_3;
+        if (v_249_1) {
+          v_249_2_1 = v_249_2;
+          if (v_249_2_1) {
+            v_249_3_1_1 = v_249_3;
           } else {
-            v_246_3_1_0 = v_246_3;
+            v_249_3_1_0 = v_249_3;
           };
         } else {
-          v_246_2_0 = v_246_2;
-          if (v_246_2_0) {
-            v_246_3_0_1 = v_246_3;
+          v_249_2_0 = v_249_2;
+          if (v_249_2_0) {
+            v_249_3_0_1 = v_249_3;
           } else {
-            v_246_3_0_0 = v_246_3;
+            v_249_3_0_0 = v_249_3;
           };
         };
         if (s_2_St_11_Max_1) {
@@ -3831,34 +3834,34 @@ void System__controller_step(int change_shift, int worker, int cleaner,
           };
         };
       } else {
-        if (v_238_1) {
-          v_238_2_1 = v_238_2;
-          if (v_238_2_1) {
-            v_238_3_1_1 = v_238_3;
+        if (v_241_1) {
+          v_241_2_1 = v_241_2;
+          if (v_241_2_1) {
+            v_241_3_1_1 = v_241_3;
           } else {
-            v_238_3_1_0 = v_238_3;
+            v_241_3_1_0 = v_241_3;
           };
         } else {
-          v_238_2_0 = v_238_2;
-          if (v_238_2_0) {
-            v_238_3_0_1 = v_238_3;
+          v_241_2_0 = v_241_2;
+          if (v_241_2_0) {
+            v_241_3_0_1 = v_241_3;
           } else {
-            v_238_3_0_0 = v_238_3;
+            v_241_3_0_0 = v_241_3;
           };
         };
-        if (v_240_1) {
-          v_240_2_1 = v_240_2;
-          if (v_240_2_1) {
-            v_240_3_1_1 = v_240_3;
+        if (v_243_1) {
+          v_243_2_1 = v_243_2;
+          if (v_243_2_1) {
+            v_243_3_1_1 = v_243_3;
           } else {
-            v_240_3_1_0 = v_240_3;
+            v_243_3_1_0 = v_243_3;
           };
         } else {
-          v_240_2_0 = v_240_2;
-          if (v_240_2_0) {
-            v_240_3_0_1 = v_240_3;
+          v_243_2_0 = v_243_2;
+          if (v_243_2_0) {
+            v_243_3_0_1 = v_243_3;
           } else {
-            v_240_3_0_0 = v_240_3;
+            v_243_3_0_0 = v_243_3;
           };
         };
         if (s_2_St_11_Max_fail_1) {
@@ -3880,87 +3883,87 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     } else {
       ck_23_3_1_0 = ck_23_3;
       if (ck_23_3_1_0) {
-        v_467 = true;
-        v_451 = true;
-        v_452 = true;
-        v_453 = true;
+        v_470 = true;
+        v_454 = true;
+        v_455 = true;
+        v_456 = true;
       } else {
         if (failed_recovered) {
-          v_257 = true;
-          v_256_1 = false;
-          v_256_2 = true;
-          v_256_3 = true;
+          v_260 = true;
+          v_259_1 = false;
+          v_259_2 = true;
+          v_259_3 = true;
         } else {
-          v_257 = self->pnr_2;
-          v_256_1 = true;
-          v_256_2 = false;
-          v_256_3 = false;
+          v_260 = self->pnr_2;
+          v_259_1 = true;
+          v_259_2 = false;
+          v_259_3 = false;
         };
-        v_255 = !(c2);
-        if (v_255) {
-          v_259 = true;
-          v_258_1 = true;
-          v_258_2 = true;
-          v_258_3 = true;
+        v_258 = !(c2);
+        if (v_258) {
+          v_262 = true;
+          v_261_1 = true;
+          v_261_2 = true;
+          v_261_3 = true;
         } else {
-          v_259 = v_257;
-          v_258_1 = v_256_1;
-          v_258_2 = v_256_2;
-          v_258_3 = v_256_3;
+          v_262 = v_260;
+          v_261_1 = v_259_1;
+          v_261_2 = v_259_2;
+          v_261_3 = v_259_3;
         };
-        v_254 = !(c1);
-        if (v_254) {
+        v_257 = !(c1);
+        if (v_257) {
           r_2_St_11_Min = true;
         } else {
-          r_2_St_11_Min = v_259;
+          r_2_St_11_Min = v_262;
         };
-        v_467 = r_2_St_11_Min;
-        if (v_254) {
+        v_470 = r_2_St_11_Min;
+        if (v_257) {
           s_2_St_11_Min_1 = false;
         } else {
-          s_2_St_11_Min_1 = v_258_1;
+          s_2_St_11_Min_1 = v_261_1;
         };
-        v_451 = s_2_St_11_Min_1;
-        if (v_254) {
+        v_454 = s_2_St_11_Min_1;
+        if (v_257) {
           s_2_St_11_Min_2 = true;
         } else {
-          s_2_St_11_Min_2 = v_258_2;
+          s_2_St_11_Min_2 = v_261_2;
         };
-        v_452 = s_2_St_11_Min_2;
-        if (v_254) {
+        v_455 = s_2_St_11_Min_2;
+        if (v_257) {
           s_2_St_11_Min_3 = false;
         } else {
-          s_2_St_11_Min_3 = v_258_3;
+          s_2_St_11_Min_3 = v_261_3;
         };
-        v_453 = s_2_St_11_Min_3;
-        if (v_256_1) {
-          v_256_2_1 = v_256_2;
-          if (v_256_2_1) {
-            v_256_3_1_1 = v_256_3;
+        v_456 = s_2_St_11_Min_3;
+        if (v_259_1) {
+          v_259_2_1 = v_259_2;
+          if (v_259_2_1) {
+            v_259_3_1_1 = v_259_3;
           } else {
-            v_256_3_1_0 = v_256_3;
+            v_259_3_1_0 = v_259_3;
           };
         } else {
-          v_256_2_0 = v_256_2;
-          if (v_256_2_0) {
-            v_256_3_0_1 = v_256_3;
+          v_259_2_0 = v_259_2;
+          if (v_259_2_0) {
+            v_259_3_0_1 = v_259_3;
           } else {
-            v_256_3_0_0 = v_256_3;
+            v_259_3_0_0 = v_259_3;
           };
         };
-        if (v_258_1) {
-          v_258_2_1 = v_258_2;
-          if (v_258_2_1) {
-            v_258_3_1_1 = v_258_3;
+        if (v_261_1) {
+          v_261_2_1 = v_261_2;
+          if (v_261_2_1) {
+            v_261_3_1_1 = v_261_3;
           } else {
-            v_258_3_1_0 = v_258_3;
+            v_261_3_1_0 = v_261_3;
           };
         } else {
-          v_258_2_0 = v_258_2;
-          if (v_258_2_0) {
-            v_258_3_0_1 = v_258_3;
+          v_261_2_0 = v_261_2;
+          if (v_261_2_0) {
+            v_261_3_0_1 = v_261_3;
           } else {
-            v_258_3_0_0 = v_258_3;
+            v_261_3_0_0 = v_261_3;
           };
         };
         if (s_2_St_11_Min_1) {
@@ -3979,125 +3982,239 @@ void System__controller_step(int change_shift, int worker, int cleaner,
           };
         };
       };
-      v_460 = v_451;
-      v_461 = v_452;
-      v_462 = v_453;
-      v_468 = v_467;
+      v_463 = v_454;
+      v_464 = v_455;
+      v_465 = v_456;
+      v_471 = v_470;
     };
-    s_2_1 = v_460;
-    s_2_2 = v_461;
-    s_2_3 = v_462;
-    r_2 = v_468;
+    s_2_1 = v_463;
+    s_2_2 = v_464;
+    s_2_3 = v_465;
+    r_2 = v_471;
   } else {
     ck_23_2_0 = ck_23_2;
     if (ck_23_2_0) {
       ck_23_3_0_1 = ck_23_3;
       if (ck_23_3_0_1) {
         if (failed_recovered) {
-          v_251 = true;
-          v_250_1 = true;
-          v_250_2 = false;
-          v_250_3 = false;
+          v_254 = true;
+          v_253_1 = true;
+          v_253_2 = false;
+          v_253_3 = false;
         } else {
-          v_251 = self->pnr_2;
-          v_250_1 = false;
-          v_250_2 = true;
-          v_250_3 = true;
+          v_254 = self->pnr_2;
+          v_253_1 = false;
+          v_253_2 = true;
+          v_253_3 = true;
         };
-        v_249 = !(c2);
-        if (v_249) {
-          v_253 = true;
-          v_252_1 = true;
-          v_252_2 = true;
-          v_252_3 = false;
+        v_252 = !(c2);
+        if (v_252) {
+          v_256 = true;
+          v_255_1 = true;
+          v_255_2 = true;
+          v_255_3 = false;
         } else {
-          v_253 = v_251;
-          v_252_1 = v_250_1;
-          v_252_2 = v_250_2;
-          v_252_3 = v_250_3;
+          v_256 = v_254;
+          v_255_1 = v_253_1;
+          v_255_2 = v_253_2;
+          v_255_3 = v_253_3;
         };
-        v_248 = !(c1);
-        if (v_248) {
+        v_251 = !(c1);
+        if (v_251) {
           r_2_St_11_Min_fail = true;
         } else {
-          r_2_St_11_Min_fail = v_253;
+          r_2_St_11_Min_fail = v_256;
         };
-        v_469 = r_2_St_11_Min_fail;
-        if (v_248) {
+        v_472 = r_2_St_11_Min_fail;
+        if (v_251) {
           s_2_St_11_Min_fail_1 = false;
         } else {
-          s_2_St_11_Min_fail_1 = v_252_1;
+          s_2_St_11_Min_fail_1 = v_255_1;
         };
-        v_454 = s_2_St_11_Min_fail_1;
-        if (v_248) {
+        v_457 = s_2_St_11_Min_fail_1;
+        if (v_251) {
           s_2_St_11_Min_fail_2 = false;
         } else {
-          s_2_St_11_Min_fail_2 = v_252_2;
+          s_2_St_11_Min_fail_2 = v_255_2;
         };
-        v_455 = s_2_St_11_Min_fail_2;
-        if (v_248) {
+        v_458 = s_2_St_11_Min_fail_2;
+        if (v_251) {
           s_2_St_11_Min_fail_3 = false;
         } else {
-          s_2_St_11_Min_fail_3 = v_252_3;
+          s_2_St_11_Min_fail_3 = v_255_3;
         };
-        v_456 = s_2_St_11_Min_fail_3;
+        v_459 = s_2_St_11_Min_fail_3;
       } else {
         if (failed_recovered) {
-          v_267 = true;
-          v_266_1 = false;
-          v_266_2 = false;
-          v_266_3 = false;
+          v_270 = true;
+          v_269_1 = false;
+          v_269_2 = false;
+          v_269_3 = false;
         } else {
-          v_267 = self->pnr_2;
-          v_266_1 = false;
-          v_266_2 = true;
-          v_266_3 = false;
+          v_270 = self->pnr_2;
+          v_269_1 = false;
+          v_269_2 = true;
+          v_269_3 = false;
         };
-        v_265 = !(c2);
-        if (v_265) {
-          v_269 = true;
+        v_268 = !(c2);
+        if (v_268) {
+          v_272 = true;
         } else {
-          v_269 = v_267;
+          v_272 = v_270;
         };
         if (c1) {
           r_2_St_11_Off = true;
         } else {
-          r_2_St_11_Off = v_269;
+          r_2_St_11_Off = v_272;
         };
-        if (v_265) {
-          v_268_1 = true;
+        if (v_268) {
+          v_271_1 = true;
         } else {
-          v_268_1 = v_266_1;
+          v_271_1 = v_269_1;
         };
         if (c1) {
           s_2_St_11_Off_1 = true;
         } else {
-          s_2_St_11_Off_1 = v_268_1;
+          s_2_St_11_Off_1 = v_271_1;
         };
-        if (v_265) {
-          v_268_2 = true;
+        if (v_268) {
+          v_271_2 = true;
         } else {
-          v_268_2 = v_266_2;
+          v_271_2 = v_269_2;
         };
         if (c1) {
           s_2_St_11_Off_2 = false;
         } else {
-          s_2_St_11_Off_2 = v_268_2;
+          s_2_St_11_Off_2 = v_271_2;
         };
-        if (v_265) {
-          v_268_3 = true;
+        if (v_268) {
+          v_271_3 = true;
         } else {
-          v_268_3 = v_266_3;
+          v_271_3 = v_269_3;
         };
         if (c1) {
           s_2_St_11_Off_3 = false;
         } else {
-          s_2_St_11_Off_3 = v_268_3;
+          s_2_St_11_Off_3 = v_271_3;
         };
-        v_469 = r_2_St_11_Off;
-        v_454 = s_2_St_11_Off_1;
-        v_455 = s_2_St_11_Off_2;
-        v_456 = s_2_St_11_Off_3;
+        v_472 = r_2_St_11_Off;
+        v_457 = s_2_St_11_Off_1;
+        v_458 = s_2_St_11_Off_2;
+        v_459 = s_2_St_11_Off_3;
+        if (v_269_1) {
+          v_269_2_1 = v_269_2;
+          if (v_269_2_1) {
+            v_269_3_1_1 = v_269_3;
+          } else {
+            v_269_3_1_0 = v_269_3;
+          };
+        } else {
+          v_269_2_0 = v_269_2;
+          if (v_269_2_0) {
+            v_269_3_0_1 = v_269_3;
+          } else {
+            v_269_3_0_0 = v_269_3;
+          };
+        };
+        if (v_271_1) {
+          v_271_2_1 = v_271_2;
+          if (v_271_2_1) {
+            v_271_3_1_1 = v_271_3;
+          } else {
+            v_271_3_1_0 = v_271_3;
+          };
+        } else {
+          v_271_2_0 = v_271_2;
+          if (v_271_2_0) {
+            v_271_3_0_1 = v_271_3;
+          } else {
+            v_271_3_0_0 = v_271_3;
+          };
+        };
+      };
+      v_466 = v_457;
+      v_467 = v_458;
+      v_468 = v_459;
+      v_474 = v_472;
+    } else {
+      ck_23_3_0_0 = ck_23_3;
+      if (ck_23_3_0_0) {
+        v_473 = true;
+        v_460 = true;
+        v_461 = true;
+        v_462 = true;
+      } else {
+        if (failed_recovered) {
+          v_265 = true;
+          v_264_1 = false;
+          v_264_2 = true;
+          v_264_3 = false;
+        } else {
+          v_265 = self->pnr_2;
+          v_264_1 = false;
+          v_264_2 = false;
+          v_264_3 = false;
+        };
+        v_263 = !(c2);
+        if (v_263) {
+          v_267 = true;
+        } else {
+          v_267 = v_265;
+        };
+        if (c1) {
+          r_2_St_11_Off_fail = true;
+        } else {
+          r_2_St_11_Off_fail = v_267;
+        };
+        v_473 = r_2_St_11_Off_fail;
+        if (v_263) {
+          v_266_1 = true;
+        } else {
+          v_266_1 = v_264_1;
+        };
+        if (c1) {
+          s_2_St_11_Off_fail_1 = false;
+        } else {
+          s_2_St_11_Off_fail_1 = v_266_1;
+        };
+        v_460 = s_2_St_11_Off_fail_1;
+        if (v_263) {
+          v_266_2 = true;
+        } else {
+          v_266_2 = v_264_2;
+        };
+        if (c1) {
+          s_2_St_11_Off_fail_2 = true;
+        } else {
+          s_2_St_11_Off_fail_2 = v_266_2;
+        };
+        v_461 = s_2_St_11_Off_fail_2;
+        if (v_263) {
+          v_266_3 = false;
+        } else {
+          v_266_3 = v_264_3;
+        };
+        if (c1) {
+          s_2_St_11_Off_fail_3 = true;
+        } else {
+          s_2_St_11_Off_fail_3 = v_266_3;
+        };
+        v_462 = s_2_St_11_Off_fail_3;
+        if (v_264_1) {
+          v_264_2_1 = v_264_2;
+          if (v_264_2_1) {
+            v_264_3_1_1 = v_264_3;
+          } else {
+            v_264_3_1_0 = v_264_3;
+          };
+        } else {
+          v_264_2_0 = v_264_2;
+          if (v_264_2_0) {
+            v_264_3_0_1 = v_264_3;
+          } else {
+            v_264_3_0_0 = v_264_3;
+          };
+        };
         if (v_266_1) {
           v_266_2_1 = v_266_2;
           if (v_266_2_1) {
@@ -4111,120 +4228,6 @@ void System__controller_step(int change_shift, int worker, int cleaner,
             v_266_3_0_1 = v_266_3;
           } else {
             v_266_3_0_0 = v_266_3;
-          };
-        };
-        if (v_268_1) {
-          v_268_2_1 = v_268_2;
-          if (v_268_2_1) {
-            v_268_3_1_1 = v_268_3;
-          } else {
-            v_268_3_1_0 = v_268_3;
-          };
-        } else {
-          v_268_2_0 = v_268_2;
-          if (v_268_2_0) {
-            v_268_3_0_1 = v_268_3;
-          } else {
-            v_268_3_0_0 = v_268_3;
-          };
-        };
-      };
-      v_463 = v_454;
-      v_464 = v_455;
-      v_465 = v_456;
-      v_471 = v_469;
-    } else {
-      ck_23_3_0_0 = ck_23_3;
-      if (ck_23_3_0_0) {
-        v_470 = true;
-        v_457 = true;
-        v_458 = true;
-        v_459 = true;
-      } else {
-        if (failed_recovered) {
-          v_262 = true;
-          v_261_1 = false;
-          v_261_2 = true;
-          v_261_3 = false;
-        } else {
-          v_262 = self->pnr_2;
-          v_261_1 = false;
-          v_261_2 = false;
-          v_261_3 = false;
-        };
-        v_260 = !(c2);
-        if (v_260) {
-          v_264 = true;
-        } else {
-          v_264 = v_262;
-        };
-        if (c1) {
-          r_2_St_11_Off_fail = true;
-        } else {
-          r_2_St_11_Off_fail = v_264;
-        };
-        v_470 = r_2_St_11_Off_fail;
-        if (v_260) {
-          v_263_1 = true;
-        } else {
-          v_263_1 = v_261_1;
-        };
-        if (c1) {
-          s_2_St_11_Off_fail_1 = false;
-        } else {
-          s_2_St_11_Off_fail_1 = v_263_1;
-        };
-        v_457 = s_2_St_11_Off_fail_1;
-        if (v_260) {
-          v_263_2 = true;
-        } else {
-          v_263_2 = v_261_2;
-        };
-        if (c1) {
-          s_2_St_11_Off_fail_2 = true;
-        } else {
-          s_2_St_11_Off_fail_2 = v_263_2;
-        };
-        v_458 = s_2_St_11_Off_fail_2;
-        if (v_260) {
-          v_263_3 = false;
-        } else {
-          v_263_3 = v_261_3;
-        };
-        if (c1) {
-          s_2_St_11_Off_fail_3 = true;
-        } else {
-          s_2_St_11_Off_fail_3 = v_263_3;
-        };
-        v_459 = s_2_St_11_Off_fail_3;
-        if (v_261_1) {
-          v_261_2_1 = v_261_2;
-          if (v_261_2_1) {
-            v_261_3_1_1 = v_261_3;
-          } else {
-            v_261_3_1_0 = v_261_3;
-          };
-        } else {
-          v_261_2_0 = v_261_2;
-          if (v_261_2_0) {
-            v_261_3_0_1 = v_261_3;
-          } else {
-            v_261_3_0_0 = v_261_3;
-          };
-        };
-        if (v_263_1) {
-          v_263_2_1 = v_263_2;
-          if (v_263_2_1) {
-            v_263_3_1_1 = v_263_3;
-          } else {
-            v_263_3_1_0 = v_263_3;
-          };
-        } else {
-          v_263_2_0 = v_263_2;
-          if (v_263_2_0) {
-            v_263_3_0_1 = v_263_3;
-          } else {
-            v_263_3_0_0 = v_263_3;
           };
         };
         if (s_2_St_11_Off_fail_1) {
@@ -4243,15 +4246,15 @@ void System__controller_step(int change_shift, int worker, int cleaner,
           };
         };
       };
-      v_463 = v_457;
-      v_464 = v_458;
-      v_465 = v_459;
-      v_471 = v_470;
+      v_466 = v_460;
+      v_467 = v_461;
+      v_468 = v_462;
+      v_474 = v_473;
     };
-    s_2_1 = v_463;
-    s_2_2 = v_464;
-    s_2_3 = v_465;
-    r_2 = v_471;
+    s_2_1 = v_466;
+    s_2_2 = v_467;
+    s_2_3 = v_468;
+    r_2 = v_474;
   };
   ck_24_1 = s_2_1;
   ck_24_2 = s_2_2;
@@ -4266,28 +4269,28 @@ void System__controller_step(int change_shift, int worker, int cleaner,
         ns_2_St_11_Max_1 = true;
         ns_2_St_11_Max_2 = true;
         ns_2_St_11_Max_3 = true;
-        v_415 = air_status_1_St_11_Max;
-        v_439 = nr_2_St_11_Max;
-        v_421 = ns_2_St_11_Max_1;
-        v_422 = ns_2_St_11_Max_2;
-        v_423 = ns_2_St_11_Max_3;
+        v_418 = air_status_1_St_11_Max;
+        v_442 = nr_2_St_11_Max;
+        v_424 = ns_2_St_11_Max_1;
+        v_425 = ns_2_St_11_Max_2;
+        v_426 = ns_2_St_11_Max_3;
       } else {
         air_status_1_St_11_Max_fail = 5;
-        v_415 = air_status_1_St_11_Max_fail;
+        v_418 = air_status_1_St_11_Max_fail;
         nr_2_St_11_Max_fail = false;
-        v_439 = nr_2_St_11_Max_fail;
+        v_442 = nr_2_St_11_Max_fail;
         ns_2_St_11_Max_fail_1 = true;
-        v_421 = ns_2_St_11_Max_fail_1;
+        v_424 = ns_2_St_11_Max_fail_1;
         ns_2_St_11_Max_fail_2 = true;
-        v_422 = ns_2_St_11_Max_fail_2;
+        v_425 = ns_2_St_11_Max_fail_2;
         ns_2_St_11_Max_fail_3 = false;
-        v_423 = ns_2_St_11_Max_fail_3;
+        v_426 = ns_2_St_11_Max_fail_3;
       };
-      v_417 = v_415;
-      v_433 = v_421;
-      v_434 = v_422;
-      v_435 = v_423;
-      v_441 = v_439;
+      v_420 = v_418;
+      v_436 = v_424;
+      v_437 = v_425;
+      v_438 = v_426;
+      v_444 = v_442;
       if (ck_24_3_1_1) {
         if (ns_2_St_11_Max_1) {
           ns_2_St_11_Max_2_1 = ns_2_St_11_Max_2;
@@ -4324,22 +4327,22 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     } else {
       ck_24_3_1_0 = ck_24_3;
       if (ck_24_3_1_0) {
-        v_416 = 0;
-        v_440 = true;
-        v_424 = true;
-        v_425 = true;
-        v_426 = true;
+        v_419 = 0;
+        v_443 = true;
+        v_427 = true;
+        v_428 = true;
+        v_429 = true;
       } else {
         air_status_1_St_11_Min = 1;
-        v_416 = air_status_1_St_11_Min;
+        v_419 = air_status_1_St_11_Min;
         nr_2_St_11_Min = false;
-        v_440 = nr_2_St_11_Min;
+        v_443 = nr_2_St_11_Min;
         ns_2_St_11_Min_1 = true;
-        v_424 = ns_2_St_11_Min_1;
+        v_427 = ns_2_St_11_Min_1;
         ns_2_St_11_Min_2 = false;
-        v_425 = ns_2_St_11_Min_2;
+        v_428 = ns_2_St_11_Min_2;
         ns_2_St_11_Min_3 = false;
-        v_426 = ns_2_St_11_Min_3;
+        v_429 = ns_2_St_11_Min_3;
         if (ns_2_St_11_Min_1) {
           ns_2_St_11_Min_2_1 = ns_2_St_11_Min_2;
           if (ns_2_St_11_Min_2_1) {
@@ -4356,68 +4359,68 @@ void System__controller_step(int change_shift, int worker, int cleaner,
           };
         };
       };
-      v_417 = v_416;
-      v_433 = v_424;
-      v_434 = v_425;
-      v_435 = v_426;
-      v_441 = v_440;
+      v_420 = v_419;
+      v_436 = v_427;
+      v_437 = v_428;
+      v_438 = v_429;
+      v_444 = v_443;
     };
-    air_status_1 = v_417;
-    ns_2_1 = v_433;
-    ns_2_2 = v_434;
-    ns_2_3 = v_435;
-    nr_2 = v_441;
+    air_status_1 = v_420;
+    ns_2_1 = v_436;
+    ns_2_2 = v_437;
+    ns_2_3 = v_438;
+    nr_2 = v_444;
   } else {
     ck_24_2_0 = ck_24_2;
     if (ck_24_2_0) {
       ck_24_3_0_1 = ck_24_3;
       if (ck_24_3_0_1) {
         air_status_1_St_11_Min_fail = 4;
-        v_418 = air_status_1_St_11_Min_fail;
+        v_421 = air_status_1_St_11_Min_fail;
         nr_2_St_11_Min_fail = false;
-        v_442 = nr_2_St_11_Min_fail;
+        v_445 = nr_2_St_11_Min_fail;
         ns_2_St_11_Min_fail_1 = false;
-        v_427 = ns_2_St_11_Min_fail_1;
+        v_430 = ns_2_St_11_Min_fail_1;
         ns_2_St_11_Min_fail_2 = true;
-        v_428 = ns_2_St_11_Min_fail_2;
+        v_431 = ns_2_St_11_Min_fail_2;
         ns_2_St_11_Min_fail_3 = true;
-        v_429 = ns_2_St_11_Min_fail_3;
+        v_432 = ns_2_St_11_Min_fail_3;
       } else {
         air_status_1_St_11_Off = 0;
         nr_2_St_11_Off = false;
         ns_2_St_11_Off_1 = false;
         ns_2_St_11_Off_2 = true;
         ns_2_St_11_Off_3 = false;
-        v_418 = air_status_1_St_11_Off;
-        v_442 = nr_2_St_11_Off;
-        v_427 = ns_2_St_11_Off_1;
-        v_428 = ns_2_St_11_Off_2;
-        v_429 = ns_2_St_11_Off_3;
+        v_421 = air_status_1_St_11_Off;
+        v_445 = nr_2_St_11_Off;
+        v_430 = ns_2_St_11_Off_1;
+        v_431 = ns_2_St_11_Off_2;
+        v_432 = ns_2_St_11_Off_3;
       };
-      v_420 = v_418;
-      v_436 = v_427;
-      v_437 = v_428;
-      v_438 = v_429;
-      v_444 = v_442;
+      v_423 = v_421;
+      v_439 = v_430;
+      v_440 = v_431;
+      v_441 = v_432;
+      v_447 = v_445;
     } else {
       ck_24_3_0_0 = ck_24_3;
       if (ck_24_3_0_0) {
-        v_419 = 0;
-        v_443 = true;
-        v_430 = true;
-        v_431 = true;
-        v_432 = true;
+        v_422 = 0;
+        v_446 = true;
+        v_433 = true;
+        v_434 = true;
+        v_435 = true;
       } else {
         air_status_1_St_11_Off_fail = 3;
-        v_419 = air_status_1_St_11_Off_fail;
+        v_422 = air_status_1_St_11_Off_fail;
         nr_2_St_11_Off_fail = false;
-        v_443 = nr_2_St_11_Off_fail;
+        v_446 = nr_2_St_11_Off_fail;
         ns_2_St_11_Off_fail_1 = false;
-        v_430 = ns_2_St_11_Off_fail_1;
+        v_433 = ns_2_St_11_Off_fail_1;
         ns_2_St_11_Off_fail_2 = false;
-        v_431 = ns_2_St_11_Off_fail_2;
+        v_434 = ns_2_St_11_Off_fail_2;
         ns_2_St_11_Off_fail_3 = false;
-        v_432 = ns_2_St_11_Off_fail_3;
+        v_435 = ns_2_St_11_Off_fail_3;
         if (ns_2_St_11_Off_fail_1) {
           ns_2_St_11_Off_fail_2_1 = ns_2_St_11_Off_fail_2;
           if (ns_2_St_11_Off_fail_2_1) {
@@ -4434,17 +4437,17 @@ void System__controller_step(int change_shift, int worker, int cleaner,
           };
         };
       };
-      v_420 = v_419;
-      v_436 = v_430;
-      v_437 = v_431;
-      v_438 = v_432;
-      v_444 = v_443;
+      v_423 = v_422;
+      v_439 = v_433;
+      v_440 = v_434;
+      v_441 = v_435;
+      v_447 = v_446;
     };
-    air_status_1 = v_420;
-    ns_2_1 = v_436;
-    ns_2_2 = v_437;
-    ns_2_3 = v_438;
-    nr_2 = v_444;
+    air_status_1 = v_423;
+    ns_2_1 = v_439;
+    ns_2_2 = v_440;
+    ns_2_3 = v_441;
+    nr_2 = v_447;
   };
   _out->air_status = air_status_1;
   v_65 = (_out->air_status>2);
@@ -4459,16 +4462,18 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_132 = !(v_131);
   v_148 = (_out->air_status==1);
   v_149 = !(v_148);
-  v_155 = (_out->air_status>2);
-  v_165 = (_out->air_status>2);
-  v_177 = (_out->air_status<3);
-  v_183 = (_out->air_status==1);
-  v_184 = (v_182&&v_183);
-  v_189 = (_out->air_status>2);
-  v_199 = (_out->air_status>2);
-  v_211 = (_out->air_status<3);
-  v_215 = (_out->air_status==1);
-  v_216 = (v_214&&v_215);
+  v_151 = (_out->air_status==2);
+  v_152 = !(v_151);
+  v_158 = (_out->air_status>2);
+  v_168 = (_out->air_status>2);
+  v_180 = (_out->air_status<3);
+  v_186 = (_out->air_status==1);
+  v_187 = (v_185&&v_186);
+  v_192 = (_out->air_status>2);
+  v_202 = (_out->air_status>2);
+  v_214 = (_out->air_status<3);
+  v_218 = (_out->air_status==1);
+  v_219 = (v_217&&v_218);
   if (ns_2_1) {
     ns_2_2_1 = ns_2_2;
     if (ns_2_2_1) {
@@ -4539,34 +4544,34 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   if (!(ck_23_1)) {
     if (ck_23_2_0) {
       if (ck_23_3_0_1) {
-        if (v_250_1) {
-          v_250_2_1 = v_250_2;
-          if (v_250_2_1) {
-            v_250_3_1_1 = v_250_3;
+        if (v_253_1) {
+          v_253_2_1 = v_253_2;
+          if (v_253_2_1) {
+            v_253_3_1_1 = v_253_3;
           } else {
-            v_250_3_1_0 = v_250_3;
+            v_253_3_1_0 = v_253_3;
           };
         } else {
-          v_250_2_0 = v_250_2;
-          if (v_250_2_0) {
-            v_250_3_0_1 = v_250_3;
+          v_253_2_0 = v_253_2;
+          if (v_253_2_0) {
+            v_253_3_0_1 = v_253_3;
           } else {
-            v_250_3_0_0 = v_250_3;
+            v_253_3_0_0 = v_253_3;
           };
         };
-        if (v_252_1) {
-          v_252_2_1 = v_252_2;
-          if (v_252_2_1) {
-            v_252_3_1_1 = v_252_3;
+        if (v_255_1) {
+          v_255_2_1 = v_255_2;
+          if (v_255_2_1) {
+            v_255_3_1_1 = v_255_3;
           } else {
-            v_252_3_1_0 = v_252_3;
+            v_255_3_1_0 = v_255_3;
           };
         } else {
-          v_252_2_0 = v_252_2;
-          if (v_252_2_0) {
-            v_252_3_0_1 = v_252_3;
+          v_255_2_0 = v_255_2;
+          if (v_255_2_0) {
+            v_255_3_0_1 = v_255_3;
           } else {
-            v_252_3_0_0 = v_252_3;
+            v_255_3_0_0 = v_255_3;
           };
         };
         if (s_2_St_11_Min_fail_1) {
@@ -4604,8 +4609,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     };
   };
   if (self->ck_21_1) {
-    v_235 = !(c_3);
-    if (v_235) {
+    v_238 = !(c_3);
+    if (v_238) {
       r_3_St_12_Closed = true;
       s_3_St_12_Closed_1 = false;
     } else {
@@ -4650,8 +4655,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_110 = !(_out->window_open);
   v_123 = !(_out->window_open);
   v_140 = !(_out->window_open);
-  v_171 = (_out->window_open&&v_170);
-  v_205 = (_out->window_open&&v_204);
+  v_174 = (_out->window_open&&v_173);
+  v_208 = (_out->window_open&&v_207);
   if (self->ck_19_1) {
     if (c_2) {
       r_4_St_13_Off = true;
@@ -4663,14 +4668,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r_4 = r_4_St_13_Off;
     s_4_1 = s_4_St_13_Off_1;
   } else {
-    v_234 = !(c_2);
-    if (v_234) {
+    v_237 = !(c_2);
+    if (v_237) {
       r_4_St_13_On = true;
     } else {
       r_4_St_13_On = self->pnr_4;
     };
     r_4 = r_4_St_13_On;
-    if (v_234) {
+    if (v_237) {
       s_4_St_13_On_1 = true;
     } else {
       s_4_St_13_On_1 = false;
@@ -4705,6 +4710,7 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_144 = (v_141&&v_143);
   v_147 = (v_144&&v_146);
   v_150 = (v_147&&v_149);
+  v_153 = (v_150&&v_152);
   if (self->ck_17_1) {
     if (arrived_1) {
       r_5_St_14_Not_Present = true;
@@ -4799,15 +4805,15 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_118 = (v_116&&v_117);
   v_134 = !(_out->worker_presence);
   v_136 = (v_134&&v_135);
-  v_151 = (_out->worker_presence||_out->cleaner_presence);
-  v_161 = (_out->worker_presence||_out->cleaner_presence);
-  v_173 = (_out->worker_presence||_out->cleaner_presence);
-  v_185 = (_out->worker_presence||_out->cleaner_presence);
-  v_195 = (_out->worker_presence||_out->cleaner_presence);
-  v_207 = (_out->worker_presence||_out->cleaner_presence);
+  v_154 = (_out->worker_presence||_out->cleaner_presence);
+  v_164 = (_out->worker_presence||_out->cleaner_presence);
+  v_176 = (_out->worker_presence||_out->cleaner_presence);
+  v_188 = (_out->worker_presence||_out->cleaner_presence);
+  v_198 = (_out->worker_presence||_out->cleaner_presence);
+  v_210 = (_out->worker_presence||_out->cleaner_presence);
   if (self->ck_13_1) {
-    v_233 = !(c_1);
-    if (v_233) {
+    v_236 = !(c_1);
+    if (v_236) {
       r_7_St_16_Locked = true;
       s_7_St_16_Locked_1 = false;
     } else {
@@ -4851,8 +4857,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   v_94 = (v_92&&v_93);
   rule11 = (v_90||v_94);
   if (self->ck_11_1) {
-    v_232 = !(c);
-    if (v_232) {
+    v_235 = !(c);
+    if (v_235) {
       r_8_St_17_Closed = true;
       s_8_St_17_Closed_1 = false;
     } else {
@@ -4862,14 +4868,14 @@ void System__controller_step(int change_shift, int worker, int cleaner,
     r_8 = r_8_St_17_Closed;
     s_8_1 = s_8_St_17_Closed_1;
   } else {
-    v_231 = !(c);
-    if (v_231) {
+    v_234 = !(c);
+    if (v_234) {
       r_8_St_17_Open = true;
     } else {
       r_8_St_17_Open = self->pnr_8;
     };
     r_8 = r_8_St_17_Open;
-    if (v_231) {
+    if (v_234) {
       s_8_St_17_Open_1 = true;
     } else {
       s_8_St_17_Open_1 = false;
@@ -4894,10 +4900,10 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   };
   _out->door_open = door_open_1;
   v_80 = (v_79&&_out->door_open);
-  v_160 = (_out->window_open&&_out->door_open);
-  v_172 = (v_171&&_out->door_open);
-  v_194 = (_out->window_open&&_out->door_open);
-  v_206 = (v_205&&_out->door_open);
+  v_163 = (_out->window_open&&_out->door_open);
+  v_175 = (v_174&&_out->door_open);
+  v_197 = (_out->window_open&&_out->door_open);
+  v_209 = (v_208&&_out->door_open);
   if (self->ck_1) {
     if (change) {
       r_9_St_18_Dia = true;
@@ -4981,66 +4987,66 @@ void System__controller_step(int change_shift, int worker, int cleaner,
   rule8 = (v_121||v_133);
   v_137 = (v_136&&_out->night);
   v_138 = !(v_137);
-  rule7 = (v_138||v_150);
-  v_152 = (v_151&&_out->night);
-  v_154 = (v_152&&v_153);
-  v_156 = (v_154&&v_155);
-  v_158 = (v_156&&v_157);
-  v_159 = !(v_158);
-  rule6 = (v_159||v_160);
-  v_162 = (v_161&&_out->night);
-  v_164 = (v_162&&v_163);
-  v_166 = (v_164&&v_165);
-  v_168 = (v_166&&v_167);
-  v_169 = !(v_168);
-  rule5 = (v_169||v_172);
-  v_174 = (v_173&&_out->night);
-  v_176 = (v_174&&v_175);
-  v_178 = (v_176&&v_177);
-  v_180 = (v_178&&v_179);
-  v_181 = !(v_180);
-  rule4 = (v_181||v_184);
-  v_186 = (v_185&&_out->night);
-  v_188 = (v_186&&v_187);
-  v_190 = (v_188&&v_189);
-  v_192 = (v_190&&v_191);
-  v_193 = !(v_192);
-  rule3 = (v_193||v_194);
-  v_196 = (v_195&&_out->night);
-  v_198 = (v_196&&v_197);
-  v_200 = (v_198&&v_199);
-  v_202 = (v_200&&v_201);
-  v_203 = !(v_202);
-  rule2 = (v_203||v_206);
-  v_208 = (v_207&&_out->night);
-  v_210 = (v_208&&v_209);
-  v_212 = (v_210&&v_211);
-  v_213 = !(v_212);
-  rule1 = (v_213||v_216);
-  v_217 = (rule1&&rule2);
-  v_218 = (v_217&&rule3);
-  v_219 = (v_218&&rule4);
-  v_220 = (v_219&&rule5);
-  v_221 = (v_220&&rule6);
-  v_222 = (v_221&&rule7);
-  v_223 = (v_222&&rule8);
-  v_224 = (v_223&&rule9);
-  v_225 = (v_224&&rule10);
-  v_226 = (v_225&&rule11);
-  v_227 = (v_226&&rule12);
-  v_228 = (v_227&&rule13);
-  v_229 = (v_228&&rule14);
-  v_230 = (v_229&&rule15);
+  rule7 = (v_138||v_153);
+  v_155 = (v_154&&_out->night);
+  v_157 = (v_155&&v_156);
+  v_159 = (v_157&&v_158);
+  v_161 = (v_159&&v_160);
+  v_162 = !(v_161);
+  rule6 = (v_162||v_163);
+  v_165 = (v_164&&_out->night);
+  v_167 = (v_165&&v_166);
+  v_169 = (v_167&&v_168);
+  v_171 = (v_169&&v_170);
+  v_172 = !(v_171);
+  rule5 = (v_172||v_175);
+  v_177 = (v_176&&_out->night);
+  v_179 = (v_177&&v_178);
+  v_181 = (v_179&&v_180);
+  v_183 = (v_181&&v_182);
+  v_184 = !(v_183);
+  rule4 = (v_184||v_187);
+  v_189 = (v_188&&_out->night);
+  v_191 = (v_189&&v_190);
+  v_193 = (v_191&&v_192);
+  v_195 = (v_193&&v_194);
+  v_196 = !(v_195);
+  rule3 = (v_196||v_197);
+  v_199 = (v_198&&_out->night);
+  v_201 = (v_199&&v_200);
+  v_203 = (v_201&&v_202);
+  v_205 = (v_203&&v_204);
+  v_206 = !(v_205);
+  rule2 = (v_206||v_209);
+  v_211 = (v_210&&_out->night);
+  v_213 = (v_211&&v_212);
+  v_215 = (v_213&&v_214);
+  v_216 = !(v_215);
+  rule1 = (v_216||v_219);
+  v_220 = (rule1&&rule2);
+  v_221 = (v_220&&rule3);
+  v_222 = (v_221&&rule4);
+  v_223 = (v_222&&rule5);
+  v_224 = (v_223&&rule6);
+  v_225 = (v_224&&rule7);
+  v_226 = (v_225&&rule8);
+  v_227 = (v_226&&rule9);
+  v_228 = (v_227&&rule10);
+  v_229 = (v_228&&rule11);
+  v_230 = (v_229&&rule12);
+  v_231 = (v_230&&rule13);
+  v_232 = (v_231&&rule14);
+  v_233 = (v_232&&rule15);
   self->pnr = nr;
-  self->v_391 = ns_1_3;
-  self->v_392 = ns_2_4;
+  self->v_394 = ns_1_3;
+  self->v_395 = ns_2_4;
   self->pnr_1 = nr_1;
-  self->v_407 = ns_1_1;
-  self->v_408 = ns_1_2;
+  self->v_410 = ns_1_1;
+  self->v_411 = ns_1_2;
   self->pnr_2 = nr_2;
-  self->v_445 = ns_2_1;
-  self->v_446 = ns_2_2;
-  self->v_447 = ns_2_3;
+  self->v_448 = ns_2_1;
+  self->v_449 = ns_2_2;
+  self->v_450 = ns_2_3;
   self->pnr_3 = nr_3;
   self->ck_21_1 = ns_3_1;
   self->pnr_4 = nr_4;

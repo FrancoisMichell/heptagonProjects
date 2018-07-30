@@ -1,5 +1,5 @@
-/* --- Generated the 25/7/2018 at 10:17 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 29/7/2018 at 13:21 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -8,8 +8,8 @@
 #include "system_types.h"
 #include "controller_controller.h"
 typedef struct System__light_source_mem {
-  int v_319;
-  int v_318;
+  int v_322;
+  int v_321;
   int pnr;
 } System__light_source_mem;
 
@@ -93,9 +93,9 @@ void System__window_step(int c, System__window_out* _out,
                          System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_358;
-  int v_357;
-  int v_356;
+  int v_361;
+  int v_360;
+  int v_359;
   int pnr;
 } System__air_conditioner_mem;
 
@@ -138,13 +138,13 @@ void System__fail_step(int failed_recovered, System__fail_out* _out,
                        System__fail_mem* self);
 
 typedef struct System__controller_mem {
-  int v_392;
-  int v_391;
-  int v_408;
-  int v_407;
-  int v_447;
-  int v_446;
-  int v_445;
+  int v_395;
+  int v_394;
+  int v_411;
+  int v_410;
+  int v_450;
+  int v_449;
+  int v_448;
   int ck_21_1;
   int ck_19_1;
   int ck_17_1;
