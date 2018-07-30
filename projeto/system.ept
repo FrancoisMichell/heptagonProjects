@@ -1,6 +1,6 @@
 (*link pros slides: https://drive.google.com/open?id=1QGEjtj41JJPet6rVrFoiDohjFCYRYAhd7RuK-l4HRhs*)
 
-node light_source ( c1, c2, sw : bool ) returns ( light_source_on : int )
+node light_source (  sw, c1, c2: bool ) returns ( light_source_on : int )
 	let
 		automaton
 			state Off do
@@ -131,7 +131,7 @@ node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool
 
 		tel
     enforce (rule1 & rule2 & rule3 & rule4 & rule5 & rule6 & rule6_5 & rule7 & rule7_5)
-    with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_light_2, c_blind_1, c_blind_2 : bool )
+    with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_blind_1, c_light_2, c_blind_2 : bool )
 
   	let
   		night = inlined day_shift (change_shift);
