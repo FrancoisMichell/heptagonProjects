@@ -1,5 +1,5 @@
-/* --- Generated the 31/7/2018 at 22:4 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 1/8/2018 at 10:59 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_TYPES_H
@@ -10,8 +10,26 @@
 #include "pervasives.h"
 #include "controller_controller.h"
 typedef enum {
-  System__St_33_Noite,
-  System__St_33_Dia
+  System__St_35_Noite,
+  System__St_35_Dia
+} System__st_35;
+
+System__st_35 System__st_35_of_string(char* s);
+
+char* string_of_System__st_35(System__st_35 x, char* buf);
+
+typedef enum {
+  System__St_34_Open,
+  System__St_34_Closed
+} System__st_34;
+
+System__st_34 System__st_34_of_string(char* s);
+
+char* string_of_System__st_34(System__st_34 x, char* buf);
+
+typedef enum {
+  System__St_33_Funcionando,
+  System__St_33_Falha
 } System__st_33;
 
 System__st_33 System__st_33_of_string(char* s);
@@ -20,7 +38,7 @@ char* string_of_System__st_33(System__st_33 x, char* buf);
 
 typedef enum {
   System__St_32_Open,
-  System__St_32_Closed
+  System__St_32_Locked
 } System__st_32;
 
 System__st_32 System__st_32_of_string(char* s);
@@ -28,8 +46,8 @@ System__st_32 System__st_32_of_string(char* s);
 char* string_of_System__st_32(System__st_32 x, char* buf);
 
 typedef enum {
-  System__St_31_Open,
-  System__St_31_Locked
+  System__St_31_Funcionando,
+  System__St_31_Falha
 } System__st_31;
 
 System__st_31 System__st_31_of_string(char* s);

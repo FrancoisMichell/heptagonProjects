@@ -1,5 +1,5 @@
-/* --- Generated the 31/7/2018 at 22:4 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 1/8/2018 at 10:59 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -92,8 +92,8 @@ void System__window_step(int c, System__window_out* _out,
                          System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_153;
-  int v_152;
+  int v_150;
+  int v_149;
   int pnr;
 } System__air_conditioner_mem;
 
@@ -223,8 +223,8 @@ void System__window_fail_step(int c1, int failed_recovered,
 
 typedef struct System__air_fail_mem {
   int ck_32_1;
-  int v_169;
-  int v_168;
+  int v_166;
+  int v_165;
   int pnr_6;
   int pnr;
 } System__air_fail_mem;
@@ -240,20 +240,24 @@ void System__air_fail_step(int c1, int c2, int failed_recovered,
                            System__air_fail_mem* self);
 
 typedef struct System__controller_mem {
-  int ck_60_1;
-  int ck_58_1;
-  int ck_55_1;
-  int ck_53_1;
-  int ck_50_1;
-  int v_185;
-  int v_184;
+  int ck_66_1;
+  int ck_64_1;
+  int ck_61_1;
+  int ck_59_1;
+  int ck_56_1;
+  int v_182;
+  int v_181;
+  int ck_51_1;
+  int ck_49_1;
+  int ck_47_1;
   int ck_45_1;
   int ck_43_1;
   int ck_41_1;
-  int ck_39_1;
-  int ck_37_1;
-  int ck_35_1;
+  int ck_38_1;
+  int ck_36_1;
   int ck_1;
+  int pnr_20;
+  int pnr_19;
   int pnr_18;
   int pnr_17;
   int pnr_16;
@@ -273,10 +277,10 @@ typedef struct System__controller_out {
   int night;
   int worker_presence;
   int cleaner_presence;
-  int door_open;
+  int door_status;
   int pc_on;
   int window_open;
-  int closet_open;
+  int closet_status;
   int air_status;
   int light_status;
   int blind_status;
@@ -288,6 +292,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
                              int air_failed_recovered, int light_switch,
                              int light_failed_recovered, int blind_switch,
                              int blind_failed_recovered,
+                             int door_failed_recovered,
+                             int closet_failed_recovered,
                              System__controller_out* _out,
                              System__controller_mem* self);
 
