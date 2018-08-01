@@ -121,7 +121,7 @@ node controller( change_shift, worker, cleaner, light_switch, blind_switch: bool
 		    	(not pc_on & air_status = 0 & light_status = 0 & blind_status = 0 & not closet_open);
 		    
 		    rule4 = not (worker_presence & cleaner_presence) or air_status = 2;
-		    rule5 = not ((worker_presence & not cleaner_presence) or (not worker_presence & cleaner_presence)) or air_status = 1;
+		    rule5 = not (not (worker_presence & cleaner_presence) & (worker_presence or cleaner_presence)) or air_status = 1;
 
 		    rule6 = not (worker_presence) or pc_on;
 		    rule6_5 = not (not worker_presence) or not pc_on;
