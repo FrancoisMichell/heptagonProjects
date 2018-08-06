@@ -181,69 +181,56 @@ node air_fail (c1, c2, failed_recovered:bool) returns (out: int;)
 		end
 	tel
 
-node controller( change_shift, worker, cleaner, air_failed_recovered, light_switch, light_failed_recovered, blind_switch, blind_failed_recovered, door_failed_recovered, closet_failed_recovered: bool)
+node controller( change_shift, worker, cleaner, air_failed_recovered, light_switch, light_failed_recovered, blind_switch, blind_failed_recovered, door_failed_recovered, (* closet_failed_recovered, pc_failed_recovered,*) window_failed_recovered: bool)
 	
 	returns (
 		night, worker_presence, cleaner_presence : bool; 
-		door_status, pc_on, window_open, closet_status, air_status, light_status, blind_status : int;)
+		door_status, pc_status, window_status, closet_status, air_status, light_status, blind_status : int;)
   	
   	contract
-		var rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule7_5, rule8, rule8_5(*, rule9, rule10, rule11, rule12, rule13, rule14, rule15 *) : bool;
+		var rule0, rule1 , rule1_1, rule1_2, rule1_3, rule2, rule5, rule6, rule6_1, rule6_2, rule6_3, rule6_4, rule7, rule7_5, rule8, rule8_5 : bool;
 
 		let
-			rule1 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & blind_status < 2) or (light_status = 1 & blind_status = 0);
-			rule2 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & blind_status < 2) or (blind_status = 1);
-
-			rule3 = not ((worker_presence or cleaner_presence) & not night & light_status < 2 & blind_status < 2) or (light_status = 1 or blind_status = 1);
-
-			rule4 = not (not worker_presence & not cleaner_presence) or (air_status <> 1 & air_status <> 2 & light_status <> 1 & blind_status <> 1);
-
-			rule5 = not (not (worker_presence & cleaner_presence) & (worker_presence or cleaner_presence) & air_status < 3) or air_status = 1;
-			rule6 = not (worker_presence & cleaner_presence & air_status < 3) or air_status = 2; 
-
-			rule7 = not (worker_presence) or pc_on = 1;
-			rule7_5 = not (not worker_presence) or pc_on = 0;
-
-			rule8 = not (cleaner_presence) or closet_status = 1;
-			rule8_5 = not (not cleaner_presence) or closet_status = 0;
+			rule0 = not (not worker_presence & not cleaner_presence) or (air_status <> 1 & air_status <> 2 & light_status <> 1 & blind_status <> 1 & door_status <> 1 & pc_status <> 1 & window_status <> 1 & closet_status <> 1);
 			
-			(* rule1 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status < 3) or (light_status = 1 & air_status = 1);
+			rule1 = not ((worker_presence or cleaner_presence) & night & light_status <= 1(*  & blind_status <= 1 *)) or (light_status = 1(*  & blind_status = 0 *));
+			rule1_3 = not ((worker_presence or cleaner_presence) & night & light_status >= 2 & blind_status <= 1) or blind_status = 1;
+			
+			rule2 = not ((worker_presence or cleaner_presence) & not night & light_status <= 1 & blind_status <= 1) or (light_status = 1 or blind_status = 1);
+			
+			rule1_1 = not ((worker_presence or cleaner_presence) & light_status >= 2 & blind_status <= 1) or (blind_status = 1);
+			rule1_2 = not ((worker_presence or cleaner_presence) & light_status <= 1 & blind_status >= 2) or (light_status = 1);
 
-		    rule2 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status > 2 & blind_status < 2) or (window_open = 1 & blind_status = 1 & door_status = 1);
-		    rule3 = not ((worker_presence or cleaner_presence) & night & light_status < 2 & air_status > 2 & blind_status > 1) or (window_open = 1 & door_status = 1);
-		    
-		    rule4 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status < 3 & blind_status < 2) or (blind_status = 1 & air_status = 1);
-		    
-		    rule5 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status > 2 & blind_status < 2) or (window_open = 1 & blind_status = 1 & door_status = 1);
-		    rule6 = not ((worker_presence or cleaner_presence) & night & light_status > 1 & air_status > 2 & blind_status > 1) or (window_open = 1 & door_status = 1);
+			rule5 = not (worker_presence & cleaner_presence & air_status < 3) or air_status = 2;
+			rule6 = not (not (worker_presence & cleaner_presence) & (worker_presence or cleaner_presence) & air_status <= 2) or (air_status = 1 & door_status <> 1 & window_status <> 1);
+			
+			rule6_1 = not ((worker_presence or cleaner_presence) & air_status >= 3 & blind_status <= 1 & window_status <= 1 & door_status <= 1) or (blind_status = 1 & window_status = 1 & door_status = 1);
+			rule6_2 = not ((worker_presence or cleaner_presence) & air_status >= 3 & blind_status >= 2 &                      door_status <= 1) or (window_status <> 1 & door_status = 1);
+			rule6_3 = not ((worker_presence or cleaner_presence) & air_status >= 3 & 					 window_status >= 2 & door_status <= 1) or (door_status = 1);
+			rule6_4 = not ((worker_presence or cleaner_presence) & air_status >= 3 & blind_status <= 1 & window_status <= 1 & door_status >= 2) or (blind_status = 1 & window_status = 1 &  door_status <> 1);
 
-		    rule7 = not (not worker_presence & not cleaner_presence & night) or (pc_on = 0 & window_open = 0 & light_status <> 1 & blind_status <> 1);
-		    rule8 = not (not worker_presence & not cleaner_presence & not night) or (pc_on = 0 & window_open = 0 & light_status <> 1 & blind_status <> 1);
+			rule7 = not (worker_presence & pc_status < 2) or pc_status = 1;
+			rule7_5 = not (not worker_presence & pc_status < 2) or pc_status = 0;
 
-		    rule9 = not (not night & pc_on = 1 & light_status = 1 & window_open = 0 & air_status < 3) or air_status = 2;
-		    rule10 = not (not night & pc_on = 1 & light_status <> 1 & window_open = 0 & air_status < 3) or air_status = 1;
-		    
-		    rule11 = not (cleaner_presence & air_status < 3) or (pc_on = 0 & closet_status = 0 & air_status = 1);
-		    
-		    rule12 = not ((worker_presence or cleaner_presence) & not night & light_status < 2) or (light_status = 1);
-		    
-		    rule13 = not ((worker_presence or cleaner_presence) & not night & air_status > 2 & blind_status < 2) or ( window_open = 1 & blind_status = 1 & door_status = 1);
-		    rule14 = not ((worker_presence or cleaner_presence) & not night & air_status > 2 & blind_status > 1) or (door_status = 1);
-
-		rule5 &rule5 &rule5 &    rule15 = not ((worker_presence or cleaner_presence) & not night & blind_status < 2) or (light_status = 1 or blind_status = 1); *)
+			rule8 = not (cleaner_presence & closet_status < 2) or closet_status = 1;
+			rule8_5 = not (not cleaner_presence & closet_status < 2) or closet_status = 0;
 		tel
-    enforce (rule1 (* & rule2 *) & rule3 & rule4 & rule5 & rule6 & rule7 & rule7_5 & rule8 & rule8_5(*rule9 & rule10 & rule11 & rule12 & rule13 & rule14 & rule15 *))
+    enforce (rule1 & rule1_1 & rule1_2 & rule1_3 & rule2 & rule0 & rule5 & rule6 & rule6_1 & rule6_2 & rule6_3 & rule6_4 & rule7 & rule7_5 & rule8 & rule8_5)
     with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_blind_1, c_light_2, c_blind_2 : bool )
 
   	let
   		night = inlined day_shift (change_shift);
-		door_status = inlined door_fail (c_door, door_failed_recovered);
-		closet_status = inlined closet_fail (c_closet, closet_failed_recovered);
 		worker_presence = inlined person (worker);
 		cleaner_presence = inlined person (cleaner);
-		pc_on = inlined computer (c_pc);
-		window_open = inlined window (c_window);
+		(* door_status = inlined door (c_door); *)
+		pc_status = inlined computer (c_pc);
+		(* window_status = inlined window (c_window); *)
+		closet_status = inlined closet (c_closet);
+		door_status = inlined door_fail (c_door, door_failed_recovered);
+		(* pc_status = inlined computer_fail (c_pc, pc_failed_recovered); *)
 		air_status = inlined air_fail (c_air_1, c_air_2, air_failed_recovered);
-  		light_status = inlined light_source_fail(light_switch, c_light_1, c_light_2, light_failed_recovered);
-  		blind_status = inlined light_source_fail(blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
+		window_status = inlined window_fail (c_window, window_failed_recovered);
+		(* closet_status = inlined closet_fail (c_closet, closet_failed_recovered); *)
+  		light_status = inlined light_source_fail (light_switch, c_light_1, c_light_2, light_failed_recovered);
+  		blind_status = inlined light_source_fail (blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
 	tel

@@ -1,0 +1,31 @@
+rule1 = not ((worker_presence or cleaner_presence) & night) or (light_status = 1 & blind_status = 0);
+rule2 = not ((worker_presence or cleaner_presence) & not night) or (light_status = 1 or blind_status = 1);
+
+rule3 = not (not worker_presence & not cleaner_presence) or 
+	(not pc_on & air_status = 0 & light_status = 0 & blind_status = 0 & not closet_open);
+
+rule4 = not (worker_presence & cleaner_presence) or air_status = 2;
+rule5 = not ((worker_presence & not cleaner_presence) or (not worker_presence & cleaner_presence)) or air_status = 1;
+
+rule6 = not (worker_presence) or pc_on;
+rule6_5 = not (not worker_presence) or not pc_on;
+
+rule7 = not (cleaner_presence) or closet_open;
+rule7_5 = not (not cleaner_presence) or not closet_open;
+
+
+SE houver presença, for noite, a luz e o ar estão funcionando, ENTÃO a luz fica ligada e o ar no mínimo;
+SE houver presença, for noite, a luz, e as persianas estão funcionando e o ar está em falha, ENTÃO a janela, as persianas e a porta abre;
+SE houver presença, for noite, a luz está funcionando e o ar e a persiana estão em falha, ENTÃO a janela e a porta abre;
+SE houver presença, for noite, o ar e persianas estão funcionando e a luz está em falha, ENTÃO a persiana é aberta e o ar permanece no mínimo;
+SE houver presença, for noite, a luz e o ar estão em falha e a persiana está funcionando, ENTÃO as janelas e a porta abrem e a persiana sobe;
+SE houver presença, for noite, a luz, o ar e as persianas estão em falha, ENTÃO a janela e a porta abrem;
+SE não houver presença e for noite, ENTÃO o pc desliga, a janela fecha, e o status da luz, persiana e ar devem ser diferentes de ligado;
+SE não houver presença e não for noite, ENTÃO o pc desliga, a janela fecha, e o status da luz, persiana e ar devem ser diferentes de ligado;
+SE não for noite, o pc e a luz estão ligadas, as janelas estão fechadas e o ar não está em falha, ENTÃO o ar condicionado fica no máximo;
+SE não for noite, o pc está ligado, a luz desligada, as janelas estão fechadas e o ar está funcionando, ENTÃO o ar condicionado fica no mínimo;
+SE houver limpeza e o ar está funcionando, ENTÃO o pc desliga, o closet abre e o ar fica no mínimo;
+SE houver presença, for dia e a luz estiver funcionando, ENTÃO a luz fica ligada;
+SE houver presença, for dia, o ar está e falha e a persiana funcionando, ENTÃO as janelas, persianas e portas abrem;
+SE houver presença, for dia, o ar e as persianas estão em falha, ENTÃO a porta abre
+SE houver presença, for dia e as persianas funcionam, ENTÃO as luzes ou as persianas devem estar ligadas;
