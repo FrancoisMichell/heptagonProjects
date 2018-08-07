@@ -1,5 +1,5 @@
-/* --- Generated the 5/8/2018 at 17:49 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 6/8/2018 at 21:17 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -240,22 +240,26 @@ void System__air_fail_step(int c1, int c2, int failed_recovered,
                            System__air_fail_mem* self);
 
 typedef struct System__controller_mem {
-  int ck_66_1;
-  int ck_64_1;
-  int ck_61_1;
-  int ck_59_1;
-  int ck_56_1;
-  int ck_54_1;
-  int ck_51_1;
+  int ck_72_1;
+  int ck_70_1;
+  int ck_67_1;
+  int ck_65_1;
+  int ck_62_1;
+  int ck_60_1;
+  int ck_57_1;
+  int ck_55_1;
+  int ck_52_1;
   int v_277;
   int v_276;
-  int ck_46_1;
-  int ck_44_1;
-  int ck_41_1;
-  int ck_39_1;
+  int ck_47_1;
+  int ck_45_1;
+  int ck_42_1;
+  int ck_40_1;
   int ck_37_1;
   int ck_35_1;
   int ck_1;
+  int pnr_22;
+  int pnr_21;
   int pnr_20;
   int pnr_19;
   int pnr_18;
@@ -293,6 +297,8 @@ void System__controller_step(int change_shift, int worker, int cleaner,
                              int light_failed_recovered, int blind_switch,
                              int blind_failed_recovered,
                              int door_failed_recovered,
+                             int closet_failed_recovered,
+                             int pc_failed_recovered,
                              int window_failed_recovered,
                              System__controller_out* _out,
                              System__controller_mem* self);

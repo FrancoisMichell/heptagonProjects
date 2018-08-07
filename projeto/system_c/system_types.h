@@ -1,5 +1,5 @@
-/* --- Generated the 5/8/2018 at 17:49 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled fri. jun. 15 15:41:53 CET 2018) --- */
+/* --- Generated the 6/8/2018 at 21:17 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_TYPES_H
@@ -10,8 +10,26 @@
 #include "pervasives.h"
 #include "controller_controller.h"
 typedef enum {
-  System__St_35_Noite,
-  System__St_35_Dia
+  System__St_37_Noite,
+  System__St_37_Dia
+} System__st_37;
+
+System__st_37 System__st_37_of_string(char* s);
+
+char* string_of_System__st_37(System__st_37 x, char* buf);
+
+typedef enum {
+  System__St_36_Present,
+  System__St_36_Not_Present
+} System__st_36;
+
+System__st_36 System__st_36_of_string(char* s);
+
+char* string_of_System__st_36(System__st_36 x, char* buf);
+
+typedef enum {
+  System__St_35_Present,
+  System__St_35_Not_Present
 } System__st_35;
 
 System__st_35 System__st_35_of_string(char* s);
@@ -19,8 +37,8 @@ System__st_35 System__st_35_of_string(char* s);
 char* string_of_System__st_35(System__st_35 x, char* buf);
 
 typedef enum {
-  System__St_34_Present,
-  System__St_34_Not_Present
+  System__St_34_Open,
+  System__St_34_Closed
 } System__st_34;
 
 System__st_34 System__st_34_of_string(char* s);
@@ -28,8 +46,8 @@ System__st_34 System__st_34_of_string(char* s);
 char* string_of_System__st_34(System__st_34 x, char* buf);
 
 typedef enum {
-  System__St_33_Present,
-  System__St_33_Not_Present
+  System__St_33_Funcionando,
+  System__St_33_Falha
 } System__st_33;
 
 System__st_33 System__st_33_of_string(char* s);
@@ -46,8 +64,8 @@ System__st_32 System__st_32_of_string(char* s);
 char* string_of_System__st_32(System__st_32 x, char* buf);
 
 typedef enum {
-  System__St_31_Open,
-  System__St_31_Locked
+  System__St_31_Funcionando,
+  System__St_31_Falha
 } System__st_31;
 
 System__st_31 System__st_31_of_string(char* s);
@@ -55,8 +73,9 @@ System__st_31 System__st_31_of_string(char* s);
 char* string_of_System__st_31(System__st_31 x, char* buf);
 
 typedef enum {
-  System__St_30_Open,
-  System__St_30_Closed
+  System__St_30_Off,
+  System__St_30_Min,
+  System__St_30_Max
 } System__st_30;
 
 System__st_30 System__st_30_of_string(char* s);
@@ -73,9 +92,8 @@ System__st_29 System__st_29_of_string(char* s);
 char* string_of_System__st_29(System__st_29 x, char* buf);
 
 typedef enum {
-  System__St_28_Off,
-  System__St_28_Min,
-  System__St_28_Max
+  System__St_28_Open,
+  System__St_28_Closed
 } System__st_28;
 
 System__st_28 System__st_28_of_string(char* s);
@@ -93,7 +111,7 @@ char* string_of_System__st_27(System__st_27 x, char* buf);
 
 typedef enum {
   System__St_26_Open,
-  System__St_26_Closed
+  System__St_26_Locked
 } System__st_26;
 
 System__st_26 System__st_26_of_string(char* s);
