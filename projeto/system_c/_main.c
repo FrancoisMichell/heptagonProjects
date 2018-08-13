@@ -1,4 +1,4 @@
-/* --- Generated the 6/8/2018 at 21:17 --- */
+/* --- Generated the 13/8/2018 at 18:36 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -74,28 +74,26 @@ int main(int argc, char** argv) {
                             blind_failed_recovered, door_failed_recovered,
                             closet_failed_recovered, pc_failed_recovered,
                             window_failed_recovered, &_res, &mem);
-    printf("\n----------------------------\n");
-    printf("night => ");
-    printf("%d \n", _res.night);
-    printf("worker => ");
-    printf("%d \n", _res.worker_presence);
-    printf("cleaner=> ");
-    printf("%d \n", _res.cleaner_presence);
-    printf("door => ");
-    printf("%d \n", _res.door_status);
-    printf("pc => ");
-    printf("%d \n", _res.pc_status);
-    printf("window => ");
-    printf("%d \n", _res.window_status);
-    printf("closet => ");
-    printf("%d \n", _res.closet_status);
-    printf("A/C => ");
-    printf("%d \n", _res.air_status);
-    printf("light => ");
-    printf("%d \n", _res.light_status);
-    printf("blind => ");
-    printf("%d \n", _res.blind_status);
-    printf("----------------------------\n");
+    printf("=> ");
+    printf("%d ", _res.night);
+    printf("=> ");
+    printf("%d ", _res.worker_presence);
+    printf("=> ");
+    printf("%d ", _res.cleaner_presence);
+    printf("=> ");
+    printf("%d ", _res.door_status);
+    printf("=> ");
+    printf("%d ", _res.pc_status);
+    printf("=> ");
+    printf("%d ", _res.window_status);
+    printf("=> ");
+    printf("%d ", _res.closet_status);
+    printf("=> ");
+    printf("%d ", _res.air_status);
+    printf("=> ");
+    printf("%d ", _res.light_status);
+    printf("=> ");
+    printf("%d ", _res.blind_status);
     puts("");
     fflush(stdout);
   };
