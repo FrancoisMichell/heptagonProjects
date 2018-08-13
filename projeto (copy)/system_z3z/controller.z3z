@@ -1,0 +1,1069 @@
+% --- Generated the 6/8/2018 at 21:17 --- %
+% --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- %
+% --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- %
+
+set_reorder(2);read("Property.lib");read("Synthesis.lib");read("Verif_Determ.lib");read("Simul.lib");read("Synthesis_Partial_order.lib");read("Orbite.lib");
+% -- dependencies --- %
+
+% ---------- process controller ---------- %
+
+declare(controller_change_shift, controller_worker, controller_cleaner,
+        controller_air_failed_recovered, controller_light_switch,
+        controller_light_failed_recovered, controller_blind_switch,
+        controller_blind_failed_recovered, controller_door_failed_recovered,
+        controller_closet_failed_recovered, controller_pc_failed_recovered,
+        controller_window_failed_recovered, controller_c_blind_2,
+        controller_c_light_2, controller_c_blind_1, controller_c_light_1,
+        controller_c_closet, controller_c_air_2, controller_c_air_1,
+        controller_c_window, controller_c_pc, controller_c_door,
+        controller_ck_1, controller_pnr_22, controller_ck_35_1,
+        controller_pnr_21, controller_ck_37_1, controller_pnr_20,
+        controller_ck_40_1, controller_pnr_19, controller_ck_42_1,
+        controller_pnr_18, controller_ck_45_1, controller_pnr_17,
+        controller_ck_47_1, controller_pnr_16, controller_v_277,
+        controller_v_276, controller_pnr_15, controller_ck_52_1,
+        controller_pnr_14, controller_ck_55_1, controller_pnr_13,
+        controller_ck_57_1, controller_pnr_12, controller_ck_60_1,
+        controller_pnr_11, controller_ck_62_1, controller_pnr_10,
+        controller_ck_65_1, controller_pnr_9, controller_ck_67_1,
+        controller_pnr_8, controller_ck_70_1, controller_pnr_7,
+        controller_ck_72_1, controller_pnr, controller_error_state);
+conditions : [controller_change_shift, controller_worker, controller_cleaner,
+              controller_air_failed_recovered, controller_light_switch,
+              controller_light_failed_recovered, controller_blind_switch,
+              controller_blind_failed_recovered,
+              controller_door_failed_recovered,
+              controller_closet_failed_recovered,
+              controller_pc_failed_recovered,
+              controller_window_failed_recovered, controller_c_blind_2,
+              controller_c_light_2, controller_c_blind_1,
+              controller_c_light_1, controller_c_closet, controller_c_air_2,
+              controller_c_air_1, controller_c_window, controller_c_pc,
+              controller_c_door];
+states : [controller_ck_1, controller_pnr_22, controller_ck_35_1,
+          controller_pnr_21, controller_ck_37_1, controller_pnr_20,
+          controller_ck_40_1, controller_pnr_19, controller_ck_42_1,
+          controller_pnr_18, controller_ck_45_1, controller_pnr_17,
+          controller_ck_47_1, controller_pnr_16, controller_v_277,
+          controller_v_276, controller_pnr_15, controller_ck_52_1,
+          controller_pnr_14, controller_ck_55_1, controller_pnr_13,
+          controller_ck_57_1, controller_pnr_12, controller_ck_60_1,
+          controller_pnr_11, controller_ck_62_1, controller_pnr_10,
+          controller_ck_65_1, controller_pnr_9, controller_ck_67_1,
+          controller_pnr_8, controller_ck_70_1, controller_pnr_7,
+          controller_ck_72_1, controller_pnr, controller_error_state];
+controllables : [controller_c_blind_2, controller_c_light_2,
+                 controller_c_blind_1, controller_c_light_1,
+                 controller_c_closet, controller_c_air_2, controller_c_air_1,
+                 controller_c_window, controller_c_pc, controller_c_door];
+evolutions : [];
+initialisations : [];
+controller_change : controller_change_shift;
+controller_arrived : controller_worker;
+controller_arrived_1 : controller_cleaner;
+controller_failed_recovered : controller_door_failed_recovered;
+controller_failed_recovered_2 : controller_failed_recovered;
+controller_c1 : controller_c_door;
+controller_c : controller_c1;
+controller_failed_recovered_7 : controller_pc_failed_recovered;
+controller_failed_recovered_4 : controller_failed_recovered_7;
+controller_c1_3 : controller_c_pc;
+controller_c_1 : controller_c1_3;
+controller_ck_50_2 : controller_v_277;
+controller_ck_50_1 : controller_v_276;
+controller_failed_recovered_8 : controller_air_failed_recovered;
+controller_failed_recovered_6 : controller_failed_recovered_8;
+controller_c2 : controller_c_air_2;
+controller_c2_2 : controller_c2;
+controller_c1_4 : controller_c_air_1;
+controller_c1_2 : controller_c1_4;
+controller_failed_recovered_9 : controller_window_failed_recovered;
+controller_failed_recovered_5 : controller_failed_recovered_9;
+controller_c1_5 : controller_c_window;
+controller_c_2 : controller_c1_5;
+controller_failed_recovered_10 : controller_closet_failed_recovered;
+controller_failed_recovered_3 : controller_failed_recovered_10;
+controller_c1_6 : controller_c_closet;
+controller_c_3 : controller_c1_6;
+controller_failed_recovered_11 : controller_light_failed_recovered;
+controller_failed_recovered_1 : controller_failed_recovered_11;
+controller_c2_3 : controller_c_light_2;
+controller_c2_1 : controller_c2_3;
+controller_c1_7 : controller_c_light_1;
+controller_c1_1 : controller_c1_7;
+controller_sw : controller_light_switch;
+controller_sw_1 : controller_sw;
+controller_failed_recovered_12 : controller_blind_failed_recovered;
+controller_failed_recovered_1_1 : controller_failed_recovered_12;
+controller_c2_4 : controller_c_blind_2;
+controller_c2_1_1 : controller_c2_4;
+controller_c1_8 : controller_c_blind_1;
+controller_c1_1_1 : controller_c1_8;
+controller_sw_2 : controller_blind_switch;
+controller_sw_1_1 : controller_sw_2;
+controller_s_22_St_37_Noite_1 : ((1 when controller_change) default -1);
+controller_r_22_St_37_Noite : ((1 when controller_change)
+  default controller_pnr_22);
+controller_s_22_St_37_Dia_1 : ((-1 when controller_change) default 1);
+controller_s_22_1 : ((controller_s_22_St_37_Dia_1 when controller_ck_1)
+  default controller_s_22_St_37_Noite_1);
+controller_r_22_St_37_Dia : ((1 when controller_change)
+  default controller_pnr_22);
+controller_r_22 : ((controller_r_22_St_37_Dia when controller_ck_1)
+  default controller_r_22_St_37_Noite);
+controller_ck_34_1 : controller_s_22_1;
+controller_ns_22_St_37_Noite_1 : -1;
+controller_nr_22_St_37_Noite : -1;
+controller_night_1_St_37_Noite : 1;
+controller_ns_22_St_37_Dia_1 : 1;
+controller_ns_22_1 : ((controller_ns_22_St_37_Dia_1 when controller_ck_34_1)
+  default controller_ns_22_St_37_Noite_1);
+controller_nr_22_St_37_Dia : -1;
+controller_nr_22 : ((controller_nr_22_St_37_Dia when controller_ck_34_1)
+  default controller_nr_22_St_37_Noite);
+controller_night_1_St_37_Dia : -1;
+controller_night_1 : ((controller_night_1_St_37_Dia when controller_ck_34_1)
+  default controller_night_1_St_37_Noite);
+controller_night : controller_night_1;
+controller_s_21_St_36_Present_1 : ((1 when controller_arrived) default -1);
+controller_r_21_St_36_Present : ((1 when controller_arrived)
+  default controller_pnr_21);
+controller_s_21_St_36_Not_Present_1 : ((-1 when controller_arrived)
+  default 1);
+controller_s_21_1 : ((controller_s_21_St_36_Not_Present_1
+  when controller_ck_35_1) default controller_s_21_St_36_Present_1);
+controller_r_21_St_36_Not_Present : ((1 when controller_arrived)
+  default controller_pnr_21);
+controller_r_21 : ((controller_r_21_St_36_Not_Present
+  when controller_ck_35_1) default controller_r_21_St_36_Present);
+controller_ck_36_1 : controller_s_21_1;
+controller_ns_21_St_36_Present_1 : -1;
+controller_nr_21_St_36_Present : -1;
+controller_presence_St_36_Present : 1;
+controller_ns_21_St_36_Not_Present_1 : 1;
+controller_ns_21_1 : ((controller_ns_21_St_36_Not_Present_1
+  when controller_ck_36_1) default controller_ns_21_St_36_Present_1);
+controller_nr_21_St_36_Not_Present : -1;
+controller_nr_21 : ((controller_nr_21_St_36_Not_Present
+  when controller_ck_36_1) default controller_nr_21_St_36_Present);
+controller_presence_St_36_Not_Present : -1;
+controller_presence : ((controller_presence_St_36_Not_Present
+  when controller_ck_36_1) default controller_presence_St_36_Present);
+controller_worker_presence : controller_presence;
+controller_s_20_St_35_Present_1 : ((1 when controller_arrived_1) default -1);
+controller_r_20_St_35_Present : ((1 when controller_arrived_1)
+  default controller_pnr_20);
+controller_s_20_St_35_Not_Present_1 : ((-1 when controller_arrived_1)
+  default 1);
+controller_s_20_1 : ((controller_s_20_St_35_Not_Present_1
+  when controller_ck_37_1) default controller_s_20_St_35_Present_1);
+controller_r_20_St_35_Not_Present : ((1 when controller_arrived_1)
+  default controller_pnr_20);
+controller_r_20 : ((controller_r_20_St_35_Not_Present
+  when controller_ck_37_1) default controller_r_20_St_35_Present);
+controller_ck_38_1 : controller_s_20_1;
+controller_ns_20_St_35_Present_1 : -1;
+controller_nr_20_St_35_Present : -1;
+controller_presence_1_St_35_Present : 1;
+controller_ns_20_St_35_Not_Present_1 : 1;
+controller_ns_20_1 : ((controller_ns_20_St_35_Not_Present_1
+  when controller_ck_38_1) default controller_ns_20_St_35_Present_1);
+controller_nr_20_St_35_Not_Present : -1;
+controller_nr_20 : ((controller_nr_20_St_35_Not_Present
+  when controller_ck_38_1) default controller_nr_20_St_35_Present);
+controller_presence_1_St_35_Not_Present : -1;
+controller_presence_1 : ((controller_presence_1_St_35_Not_Present
+  when controller_ck_38_1) default controller_presence_1_St_35_Present);
+controller_cleaner_presence : controller_presence_1;
+controller_v_206 : (not controller_c);
+controller_s_19_St_34_Open_1 : ((1 when controller_v_206) default -1);
+controller_r_19_St_34_Open : ((1 when controller_v_206)
+  default controller_pnr_19);
+controller_v_207 : (not controller_c);
+controller_s_19_St_34_Closed_1 : ((-1 when controller_v_207) default 1);
+controller_s_19_1 : ((controller_s_19_St_34_Closed_1 when controller_ck_40_1)
+  default controller_s_19_St_34_Open_1);
+controller_r_19_St_34_Closed : ((1 when controller_v_207)
+  default controller_pnr_19);
+controller_r_19 : ((controller_r_19_St_34_Closed when controller_ck_40_1)
+  default controller_r_19_St_34_Open);
+controller_ck_41_1 : controller_s_19_1;
+controller_ns_19_St_34_Open_1 : -1;
+controller_nr_19_St_34_Open : -1;
+controller_door_open_St_34_Open : a_const(1);
+controller_ns_19_St_34_Closed_1 : 1;
+controller_ns_19_1 : ((controller_ns_19_St_34_Closed_1
+  when controller_ck_41_1) default controller_ns_19_St_34_Open_1);
+controller_nr_19_St_34_Closed : -1;
+controller_nr_19 : ((controller_nr_19_St_34_Closed when controller_ck_41_1)
+  default controller_nr_19_St_34_Open);
+controller_door_open_St_34_Closed : a_const(0);
+controller_door_open : a_part(controller_ck_41_1, a_const(0),
+                              controller_door_open_St_34_Closed,
+                              controller_door_open_St_34_Open);
+controller_door : controller_door_open;
+controller_s_18_St_33_Falha_1 : ((-1 when controller_failed_recovered_2)
+  default 1);
+controller_r_18_St_33_Falha : ((1 when controller_failed_recovered_2)
+  default controller_pnr_18);
+controller_s_18_St_33_Funcionando_1 : ((1 when controller_failed_recovered_2)
+  default -1);
+controller_s_18_1 : ((controller_s_18_St_33_Falha_1 when controller_ck_42_1)
+  default controller_s_18_St_33_Funcionando_1);
+controller_r_18_St_33_Funcionando : ((1 when controller_failed_recovered_2)
+  default controller_pnr_18);
+controller_r_18 : ((controller_r_18_St_33_Falha when controller_ck_42_1)
+  default controller_r_18_St_33_Funcionando);
+controller_ck_43_1 : controller_s_18_1;
+controller_ns_18_St_33_Falha_1 : 1;
+controller_nr_18_St_33_Falha : -1;
+controller_failed_2_St_33_Falha : 1;
+controller_ns_18_St_33_Funcionando_1 : -1;
+controller_ns_18_1 : ((controller_ns_18_St_33_Falha_1
+  when controller_ck_43_1) default controller_ns_18_St_33_Funcionando_1);
+controller_nr_18_St_33_Funcionando : -1;
+controller_nr_18 : ((controller_nr_18_St_33_Falha when controller_ck_43_1)
+  default controller_nr_18_St_33_Funcionando);
+controller_failed_2_St_33_Funcionando : -1;
+controller_failed_2 : ((controller_failed_2_St_33_Falha
+  when controller_ck_43_1) default controller_failed_2_St_33_Funcionando);
+controller_failed : controller_failed_2;
+controller_ck_39 : controller_failed;
+controller_out_false : controller_door;
+controller_out_true : (controller_door + a_const(2));
+controller_out : a_part(controller_ck_39, a_const(0), controller_out_true,
+                        controller_out_false);
+controller_door_status : controller_out;
+controller_v_208 : (not controller_c_1);
+controller_s_17_St_32_On_1 : ((1 when controller_v_208) default -1);
+controller_r_17_St_32_On : ((1 when controller_v_208)
+  default controller_pnr_17);
+controller_v_209 : (not controller_c_1);
+controller_s_17_St_32_Off_1 : ((-1 when controller_v_209) default 1);
+controller_s_17_1 : ((controller_s_17_St_32_Off_1 when controller_ck_45_1)
+  default controller_s_17_St_32_On_1);
+controller_r_17_St_32_Off : ((1 when controller_v_209)
+  default controller_pnr_17);
+controller_r_17 : ((controller_r_17_St_32_Off when controller_ck_45_1)
+  default controller_r_17_St_32_On);
+controller_ck_46_1 : controller_s_17_1;
+controller_ns_17_St_32_On_1 : -1;
+controller_nr_17_St_32_On : -1;
+controller_computer_on_St_32_On : a_const(1);
+controller_ns_17_St_32_Off_1 : 1;
+controller_ns_17_1 : ((controller_ns_17_St_32_Off_1 when controller_ck_46_1)
+  default controller_ns_17_St_32_On_1);
+controller_nr_17_St_32_Off : -1;
+controller_nr_17 : ((controller_nr_17_St_32_Off when controller_ck_46_1)
+  default controller_nr_17_St_32_On);
+controller_computer_on_St_32_Off : a_const(0);
+controller_computer_on : a_part(controller_ck_46_1, a_const(0),
+                                controller_computer_on_St_32_Off,
+                                controller_computer_on_St_32_On);
+controller_computer : controller_computer_on;
+controller_s_16_St_31_Falha_1 : ((-1 when controller_failed_recovered_4)
+  default 1);
+controller_r_16_St_31_Falha : ((1 when controller_failed_recovered_4)
+  default controller_pnr_16);
+controller_s_16_St_31_Funcionando_1 : ((1 when controller_failed_recovered_4)
+  default -1);
+controller_s_16_1 : ((controller_s_16_St_31_Falha_1 when controller_ck_47_1)
+  default controller_s_16_St_31_Funcionando_1);
+controller_r_16_St_31_Funcionando : ((1 when controller_failed_recovered_4)
+  default controller_pnr_16);
+controller_r_16 : ((controller_r_16_St_31_Falha when controller_ck_47_1)
+  default controller_r_16_St_31_Funcionando);
+controller_ck_48_1 : controller_s_16_1;
+controller_ns_16_St_31_Falha_1 : 1;
+controller_nr_16_St_31_Falha : -1;
+controller_failed_4_St_31_Falha : 1;
+controller_ns_16_St_31_Funcionando_1 : -1;
+controller_ns_16_1 : ((controller_ns_16_St_31_Falha_1
+  when controller_ck_48_1) default controller_ns_16_St_31_Funcionando_1);
+controller_nr_16_St_31_Funcionando : -1;
+controller_nr_16 : ((controller_nr_16_St_31_Falha when controller_ck_48_1)
+  default controller_nr_16_St_31_Funcionando);
+controller_failed_4_St_31_Funcionando : -1;
+controller_failed_4 : ((controller_failed_4_St_31_Falha
+  when controller_ck_48_1) default controller_failed_4_St_31_Funcionando);
+controller_failed_7 : controller_failed_4;
+controller_ck_44 : controller_failed_7;
+controller_out_1_false : controller_computer;
+controller_out_1_true : (controller_computer + a_const(2));
+controller_out_1 : a_part(controller_ck_44, a_const(0),
+                          controller_out_1_true, controller_out_1_false);
+controller_pc_status : controller_out_1;
+controller_ck_50_2_0 : controller_ck_50_2;
+controller_ck_50_2_1 : controller_ck_50_2;
+controller_v_210 : (not controller_c1_2);
+controller_v_211 : (not controller_c2_2);
+controller_v_212_2 : ((-1 when controller_v_211) default 1);
+controller_v_212_1 : ((-1 when controller_v_211) default 1);
+controller_v_213 : ((1 when controller_v_211) default controller_pnr_15);
+controller_s_15_St_30_Max_2 : ((-1 when controller_v_210)
+  default controller_v_212_2);
+controller_s_15_St_30_Max_1 : ((1 when controller_v_210)
+  default controller_v_212_1);
+controller_r_15_St_30_Max : ((1 when controller_v_210)
+  default controller_v_213);
+controller_v_214 : (not controller_c1_2);
+controller_v_215 : (not controller_c2_2);
+controller_v_216_2 : ((1 when controller_v_215) default -1);
+controller_v_216_1 : ((1 when controller_v_215) default 1);
+controller_v_217 : ((1 when controller_v_215) default controller_pnr_15);
+controller_s_15_St_30_Min_2 : ((-1 when controller_v_214)
+  default controller_v_216_2);
+controller_v_279 : ((controller_s_15_St_30_Max_2 when controller_ck_50_2_1)
+  default controller_s_15_St_30_Min_2);
+controller_s_15_St_30_Min_1 : ((-1 when controller_v_214)
+  default controller_v_216_1);
+controller_v_278 : ((controller_s_15_St_30_Max_1 when controller_ck_50_2_1)
+  default controller_s_15_St_30_Min_1);
+controller_r_15_St_30_Min : ((1 when controller_v_214)
+  default controller_v_217);
+controller_v_282 : ((controller_r_15_St_30_Max when controller_ck_50_2_1)
+  default controller_r_15_St_30_Min);
+controller_s_15_St_30_Max_2_0 : controller_s_15_St_30_Max_2;
+controller_s_15_St_30_Max_2_1 : controller_s_15_St_30_Max_2;
+controller_s_15_St_30_Min_2_0 : controller_s_15_St_30_Min_2;
+controller_s_15_St_30_Min_2_1 : controller_s_15_St_30_Min_2;
+controller_v_212_2_0 : controller_v_212_2;
+controller_v_212_2_1 : controller_v_212_2;
+controller_v_216_2_0 : controller_v_216_2;
+controller_v_216_2_1 : controller_v_216_2;
+controller_v_218 : (not controller_c1_2);
+controller_v_219 : (not controller_c2_2);
+controller_v_220_2 : ((1 when controller_v_219) default -1);
+controller_v_220_1 : ((1 when controller_v_219) default -1);
+controller_v_221 : ((1 when controller_v_219) default controller_pnr_15);
+controller_s_15_St_30_Off_2 : ((-1 when controller_v_218)
+  default controller_v_220_2);
+controller_v_281 : ((1 when controller_ck_50_2_0)
+  default controller_s_15_St_30_Off_2);
+controller_s_15_St_30_Off_1 : ((1 when controller_v_218)
+  default controller_v_220_1);
+controller_v_280 : ((1 when controller_ck_50_2_0)
+  default controller_s_15_St_30_Off_1);
+controller_r_15_St_30_Off : ((1 when controller_v_218)
+  default controller_v_221);
+controller_v_283 : ((1 when controller_ck_50_2_0)
+  default controller_r_15_St_30_Off);
+controller_s_15_St_30_Off_2_0 : controller_s_15_St_30_Off_2;
+controller_s_15_St_30_Off_2_1 : controller_s_15_St_30_Off_2;
+controller_r_15 : ((controller_v_282 when controller_ck_50_1)
+  default controller_v_283);
+controller_s_15_2 : ((controller_v_279 when controller_ck_50_1)
+  default controller_v_281);
+controller_s_15_1 : ((controller_v_278 when controller_ck_50_1)
+  default controller_v_280);
+controller_s_15_2_0 : controller_s_15_2;
+controller_s_15_2_1 : controller_s_15_2;
+controller_v_220_2_0 : controller_v_220_2;
+controller_v_220_2_1 : controller_v_220_2;
+controller_ck_51_2 : controller_s_15_2;
+controller_ck_51_1 : controller_s_15_1;
+controller_ck_51_2_0 : controller_ck_51_2;
+controller_ck_51_2_1 : controller_ck_51_2;
+controller_ns_15_St_30_Max_2 : 1;
+controller_ns_15_St_30_Max_1 : 1;
+controller_nr_15_St_30_Max : -1;
+controller_air_state_1_St_30_Max : a_const(2);
+controller_ns_15_St_30_Min_2 : -1;
+controller_v_271 : ((controller_ns_15_St_30_Max_2 when controller_ck_51_2_1)
+  default controller_ns_15_St_30_Min_2);
+controller_ns_15_St_30_Min_1 : 1;
+controller_v_270 : ((controller_ns_15_St_30_Max_1 when controller_ck_51_2_1)
+  default controller_ns_15_St_30_Min_1);
+controller_nr_15_St_30_Min : -1;
+controller_v_274 : ((controller_nr_15_St_30_Max when controller_ck_51_2_1)
+  default controller_nr_15_St_30_Min);
+controller_air_state_1_St_30_Min : a_const(1);
+controller_v_268 : a_part(controller_ck_51_2_1, a_const(0),
+                          controller_air_state_1_St_30_Max,
+                          controller_air_state_1_St_30_Min);
+controller_ns_15_St_30_Max_2_0 : controller_ns_15_St_30_Max_2;
+controller_ns_15_St_30_Max_2_1 : controller_ns_15_St_30_Max_2;
+controller_ns_15_St_30_Min_2_0 : controller_ns_15_St_30_Min_2;
+controller_ns_15_St_30_Min_2_1 : controller_ns_15_St_30_Min_2;
+controller_ns_15_St_30_Off_2 : -1;
+controller_v_273 : ((1 when controller_ck_51_2_0)
+  default controller_ns_15_St_30_Off_2);
+controller_ns_15_St_30_Off_1 : -1;
+controller_v_272 : ((1 when controller_ck_51_2_0)
+  default controller_ns_15_St_30_Off_1);
+controller_nr_15_St_30_Off : -1;
+controller_v_275 : ((1 when controller_ck_51_2_0)
+  default controller_nr_15_St_30_Off);
+controller_air_state_1_St_30_Off : a_const(0);
+controller_v_269 : a_part(controller_ck_51_2_0, a_const(0), a_const(0),
+                          controller_air_state_1_St_30_Off);
+controller_ns_15_St_30_Off_2_0 : controller_ns_15_St_30_Off_2;
+controller_ns_15_St_30_Off_2_1 : controller_ns_15_St_30_Off_2;
+controller_nr_15 : ((controller_v_274 when controller_ck_51_1)
+  default controller_v_275);
+controller_ns_15_2 : ((controller_v_271 when controller_ck_51_1)
+  default controller_v_273);
+controller_ns_15_1 : ((controller_v_270 when controller_ck_51_1)
+  default controller_v_272);
+controller_air_state_1 : a_part(controller_ck_51_1, a_const(0),
+                                controller_v_268, controller_v_269);
+controller_ns_15_2_0 : controller_ns_15_2;
+controller_ns_15_2_1 : controller_ns_15_2;
+controller_air_state : controller_air_state_1;
+controller_s_14_St_29_Falha_1 : ((-1 when controller_failed_recovered_6)
+  default 1);
+controller_r_14_St_29_Falha : ((1 when controller_failed_recovered_6)
+  default controller_pnr_14);
+controller_s_14_St_29_Funcionando_1 : ((1 when controller_failed_recovered_6)
+  default -1);
+controller_s_14_1 : ((controller_s_14_St_29_Falha_1 when controller_ck_52_1)
+  default controller_s_14_St_29_Funcionando_1);
+controller_r_14_St_29_Funcionando : ((1 when controller_failed_recovered_6)
+  default controller_pnr_14);
+controller_r_14 : ((controller_r_14_St_29_Falha when controller_ck_52_1)
+  default controller_r_14_St_29_Funcionando);
+controller_ck_53_1 : controller_s_14_1;
+controller_ns_14_St_29_Falha_1 : 1;
+controller_nr_14_St_29_Falha : -1;
+controller_failed_6_St_29_Falha : 1;
+controller_ns_14_St_29_Funcionando_1 : -1;
+controller_ns_14_1 : ((controller_ns_14_St_29_Falha_1
+  when controller_ck_53_1) default controller_ns_14_St_29_Funcionando_1);
+controller_nr_14_St_29_Funcionando : -1;
+controller_nr_14 : ((controller_nr_14_St_29_Falha when controller_ck_53_1)
+  default controller_nr_14_St_29_Funcionando);
+controller_failed_6_St_29_Funcionando : -1;
+controller_failed_6 : ((controller_failed_6_St_29_Falha
+  when controller_ck_53_1) default controller_failed_6_St_29_Funcionando);
+controller_failed_8 : controller_failed_6;
+controller_ck_49 : controller_failed_8;
+controller_out_2_false : controller_air_state;
+controller_out_2_true : (controller_air_state + a_const(3));
+controller_out_2 : a_part(controller_ck_49, a_const(0),
+                          controller_out_2_true, controller_out_2_false);
+controller_air_status : controller_out_2;
+controller_s_13_St_28_Open_1 : ((1 when controller_c_2) default -1);
+controller_r_13_St_28_Open : ((1 when controller_c_2)
+  default controller_pnr_13);
+controller_v_222 : (not controller_c_2);
+controller_s_13_St_28_Closed_1 : ((-1 when controller_v_222) default 1);
+controller_s_13_1 : ((controller_s_13_St_28_Closed_1 when controller_ck_55_1)
+  default controller_s_13_St_28_Open_1);
+controller_r_13_St_28_Closed : ((1 when controller_v_222)
+  default controller_pnr_13);
+controller_r_13 : ((controller_r_13_St_28_Closed when controller_ck_55_1)
+  default controller_r_13_St_28_Open);
+controller_ck_56_1 : controller_s_13_1;
+controller_ns_13_St_28_Open_1 : -1;
+controller_nr_13_St_28_Open : -1;
+controller_window_open_St_28_Open : a_const(1);
+controller_ns_13_St_28_Closed_1 : 1;
+controller_ns_13_1 : ((controller_ns_13_St_28_Closed_1
+  when controller_ck_56_1) default controller_ns_13_St_28_Open_1);
+controller_nr_13_St_28_Closed : -1;
+controller_nr_13 : ((controller_nr_13_St_28_Closed when controller_ck_56_1)
+  default controller_nr_13_St_28_Open);
+controller_window_open_St_28_Closed : a_const(0);
+controller_window_open : a_part(controller_ck_56_1, a_const(0),
+                                controller_window_open_St_28_Closed,
+                                controller_window_open_St_28_Open);
+controller_window : controller_window_open;
+controller_s_12_St_27_Falha_1 : ((-1 when controller_failed_recovered_5)
+  default 1);
+controller_r_12_St_27_Falha : ((1 when controller_failed_recovered_5)
+  default controller_pnr_12);
+controller_s_12_St_27_Funcionando_1 : ((1 when controller_failed_recovered_5)
+  default -1);
+controller_s_12_1 : ((controller_s_12_St_27_Falha_1 when controller_ck_57_1)
+  default controller_s_12_St_27_Funcionando_1);
+controller_r_12_St_27_Funcionando : ((1 when controller_failed_recovered_5)
+  default controller_pnr_12);
+controller_r_12 : ((controller_r_12_St_27_Falha when controller_ck_57_1)
+  default controller_r_12_St_27_Funcionando);
+controller_ck_58_1 : controller_s_12_1;
+controller_ns_12_St_27_Falha_1 : 1;
+controller_nr_12_St_27_Falha : -1;
+controller_failed_5_St_27_Falha : 1;
+controller_ns_12_St_27_Funcionando_1 : -1;
+controller_ns_12_1 : ((controller_ns_12_St_27_Falha_1
+  when controller_ck_58_1) default controller_ns_12_St_27_Funcionando_1);
+controller_nr_12_St_27_Funcionando : -1;
+controller_nr_12 : ((controller_nr_12_St_27_Falha when controller_ck_58_1)
+  default controller_nr_12_St_27_Funcionando);
+controller_failed_5_St_27_Funcionando : -1;
+controller_failed_5 : ((controller_failed_5_St_27_Falha
+  when controller_ck_58_1) default controller_failed_5_St_27_Funcionando);
+controller_failed_9 : controller_failed_5;
+controller_ck_54 : controller_failed_9;
+controller_out_3_false : controller_window;
+controller_out_3_true : (controller_window + a_const(2));
+controller_out_3 : a_part(controller_ck_54, a_const(0),
+                          controller_out_3_true, controller_out_3_false);
+controller_window_status : controller_out_3;
+controller_s_11_St_26_Open_1 : ((1 when controller_c_3) default -1);
+controller_r_11_St_26_Open : ((1 when controller_c_3)
+  default controller_pnr_11);
+controller_v_223 : (not controller_c_3);
+controller_s_11_St_26_Locked_1 : ((-1 when controller_v_223) default 1);
+controller_s_11_1 : ((controller_s_11_St_26_Locked_1 when controller_ck_60_1)
+  default controller_s_11_St_26_Open_1);
+controller_r_11_St_26_Locked : ((1 when controller_v_223)
+  default controller_pnr_11);
+controller_r_11 : ((controller_r_11_St_26_Locked when controller_ck_60_1)
+  default controller_r_11_St_26_Open);
+controller_ck_61_1 : controller_s_11_1;
+controller_ns_11_St_26_Open_1 : -1;
+controller_nr_11_St_26_Open : -1;
+controller_closet_open_St_26_Open : a_const(1);
+controller_ns_11_St_26_Locked_1 : 1;
+controller_ns_11_1 : ((controller_ns_11_St_26_Locked_1
+  when controller_ck_61_1) default controller_ns_11_St_26_Open_1);
+controller_nr_11_St_26_Locked : -1;
+controller_nr_11 : ((controller_nr_11_St_26_Locked when controller_ck_61_1)
+  default controller_nr_11_St_26_Open);
+controller_closet_open_St_26_Locked : a_const(0);
+controller_closet_open : a_part(controller_ck_61_1, a_const(0),
+                                controller_closet_open_St_26_Locked,
+                                controller_closet_open_St_26_Open);
+controller_closet : controller_closet_open;
+controller_s_10_St_25_Falha_1 : ((-1 when controller_failed_recovered_3)
+  default 1);
+controller_r_10_St_25_Falha : ((1 when controller_failed_recovered_3)
+  default controller_pnr_10);
+controller_s_10_St_25_Funcionando_1 : ((1 when controller_failed_recovered_3)
+  default -1);
+controller_s_10_1 : ((controller_s_10_St_25_Falha_1 when controller_ck_62_1)
+  default controller_s_10_St_25_Funcionando_1);
+controller_r_10_St_25_Funcionando : ((1 when controller_failed_recovered_3)
+  default controller_pnr_10);
+controller_r_10 : ((controller_r_10_St_25_Falha when controller_ck_62_1)
+  default controller_r_10_St_25_Funcionando);
+controller_ck_63_1 : controller_s_10_1;
+controller_ns_10_St_25_Falha_1 : 1;
+controller_nr_10_St_25_Falha : -1;
+controller_failed_3_St_25_Falha : 1;
+controller_ns_10_St_25_Funcionando_1 : -1;
+controller_ns_10_1 : ((controller_ns_10_St_25_Falha_1
+  when controller_ck_63_1) default controller_ns_10_St_25_Funcionando_1);
+controller_nr_10_St_25_Funcionando : -1;
+controller_nr_10 : ((controller_nr_10_St_25_Falha when controller_ck_63_1)
+  default controller_nr_10_St_25_Funcionando);
+controller_failed_3_St_25_Funcionando : -1;
+controller_failed_3 : ((controller_failed_3_St_25_Falha
+  when controller_ck_63_1) default controller_failed_3_St_25_Funcionando);
+controller_failed_10 : controller_failed_3;
+controller_ck_59 : controller_failed_10;
+controller_out_4_false : controller_closet;
+controller_out_4_true : (controller_closet + a_const(2));
+controller_out_4 : a_part(controller_ck_59, a_const(0),
+                          controller_out_4_true, controller_out_4_false);
+controller_closet_status : controller_out_4;
+controller_v_224 : (controller_c1_1 and controller_sw_1);
+controller_v_225 : (not controller_c2_1);
+controller_v_226 : (controller_v_224 or controller_v_225);
+controller_s_9_St_24_On_1 : ((1 when controller_v_226) default -1);
+controller_r_9_St_24_On : ((1 when controller_v_226)
+  default controller_pnr_9);
+controller_v_227 : (controller_c1_1 and controller_sw_1);
+controller_v_228 : (not controller_c2_1);
+controller_v_229 : (controller_v_227 or controller_v_228);
+controller_s_9_St_24_Off_1 : ((-1 when controller_v_229) default 1);
+controller_s_9_1 : ((controller_s_9_St_24_Off_1 when controller_ck_65_1)
+  default controller_s_9_St_24_On_1);
+controller_r_9_St_24_Off : ((1 when controller_v_229)
+  default controller_pnr_9);
+controller_r_9 : ((controller_r_9_St_24_Off when controller_ck_65_1)
+  default controller_r_9_St_24_On);
+controller_ck_66_1 : controller_s_9_1;
+controller_ns_9_St_24_On_1 : -1;
+controller_nr_9_St_24_On : -1;
+controller_light_source_on_St_24_On : a_const(1);
+controller_ns_9_St_24_Off_1 : 1;
+controller_ns_9_1 : ((controller_ns_9_St_24_Off_1 when controller_ck_66_1)
+  default controller_ns_9_St_24_On_1);
+controller_nr_9_St_24_Off : -1;
+controller_nr_9 : ((controller_nr_9_St_24_Off when controller_ck_66_1)
+  default controller_nr_9_St_24_On);
+controller_light_source_on_St_24_Off : a_const(0);
+controller_light_source_on : a_part(controller_ck_66_1, a_const(0),
+                                    controller_light_source_on_St_24_Off,
+                                    controller_light_source_on_St_24_On);
+controller_light_source : controller_light_source_on;
+controller_s_8_St_23_Falha_1 : ((-1 when controller_failed_recovered_1)
+  default 1);
+controller_r_8_St_23_Falha : ((1 when controller_failed_recovered_1)
+  default controller_pnr_8);
+controller_s_8_St_23_Funcionando_1 : ((1 when controller_failed_recovered_1)
+  default -1);
+controller_s_8_1 : ((controller_s_8_St_23_Falha_1 when controller_ck_67_1)
+  default controller_s_8_St_23_Funcionando_1);
+controller_r_8_St_23_Funcionando : ((1 when controller_failed_recovered_1)
+  default controller_pnr_8);
+controller_r_8 : ((controller_r_8_St_23_Falha when controller_ck_67_1)
+  default controller_r_8_St_23_Funcionando);
+controller_ck_68_1 : controller_s_8_1;
+controller_ns_8_St_23_Falha_1 : 1;
+controller_nr_8_St_23_Falha : -1;
+controller_failed_1_St_23_Falha : 1;
+controller_ns_8_St_23_Funcionando_1 : -1;
+controller_ns_8_1 : ((controller_ns_8_St_23_Falha_1 when controller_ck_68_1)
+  default controller_ns_8_St_23_Funcionando_1);
+controller_nr_8_St_23_Funcionando : -1;
+controller_nr_8 : ((controller_nr_8_St_23_Falha when controller_ck_68_1)
+  default controller_nr_8_St_23_Funcionando);
+controller_failed_1_St_23_Funcionando : -1;
+controller_failed_1 : ((controller_failed_1_St_23_Falha
+  when controller_ck_68_1) default controller_failed_1_St_23_Funcionando);
+controller_failed_11 : controller_failed_1;
+controller_ck_64 : controller_failed_11;
+controller_out_5_false : controller_light_source;
+controller_out_5_true : (controller_light_source + a_const(2));
+controller_out_5 : a_part(controller_ck_64, a_const(0),
+                          controller_out_5_true, controller_out_5_false);
+controller_light_status : controller_out_5;
+controller_v_230 : (controller_c1_1_1 and controller_sw_1_1);
+controller_v_231 : (not controller_c2_1_1);
+controller_v_232 : (controller_v_230 or controller_v_231);
+controller_s_7_St_22_On_1 : ((1 when controller_v_232) default -1);
+controller_r_7_St_22_On : ((1 when controller_v_232)
+  default controller_pnr_7);
+controller_v_233 : (controller_c1_1_1 and controller_sw_1_1);
+controller_v_234 : (not controller_c2_1_1);
+controller_v_235 : (controller_v_233 or controller_v_234);
+controller_s_7_St_22_Off_1 : ((-1 when controller_v_235) default 1);
+controller_s_7_1 : ((controller_s_7_St_22_Off_1 when controller_ck_70_1)
+  default controller_s_7_St_22_On_1);
+controller_r_7_St_22_Off : ((1 when controller_v_235)
+  default controller_pnr_7);
+controller_r_7 : ((controller_r_7_St_22_Off when controller_ck_70_1)
+  default controller_r_7_St_22_On);
+controller_ck_71_1 : controller_s_7_1;
+controller_ns_7_St_22_On_1 : -1;
+controller_nr_7_St_22_On : -1;
+controller_light_source_on_1_St_22_On : a_const(1);
+controller_ns_7_St_22_Off_1 : 1;
+controller_ns_7_1 : ((controller_ns_7_St_22_Off_1 when controller_ck_71_1)
+  default controller_ns_7_St_22_On_1);
+controller_nr_7_St_22_Off : -1;
+controller_nr_7 : ((controller_nr_7_St_22_Off when controller_ck_71_1)
+  default controller_nr_7_St_22_On);
+controller_light_source_on_1_St_22_Off : a_const(0);
+controller_light_source_on_1 : a_part(controller_ck_71_1, a_const(0),
+                                      controller_light_source_on_1_St_22_Off,
+                                      controller_light_source_on_1_St_22_On);
+controller_light_source_1 : controller_light_source_on_1;
+controller_s_St_21_Falha_1 : ((-1 when controller_failed_recovered_1_1)
+  default 1);
+controller_r_St_21_Falha : ((1 when controller_failed_recovered_1_1)
+  default controller_pnr);
+controller_s_St_21_Funcionando_1 : ((1 when controller_failed_recovered_1_1)
+  default -1);
+controller_s_1 : ((controller_s_St_21_Falha_1 when controller_ck_72_1)
+  default controller_s_St_21_Funcionando_1);
+controller_r_St_21_Funcionando : ((1 when controller_failed_recovered_1_1)
+  default controller_pnr);
+controller_r : ((controller_r_St_21_Falha when controller_ck_72_1)
+  default controller_r_St_21_Funcionando);
+controller_ck_73_1 : controller_s_1;
+controller_ns_St_21_Falha_1 : 1;
+controller_nr_St_21_Falha : -1;
+controller_failed_1_1_St_21_Falha : 1;
+controller_ns_St_21_Funcionando_1 : -1;
+controller_ns_1 : ((controller_ns_St_21_Falha_1 when controller_ck_73_1)
+  default controller_ns_St_21_Funcionando_1);
+controller_nr_St_21_Funcionando : -1;
+controller_nr : ((controller_nr_St_21_Falha when controller_ck_73_1)
+  default controller_nr_St_21_Funcionando);
+controller_failed_1_1_St_21_Funcionando : -1;
+controller_failed_1_1 : ((controller_failed_1_1_St_21_Falha
+  when controller_ck_73_1) default controller_failed_1_1_St_21_Funcionando);
+controller_failed_12 : controller_failed_1_1;
+controller_ck_69 : controller_failed_12;
+controller_out_6_false : controller_light_source_1;
+controller_out_6_true : (controller_light_source_1 + a_const(2));
+controller_out_6 : a_part(controller_ck_69, a_const(0),
+                          controller_out_6_true, controller_out_6_false);
+controller_blind_status : controller_out_6;
+initialisations : concat(initialisations, [(controller_ck_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_22_1 default controller_ck_1)]);
+initialisations : concat(initialisations, [(controller_pnr_22 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_22 default controller_pnr_22)]);
+initialisations : concat(initialisations, [(controller_ck_35_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_21_1 default controller_ck_35_1)]);
+initialisations : concat(initialisations, [(controller_pnr_21 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_21 default controller_pnr_21)]);
+initialisations : concat(initialisations, [(controller_ck_37_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_20_1 default controller_ck_37_1)]);
+initialisations : concat(initialisations, [(controller_pnr_20 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_20 default controller_pnr_20)]);
+initialisations : concat(initialisations, [(controller_ck_40_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_19_1 default controller_ck_40_1)]);
+initialisations : concat(initialisations, [(controller_pnr_19 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_19 default controller_pnr_19)]);
+initialisations : concat(initialisations, [(controller_ck_42_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_18_1 default controller_ck_42_1)]);
+initialisations : concat(initialisations, [(controller_pnr_18 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_18 default controller_pnr_18)]);
+initialisations : concat(initialisations, [(controller_ck_45_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_17_1 default controller_ck_45_1)]);
+initialisations : concat(initialisations, [(controller_pnr_17 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_17 default controller_pnr_17)]);
+initialisations : concat(initialisations, [(controller_ck_47_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_16_1 default controller_ck_47_1)]);
+initialisations : concat(initialisations, [(controller_pnr_16 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_16 default controller_pnr_16)]);
+initialisations : concat(initialisations, [(controller_v_277 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_15_2 default controller_v_277)]);
+initialisations : concat(initialisations, [(controller_v_276 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_15_1 default controller_v_276)]);
+initialisations : concat(initialisations, [(controller_pnr_15 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_15 default controller_pnr_15)]);
+initialisations : concat(initialisations, [(controller_ck_52_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_14_1 default controller_ck_52_1)]);
+initialisations : concat(initialisations, [(controller_pnr_14 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_14 default controller_pnr_14)]);
+initialisations : concat(initialisations, [(controller_ck_55_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_13_1 default controller_ck_55_1)]);
+initialisations : concat(initialisations, [(controller_pnr_13 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_13 default controller_pnr_13)]);
+initialisations : concat(initialisations, [(controller_ck_57_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_12_1 default controller_ck_57_1)]);
+initialisations : concat(initialisations, [(controller_pnr_12 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_12 default controller_pnr_12)]);
+initialisations : concat(initialisations, [(controller_ck_60_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_11_1 default controller_ck_60_1)]);
+initialisations : concat(initialisations, [(controller_pnr_11 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_11 default controller_pnr_11)]);
+initialisations : concat(initialisations, [(controller_ck_62_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_10_1 default controller_ck_62_1)]);
+initialisations : concat(initialisations, [(controller_pnr_10 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_nr_10 default controller_pnr_10)]);
+initialisations : concat(initialisations, [(controller_ck_65_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_9_1 default controller_ck_65_1)]);
+initialisations : concat(initialisations, [(controller_pnr_9 = -1)]);
+evolutions : concat(evolutions, [(controller_nr_9 default controller_pnr_9)]);
+initialisations : concat(initialisations, [(controller_ck_67_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_8_1 default controller_ck_67_1)]);
+initialisations : concat(initialisations, [(controller_pnr_8 = -1)]);
+evolutions : concat(evolutions, [(controller_nr_8 default controller_pnr_8)]);
+initialisations : concat(initialisations, [(controller_ck_70_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_7_1 default controller_ck_70_1)]);
+initialisations : concat(initialisations, [(controller_pnr_7 = -1)]);
+evolutions : concat(evolutions, [(controller_nr_7 default controller_pnr_7)]);
+initialisations : concat(initialisations, [(controller_ck_72_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(controller_ns_1 default controller_ck_72_1)]);
+initialisations : concat(initialisations, [(controller_pnr = -1)]);
+evolutions : concat(evolutions, [(controller_nr default controller_pnr)]);
+controller_v_188 : (a_iminv(controller_closet_status, 1) + 1);
+controller_v_189 : (not controller_v_188);
+controller_v_185 : (a_iminv(controller_window_status, 1) + 1);
+controller_v_186 : (not controller_v_185);
+controller_v_182 : (a_iminv(controller_pc_status, 1) + 1);
+controller_v_183 : (not controller_v_182);
+controller_v_179 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_180 : (not controller_v_179);
+controller_v_176 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_177 : (not controller_v_176);
+controller_v_173 : (a_iminv(controller_light_status, 1) + 1);
+controller_v_174 : (not controller_v_173);
+controller_v_170 : (a_iminv(controller_air_status, 2) + 1);
+controller_v_171 : (not controller_v_170);
+controller_v_168 : (a_iminv(controller_air_status, 1) + 1);
+controller_v_169 : (not controller_v_168);
+controller_v_172 : (controller_v_169 and controller_v_171);
+controller_v_175 : (controller_v_172 and controller_v_174);
+controller_v_178 : (controller_v_175 and controller_v_177);
+controller_v_181 : (controller_v_178 and controller_v_180);
+controller_v_184 : (controller_v_181 and controller_v_183);
+controller_v_187 : (controller_v_184 and controller_v_186);
+controller_v_190 : (controller_v_187 and controller_v_189);
+controller_v_165 : (not controller_cleaner_presence);
+controller_v_164 : (not controller_worker_presence);
+controller_v_166 : (controller_v_164 and controller_v_165);
+controller_v_167 : (not controller_v_166);
+controller_rule0 : (controller_v_167 or controller_v_190);
+controller_v_163 : (a_iminv(controller_light_status, 1) + 1);
+controller_v_160 : (a_inf(controller_light_status, 1) + 1);
+controller_v_158 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_159 : (controller_v_158 and controller_night);
+controller_v_161 : (controller_v_159 and controller_v_160);
+controller_v_162 : (not controller_v_161);
+controller_rule1 : (controller_v_162 or controller_v_163);
+controller_v_157 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_154 : (a_inf(controller_blind_status, 1) + 1);
+controller_v_152 : (a_sup(controller_light_status, 2) + 1);
+controller_v_150 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_151 : (controller_v_150 and controller_night);
+controller_v_153 : (controller_v_151 and controller_v_152);
+controller_v_155 : (controller_v_153 and controller_v_154);
+controller_v_156 : (not controller_v_155);
+controller_rule1_3 : (controller_v_156 or controller_v_157);
+controller_v_148 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_147 : (a_iminv(controller_light_status, 1) + 1);
+controller_v_149 : (controller_v_147 or controller_v_148);
+controller_v_144 : (a_inf(controller_blind_status, 1) + 1);
+controller_v_142 : (a_inf(controller_light_status, 1) + 1);
+controller_v_140 : (not controller_night);
+controller_v_139 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_141 : (controller_v_139 and controller_v_140);
+controller_v_143 : (controller_v_141 and controller_v_142);
+controller_v_145 : (controller_v_143 and controller_v_144);
+controller_v_146 : (not controller_v_145);
+controller_rule2 : (controller_v_146 or controller_v_149);
+controller_v_138 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_135 : (a_inf(controller_blind_status, 1) + 1);
+controller_v_133 : (a_sup(controller_light_status, 2) + 1);
+controller_v_132 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_134 : (controller_v_132 and controller_v_133);
+controller_v_136 : (controller_v_134 and controller_v_135);
+controller_v_137 : (not controller_v_136);
+controller_rule1_1 : (controller_v_137 or controller_v_138);
+controller_v_191 : (controller_rule1 and controller_rule1_1);
+controller_v_131 : (a_iminv(controller_light_status, 1) + 1);
+controller_v_128 : (a_sup(controller_blind_status, 2) + 1);
+controller_v_126 : (a_inf(controller_light_status, 1) + 1);
+controller_v_125 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_127 : (controller_v_125 and controller_v_126);
+controller_v_129 : (controller_v_127 and controller_v_128);
+controller_v_130 : (not controller_v_129);
+controller_rule1_2 : (controller_v_130 or controller_v_131);
+controller_v_192 : (controller_v_191 and controller_rule1_2);
+controller_v_193 : (controller_v_192 and controller_rule1_3);
+controller_v_194 : (controller_v_193 and controller_rule2);
+controller_v_195 : (controller_v_194 and controller_rule0);
+controller_v_124 : (a_iminv(controller_air_status, 2) + 1);
+controller_v_121 : (a_inf(controller_air_status, 2) + 1);
+controller_v_120 : (controller_worker_presence
+  and controller_cleaner_presence);
+controller_v_122 : (controller_v_120 and controller_v_121);
+controller_v_123 : (not controller_v_122);
+controller_rule5 : (controller_v_123 or controller_v_124);
+controller_v_196 : (controller_v_195 and controller_rule5);
+controller_v_117 : (a_iminv(controller_window_status, 1) + 1);
+controller_v_118 : (not controller_v_117);
+controller_v_114 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_115 : (not controller_v_114);
+controller_v_113 : (a_iminv(controller_air_status, 1) + 1);
+controller_v_116 : (controller_v_113 and controller_v_115);
+controller_v_119 : (controller_v_116 and controller_v_118);
+controller_v_110 : (a_inf(controller_air_status, 2) + 1);
+controller_v_108 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_106 : (controller_worker_presence
+  and controller_cleaner_presence);
+controller_v_107 : (not controller_v_106);
+controller_v_109 : (controller_v_107 and controller_v_108);
+controller_v_111 : (controller_v_109 and controller_v_110);
+controller_v_112 : (not controller_v_111);
+controller_rule6 : (controller_v_112 or controller_v_119);
+controller_v_197 : (controller_v_196 and controller_rule6);
+controller_v_104 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_102 : (a_iminv(controller_window_status, 1) + 1);
+controller_v_101 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_103 : (controller_v_101 and controller_v_102);
+controller_v_105 : (controller_v_103 and controller_v_104);
+controller_v_98 : (a_inf(controller_door_status, 1) + 1);
+controller_v_96 : (a_inf(controller_window_status, 1) + 1);
+controller_v_94 : (a_inf(controller_blind_status, 1) + 1);
+controller_v_92 : (a_sup(controller_air_status, 3) + 1);
+controller_v_91 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_93 : (controller_v_91 and controller_v_92);
+controller_v_95 : (controller_v_93 and controller_v_94);
+controller_v_97 : (controller_v_95 and controller_v_96);
+controller_v_99 : (controller_v_97 and controller_v_98);
+controller_v_100 : (not controller_v_99);
+controller_rule6_1 : (controller_v_100 or controller_v_105);
+controller_v_198 : (controller_v_197 and controller_rule6_1);
+controller_v_89 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_87 : (a_iminv(controller_window_status, 1) + 1);
+controller_v_88 : (not controller_v_87);
+controller_v_90 : (controller_v_88 and controller_v_89);
+controller_v_84 : (a_inf(controller_door_status, 1) + 1);
+controller_v_82 : (a_sup(controller_blind_status, 2) + 1);
+controller_v_80 : (a_sup(controller_air_status, 3) + 1);
+controller_v_79 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_81 : (controller_v_79 and controller_v_80);
+controller_v_83 : (controller_v_81 and controller_v_82);
+controller_v_85 : (controller_v_83 and controller_v_84);
+controller_v_86 : (not controller_v_85);
+controller_rule6_2 : (controller_v_86 or controller_v_90);
+controller_v_199 : (controller_v_198 and controller_rule6_2);
+controller_v_78 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_75 : (a_inf(controller_door_status, 1) + 1);
+controller_v_73 : (a_sup(controller_window_status, 2) + 1);
+controller_v_71 : (a_sup(controller_air_status, 3) + 1);
+controller_v_70 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_72 : (controller_v_70 and controller_v_71);
+controller_v_74 : (controller_v_72 and controller_v_73);
+controller_v_76 : (controller_v_74 and controller_v_75);
+controller_v_77 : (not controller_v_76);
+controller_rule6_3 : (controller_v_77 or controller_v_78);
+controller_v_200 : (controller_v_199 and controller_rule6_3);
+controller_v_67 : (a_iminv(controller_door_status, 1) + 1);
+controller_v_68 : (not controller_v_67);
+controller_v_65 : (a_iminv(controller_window_status, 1) + 1);
+controller_v_64 : (a_iminv(controller_blind_status, 1) + 1);
+controller_v_66 : (controller_v_64 and controller_v_65);
+controller_v_69 : (controller_v_66 and controller_v_68);
+controller_v_61 : (a_sup(controller_door_status, 2) + 1);
+controller_v_59 : (a_inf(controller_window_status, 1) + 1);
+controller_v_57 : (a_inf(controller_blind_status, 1) + 1);
+controller_v_55 : (a_sup(controller_air_status, 3) + 1);
+controller_v_54 : (controller_worker_presence
+  or controller_cleaner_presence);
+controller_v_56 : (controller_v_54 and controller_v_55);
+controller_v_58 : (controller_v_56 and controller_v_57);
+controller_v_60 : (controller_v_58 and controller_v_59);
+controller_v_62 : (controller_v_60 and controller_v_61);
+controller_v_63 : (not controller_v_62);
+controller_rule6_4 : (controller_v_63 or controller_v_69);
+controller_v_201 : (controller_v_200 and controller_rule6_4);
+controller_v_53 : (a_iminv(controller_pc_status, 1) + 1);
+controller_v_50 : (a_inf(controller_pc_status, 1) + 1);
+controller_v_51 : (controller_worker_presence and controller_v_50);
+controller_v_52 : (not controller_v_51);
+controller_rule7 : (controller_v_52 or controller_v_53);
+controller_v_202 : (controller_v_201 and controller_rule7);
+controller_v_49 : (a_iminv(controller_pc_status, 0) + 1);
+controller_v_46 : (a_inf(controller_pc_status, 1) + 1);
+controller_v_45 : (not controller_worker_presence);
+controller_v_47 : (controller_v_45 and controller_v_46);
+controller_v_48 : (not controller_v_47);
+controller_rule7_5 : (controller_v_48 or controller_v_49);
+controller_v_203 : (controller_v_202 and controller_rule7_5);
+controller_v_44 : (a_iminv(controller_closet_status, 1) + 1);
+controller_v_41 : (a_inf(controller_closet_status, 1) + 1);
+controller_v_42 : (controller_cleaner_presence and controller_v_41);
+controller_v_43 : (not controller_v_42);
+controller_rule8 : (controller_v_43 or controller_v_44);
+controller_v_204 : (controller_v_203 and controller_rule8);
+controller_v_40 : (a_iminv(controller_closet_status, 0) + 1);
+controller_v_37 : (a_inf(controller_closet_status, 1) + 1);
+controller_v : (not controller_cleaner_presence);
+controller_v_38 : (controller_v and controller_v_37);
+controller_v_39 : (not controller_v_38);
+controller_rule8_5 : (controller_v_39 or controller_v_40);
+controller_v_205 : (controller_v_204 and controller_rule8_5);
+controller_assume : 1;
+controller_guarantee : controller_v_205;
+initialisations : concat(initialisations, [(controller_error_state = 1)]);
+evolutions : concat(evolutions, [controller_guarantee]);
+constraints : [((controller_change_shift^2) = 1), ((controller_worker^2)
+               = 1), ((controller_cleaner^2) = 1),
+               ((controller_air_failed_recovered^2) = 1),
+               ((controller_light_switch^2) = 1),
+               ((controller_light_failed_recovered^2) = 1),
+               ((controller_blind_switch^2) = 1),
+               ((controller_blind_failed_recovered^2) = 1),
+               ((controller_door_failed_recovered^2) = 1),
+               ((controller_closet_failed_recovered^2) = 1),
+               ((controller_pc_failed_recovered^2) = 1),
+               ((controller_window_failed_recovered^2) = 1),
+               ((controller_c_blind_2^2) = 1), ((controller_c_light_2^2)
+               = 1), ((controller_c_blind_1^2) = 1),
+               ((controller_c_light_1^2) = 1), ((controller_c_closet^2) = 1),
+               ((controller_c_air_2^2) = 1), ((controller_c_air_1^2) = 1),
+               ((controller_c_window^2) = 1), ((controller_c_pc^2) = 1),
+               ((controller_c_door^2) = 1), (controller_assume = 1)];
+
+% --- outputs : [controller_night, controller_worker_presence,
+                 controller_cleaner_presence, controller_door_status,
+                 controller_pc_status, controller_window_status,
+                 controller_closet_status, controller_air_status,
+                 controller_light_status, controller_blind_status] --- %
+controller : processus(conditions, states, evolutions, initialisations,
+                       [gen(constraints)], controllables);
+controller_init : initial(controller);
+controller : S_Security(controller,B_True(controller,controller_error_state));
+dcs_result : equal(controller_init,initial(controller));
+if dcs_result then
+    print("controller: synthesis succeeded.")
+else
+    print("controller: synthesis failed.");
+
+if dcs_result then
+    print("Triangulation and controller generation...")
+else
+    quit(1);
+declare(p_controller_c_blind_2, p_controller_c_light_2,
+        p_controller_c_blind_1, p_controller_c_light_1,
+        p_controller_c_closet, p_controller_c_air_2, p_controller_c_air_1,
+        p_controller_c_window, p_controller_c_pc, p_controller_c_door);
+phantom_vars : [p_controller_c_blind_2, p_controller_c_light_2,
+                p_controller_c_blind_1, p_controller_c_light_1,
+                p_controller_c_closet, p_controller_c_air_2,
+                p_controller_c_air_1, p_controller_c_window,
+                p_controller_c_pc, p_controller_c_door];
+controller_triang : Triang(constraint(controller),controllables,phantom_vars);
+controller_inputs : [controller_change_shift, controller_worker,
+                     controller_cleaner, controller_air_failed_recovered,
+                     controller_light_switch,
+                     controller_light_failed_recovered,
+                     controller_blind_switch,
+                     controller_blind_failed_recovered,
+                     controller_door_failed_recovered,
+                     controller_closet_failed_recovered,
+                     controller_pc_failed_recovered,
+                     controller_window_failed_recovered, controller_ck_1,
+                     controller_pnr_22, controller_ck_35_1,
+                     controller_pnr_21, controller_ck_37_1,
+                     controller_pnr_20, controller_ck_40_1,
+                     controller_pnr_19, controller_ck_42_1,
+                     controller_pnr_18, controller_ck_45_1,
+                     controller_pnr_17, controller_ck_47_1,
+                     controller_pnr_16, controller_v_277, controller_v_276,
+                     controller_pnr_15, controller_ck_52_1,
+                     controller_pnr_14, controller_ck_55_1,
+                     controller_pnr_13, controller_ck_57_1,
+                     controller_pnr_12, controller_ck_60_1,
+                     controller_pnr_11, controller_ck_62_1,
+                     controller_pnr_10, controller_ck_65_1, controller_pnr_9,
+                     controller_ck_67_1, controller_pnr_8,
+                     controller_ck_70_1, controller_pnr_7,
+                     controller_ck_72_1, controller_pnr,
+                     p_controller_c_blind_2, p_controller_c_light_2,
+                     p_controller_c_blind_1, p_controller_c_light_1,
+                     p_controller_c_closet, p_controller_c_air_2,
+                     p_controller_c_air_1, p_controller_c_window,
+                     p_controller_c_pc, p_controller_c_door];
+heptagon_controller("controller_controller.ept","controller",controller_inputs,controllables,controller_triang);
+

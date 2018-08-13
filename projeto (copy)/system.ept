@@ -193,7 +193,7 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
 		let
 			rule0 = not (not worker_presence & not cleaner_presence) or (air_status <> 1 & air_status <> 2 & light_status <> 1 & blind_status <> 1 & door_status <> 1 & pc_status <> 1 & window_status <> 1 & closet_status <> 1);
 			
-			rule1 = not ((worker_presence or cleaner_presence) & night & light_status <= 1) or (light_status = 1);
+			rule1 = not ((worker_presence or cleaner_presence) & night & light_status <= 1(*  & blind_status <= 1 *)) or (light_status = 1(*  & blind_status = 0 *));
 			rule1_3 = not ((worker_presence or cleaner_presence) & night & light_status >= 2 & blind_status <= 1) or blind_status = 1;
 			
 			rule2 = not ((worker_presence or cleaner_presence) & not night & light_status <= 1 & blind_status <= 1) or (light_status = 1 or blind_status = 1);
@@ -201,7 +201,7 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
 			rule1_1 = not ((worker_presence or cleaner_presence) & light_status >= 2 & blind_status <= 1) or (blind_status = 1);
 			rule1_2 = not ((worker_presence or cleaner_presence) & light_status <= 1 & blind_status >= 2) or (light_status = 1);
 
-			rule5 = not (worker_presence & cleaner_presence & air_status <= 2) or air_status = 2;
+			rule5 = not (worker_presence & cleaner_presence & air_status < 3) or air_status = 2;
 			rule6 = not (not (worker_presence & cleaner_presence) & (worker_presence or cleaner_presence) & air_status <= 2) or (air_status = 1 & door_status <> 1 & window_status <> 1);
 			
 			rule6_1 = not ((worker_presence or cleaner_presence) & air_status >= 3 & blind_status <= 1 & window_status <= 1 & door_status <= 1) or (blind_status = 1 & window_status = 1 & door_status = 1);
@@ -209,11 +209,11 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
 			rule6_3 = not ((worker_presence or cleaner_presence) & air_status >= 3 & 					 window_status >= 2 & door_status <= 1) or (door_status = 1);
 			rule6_4 = not ((worker_presence or cleaner_presence) & air_status >= 3 & blind_status <= 1 & window_status <= 1 & door_status >= 2) or (blind_status = 1 & window_status = 1 &  door_status <> 1);
 
-			rule7 = not (worker_presence & pc_status <= 1) or pc_status = 1;
-			rule7_5 = not (not worker_presence & pc_status <= 1) or pc_status = 0;
+			rule7 = not (worker_presence & pc_status < 2) or pc_status = 1;
+			rule7_5 = not (not worker_presence & pc_status < 2) or pc_status = 0;
 
-			rule8 = not (cleaner_presence & closet_status <= 1) or closet_status = 1;
-			rule8_5 = not (not cleaner_presence & closet_status <= 1) or closet_status = 0;
+			rule8 = not (cleaner_presence & closet_status < 2) or closet_status = 1;
+			rule8_5 = not (not cleaner_presence & closet_status < 2) or closet_status = 0;
 		tel
     enforce (rule1 & rule1_1 & rule1_2 & rule1_3 & rule2 & rule0 & rule5 & rule6 & rule6_1 & rule6_2 & rule6_3 & rule6_4 & rule7 & rule7_5 & rule8 & rule8_5)
     with ( c_door, c_pc, c_window, c_air_1, c_air_2, c_closet,  c_light_1, c_blind_1, c_light_2, c_blind_2 : bool )
@@ -222,18 +222,15 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
   		night = inlined day_shift (change_shift);
 		worker_presence = inlined person (worker);
 		cleaner_presence = inlined person (cleaner);
-		door_status = inlined door (c_door);
-		(* door_status = inlined door_fail (c_door, door_failed_recovered); *)
-		pc_status = inlined computer (c_pc);
-		(* pc_status = inlined computer_fail (c_pc, pc_failed_recovered); *)
-		air_status = inlined air_conditioner (c_air_1, c_air_2);
-		(* air_status = inlined air_fail (c_air_1, c_air_2, air_failed_recovered); *)
-		window_status = inlined window (c_window);
-		(* window_status = inlined window_fail (c_window, window_failed_recovered); *)
-		closet_status = inlined closet (c_closet);
-		(* closet_status = inlined closet_fail (c_closet, closet_failed_recovered); *)
-		(* light_status = inlined light_source (light_switch, c_light_1, c_light_2); *)
+		(* door_status = inlined door (c_door); *)
+		(*pc_status = inlined computer (c_pc);*)
+		(* window_status = inlined window (c_window); *)
+		(* closet_status = inlined closet (c_closet); *)
+		door_status = inlined door_fail (c_door, door_failed_recovered);
+		pc_status = inlined computer_fail (c_pc, pc_failed_recovered);
+		air_status = inlined air_fail (c_air_1, c_air_2, air_failed_recovered);
+		window_status = inlined window_fail (c_window, window_failed_recovered);
+		closet_status = inlined closet_fail (c_closet, closet_failed_recovered);
   		light_status = inlined light_source_fail (light_switch, c_light_1, c_light_2, light_failed_recovered);
-  		(* blind_status = inlined light_source (blind_switch, c_blind_1, c_blind_2); *)
   		blind_status = inlined light_source_fail (blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
 	tel
