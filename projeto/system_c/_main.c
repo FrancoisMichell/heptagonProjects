@@ -1,5 +1,5 @@
-/* --- Generated the 1/8/2018 at 9:33 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 14/8/2018 at 10:9 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -45,23 +45,23 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.night);
     printf("=> ");
-    printf("%d ", _res.door_open);
-    printf("=> ");
     printf("%d ", _res.worker_presence);
     printf("=> ");
     printf("%d ", _res.cleaner_presence);
     printf("=> ");
-    printf("%d ", _res.pc_on);
+    printf("%d ", _res.door_status);
     printf("=> ");
-    printf("%d ", _res.window_open);
+    printf("%d ", _res.pc_status);
     printf("=> ");
-    printf("%d ", _res.closet_open);
+    printf("%d ", _res.window_status);
+    printf("=> ");
+    printf("%d ", _res.closet_status);
+    printf("=> ");
+    printf("%d ", _res.air_status);
     printf("=> ");
     printf("%d ", _res.light_status);
     printf("=> ");
     printf("%d ", _res.blind_status);
-    printf("=> ");
-    printf("%d ", _res.air_status);
     puts("");
     fflush(stdout);
   };

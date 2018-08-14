@@ -1,5 +1,5 @@
-/* --- Generated the 1/8/2018 at 9:33 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 14/8/2018 at 10:9 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -13,7 +13,7 @@ typedef struct System__light_source_mem {
 } System__light_source_mem;
 
 typedef struct System__light_source_out {
-  int light_source_on;
+  int light_source_status;
 } System__light_source_out;
 
 void System__light_source_reset(System__light_source_mem* self);
@@ -28,7 +28,7 @@ typedef struct System__door_mem {
 } System__door_mem;
 
 typedef struct System__door_out {
-  int door_open;
+  int door_status;
 } System__door_out;
 
 void System__door_reset(System__door_mem* self);
@@ -41,27 +41,13 @@ typedef struct System__closet_mem {
 } System__closet_mem;
 
 typedef struct System__closet_out {
-  int closet_open;
+  int closet_status;
 } System__closet_out;
 
 void System__closet_reset(System__closet_mem* self);
 
 void System__closet_step(int c, System__closet_out* _out,
                          System__closet_mem* self);
-
-typedef struct System__person_mem {
-  int ck_1;
-  int pnr;
-} System__person_mem;
-
-typedef struct System__person_out {
-  int presence;
-} System__person_out;
-
-void System__person_reset(System__person_mem* self);
-
-void System__person_step(int arrived, System__person_out* _out,
-                         System__person_mem* self);
 
 typedef struct System__computer_mem {
   int ck_1;
@@ -83,7 +69,7 @@ typedef struct System__window_mem {
 } System__window_mem;
 
 typedef struct System__window_out {
-  int window_open;
+  int window_status;
 } System__window_out;
 
 void System__window_reset(System__window_mem* self);
@@ -92,13 +78,13 @@ void System__window_step(int c, System__window_out* _out,
                          System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_106;
-  int v_105;
+  int v_223;
+  int v_222;
   int pnr;
 } System__air_conditioner_mem;
 
 typedef struct System__air_conditioner_out {
-  int air_state;
+  int air_status;
 } System__air_conditioner_out;
 
 void System__air_conditioner_reset(System__air_conditioner_mem* self);
@@ -106,6 +92,20 @@ void System__air_conditioner_reset(System__air_conditioner_mem* self);
 void System__air_conditioner_step(int c1, int c2,
                                   System__air_conditioner_out* _out,
                                   System__air_conditioner_mem* self);
+
+typedef struct System__person_mem {
+  int ck_1;
+  int pnr;
+} System__person_mem;
+
+typedef struct System__person_out {
+  int presence;
+} System__person_out;
+
+void System__person_reset(System__person_mem* self);
+
+void System__person_step(int arrived, System__person_out* _out,
+                         System__person_mem* self);
 
 typedef struct System__day_shift_mem {
   int ck_1;
@@ -124,8 +124,8 @@ void System__day_shift_step(int change, System__day_shift_out* _out,
 typedef struct System__controller_mem {
   int ck_26_1;
   int ck_24_1;
-  int v_122;
-  int v_121;
+  int v_239;
+  int v_238;
   int ck_20_1;
   int ck_18_1;
   int ck_16_1;
@@ -147,15 +147,15 @@ typedef struct System__controller_mem {
 
 typedef struct System__controller_out {
   int night;
-  int door_open;
   int worker_presence;
   int cleaner_presence;
-  int pc_on;
-  int window_open;
-  int closet_open;
+  int door_status;
+  int pc_status;
+  int window_status;
+  int closet_status;
+  int air_status;
   int light_status;
   int blind_status;
-  int air_status;
 } System__controller_out;
 
 void System__controller_reset(System__controller_mem* self);
