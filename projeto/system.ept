@@ -324,7 +324,7 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
 		window_status = inlined window (c_window, window_failed_recovered);
 		(* air_status = inlined air_conditioner (c_air_1, c_air_2); *)
 		air_status = inlined air_conditioner (c_air_1, c_air_2, air_failed_recovered);
-  		(* light_status = inlined light_source_1(light_switch, c_light_1, c_light_2); *)
+  		(* light_status = inlined light_source(light_switch, c_light_1, c_light_2); *)
   		light_status = inlined light_source(light_switch, c_light_1, c_light_2, light_failed_recovered);
   		(* blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2); *)
   		blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
