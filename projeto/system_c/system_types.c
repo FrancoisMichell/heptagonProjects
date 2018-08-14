@@ -1,4 +1,4 @@
-/* --- Generated the 14/8/2018 at 12:30 --- */
+/* --- Generated the 14/8/2018 at 13:23 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
@@ -7,22 +7,103 @@
 #include <stdlib.h>
 #include "system_types.h"
 
-System__st_17 System__st_17_of_string(char* s) {
-  if ((strcmp(s, "St_17_Noite")==0)) {
-    return System__St_17_Noite;
+System__st_20 System__st_20_of_string(char* s) {
+  if ((strcmp(s, "St_20_Noite")==0)) {
+    return System__St_20_Noite;
   };
-  if ((strcmp(s, "St_17_Dia")==0)) {
-    return System__St_17_Dia;
+  if ((strcmp(s, "St_20_Dia")==0)) {
+    return System__St_20_Dia;
+  };
+}
+
+char* string_of_System__st_20(System__st_20 x, char* buf) {
+  switch (x) {
+    case System__St_20_Noite:
+      strcpy(buf, "St_20_Noite");
+      break;
+    case System__St_20_Dia:
+      strcpy(buf, "St_20_Dia");
+      break;
+    default:
+      break;
+  };
+  return buf;
+}
+
+System__st_19 System__st_19_of_string(char* s) {
+  if ((strcmp(s, "St_19_Present")==0)) {
+    return System__St_19_Present;
+  };
+  if ((strcmp(s, "St_19_Not_Present")==0)) {
+    return System__St_19_Not_Present;
+  };
+}
+
+char* string_of_System__st_19(System__st_19 x, char* buf) {
+  switch (x) {
+    case System__St_19_Present:
+      strcpy(buf, "St_19_Present");
+      break;
+    case System__St_19_Not_Present:
+      strcpy(buf, "St_19_Not_Present");
+      break;
+    default:
+      break;
+  };
+  return buf;
+}
+
+System__st_18 System__st_18_of_string(char* s) {
+  if ((strcmp(s, "St_18_Present")==0)) {
+    return System__St_18_Present;
+  };
+  if ((strcmp(s, "St_18_Not_Present")==0)) {
+    return System__St_18_Not_Present;
+  };
+}
+
+char* string_of_System__st_18(System__st_18 x, char* buf) {
+  switch (x) {
+    case System__St_18_Present:
+      strcpy(buf, "St_18_Present");
+      break;
+    case System__St_18_Not_Present:
+      strcpy(buf, "St_18_Not_Present");
+      break;
+    default:
+      break;
+  };
+  return buf;
+}
+
+System__st_17 System__st_17_of_string(char* s) {
+  if ((strcmp(s, "St_17_On_fail")==0)) {
+    return System__St_17_On_fail;
+  };
+  if ((strcmp(s, "St_17_On")==0)) {
+    return System__St_17_On;
+  };
+  if ((strcmp(s, "St_17_Off_fail")==0)) {
+    return System__St_17_Off_fail;
+  };
+  if ((strcmp(s, "St_17_Off")==0)) {
+    return System__St_17_Off;
   };
 }
 
 char* string_of_System__st_17(System__st_17 x, char* buf) {
   switch (x) {
-    case System__St_17_Noite:
-      strcpy(buf, "St_17_Noite");
+    case System__St_17_On_fail:
+      strcpy(buf, "St_17_On_fail");
       break;
-    case System__St_17_Dia:
-      strcpy(buf, "St_17_Dia");
+    case System__St_17_On:
+      strcpy(buf, "St_17_On");
+      break;
+    case System__St_17_Off_fail:
+      strcpy(buf, "St_17_Off_fail");
+      break;
+    case System__St_17_Off:
+      strcpy(buf, "St_17_Off");
       break;
     default:
       break;
@@ -31,21 +112,33 @@ char* string_of_System__st_17(System__st_17 x, char* buf) {
 }
 
 System__st_16 System__st_16_of_string(char* s) {
-  if ((strcmp(s, "St_16_Present")==0)) {
-    return System__St_16_Present;
+  if ((strcmp(s, "St_16_Open_fail")==0)) {
+    return System__St_16_Open_fail;
   };
-  if ((strcmp(s, "St_16_Not_Present")==0)) {
-    return System__St_16_Not_Present;
+  if ((strcmp(s, "St_16_Open")==0)) {
+    return System__St_16_Open;
+  };
+  if ((strcmp(s, "St_16_Closed_fail")==0)) {
+    return System__St_16_Closed_fail;
+  };
+  if ((strcmp(s, "St_16_Closed")==0)) {
+    return System__St_16_Closed;
   };
 }
 
 char* string_of_System__st_16(System__st_16 x, char* buf) {
   switch (x) {
-    case System__St_16_Present:
-      strcpy(buf, "St_16_Present");
+    case System__St_16_Open_fail:
+      strcpy(buf, "St_16_Open_fail");
       break;
-    case System__St_16_Not_Present:
-      strcpy(buf, "St_16_Not_Present");
+    case System__St_16_Open:
+      strcpy(buf, "St_16_Open");
+      break;
+    case System__St_16_Closed_fail:
+      strcpy(buf, "St_16_Closed_fail");
+      break;
+    case System__St_16_Closed:
+      strcpy(buf, "St_16_Closed");
       break;
     default:
       break;
@@ -54,21 +147,33 @@ char* string_of_System__st_16(System__st_16 x, char* buf) {
 }
 
 System__st_15 System__st_15_of_string(char* s) {
-  if ((strcmp(s, "St_15_Present")==0)) {
-    return System__St_15_Present;
+  if ((strcmp(s, "St_15_Open_fail")==0)) {
+    return System__St_15_Open_fail;
   };
-  if ((strcmp(s, "St_15_Not_Present")==0)) {
-    return System__St_15_Not_Present;
+  if ((strcmp(s, "St_15_Open")==0)) {
+    return System__St_15_Open;
+  };
+  if ((strcmp(s, "St_15_Locked_fail")==0)) {
+    return System__St_15_Locked_fail;
+  };
+  if ((strcmp(s, "St_15_Locked")==0)) {
+    return System__St_15_Locked;
   };
 }
 
 char* string_of_System__st_15(System__st_15 x, char* buf) {
   switch (x) {
-    case System__St_15_Present:
-      strcpy(buf, "St_15_Present");
+    case System__St_15_Open_fail:
+      strcpy(buf, "St_15_Open_fail");
       break;
-    case System__St_15_Not_Present:
-      strcpy(buf, "St_15_Not_Present");
+    case System__St_15_Open:
+      strcpy(buf, "St_15_Open");
+      break;
+    case System__St_15_Locked_fail:
+      strcpy(buf, "St_15_Locked_fail");
+      break;
+    case System__St_15_Locked:
+      strcpy(buf, "St_15_Locked");
       break;
     default:
       break;
@@ -77,33 +182,33 @@ char* string_of_System__st_15(System__st_15 x, char* buf) {
 }
 
 System__st_14 System__st_14_of_string(char* s) {
-  if ((strcmp(s, "St_14_On_fail")==0)) {
-    return System__St_14_On_fail;
+  if ((strcmp(s, "St_14_Open_fail")==0)) {
+    return System__St_14_Open_fail;
   };
-  if ((strcmp(s, "St_14_On")==0)) {
-    return System__St_14_On;
+  if ((strcmp(s, "St_14_Open")==0)) {
+    return System__St_14_Open;
   };
-  if ((strcmp(s, "St_14_Off_fail")==0)) {
-    return System__St_14_Off_fail;
+  if ((strcmp(s, "St_14_Closed_fail")==0)) {
+    return System__St_14_Closed_fail;
   };
-  if ((strcmp(s, "St_14_Off")==0)) {
-    return System__St_14_Off;
+  if ((strcmp(s, "St_14_Closed")==0)) {
+    return System__St_14_Closed;
   };
 }
 
 char* string_of_System__st_14(System__st_14 x, char* buf) {
   switch (x) {
-    case System__St_14_On_fail:
-      strcpy(buf, "St_14_On_fail");
+    case System__St_14_Open_fail:
+      strcpy(buf, "St_14_Open_fail");
       break;
-    case System__St_14_On:
-      strcpy(buf, "St_14_On");
+    case System__St_14_Open:
+      strcpy(buf, "St_14_Open");
       break;
-    case System__St_14_Off_fail:
-      strcpy(buf, "St_14_Off_fail");
+    case System__St_14_Closed_fail:
+      strcpy(buf, "St_14_Closed_fail");
       break;
-    case System__St_14_Off:
-      strcpy(buf, "St_14_Off");
+    case System__St_14_Closed:
+      strcpy(buf, "St_14_Closed");
       break;
     default:
       break;
@@ -112,33 +217,45 @@ char* string_of_System__st_14(System__st_14 x, char* buf) {
 }
 
 System__st_13 System__st_13_of_string(char* s) {
-  if ((strcmp(s, "St_13_Open_fail")==0)) {
-    return System__St_13_Open_fail;
+  if ((strcmp(s, "St_13_Off_fail")==0)) {
+    return System__St_13_Off_fail;
   };
-  if ((strcmp(s, "St_13_Open")==0)) {
-    return System__St_13_Open;
+  if ((strcmp(s, "St_13_Off")==0)) {
+    return System__St_13_Off;
   };
-  if ((strcmp(s, "St_13_Closed_fail")==0)) {
-    return System__St_13_Closed_fail;
+  if ((strcmp(s, "St_13_Min_fail")==0)) {
+    return System__St_13_Min_fail;
   };
-  if ((strcmp(s, "St_13_Closed")==0)) {
-    return System__St_13_Closed;
+  if ((strcmp(s, "St_13_Min")==0)) {
+    return System__St_13_Min;
+  };
+  if ((strcmp(s, "St_13_Max_fail")==0)) {
+    return System__St_13_Max_fail;
+  };
+  if ((strcmp(s, "St_13_Max")==0)) {
+    return System__St_13_Max;
   };
 }
 
 char* string_of_System__st_13(System__st_13 x, char* buf) {
   switch (x) {
-    case System__St_13_Open_fail:
-      strcpy(buf, "St_13_Open_fail");
+    case System__St_13_Off_fail:
+      strcpy(buf, "St_13_Off_fail");
       break;
-    case System__St_13_Open:
-      strcpy(buf, "St_13_Open");
+    case System__St_13_Off:
+      strcpy(buf, "St_13_Off");
       break;
-    case System__St_13_Closed_fail:
-      strcpy(buf, "St_13_Closed_fail");
+    case System__St_13_Min_fail:
+      strcpy(buf, "St_13_Min_fail");
       break;
-    case System__St_13_Closed:
-      strcpy(buf, "St_13_Closed");
+    case System__St_13_Min:
+      strcpy(buf, "St_13_Min");
+      break;
+    case System__St_13_Max_fail:
+      strcpy(buf, "St_13_Max_fail");
+      break;
+    case System__St_13_Max:
+      strcpy(buf, "St_13_Max");
       break;
     default:
       break;
@@ -147,33 +264,33 @@ char* string_of_System__st_13(System__st_13 x, char* buf) {
 }
 
 System__st_12 System__st_12_of_string(char* s) {
-  if ((strcmp(s, "St_12_Open_fail")==0)) {
-    return System__St_12_Open_fail;
+  if ((strcmp(s, "St_12_On_fail")==0)) {
+    return System__St_12_On_fail;
   };
-  if ((strcmp(s, "St_12_Open")==0)) {
-    return System__St_12_Open;
+  if ((strcmp(s, "St_12_On")==0)) {
+    return System__St_12_On;
   };
-  if ((strcmp(s, "St_12_Locked_fail")==0)) {
-    return System__St_12_Locked_fail;
+  if ((strcmp(s, "St_12_Off_fail")==0)) {
+    return System__St_12_Off_fail;
   };
-  if ((strcmp(s, "St_12_Locked")==0)) {
-    return System__St_12_Locked;
+  if ((strcmp(s, "St_12_Off")==0)) {
+    return System__St_12_Off;
   };
 }
 
 char* string_of_System__st_12(System__st_12 x, char* buf) {
   switch (x) {
-    case System__St_12_Open_fail:
-      strcpy(buf, "St_12_Open_fail");
+    case System__St_12_On_fail:
+      strcpy(buf, "St_12_On_fail");
       break;
-    case System__St_12_Open:
-      strcpy(buf, "St_12_Open");
+    case System__St_12_On:
+      strcpy(buf, "St_12_On");
       break;
-    case System__St_12_Locked_fail:
-      strcpy(buf, "St_12_Locked_fail");
+    case System__St_12_Off_fail:
+      strcpy(buf, "St_12_Off_fail");
       break;
-    case System__St_12_Locked:
-      strcpy(buf, "St_12_Locked");
+    case System__St_12_Off:
+      strcpy(buf, "St_12_Off");
       break;
     default:
       break;
@@ -182,33 +299,33 @@ char* string_of_System__st_12(System__st_12 x, char* buf) {
 }
 
 System__st_11 System__st_11_of_string(char* s) {
-  if ((strcmp(s, "St_11_Open_fail")==0)) {
-    return System__St_11_Open_fail;
+  if ((strcmp(s, "St_11_On_fail")==0)) {
+    return System__St_11_On_fail;
   };
-  if ((strcmp(s, "St_11_Open")==0)) {
-    return System__St_11_Open;
+  if ((strcmp(s, "St_11_On")==0)) {
+    return System__St_11_On;
   };
-  if ((strcmp(s, "St_11_Closed_fail")==0)) {
-    return System__St_11_Closed_fail;
+  if ((strcmp(s, "St_11_Off_fail")==0)) {
+    return System__St_11_Off_fail;
   };
-  if ((strcmp(s, "St_11_Closed")==0)) {
-    return System__St_11_Closed;
+  if ((strcmp(s, "St_11_Off")==0)) {
+    return System__St_11_Off;
   };
 }
 
 char* string_of_System__st_11(System__st_11 x, char* buf) {
   switch (x) {
-    case System__St_11_Open_fail:
-      strcpy(buf, "St_11_Open_fail");
+    case System__St_11_On_fail:
+      strcpy(buf, "St_11_On_fail");
       break;
-    case System__St_11_Open:
-      strcpy(buf, "St_11_Open");
+    case System__St_11_On:
+      strcpy(buf, "St_11_On");
       break;
-    case System__St_11_Closed_fail:
-      strcpy(buf, "St_11_Closed_fail");
+    case System__St_11_Off_fail:
+      strcpy(buf, "St_11_Off_fail");
       break;
-    case System__St_11_Closed:
-      strcpy(buf, "St_11_Closed");
+    case System__St_11_Off:
+      strcpy(buf, "St_11_Off");
       break;
     default:
       break;
@@ -217,45 +334,33 @@ char* string_of_System__st_11(System__st_11 x, char* buf) {
 }
 
 System__st_10 System__st_10_of_string(char* s) {
+  if ((strcmp(s, "St_10_On_fail")==0)) {
+    return System__St_10_On_fail;
+  };
+  if ((strcmp(s, "St_10_On")==0)) {
+    return System__St_10_On;
+  };
   if ((strcmp(s, "St_10_Off_fail")==0)) {
     return System__St_10_Off_fail;
   };
   if ((strcmp(s, "St_10_Off")==0)) {
     return System__St_10_Off;
   };
-  if ((strcmp(s, "St_10_Min_fail")==0)) {
-    return System__St_10_Min_fail;
-  };
-  if ((strcmp(s, "St_10_Min")==0)) {
-    return System__St_10_Min;
-  };
-  if ((strcmp(s, "St_10_Max_fail")==0)) {
-    return System__St_10_Max_fail;
-  };
-  if ((strcmp(s, "St_10_Max")==0)) {
-    return System__St_10_Max;
-  };
 }
 
 char* string_of_System__st_10(System__st_10 x, char* buf) {
   switch (x) {
+    case System__St_10_On_fail:
+      strcpy(buf, "St_10_On_fail");
+      break;
+    case System__St_10_On:
+      strcpy(buf, "St_10_On");
+      break;
     case System__St_10_Off_fail:
       strcpy(buf, "St_10_Off_fail");
       break;
     case System__St_10_Off:
       strcpy(buf, "St_10_Off");
-      break;
-    case System__St_10_Min_fail:
-      strcpy(buf, "St_10_Min_fail");
-      break;
-    case System__St_10_Min:
-      strcpy(buf, "St_10_Min");
-      break;
-    case System__St_10_Max_fail:
-      strcpy(buf, "St_10_Max_fail");
-      break;
-    case System__St_10_Max:
-      strcpy(buf, "St_10_Max");
       break;
     default:
       break;

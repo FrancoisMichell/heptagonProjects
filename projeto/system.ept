@@ -277,7 +277,7 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
 	
 	returns (
 		night, worker_presence, cleaner_presence : bool; 
-		door_status, pc_status, window_status, closet_status, air_status, light_status, blind_status : int;)
+		door_status, pc_status, window_status, closet_status, air_status, light_status, blind_status, blind_status2, blind_status3, blind_status4 : int;)
   	
   	contract
 		var rule0, rule1, rule1_3, rule2, rule1_1, rule1_2, rule5, rule6, rule6_1, rule6_2, rule6_3, rule6_4, rule7, rule7_5, rule8, rule8_5 : bool;
