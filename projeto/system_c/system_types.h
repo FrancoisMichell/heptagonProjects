@@ -1,5 +1,5 @@
-/* --- Generated the 14/8/2018 at 13:23 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
+/* --- Generated the 15/8/2018 at 9:51 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_TYPES_H
@@ -10,37 +10,8 @@
 #include "pervasives.h"
 #include "controller_controller.h"
 typedef enum {
-  System__St_20_Noite,
-  System__St_20_Dia
-} System__st_20;
-
-System__st_20 System__st_20_of_string(char* s);
-
-char* string_of_System__st_20(System__st_20 x, char* buf);
-
-typedef enum {
-  System__St_19_Present,
-  System__St_19_Not_Present
-} System__st_19;
-
-System__st_19 System__st_19_of_string(char* s);
-
-char* string_of_System__st_19(System__st_19 x, char* buf);
-
-typedef enum {
-  System__St_18_Present,
-  System__St_18_Not_Present
-} System__st_18;
-
-System__st_18 System__st_18_of_string(char* s);
-
-char* string_of_System__st_18(System__st_18 x, char* buf);
-
-typedef enum {
-  System__St_17_On_fail,
-  System__St_17_On,
-  System__St_17_Off_fail,
-  System__St_17_Off
+  System__St_17_Noite,
+  System__St_17_Dia
 } System__st_17;
 
 System__st_17 System__st_17_of_string(char* s);
@@ -48,10 +19,8 @@ System__st_17 System__st_17_of_string(char* s);
 char* string_of_System__st_17(System__st_17 x, char* buf);
 
 typedef enum {
-  System__St_16_Open_fail,
-  System__St_16_Open,
-  System__St_16_Closed_fail,
-  System__St_16_Closed
+  System__St_16_Present,
+  System__St_16_Not_Present
 } System__st_16;
 
 System__st_16 System__st_16_of_string(char* s);
@@ -59,10 +28,8 @@ System__st_16 System__st_16_of_string(char* s);
 char* string_of_System__st_16(System__st_16 x, char* buf);
 
 typedef enum {
-  System__St_15_Open_fail,
-  System__St_15_Open,
-  System__St_15_Locked_fail,
-  System__St_15_Locked
+  System__St_15_Present,
+  System__St_15_Not_Present
 } System__st_15;
 
 System__st_15 System__st_15_of_string(char* s);
@@ -70,10 +37,10 @@ System__st_15 System__st_15_of_string(char* s);
 char* string_of_System__st_15(System__st_15 x, char* buf);
 
 typedef enum {
-  System__St_14_Open_fail,
-  System__St_14_Open,
-  System__St_14_Closed_fail,
-  System__St_14_Closed
+  System__St_14_On_fail,
+  System__St_14_On,
+  System__St_14_Off_fail,
+  System__St_14_Off
 } System__st_14;
 
 System__st_14 System__st_14_of_string(char* s);
@@ -81,12 +48,10 @@ System__st_14 System__st_14_of_string(char* s);
 char* string_of_System__st_14(System__st_14 x, char* buf);
 
 typedef enum {
-  System__St_13_Off_fail,
-  System__St_13_Off,
-  System__St_13_Min_fail,
-  System__St_13_Min,
-  System__St_13_Max_fail,
-  System__St_13_Max
+  System__St_13_Open_fail,
+  System__St_13_Open,
+  System__St_13_Closed_fail,
+  System__St_13_Closed
 } System__st_13;
 
 System__st_13 System__st_13_of_string(char* s);
@@ -94,10 +59,10 @@ System__st_13 System__st_13_of_string(char* s);
 char* string_of_System__st_13(System__st_13 x, char* buf);
 
 typedef enum {
-  System__St_12_On_fail,
-  System__St_12_On,
-  System__St_12_Off_fail,
-  System__St_12_Off
+  System__St_12_Open_fail,
+  System__St_12_Open,
+  System__St_12_Locked_fail,
+  System__St_12_Locked
 } System__st_12;
 
 System__st_12 System__st_12_of_string(char* s);
@@ -105,10 +70,10 @@ System__st_12 System__st_12_of_string(char* s);
 char* string_of_System__st_12(System__st_12 x, char* buf);
 
 typedef enum {
-  System__St_11_On_fail,
-  System__St_11_On,
-  System__St_11_Off_fail,
-  System__St_11_Off
+  System__St_11_Open_fail,
+  System__St_11_Open,
+  System__St_11_Closed_fail,
+  System__St_11_Closed
 } System__st_11;
 
 System__st_11 System__st_11_of_string(char* s);
@@ -116,10 +81,12 @@ System__st_11 System__st_11_of_string(char* s);
 char* string_of_System__st_11(System__st_11 x, char* buf);
 
 typedef enum {
-  System__St_10_On_fail,
-  System__St_10_On,
   System__St_10_Off_fail,
-  System__St_10_Off
+  System__St_10_Off,
+  System__St_10_Min_fail,
+  System__St_10_Min,
+  System__St_10_Max_fail,
+  System__St_10_Max
 } System__st_10;
 
 System__st_10 System__st_10_of_string(char* s);
