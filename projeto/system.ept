@@ -115,7 +115,7 @@ node fail (failed_recovered: bool) returns (failed : bool)
 		end
 	tel
 
-node light_source_fail (sw, c1, c2, failed_recovered: bool) returns (out: int)
+ node light_source_fail (sw, c1, c2, failed_recovered: bool) returns (out: int)
 	var light_source : int; failed: bool;
 	let
 		light_source = inlined light_source (sw, c1, c2);
@@ -157,7 +157,7 @@ node computer_fail (c1, failed_recovered: bool) returns (out: int)
 		 | true do out = computer + 2
 		 | false do out = computer
 		end
-	tel
+	tel 
 
 node window_fail (c1, failed_recovered: bool) returns (out: int)
 	var window : int; failed: bool;
@@ -237,3 +237,4 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
   		(* blind_status = inlined light_source (blind_switch, c_blind_1, c_blind_2); *)
   		blind_status = inlined light_source_fail (blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
 	tel
+(* for i in `seq 30`; do make clean && /usr/bin/time -v -o ./no_errors.txt -a make &; done *)

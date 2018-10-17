@@ -1,0 +1,1080 @@
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -fr system_c system_z3z 
+rm -f controller_controller.ept
+rm -fr system_c system_z3z 
+rm -f controller_controller.ept
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -f controller_controller.ept
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -f controller_sim main.*
+rm -fr system_c system_z3z 
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+rm -f controller_controller.ept
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr system_c system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
+-----------------------------------------------------------------------------
+ >>>> sigali command is available.
+ >>>> SIGALI Documentation is available in :  directory 
+ >>>> Predefined SIGALI Libraries are available in :  directory 
+------------------------------------------------------------------------------
+rm -fr controller_controller_c system_c controller_controller_z3z system_z3z 
+rm -f controller_sim main.*
+rm -f *.epci *.mls *.ml *.obc ./*~
+rm -f controller_controller.ept
+heptc -target c -target z3z -s controller system.ept
+/home/ti/Sigali-2.4/bin/sigali < system_z3z/controller.z3z > /dev/null
+heptc -target c controller_controller.ept
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/_main.c -o system_c/_main.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c system_c/system.c -o system_c/system.o
+gcc -c  -I controller_controller_c -I /usr/local/lib/heptagon/c  -I system_c controller_controller_c/controller_controller.c -o controller_controller_c/controller_controller.o
+gcc  -o controller_sim system_c/_main.o system_c/system.o controller_controller_c/controller_controller.o
