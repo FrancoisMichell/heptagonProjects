@@ -1,5 +1,5 @@
-/* --- Generated the 15/8/2018 at 9:51 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
+/* --- Generated the 17/10/2018 at 21:6 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled fri. oct. 12 21:14:6 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #ifndef SYSTEM_H
@@ -8,8 +8,7 @@
 #include "system_types.h"
 #include "controller_controller.h"
 typedef struct System__light_source_mem {
-  int v_385;
-  int v_384;
+  int ck_1_2;
   int pnr;
 } System__light_source_mem;
 
@@ -19,13 +18,12 @@ typedef struct System__light_source_out {
 
 void System__light_source_reset(System__light_source_mem* self);
 
-void System__light_source_step(int sw, int c1, int c2, int failed_recovered,
+void System__light_source_step(int sw, int c1, int c2,
                                System__light_source_out* _out,
                                System__light_source_mem* self);
 
 typedef struct System__door_mem {
-  int v_401;
-  int v_400;
+  int ck_1;
   int pnr;
 } System__door_mem;
 
@@ -35,12 +33,10 @@ typedef struct System__door_out {
 
 void System__door_reset(System__door_mem* self);
 
-void System__door_step(int c, int failed_recovered, System__door_out* _out,
-                       System__door_mem* self);
+void System__door_step(int c, System__door_out* _out, System__door_mem* self);
 
 typedef struct System__closet_mem {
-  int v_417;
-  int v_416;
+  int ck_1;
   int pnr;
 } System__closet_mem;
 
@@ -50,28 +46,25 @@ typedef struct System__closet_out {
 
 void System__closet_reset(System__closet_mem* self);
 
-void System__closet_step(int c, int failed_recovered,
-                         System__closet_out* _out, System__closet_mem* self);
+void System__closet_step(int c, System__closet_out* _out,
+                         System__closet_mem* self);
 
 typedef struct System__computer_mem {
-  int v_433;
-  int v_432;
+  int ck_1;
   int pnr;
 } System__computer_mem;
 
 typedef struct System__computer_out {
-  int computer_status;
+  int computer_on;
 } System__computer_out;
 
 void System__computer_reset(System__computer_mem* self);
 
-void System__computer_step(int c, int failed_recovered,
-                           System__computer_out* _out,
+void System__computer_step(int c, System__computer_out* _out,
                            System__computer_mem* self);
 
 typedef struct System__window_mem {
-  int v_449;
-  int v_448;
+  int ck_1;
   int pnr;
 } System__window_mem;
 
@@ -81,13 +74,12 @@ typedef struct System__window_out {
 
 void System__window_reset(System__window_mem* self);
 
-void System__window_step(int c, int failed_recovered,
-                         System__window_out* _out, System__window_mem* self);
+void System__window_step(int c, System__window_out* _out,
+                         System__window_mem* self);
 
 typedef struct System__air_conditioner_mem {
-  int v_488;
-  int v_487;
-  int v_486;
+  int v_223;
+  int v_222;
   int pnr;
 } System__air_conditioner_mem;
 
@@ -97,7 +89,7 @@ typedef struct System__air_conditioner_out {
 
 void System__air_conditioner_reset(System__air_conditioner_mem* self);
 
-void System__air_conditioner_step(int c1, int c2, int failed_recovered,
+void System__air_conditioner_step(int c1, int c2,
                                   System__air_conditioner_out* _out,
                                   System__air_conditioner_mem* self);
 
@@ -130,21 +122,14 @@ void System__day_shift_step(int change, System__day_shift_out* _out,
                             System__day_shift_mem* self);
 
 typedef struct System__controller_mem {
-  int v_522;
-  int v_521;
-  int v_538;
-  int v_537;
-  int v_577;
-  int v_576;
-  int v_575;
-  int v_611;
-  int v_610;
-  int v_627;
-  int v_626;
-  int v_643;
-  int v_642;
-  int v_659;
-  int v_658;
+  int ck_26_1;
+  int ck_24_1;
+  int v_239;
+  int v_238;
+  int ck_20_1;
+  int ck_18_1;
+  int ck_16_1;
+  int ck_14_1;
   int ck_12_1;
   int ck_10_1;
   int ck_1;

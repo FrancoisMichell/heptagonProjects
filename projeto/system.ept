@@ -1,4 +1,4 @@
-(* node light_source ( sw, c1, c2: bool ) returns ( light_source_status : int )
+node light_source ( sw, c1, c2: bool ) returns ( light_source_status : int )
 	let
 		automaton
 			state Off do
@@ -9,9 +9,9 @@
 				light_source_status = 1;
 				unless (c1 & sw) or not c2 then Off
 		end
-	tel *)
+	tel
 
-node light_source ( sw, c1, c2, failed_recovered : bool ) returns ( light_source_status : int )
+(* node light_source ( sw, c1, c2, failed_recovered : bool ) returns ( light_source_status : int )
 	let
 		automaton
 			state Off do
@@ -34,9 +34,9 @@ node light_source ( sw, c1, c2, failed_recovered : bool ) returns ( light_source
 				unless (c1 & sw) or not c2 then Off_fail
 				| failed_recovered then On
 		end
-	tel
+	tel*)
 
-(* node door ( c : bool ) returns ( door_status : int )
+node door ( c : bool ) returns ( door_status : int )
 	let
 	    automaton
 		    state Closed do
@@ -46,9 +46,9 @@ node light_source ( sw, c1, c2, failed_recovered : bool ) returns ( light_source
 				door_status = 1;
 			    unless not c then Closed
 	    end
-	tel *)
+	tel
 
-node door ( c, failed_recovered : bool ) returns ( door_status : int )
+(* node door ( c, failed_recovered : bool ) returns ( door_status : int )
 	let
 	    automaton
 		    state Closed do
@@ -71,9 +71,9 @@ node door ( c, failed_recovered : bool ) returns ( door_status : int )
 				unless not c then Open_fail
 				| failed_recovered then Closed_fail
 	    end
-	tel
+	tel*)
 
-(* node closet ( c : bool ) returns ( closet_status : int )
+node closet ( c : bool ) returns ( closet_status : int )
 	let
 		automaton
 			state Locked do
@@ -83,9 +83,9 @@ node door ( c, failed_recovered : bool ) returns ( door_status : int )
 				closet_status = 1;
 				unless c then Locked
 		end
-	tel *)
+	tel
 
-node closet ( c, failed_recovered : bool ) returns ( closet_status : int )
+(* node closet ( c, failed_recovered : bool ) returns ( closet_status : int ) 
 	let
 		automaton
 			state Locked do
@@ -108,9 +108,9 @@ node closet ( c, failed_recovered : bool ) returns ( closet_status : int )
 				unless c then Locked_fail
 				| failed_recovered then Open
 		end
-	tel
+	tel*)
 
-(* node computer ( c : bool ) returns ( computer_on : int )
+node computer ( c : bool ) returns ( computer_on : int )
 	let
 		automaton
 			state Off do
@@ -120,9 +120,9 @@ node closet ( c, failed_recovered : bool ) returns ( closet_status : int )
 				computer_on = 1;
 				unless not c then Off
 		end
-	tel *)
+	tel
 
-node computer ( c, failed_recovered : bool ) returns ( computer_status : int )
+(* node computer ( c, failed_recovered : bool ) returns ( computer_status : int ) 
 	let
 		automaton
 			state Off do
@@ -145,9 +145,9 @@ node computer ( c, failed_recovered : bool ) returns ( computer_status : int )
 				unless not c then Off_fail
 				| failed_recovered then On
 		end
-	tel
+	tel*)
 
-(* node window ( c : bool ) returns ( window_status : int )
+node window ( c : bool ) returns ( window_status : int )
 	let
 		automaton
 			state Closed do
@@ -159,9 +159,9 @@ node computer ( c, failed_recovered : bool ) returns ( computer_status : int )
 				unless c then Closed
 				
 		end
-	tel *)
+	tel
 
-node window ( c, failed_recovered : bool ) returns ( window_status : int )
+(* node window ( c, failed_recovered : bool ) returns ( window_status : int ) 
 	let
 		automaton
 			state Closed do
@@ -185,9 +185,9 @@ node window ( c, failed_recovered : bool ) returns ( window_status : int )
 				| failed_recovered then Open
 				
 		end
-	tel
+	tel*)
 
-(* node air_conditioner ( c1, c2 : bool ) returns ( air_status : int )
+node air_conditioner ( c1, c2 : bool ) returns ( air_status : int )
 	let
 		automaton
 			state Off do
@@ -205,9 +205,9 @@ node window ( c, failed_recovered : bool ) returns ( window_status : int )
 				unless not c1 then Min
 					| not c2 then Off
 		end
-	tel *)
+	tel
 
-node air_conditioner ( c1, c2, failed_recovered : bool ) returns ( air_status : int )
+(* node air_conditioner ( c1, c2, failed_recovered : bool ) returns ( air_status : int ) 
 	let
 		automaton
 			state Off do
@@ -247,7 +247,7 @@ node air_conditioner ( c1, c2, failed_recovered : bool ) returns ( air_status : 
 				| failed_recovered then Max
 
 		end
-	tel
+	tel*)
 
 node person ( arrived : bool ) returns ( presence : bool )
 	let
@@ -314,18 +314,18 @@ node controller( change_shift, worker, cleaner, air_failed_recovered, light_swit
   		night = inlined day_shift (change_shift);
 		worker_presence = inlined person (worker);
 		cleaner_presence = inlined person (cleaner);
-		(* pc_status = inlined computer (c_pc); *)
-		pc_status = inlined computer (c_pc, pc_failed_recovered);
-		(* door_status = inlined door (c_door); *)
-		door_status = inlined door (c_door, door_failed_recovered);
-		(* closet_status = inlined closet (c_closet); *)
-		closet_status = inlined closet (c_closet, closet_failed_recovered);
-		(* window_status = inlined window (c_window); *)
-		window_status = inlined window (c_window, window_failed_recovered);
-		(* air_status = inlined air_conditioner (c_air_1, c_air_2); *)
-		air_status = inlined air_conditioner (c_air_1, c_air_2, air_failed_recovered);
-  		(* light_status = inlined light_source(light_switch, c_light_1, c_light_2); *)
-  		light_status = inlined light_source(light_switch, c_light_1, c_light_2, light_failed_recovered);
-  		(* blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2); *)
-  		blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2, blind_failed_recovered);
+		pc_status = inlined computer (c_pc);
+		(* pc_status = inlined computer (c_pc, pc_failed_recovered); *)
+		door_status = inlined door (c_door);
+		(* door_status = inlined door (c_door, door_failed_recovered); *)
+		closet_status = inlined closet (c_closet);
+		(* closet_status = inlined closet (c_closet, closet_failed_recovered); *)
+		window_status = inlined window (c_window);
+		(* window_status = inlined window (c_window, window_failed_recovered); *)
+		air_status = inlined air_conditioner (c_air_1, c_air_2);
+		(* air_status = inlined air_conditioner (c_air_1, c_air_2, air_failed_recovered); *)
+  		light_status = inlined light_source(light_switch, c_light_1, c_light_2);
+  		(* light_status = inlined light_source(light_switch, c_light_1, c_light_2, light_failed_recovered); *)
+  		blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2);
+  		(* blind_status = inlined light_source(blind_switch, c_blind_1, c_blind_2, blind_failed_recovered); *)
 	tel

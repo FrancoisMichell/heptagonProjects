@@ -1,5 +1,5 @@
-/* --- Generated the 14/8/2018 at 13:23 --- */
-/* --- heptagon compiler, version 1.03.00 (compiled mon. aug. 6 15:37:40 CET 2018) --- */
+/* --- Generated the 17/10/2018 at 21:6 --- */
+/* --- heptagon compiler, version 1.03.00 (compiled fri. oct. 12 21:14:6 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s controller system.ept --- */
 
 #include <stdio.h>
@@ -74,28 +74,27 @@ int main(int argc, char** argv) {
                             blind_failed_recovered, door_failed_recovered,
                             closet_failed_recovered, pc_failed_recovered,
                             window_failed_recovered, &_res, &mem);
-    printf("\n==================================\n");
-    printf("night => ");
-    printf("%d \n", _res.night);
-    printf("worker_presence => ");
-    printf("%d \n", _res.worker_presence);
-    printf("cleaner_presence => ");
-    printf("%d \n", _res.cleaner_presence);
-    printf("door_status => ");
-    printf("%d \n", _res.door_status);
-    printf("pc_status => ");
-    printf("%d \n", _res.pc_status);
-    printf("window_status => ");
-    printf("%d \n", _res.window_status);
-    printf("closet_status => ");
-    printf("%d \n", _res.closet_status);
-    printf("air_status => ");
-    printf("%d \n", _res.air_status);
-    printf("light_status => ");
-    printf("%d \n", _res.light_status);
-    printf("blind_status => ");
-    printf("%d \n", _res.blind_status);
-    printf("==================================\n");;
+    printf("=> ");
+    printf("%d ", _res.night);
+    printf("=> ");
+    printf("%d ", _res.worker_presence);
+    printf("=> ");
+    printf("%d ", _res.cleaner_presence);
+    printf("=> ");
+    printf("%d ", _res.door_status);
+    printf("=> ");
+    printf("%d ", _res.pc_status);
+    printf("=> ");
+    printf("%d ", _res.window_status);
+    printf("=> ");
+    printf("%d ", _res.closet_status);
+    printf("=> ");
+    printf("%d ", _res.air_status);
+    printf("=> ");
+    printf("%d ", _res.light_status);
+    printf("=> ");
+    printf("%d ", _res.blind_status);
+    puts("");
     fflush(stdout);
   };
   return 0;
