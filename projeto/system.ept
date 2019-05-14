@@ -94,24 +94,24 @@ node air_conditioner ( c1, c2 : bool ) returns ( air_state : int )
 node day_shift (change : bool) returns ( night : bool)
 	let
 		automaton
-			state Dia do
+			state Day do
 				night = false
-				unless change then Noite
-			state Noite do
+				unless change then Night
+			state Night do
 				night = true
-				unless change then Dia
+				unless change then Day
 		end
 	tel
 
 node fail (failed_recovered: bool) returns (failed : bool)
 	let
 		automaton
-			state Funcionando do
+			state Working do
 				failed = false
-				unless failed_recovered then Falha
-			state Falha do
+				unless failed_recovered then Failed
+			state Failed do
 				failed = true
-				unless failed_recovered then Funcionando
+				unless failed_recovered then Working
 		end
 	tel
 
