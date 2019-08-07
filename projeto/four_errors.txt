@@ -21,6 +21,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.56
 	System time (seconds): 0.07
@@ -44,6 +46,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.54
 	System time (seconds): 0.10
@@ -67,6 +71,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.64
 	System time (seconds): 0.10
@@ -90,6 +96,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.53
 	System time (seconds): 0.08
@@ -113,6 +121,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.48
 	System time (seconds): 0.08
@@ -136,6 +146,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.48
 	System time (seconds): 0.10
@@ -159,6 +171,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.67
 	System time (seconds): 0.09
@@ -182,6 +196,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.53
 	System time (seconds): 0.10
@@ -205,6 +221,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.52
 	System time (seconds): 0.09
@@ -228,6 +246,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.46
 	System time (seconds): 0.10
@@ -251,6 +271,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.72
 	System time (seconds): 0.11
@@ -274,6 +296,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.67
 	System time (seconds): 0.05
@@ -297,6 +321,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.62
 	System time (seconds): 0.11
@@ -320,6 +346,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.48
 	System time (seconds): 0.08
@@ -343,6 +371,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.52
 	System time (seconds): 0.11
@@ -366,6 +396,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.48
 	System time (seconds): 0.08
@@ -389,6 +421,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.93
 	System time (seconds): 0.10
@@ -412,6 +446,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.89
 	System time (seconds): 0.06
@@ -435,6 +471,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.64
 	System time (seconds): 0.10
@@ -458,6 +496,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.60
 	System time (seconds): 0.08
@@ -481,6 +521,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.63
 	System time (seconds): 0.11
@@ -504,6 +546,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.52
 	System time (seconds): 0.10
@@ -527,6 +571,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.50
 	System time (seconds): 0.08
@@ -550,6 +596,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.53
 	System time (seconds): 0.10
@@ -573,6 +621,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.46
 	System time (seconds): 0.12
@@ -596,6 +646,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.42
 	System time (seconds): 0.09
@@ -619,6 +671,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.56
 	System time (seconds): 0.11
@@ -642,6 +696,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.50
 	System time (seconds): 0.09
@@ -665,6 +721,8 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+-----------------------------
+
 	Command being timed: "make"
 	User time (seconds): 10.51
 	System time (seconds): 0.12
