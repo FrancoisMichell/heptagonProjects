@@ -1,5 +1,8 @@
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.46
+	User time (seconds): 102,46
 	System time (seconds): 0.26
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.74
@@ -21,8 +24,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.00
+	User time (seconds): 102,00
 	System time (seconds): 0.29
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.30
@@ -44,8 +50,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 103.45
+	User time (seconds): 103,45
 	System time (seconds): 0.32
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:43.79
@@ -67,8 +76,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.17
+	User time (seconds): 102,17
 	System time (seconds): 0.27
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.45
@@ -90,8 +102,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.31
+	User time (seconds): 102,31
 	System time (seconds): 0.26
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.58
@@ -113,8 +128,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 103.33
+	User time (seconds): 103,33
 	System time (seconds): 0.29
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:43.63
@@ -136,8 +154,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.15
+	User time (seconds): 102,15
 	System time (seconds): 0.24
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.41
@@ -159,8 +180,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.64
+	User time (seconds): 102,64
 	System time (seconds): 0.22
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.87
@@ -182,8 +206,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 103.31
+	User time (seconds): 103,31
 	System time (seconds): 0.23
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:43.56
@@ -205,8 +232,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.06
+	User time (seconds): 102,06
 	System time (seconds): 0.21
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.28
@@ -228,8 +258,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.08
+	User time (seconds): 102,08
 	System time (seconds): 0.26
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.36
@@ -251,8 +284,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 103.08
+	User time (seconds): 103,08
 	System time (seconds): 0.22
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:43.31
@@ -274,8 +310,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 102.12
+	User time (seconds): 102,12
 	System time (seconds): 0.25
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.38
@@ -297,8 +336,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 101.33
+	User time (seconds): 101,33
 	System time (seconds): 0.29
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.63
@@ -320,8 +362,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 101.15
+	User time (seconds): 101,15
 	System time (seconds): 0.20
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.36
@@ -343,8 +388,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.16
+	User time (seconds): 100,16
 	System time (seconds): 0.21
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.39
@@ -366,8 +414,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.05
+	User time (seconds): 100,05
 	System time (seconds): 0.25
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.31
@@ -389,8 +440,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.84
+	User time (seconds): 100,84
 	System time (seconds): 0.21
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.06
@@ -412,8 +466,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 99.95
+	User time (seconds): 99,95
 	System time (seconds): 0.23
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.20
@@ -435,8 +492,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.08
+	User time (seconds): 100,08
 	System time (seconds): 0.18
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.28
@@ -458,8 +518,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 101.30
+	User time (seconds): 101,30
 	System time (seconds): 0.26
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.58
@@ -481,8 +544,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.19
+	User time (seconds): 100,19
 	System time (seconds): 0.24
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.44
@@ -504,8 +570,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.09
+	User time (seconds): 100,09
 	System time (seconds): 0.28
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.39
@@ -527,8 +596,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.33
+	User time (seconds): 100,33
 	System time (seconds): 0.23
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.58
@@ -550,8 +622,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.58
+	User time (seconds): 100,58
 	System time (seconds): 0.25
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.84
@@ -573,8 +648,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.21
+	User time (seconds): 100,21
 	System time (seconds): 0.21
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.43
@@ -596,8 +674,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.07
+	User time (seconds): 100,07
 	System time (seconds): 0.27
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.35
@@ -619,8 +700,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 101.44
+	User time (seconds): 101,44
 	System time (seconds): 0.26
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.72
@@ -642,8 +726,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.06
+	User time (seconds): 100,06
 	System time (seconds): 0.20
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.27
@@ -665,8 +752,11 @@
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
+
+-------------------------------------------
+
 	Command being timed: "make"
-	User time (seconds): 100.10
+	User time (seconds): 100,10
 	System time (seconds): 0.23
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:40.34
